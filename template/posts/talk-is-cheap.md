@@ -2,7 +2,7 @@ title: Talk Is Cheap
 date:
 heading: Show me the code
 ---
-You guys want code highlighting, I knew it.
+You guys want code highlighting, I knew it!
 
 ### The famous Vue.js 10 second example
 

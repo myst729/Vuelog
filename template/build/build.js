@@ -29,7 +29,8 @@ cp('-R', 'posts/', postsPath)
 
 var databasePath = path.join(config.build.assetsRoot, config.build.databaseFileName)
 rm('-f', databasePath)
-cp(databaseFileName, config.build.assetsRoot)
+
+cp(config.build.databaseFileName, config.build.assetsRoot)
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()

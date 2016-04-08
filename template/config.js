@@ -8,7 +8,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     postsSubDirectory: 'posts',
     databaseFileName: 'database.js',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     productionSourceMap: true
   },
   dev: {

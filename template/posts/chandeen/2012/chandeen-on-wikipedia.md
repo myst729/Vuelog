@@ -1,5 +1,5 @@
 title: Chandeen on Wikipedia
-date: 1990-02-14
+date: 2012-02-14
 ---
 > https://en.wikipedia.org/wiki/Chandeen
 
