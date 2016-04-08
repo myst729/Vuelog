@@ -13,7 +13,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It
 ``` bash
 $ npm install -g vue-cli
 $ vue init myst729/Vuelog my-blog
-$ cd my-project
+$ cd my-blog
 $ npm install
 $ npm run dev
 ```
