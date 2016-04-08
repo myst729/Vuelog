@@ -6,6 +6,8 @@ module.exports = {
     index: path.resolve(__dirname, 'dist/index.html'),
     assetsRoot: path.resolve(__dirname, 'dist'),
     assetsSubDirectory: 'static',
+    postsSubDirectory: 'posts',
+    databaseFileName: 'database.js',
     assetsPublicPath: '/',
     productionSourceMap: true
   },

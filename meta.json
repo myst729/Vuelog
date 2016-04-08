@@ -3,19 +3,19 @@
     "name": {
       "type": "string",
       "required": true,
-      "label": "Project name"
+      "label": "Blog name"
     },
     "version": {
       "type": "string",
       "required": true,
-      "label": "Project version",
+      "label": "Blog version",
       "default": "0.1.0"
     },
     "description": {
       "type": "string",
       "required": false,
-      "label": "Project description",
-      "default": "A Vue.js project"
+      "label": "Blog description",
+      "default": "A backend-free blog system built on top of Vue.js"
     },
     "author": {
       "type": "string",

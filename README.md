@@ -1,4 +1,4 @@
-# vue-webpack-boilerplate
+# vue-Vuelog-boilerplate
 
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
 

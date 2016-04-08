@@ -1,10 +1,6 @@
 {
-  "name": "vue-cli-template-webpack",
+  "name": "vue-cli-template-Vuelog",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.",
-  "scripts": {
-    "docs": "cd docs && gitbook serve",
-    "deploy-docs": "bash ./deploy-docs.sh"
-  }
+  "description": "Hack your own Vuelog with vue-cli."
 }

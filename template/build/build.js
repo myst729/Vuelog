@@ -22,6 +22,15 @@ rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 cp('-R', 'static/', assetsPath)
 
+var postsPath = path.join(config.build.assetsRoot, config.build.postsSubDirectory)
+rm('-rf', postsPath)
+mkdir('-p', postsPath)
+cp('-R', 'posts/', postsPath)
+
+var databasePath = path.join(config.build.assetsRoot, config.build.databaseFileName)
+rm('-f', databasePath)
+cp(databaseFileName, config.build.assetsRoot)
+
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
   if (err) throw err

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+  <circle cx="200" cy="200" r="200" fill="#42b983" />
+  <circle cx="200" cy="200" r="120" fill="#34495e" />
+  <circle cx="200" cy="200" r="45" fill="#fff" />
+</svg>

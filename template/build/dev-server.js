@@ -55,6 +55,10 @@ app.use(hotMiddleware)
 // serve pure static assets
 var staticPath = path.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
+var postsPath = path.join(config.build.assetsPublicPath, config.build.postsSubDirectory)
+app.use(postsPath, express.static('./posts'))
+var databasePath = path.join(config.build.assetsPublicPath, config.build.databaseFileName)
+app.use(databasePath, express.static('./database.js'))
 
 module.exports = app.listen(port, function (err) {
   if (err) {
