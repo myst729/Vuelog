@@ -2,8 +2,11 @@
   <div class="content">
     <vuelog-post v-for="path in paths" track-by="$index" :database="database" :excerpt="true" :path="path"></vuelog-post>
     <div class="pagination">
-      <a :class="{invisible: !prev}" v-link="{name: category, params: {page: prev}}" class="left">&lt;&lt; {{prev}}</a>
-      <a :class="{invisible: !next}" v-link="{name: category, params: {page: next}}" class="right">{{next}} &gt;&gt;</a>
+      <a v-if="prev" v-link="{name: category, params: {page: prev}}" class="prev">&lt;&lt; Prev</a>
+      <span v-else class="prev">&lt;&lt; Prev</span>
+      <span> | </span>
+      <a v-if="next" v-link="{name: category, params: {page: next}}" class="next">Next &gt;&gt;</a>
+      <span v-else class="next">Next &gt;&gt;</span>
     </div>
   </div>
 </template>

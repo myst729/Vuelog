@@ -2,8 +2,11 @@
   <div class="content">
     <vuelog-post :database="database" :excerpt="false" :path="path"></vuelog-post>
     <div class="pagination">
-      <a :class="{invisible: !prev}" v-link="{path: prev}" class="left">&lt;&lt; Previous</a>
-      <a :class="{invisible: !next}" v-link="{path: next}" class="right">Next &gt;&gt;</a>
+      <a v-if="prev" v-link="{path: prev}" class="prev">&lt;&lt; Prev</a>
+      <span v-else class="prev">&lt;&lt; Prev</span>
+      <span> | </span>
+      <a v-if="next" v-link="{path: next}" class="next">Next &gt;&gt;</a>
+      <span v-else class="next">Next &gt;&gt;</span>
     </div>
   </div>
 </template>
@@ -18,6 +21,7 @@
     data () {
       return {
         path: '',
+        category: '',
         prev: false,
         next: false
       }

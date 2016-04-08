@@ -80,7 +80,7 @@ table {
   word-break: keep-all; }
 
 table th {
-  font-weight: bold;
+  font-weight: 600;
   background: #f7f8ff; }
 
 table th,
@@ -306,7 +306,7 @@ a.button {
     left: -0.7em;
     top: -2px;
     font-size: 1.2em;
-    font-weight: bold; }
+    font-weight: 600; }
   .content h4 {
     color: #7f8c8d;
     margin: 1.2em 0; }
@@ -373,22 +373,26 @@ a.button {
     border-radius: 100%;
     text-align: center;
     line-height: 20px;
-    font-weight: bold;
+    font-weight: 600;
     font-family: 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px; }
 
 .pagination {
+  color: #7f8c8d;
+  font-weight: 600;
   text-align: center;
   padding: 20px; }
-  .pagination a {
-    width: 45%;
-    display: inline-block; }
-    .pagination a.invisible {
-      visibility: hidden; }
-  .pagination .left {
-    text-align: left; }
-  .pagination .right {
+  .pagination .prev,
+  .pagination .next {
+    display: inline-block;
+    width: 25%; }
+  .pagination .prev {
     text-align: right; }
+  .pagination .next {
+    text-align: left; }
+  .pagination span.prev,
+  .pagination span.next {
+    color: #b3b3b3; }
 
 pre {
   margin: 1.2em 0;
@@ -440,7 +444,7 @@ pre {
   background: #f8f8f8; }
 
 .hljs-strong {
-  font-weight: bold; }
+  font-weight: 600; }
 
 .hljs-comment,
 .hljs-quote,

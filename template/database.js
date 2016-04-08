@@ -1,6 +1,6 @@
 var VUELOG_DATABASE = {
   title: 'Vuelog Demo',
-  base: 'https://myst729.github.io/Vuelog/',
+  base: {{ base }},
   logo: './static/img/logo.svg',
   posts: './posts',
   pagenum: 2,

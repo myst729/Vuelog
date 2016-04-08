@@ -32,6 +32,10 @@
       "required": true,
       "label": "Project title",
       "default": "Vuelog Template"
+    },
+    "base": {
+      "type": "string",
+      "label": "Project URL"
     }
   }
 }

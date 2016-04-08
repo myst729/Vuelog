@@ -21,14 +21,16 @@ After several releases on Hyperium, the group separated from that label and bega
 
 Harald Löwy created his own independent label, Kalinkaland, in 2001, which became the primary vehicle for the release of Chandeen's music. Several further releases followed before the group broke up. In 2007 Löwy reactivated the project, releasing a new album, _Teenage Poetry_, in 2008. Julia Beyer joined for this release.
 
+![Echoes](./static/pictures/chandeen-echoes.jpg)
+
 ## Members
 
-### Current
+**Current**
 
 + Julia Beyer - vocals, songwriting
 + Harald Löwy - music, production, songwriting
 
-### Former
+**Former**
 
 + Mike Brown - music, production, songwriting (†2012)
 + Aline Akbari - vocals, songwriting (1991–93)
@@ -37,7 +39,7 @@ Harald Löwy created his own independent label, Kalinkaland, in 2001, which beca
 + Oliver Henkel - music (1990–2004)
 + Antje Schulz - vocals, songwriting (1992–2004)
 
-### Collaborators
+**Collaborators**
 
 + Michael Schwalm - management, photography, artwork, production
 + Dorothea Hohnstedt - flute
