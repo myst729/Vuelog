@@ -1,5 +1,5 @@
 var VUELOG_DATABASE = {
-  title: 'Vuelog Demo',
+  title: {{ title }},
   base: {{ base }},
   logo: './static/img/logo.svg',
   posts: './posts',
