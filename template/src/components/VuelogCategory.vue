@@ -35,7 +35,6 @@
         var totalPages
 
         this.category = to.path.replace(/^(\/[^\/]+)\/.+/, ($, $1) => $1)
-        console.log(this.category)
         for (var i = 0; i < sitemap.length; i++) {
           if (sitemap[i].type === 'category' && sitemap[i].path === this.category) {
             this.all = sitemap[i].children
