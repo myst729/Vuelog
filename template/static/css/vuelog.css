@@ -382,6 +382,8 @@ a.button {
   font-weight: 600;
   text-align: center;
   padding: 20px; }
+  .pagination.invisible {
+    visibility: hidden; }
   .pagination .prev,
   .pagination .next {
     display: inline-block;

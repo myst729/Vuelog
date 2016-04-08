@@ -1,12 +1,12 @@
 <template>
   <div class="content">
     <vuelog-post :database="database" :excerpt="false" :path="path"></vuelog-post>
-    <div class="pagination">
+    <div class="pagination" :class="{invisible: !category}">
       <a v-if="prev" v-link="{path: prev}" class="prev">&lt;&lt; Prev</a>
-      <span v-else class="prev">&lt;&lt; Prev</span>
+      <span v-if="!prev" class="prev">&lt;&lt; Prev</span>
       <span> | </span>
       <a v-if="next" v-link="{path: next}" class="next">Next &gt;&gt;</a>
-      <span v-else class="next">Next &gt;&gt;</span>
+      <span v-if="!next" class="next">Next &gt;&gt;</span>
     </div>
   </div>
 </template>
@@ -30,7 +30,8 @@
     methods: {
       updatePagination (to) {
         if (!to.params || !to.params.year || !to.params.title) {
-          // not a post in timeline
+          // not a post in category
+          this.category = ''
           return
         }
 
