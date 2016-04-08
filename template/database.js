@@ -1,6 +1,6 @@
 var VUELOG_DATABASE = {
-  title: {{ title }},
-  base: {{ base }},
+  title: '{{ title }}',
+  base: '{{ base }}',
   logo: './static/img/logo.svg',
   posts: './posts',
   pagenum: 2,
