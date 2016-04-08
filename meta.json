@@ -3,27 +3,35 @@
     "name": {
       "type": "string",
       "required": true,
-      "label": "Blog name"
+      "label": "Project name",
+      "default": "vuelog"
     },
     "version": {
       "type": "string",
       "required": true,
-      "label": "Blog version",
+      "label": "Project version",
       "default": "0.1.0"
     },
     "description": {
       "type": "string",
       "required": false,
-      "label": "Blog description",
+      "label": "Project description",
       "default": "A backend-free blog system built on top of Vue.js"
     },
     "author": {
       "type": "string",
+      "required": false,
       "label": "Author"
     },
     "private": {
       "type": "boolean",
       "default": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "label": "Project title",
+      "default": "Vuelog Template"
     }
   }
 }

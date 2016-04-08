@@ -3,7 +3,7 @@
     <div class="header">
       <a class="header-logo" v-link="{path: '/'}">
         <img :src="database.logo">
-        <span>{{database.title}}</span>
+        <span v-text="database.title"></span>
       </a>
       <vuelog-nav :sitemap="database.sitemap"></vuelog-nav>
     </div>

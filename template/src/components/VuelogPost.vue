@@ -1,9 +1,9 @@
 <template>
   <div class="post">
-    <h1 v-if="!excerpt && title" class="post-title">{{title}}</h1>
-    <h2 v-if="excerpt && title" class="post-title"><a v-if="excerpt" v-link="{path: path}">{{title}}</a></h2>
-    <h4 v-if="date">{{date}}</h4>
-    <div class="post-body">{{{content}}}</div>
+    <h1 v-if="!excerpt && title" class="post-title" v-text="title"></h1>
+    <h2 v-if="excerpt && title" class="post-title"><a v-if="excerpt" v-link="{path: path}" v-text="title"></a></h2>
+    <h4 v-if="date" v-text="date"></h4>
+    <div class="post-body" v-html="content"></div>
     <a v-if="excerpt" v-link="{path: path}" class="read-more">... continue reading</a>
   </div>
 </template>
@@ -44,7 +44,7 @@
           this.$dispatch('heading', heading || this.title)
         }
 
-        content = content.replace(/```(\w*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
+        content = content.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
           var formatted
           try {
             formatted = hljs.highlight($lang, $code)

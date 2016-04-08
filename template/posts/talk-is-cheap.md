@@ -8,7 +8,7 @@ You guys want code highlighting, I knew it.
 
 ```html
 <div id="demo">
-  <p>{{message}}</p>
+  <p></p>
   <input v-model="message">
 </div>
 ```

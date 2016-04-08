@@ -38,34 +38,36 @@ router.map({
    *    /404
    */
 
-  '/articles': {
+  '/lorem-ipsum': {
     component: VuelogCategory
   },
-  '/articles/page/:page': {
-    name: 'articles',
+  '/lorem-ipsum/page/:page': {
+    name: '/lorem-ipsum',
     component: VuelogCategory
   },
-  '/articles/:year/:title': {
-    name: 'article',
+  '/lorem-ipsum/:year/:title': {
     component: VuelogPage
   },
-  '/books': {
+  '/chandeen': {
+    component: VuelogCategory
+  },
+  '/chandeen/page/:page': {
+    name: '/chandeen',
+    component: VuelogCategory
+  },
+  '/chandeen/:year/:title': {
     component: VuelogPage
   },
-  '/projects': {
-    component: VuelogPage
-  },
-  '/slides': {
-    component: VuelogPage
-  },
-  '/music': {
+  '/talk-is-cheap': {
     component: VuelogPage
   }
 })
 
 router.redirect({
-  '/': '/articles',
-  '*': '/articles'
+  '/': '/lorem-ipsum',
+  '/lorem-ipsum/page/1': '/lorem-ipsum',
+  '/chandeen/page/1': '/chandeen',
+  '*': '/lorem-ipsum'
 })
 
 router.start(Vuelog, 'vuelog')

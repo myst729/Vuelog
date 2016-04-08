@@ -31,12 +31,12 @@
         }
 
         var sitemap = this.database.sitemap
-        var currentCategory = to.path.replace(/(\/\w+)\/.+/, ($, $1) => $1)
         var all
         var selfIndex
 
+        this.category = to.path.replace(/^(\/[^\/]+)\/.+/, ($, $1) => $1)
         for (var i = 0; i < sitemap.length; i++) {
-          if (sitemap[i].type === 'category' && sitemap[i].path === currentCategory) {
+          if (sitemap[i].type === 'category' && sitemap[i].path === this.category) {
             all = sitemap[i].children
             selfIndex = all.indexOf(to.path)
             this.prev = selfIndex > 0 ? all[selfIndex - 1] : false

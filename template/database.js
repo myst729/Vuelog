@@ -3,7 +3,7 @@ var VUELOG_DATABASE = {
   base: 'https://myst729.github.io/Vuelog/',
   logo: './static/img/logo.svg',
   posts: './posts',
-  pagenum: 7,
+  pagenum: 2,
   sitemap: [
     {
       title: 'Lorem Ipsum',
@@ -11,7 +11,16 @@ var VUELOG_DATABASE = {
       type: 'category',
       children: [
         '/lorem-ipsum/2016/lorem-ipsum-samples',
+        '/lorem-ipsum/2015/lorem-ipsum-on-wikipedia',
         '/lorem-ipsum/2015/lorem-ipsum-demystified'
+      ]
+    },
+    {
+      title: 'Chandeen',
+      path: '/chandeen',
+      type: 'category',
+      children: [
+        '/chandeen/2012/chandeen-on-wikipedia'
       ]
     },
     {
