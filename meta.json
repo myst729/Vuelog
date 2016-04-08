@@ -30,12 +30,12 @@
     "title": {
       "type": "string",
       "label": "Project title",
-      "default": "Vuelog Template"
+      "default": "'Vuelog Template'"
     },
     "base": {
       "type": "string",
       "label": "Project URL",
-      "default": ""
+      "default": "''"
     }
   }
 }
