@@ -19,12 +19,11 @@ router.map({
    *  home-
    *    /
    *    /p/:pagenum
-   *  blog- (by default it should redirect to /)
+   *  blog- (by default it should redirect to "/", turn it off if you have a specified home page)
    *    /blog
    *    /blog/p/:pagenum
-   *  archive- (similar as /blog but without excerpts, only a list of titles)
+   *  archive- (list all posts and pages respectively, no contents or excerpts, only the titles)
    *    /archive
-   *    /archive/p/:pagenum
    *  category-
    *    /category/:category
    *    /category/:category/p/:pagenum
