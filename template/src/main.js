@@ -2,71 +2,91 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Vuelog from './Vuelog'
-import VuelogCategory from './components/VuelogCategory'
+import VuelogHome from './components/VuelogHome'
+import VuelogArchive from './components/VuelogArchive'
+import VuelogPosts from './components/VuelogPosts'
+import VuelogPost from './components/VuelogPost'
 import VuelogPage from './components/VuelogPage'
+import VuelogOops from './components/VuelogOops'
 
 Vue.use(VueRouter)
 
 var router = new VueRouter()
 
 router.map({
-
+  '/archive': {
+    name: 'archive',
+    component: VuelogArchive
+  },
+  '/archive/year/:year': {
+    name: 'archive-year',
+    component: VuelogArchive
+  },
+  '/archive/category/:category': {
+    name: 'archive-category',
+    component: VuelogArchive
+  },
+  '/blog': {
+    name: 'blog',
+    component: VuelogPosts
+  },
+  '/blog/p/:p': {
+    name: 'blog-more',
+    component: VuelogPosts
+  },
+  '/category/:category': {
+    name: 'category',
+    component: VuelogPosts
+  },
+  '/category/:category/p/:p': {
+    name: 'category-more',
+    component: VuelogPosts
+  },
+  '/category/:category/:time/:post': {
+    name: 'post',
+    component: VuelogPost
+  },
   /*
-   *  ========================================
-   *  = Will refactor to following structure =
-   *  ========================================
-   *
-   *  home-
-   *    /
-   *    /p/:pagenum
-   *  blog- (by default it should redirect to "/", turn it off if you have a specified home page)
-   *    /blog
-   *    /blog/p/:pagenum
-   *  archive- (list all posts and pages respectively, no contents or excerpts, only the titles)
-   *    /archive
-   *  category-
-   *    /category/:category
-   *    /category/:category/p/:pagenum
-   *  post-
-   *    /post/:category/:time/:title
-   *    /post/:category/:time/:title/p/:pagenum
-   *  page-
-   *    /page/:title
-   *    /page/:title/p/:pagenum
-   *  404-
-   *    /404
-   */
-
-  '/lorem-ipsum': {
-    component: VuelogCategory
+  TODO: if the content is too long, you can insert `<!-- next -->` to add a page break
+  ====================================================================================
+  '/category/:category/:time/:post/p/:p': {
+    name: 'post-more',
+    component: VuelogPost
   },
-  '/lorem-ipsum/page/:page': {
-    name: '/lorem-ipsum',
-    component: VuelogCategory
-  },
-  '/lorem-ipsum/:year/:title': {
+  */
+  '/page/:page': {
+    name: 'page',
     component: VuelogPage
   },
-  '/chandeen': {
-    component: VuelogCategory
-  },
-  '/chandeen/page/:page': {
-    name: '/chandeen',
-    component: VuelogCategory
-  },
-  '/chandeen/:year/:title': {
+  /*
+  TODO: if the content is too long, you can insert `<!-- next -->` to add a page break
+  ====================================================================================
+  '/page/:page/p/:p': {
+    name: 'page-more',
     component: VuelogPage
   },
-  '/talk-is-cheap': {
-    component: VuelogPage
+  */
+  '/oops': {
+    name: 'oops',
+    component: VuelogOops
   }
 })
 
+/* global VUELOG_DATABASE */
+if (VUELOG_DATABASE.deployment.useHomepage) {
+  router.on('/', {
+    name: 'home',
+    component: VuelogHome
+  })
+} else {
+  router.redirect({
+    '/': '/blog',
+    '/p/:p': '/blog/p/:p'
+  })
+}
+
 router.redirect({
-  '/': '/lorem-ipsum',
-  '/lorem-ipsum/page/1': '/lorem-ipsum',
-  '/chandeen/page/1': '/chandeen',
-  '*': '/lorem-ipsum'
+  '*': '/oops'
 })
 
 router.start(Vuelog, 'vuelog')

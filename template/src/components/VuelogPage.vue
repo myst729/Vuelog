@@ -1,63 +1,51 @@
 <template>
   <div class="content">
-    <vuelog-post :database="database" :excerpt="false" :path="path"></vuelog-post>
-    <div class="pagination" :class="{invisible: !category}">
-      <a v-if="prev" v-link="{path: prev}" class="prev">&lt;&lt; Prev</a>
-      <span v-if="!prev" class="prev">&lt;&lt; Prev</span>
-      <span> | </span>
-      <a v-if="next" v-link="{path: next}" class="next">Next &gt;&gt;</a>
-      <span v-if="!next" class="next">Next &gt;&gt;</span>
+    <div class="content-wrap">
+      <vuelog-content :database="database" :record="record" :type="type" :excerpt="false"></vuelog-content>
+    </div>
+
+    <div class="footer">
+      <span>Built with <i>&#10084;</i> and <a :href="database.system.project" v-text="database.system.name"></a></span>
     </div>
   </div>
 </template>
 
 <script>
-  import VuelogPost from './VuelogPost'
+  import VuelogContent from './VuelogContent'
 
   export default {
     components: {
-      VuelogPost
+      VuelogContent
     },
+
+    props: ['database'],
+
     data () {
       return {
-        path: '',
-        category: '',
-        prev: false,
-        next: false
+        record: {},
+        type: 'page'
       }
     },
-    props: ['database'],
+
     methods: {
-      updatePagination (to) {
-        if (!to.params || !to.params.year || !to.params.title) {
-          // not a post in category
-          this.category = ''
-          return
-        }
+      getPageRecord (slug) {
+        var pages = this.database.pages
 
-        var sitemap = this.database.sitemap
-        var all
-        var selfIndex
-
-        this.category = to.path.replace(/^(\/[^\/]+)\/.+/, ($, $1) => $1)
-        for (var i = 0; i < sitemap.length; i++) {
-          if (sitemap[i].type === 'category' && sitemap[i].path === this.category) {
-            all = sitemap[i].children
-            selfIndex = all.indexOf(to.path)
-            this.prev = selfIndex > 0 ? all[selfIndex - 1] : false
-            this.next = selfIndex < all.length - 1 ? all[selfIndex + 1] : false
-            break
+        for (var i = 0; i < pages.length; i++) {
+          if (pages[i].slug === slug) {
+            this.record = pages[i]
+            return
           }
         }
-      },
-      updatePost (to) {
-        this.path = to.path
       }
     },
+
     route: {
       data (transition) {
-        this.updatePagination(transition.to)
-        this.updatePost(transition.to)
+        var params = transition.to.params
+        var slug = (params && params.page)
+        this.getPageRecord(slug)
+
         transition.next()
       }
     }

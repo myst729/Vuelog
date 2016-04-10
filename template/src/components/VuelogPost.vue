@@ -1,76 +1,90 @@
 <template>
-  <div class="post">
-    <h1 v-if="!excerpt && title" class="post-title" v-text="title"></h1>
-    <h2 v-if="excerpt && title" class="post-title"><a v-if="excerpt" v-link="{path: path}" v-text="title"></a></h2>
-    <h4 v-if="date" v-text="date"></h4>
-    <div class="post-body" v-html="content"></div>
-    <a v-if="excerpt" v-link="{path: path}" class="read-more">... continue reading</a>
+  <div class="content">
+    <div class="content-wrap">
+      <vuelog-content :database="database" :record="record" :type="type" :excerpt="false"></vuelog-content>
+    </div>
+
+    <div class="pagination">
+      <div class="prev" v-if="prev">
+        <a v-text="'&laquo; ' + prev.title" v-link="{name: 'post', params: {category: prev.category, post: prev.slug, time: prev.routeTime}}"></a>
+      </div>
+      <div class="next" v-if="next">
+        <a v-text="next.title + ' &raquo;'" v-link="{name: 'post', params: {category: next.category, post: next.slug, time: next.routeTime}}"></a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Built with <i>&#10084;</i> and <a :href="database.system.project" v-text="database.system.name"></a></span>
+    </div>
   </div>
 </template>
 
 <script>
-  import hljs from 'highlight.js'
-  import marked from 'marked'
+  import utils from '../utils.js'
+  import VuelogContent from './VuelogContent'
 
   export default {
+    components: {
+      VuelogContent
+    },
+
+    props: ['database'],
+
     data () {
       return {
-        title: '',
-        date: '',
-        content: ''
+        record: {},
+        type: 'post',
+        prev: null,
+        next: null
       }
     },
-    props: ['database', 'excerpt', 'path'],
+
     methods: {
-      fetchContent (path) {
-        var fullpath = this.database.posts + path + '.md'
-        /* global fetch */
-        return fetch(fullpath).then(response => response.ok && response.text())
-      },
-      parseContent (md) {
-        var delimiter = '\n---\n'
-        var delimiterPosition = md.indexOf(delimiter)
-        var meta = md.slice(0, delimiterPosition).split('\n')
-        var content = md.slice(delimiterPosition + delimiter.length)
+      getPostRecord (category, slug) {
+        var posts = this.database.posts
+        var categories = this.database.categories
+        var routeTime = this.database.deployment.routeTime
+        var displayTime = this.database.deployment.displayTime
 
-        this.title = meta[0] ? meta[0].replace('title:', '').trim() : ''
-        this.date = meta[1] ? meta[1].replace('date:', '').trim() : ''
+        for (var i = 0; i < posts.length; i++) {
+          if (posts[i].category === category && posts[i].slug === slug) {
+            this.record = posts[i]
+            this.record.displayTime = utils.formatTime(this.record.date, displayTime)
+            this.record.routeTime = utils.formatTime(this.record.date, routeTime)
 
-        if (this.excerpt) {
-          // in category view
-          content = content.split('<!-- more -->')[0]
-        } else {
-          var heading = meta[2] ? meta[2].replace('heading:', '').trim() : ''
-          this.$dispatch('heading', heading || this.title)
-        }
+            if (i > 0) {
+              this.prev = posts[i - 1]
+              this.prev.routeTime = utils.formatTime(this.prev.date, routeTime)
+            } else {
+              this.prev = null
+            }
 
-        content = content.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
-          var formatted
-          try {
-            formatted = hljs.highlight($lang, $code)
-          } catch (e) {
-            formatted = hljs.highlightAuto($code)
+            if (i < posts.length - 1) {
+              this.next = posts[i + 1]
+              this.next.routeTime = utils.formatTime(this.next.date, routeTime)
+            } else {
+              this.next = null
+            }
+
+            for (var j = 0; j < categories.length; j++) {
+              if (categories[j].slug === category) {
+                this.record.categoryTitle = categories[j].title
+                return
+              }
+            }
           }
-          return `<pre data-lang="${formatted.language}"><code class="hljs ${formatted.language}">${formatted.value}</code></pre>`
-        })
-
-        this.content = marked(content)
-      },
-      getContent (path) {
-        this.fetchContent(path).then(this.parseContent)
-      }
-    },
-    activate (done) {
-      if (this.path) {
-        this.getContent(this.path)
-      }
-      done()
-    },
-    watch: {
-      path (newPath, oldPath) {
-        if (newPath && newPath !== oldPath) {
-          this.getContent(newPath)
         }
+      }
+    },
+
+    route: {
+      data (transition) {
+        var params = transition.to.params
+        var category = (params && params.category)
+        var slug = (params && params.post)
+        this.getPostRecord(category, slug)
+
+        transition.next()
       }
     }
   }

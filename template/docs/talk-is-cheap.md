@@ -1,6 +1,4 @@
 title: Talk is cheap, show me the styles!
-date:
-heading: Show me the code
 ---
 
 ### Headings

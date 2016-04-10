@@ -1,6 +1,6 @@
-# {{ name }}
+# Vuelog
 
-> {{ description }}
+> A backend-free blog system built on top of Vue.js
 
 ## Build Setup
 

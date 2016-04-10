@@ -1,22 +1,28 @@
 <template>
   <div class="header-wrap">
     <div class="header">
-      <a class="header-logo" v-link="{path: '/'}">
-        <img :src="database.logo">
-        <span v-text="database.title"></span>
-      </a>
-      <vuelog-nav :sitemap="database.sitemap"></vuelog-nav>
+      <div class="header-logo">
+        <a v-link="{path: '/'}">
+          <img :src="database.deployment.logo">
+          <span v-text="database.deployment.title"></span>
+        </a>
+      </div>
+      <vuelog-search v-if="database.search.enable && (!database.deployment.useHomepage || $route.path !== '/')" :settings="database.search"></vuelog-search>
+      <vuelog-navigation :items="database.navigation"></vuelog-navigation>
     </div>
   </div>
 </template>
 
 <script>
-  import VuelogNav from './VuelogNav'
+  import VuelogNavigation from './VuelogNavigation'
+  import VuelogSearch from './VuelogSearch'
 
   export default {
     components: {
-      VuelogNav
+      VuelogNavigation,
+      VuelogSearch
     },
+
     props: ['database']
   }
 </script>

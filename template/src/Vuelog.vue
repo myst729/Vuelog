@@ -12,15 +12,18 @@
     components: {
       VuelogHeader
     },
+
     data () {
       return {
         /* global VUELOG_DATABASE */
         database: VUELOG_DATABASE
       }
     },
+
     events: {
-      heading (title) {
-        document.title = title ? `${this.database.title} | ${title}` : this.database.title
+      'update-document-title': function (label) {
+        var title = this.database.deployment.title
+        document.title = label ? `${title} | ${label}` : title
       }
     }
   }

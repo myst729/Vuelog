@@ -1,53 +1,129 @@
 var VUELOG_DATABASE = {
-  title: '{{ title }}',
-  base: '{{ base }}',
-  logo: './static/img/logo.svg',
-  posts: './posts',
-  pagenum: 2,
-  sitemap: [
+
+  // DO NOT touch this part
+  system: {
+    name: 'Vuelog',
+    description: 'A backend-free blog system built on top of Vue.js',
+    version: '0.2.0',
+    project: 'https://github.com/myst729/Vuelog',
+    release: 'https://github.com/myst729/Vuelog/releases',
+    logo: './static/img/logo.svg',
+    author: 'Leo Deng'
+  },
+
+  // Edit your site from here
+  deployment: {
+    title: '{{ title }}',
+    url: '{{ url }}',
+    logo: './static/img/logo.svg',
+    folder: './docs',
+    perPage: 2,
+    displayTime: 'YYYY-MM-DD', // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'
+    routeTime: 'YYYY', // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD', DO NOT include '/'
+    useHomepage: true
+  },
+
+  // Search functionality is served with Algolia
+  search: {
+    enable: false,
+    appId: '3LBHRKJXUF',
+    apiKey: 'bfe100eb9f784537f122bdf39d113fae',
+    indexName: 'Vuelog',
+    displayKey: 'name'
+  },
+
+  navigation: [
     {
-      title: 'Lorem Ipsum',
-      path: '/lorem-ipsum',
+      label: 'Blog',
+      type: 'blog',
+      path: '/blog'
+    },
+    {
+      label: 'Archive',
+      type: 'archive',
+      path: '/archive'
+    },
+    {
+      label: 'Chandeen',
       type: 'category',
-      children: [
-        '/lorem-ipsum/2016/lorem-ipsum-samples',
-        '/lorem-ipsum/2015/lorem-ipsum-on-wikipedia',
-        '/lorem-ipsum/2015/lorem-ipsum-demystified'
-      ]
+      path: '/category/chandeen'
     },
     {
-      title: 'Chandeen',
-      path: '/chandeen',
+      label: 'Lorum Ipsum',
       type: 'category',
-      children: [
-        '/chandeen/2012/chandeen-on-wikipedia'
-      ]
+      path: '/category/lorem-ipsum'
     },
     {
-      title: 'Talk Is Cheap',
-      path: '/talk-is-cheap',
-      type: 'page'
+      label: 'Talk Is Cheap',
+      type: 'page',
+      path: '/page/talk-is-cheap'
     },
     {
-      title: 'Links',
+      label: 'Links',
       type: 'dropdown',
       children: [
         {
-          title: 'Weibo',
-          path: 'http://weibo.com/myst729',
-          type: 'outgoing'
+          label: 'Weibo',
+          type: 'outgoing',
+          link: 'http://weibo.com/myst729'
         },
         {
-          title: 'GitHub',
-          path: 'https://github.com/myst729',
-          type: 'outgoing'
+          label: 'GitHub',
+          type: 'outgoing',
+          link: 'https://github.com/myst729'
         },
         {
-          title: 'StackOverflow',
-          path: 'https://stackoverflow.com/users/1032492',
-          type: 'outgoing'
+          label: 'StackOverflow',
+          type: 'outgoing',
+          link: 'https://stackoverflow.com/users/1032492'
         }
       ]
     }
+  ],
+
+  pages: [
+    {
+      title: 'Talk Is Cheap',
+      slug: 'talk-is-cheap'
+    }
+  ],
+
+  categories: [
+    {
+      title: 'Chandeen',
+      slug: 'chandeen'
+    },
+    {
+      title: 'Lorem Ipsum',
+      slug: 'lorem-ipsum'
+    }
+  ],
+
+  posts: [
+    {
+      title: 'Lorem Ipsum Samples',
+      slug: 'lorem-ipsum-samples',
+      category: 'lorem-ipsum',
+      date: 20160116
+    },
+    {
+      title: 'Lorem Ipsum on Wikipedia',
+      slug: 'lorem-ipsum-on-wikipedia',
+      category: 'lorem-ipsum',
+      date: 20150214
+    },
+    {
+      title: 'Lorem Ipsum Demystified',
+      slug: 'lorem-ipsum-demystified',
+      category: 'lorem-ipsum',
+      date: 20150212
+    },
+    {
+      title: 'Chandeen on Wikipedia',
+      slug: 'chandeen-on-wikipedia',
+      category: 'chandeen',
+      date: 20120214
+    }
   ]
+
 }
