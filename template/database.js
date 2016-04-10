@@ -26,10 +26,10 @@ var VUELOG_DATABASE = {
   // Search functionality is served with Algolia
   search: {
     enable: false,
-    appId: '3LBHRKJXUF',
-    apiKey: 'bfe100eb9f784537f122bdf39d113fae',
-    indexName: 'Vuelog',
-    displayKey: 'name'
+    appId: '-',
+    apiKey: '-',
+    indexName: '-',
+    displayKey: '-'
   },
 
   navigation: [
