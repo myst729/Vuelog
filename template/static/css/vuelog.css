@@ -313,7 +313,8 @@ a.button {
   margin: 0 auto;
   padding: 0 30px; }
   .content .content-wrap {
-    flex: 1; }
+    flex: 1;
+    padding: 0 30px; }
   .content .content-body {
     padding: 1em 0 2em; }
   .content a {
@@ -322,10 +323,10 @@ a.button {
   .content a.button {
     color: #fff;
     font-size: 0.9em; }
-  .content h1.content-title,
-  .content h2.content-title a {
+  .content .post-title,
+  .content .post-title a {
     color: #34495e; }
-  .content h2.content-title a:hover {
+  .content .post-title a:hover {
     border-bottom: 2px solid #42b983; }
   .content h3 {
     margin: 3em 0 1.2em;
