@@ -4,7 +4,7 @@ var VUELOG_DATABASE = {
   system: {
     name: 'Vuelog',
     description: 'A backend-free blog system built on top of Vue.js',
-    version: '0.2.0',
+    version: '0.2.1',
     project: 'https://github.com/myst729/Vuelog',
     release: 'https://github.com/myst729/Vuelog/releases',
     logo: './static/img/logo.svg',
