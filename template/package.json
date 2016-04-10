@@ -12,15 +12,16 @@
   },
   "dependencies": {
     "algoliasearch": "^3.13.1",
+    "angular": "~1.4.2",
     "autocomplete.js": "^0.18.0",
     "babel-runtime": "^5.8.0",
     "highlight.js": "^9.2.0",
+    "jquery": "^2.2.3",
     "marked": "^0.3.5",
     "vue": "^1.0.21",
     "vue-router": "^0.7.13"
   },
   "devDependencies": {
-    "angular": "~1.4.2",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",
@@ -47,7 +48,6 @@
     "http-proxy-middleware": "^0.12.0",
     "inject-loader": "^2.0.1",
     "isparta-loader": "^2.0.0",
-    "jquery": "^2.2.3",
     "json-loader": "^0.5.4",
     "karma": "^0.13.15",
     "karma-coverage": "^0.5.5",
