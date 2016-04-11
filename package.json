@@ -3,6 +3,11 @@
   "version": "0.2.1",
   "description": "A backend-free blog system built on top of Vue.js",
   "author": "Leo Deng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myst729/Vuelog.git"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
