@@ -44,16 +44,6 @@ var VUELOG_DATABASE = {
       path: '/archive'
     },
     {
-      label: 'Chandeen',
-      type: 'category',
-      path: '/category/chandeen'
-    },
-    {
-      label: 'Lorum Ipsum',
-      type: 'category',
-      path: '/category/lorem-ipsum'
-    },
-    {
       label: 'Talk Is Cheap',
       type: 'page',
       path: '/page/talk-is-cheap'

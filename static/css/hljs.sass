@@ -1,0 +1,116 @@
+pre
+  margin: 1.2em 0
+  position: relative
+
+  &:after
+    position: absolute
+    top: 0
+    right: 0
+    color: #c8c8c8
+    text-align: right
+    font-size: 0.75em
+    padding: 5px 10px 0
+    line-height: 15px
+    height: 15px
+    font-style: italic
+    font-weight: 600
+
+  &[data-lang=html]:after
+    content: 'HTML'
+
+  &[data-lang=css]:after
+    content: 'CSS'
+
+  &[data-lang=javascript]:after,
+  &[data-lang=js]:after
+    content: 'JavaScript'
+
+  &[data-lang=typescript]:after,
+  &[data-lang=ts]:after
+    content: 'TypeScript'
+
+  &[data-lang=php]:after
+    content: 'PHP'
+
+  &[data-lang=java]:after
+    content: 'Java'
+
+  &[data-lang=python]:after,
+  &[data-lang=py]:after
+    content: 'Python'
+
+  &[data-lang=ruby]:after
+    content: 'Ruby'
+
+  &[data-lang=sql]:after
+    content: 'SQL'
+
+  &[data-lang=json]:after
+    content: 'JSON'
+
+  &[data-lang=markdown]:after,
+  &[data-lang=md]:after
+    content: 'Markdown'
+
+  &[data-lang=bash]:after,
+  &[data-lang=shell]:after
+    content: 'Shell'
+
+  &[data-lang=diff]:after,
+  &[data-lang=patch]:after
+    content: 'Diff'
+
+.hljs
+  display: block
+  overflow-x: auto
+  padding: 0.5em
+  color: #525252
+  background: #f8f8f8
+
+.hljs-strong
+  font-weight: 600
+
+.hljs-comment,
+.hljs-quote,
+.hljs-emphasis
+  color: #b3b3b3
+  font-style: italic
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-bullet,
+.hljs-built_in,
+.hljs-keyword,
+.hljs-section,
+.hljs-selector-id,
+.hljs-type,
+.hljs-class,
+  color: #e96900
+
+.hljs-tag,
+.hljs-doctag,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-builtin-name,
+.hljs-link,
+.hljs-title,
+.hljs-meta,
+.hljs-subst
+  color: #2973b7
+
+.hljs-symbol,
+.hljs-string,
+.hljs-regexp,
+.hljs-variable,
+.hljs-template-variable
+  color: #42b983
+
+.hljs-literal,
+.hljs-number
+  color: #ae81ff
+
+.hljs-deletion
+  background: #fdd
+
+.hljs-addition
+  background: #dfd
