@@ -73,7 +73,21 @@
       },
 
       getContent (record) {
-        this.fetchContent(record).then(this.parseContent)
+        // Safari and Android doesn't suppport fetch API and promise well, at the moment
+        // this.fetchContent(record).then(this.parseContent)
+
+        var folder = this.database.deployment.folder
+        var year = utils.formatTime(record.date, this.database.deployment.routeTime)
+        var fullpath = this.type === 'post' ? `${folder}/${record.category}/${year}/${record.slug}.md` : `${folder}/${record.slug}.md`
+        /* global XMLHttpRequest */
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', fullpath, true)
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            this.parseContent(xhr.responseText)
+          }
+        }
+        xhr.send(null)
       }
     },
 
