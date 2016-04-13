@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var chalk = require('chalk')
+var exists = require('fs').existsSync
+var path = require('path')
+var inquirer = require('inquirer')
+require('shelljs/global')
+
+// Usage
+program.usage('[name]')
+
+// Help
+program.on('--help', function () {
+  console.log('  Example:')
+  console.log()
+  console.log(chalk.cyan('    # generate a new blog with default template'))
+  console.log('    $ vuelog init my-blog')
+  console.log()
+})
+
+// Help
+function help () {
+  program.parse(process.argv)
+  if (program.args.length < 1) {
+    return program.help()
+  }
+}
+help()
+
+// Padding
+console.log()
+process.on('exit', function () {
+  console.log()
+})
+
+// Settings
+var rawName = program.args[0]
+var inPlace = !rawName || rawName === '.'
+var name = inPlace ? path.relative('../', process.cwd()) : rawName
+var to = path.resolve(rawName || '.')
+
+if (exists(to)) {
+  inquirer.prompt([{
+    name: 'ok',
+    type: 'confirm',
+    message: inPlace ? 'Generate blog in current directory?' : 'Target directory exists. Continue?'
+  }], function (answers) {
+    if (answers.ok) {
+      run()
+    }
+  })
+} else {
+  run()
+}
+
+// Generate the blog
+function run () {
+  if (!inPlace) {
+    mkdir('-p', name)
+  }
+  cp('-R', path.resolve(__dirname, '../dist') + '/', to)
+}

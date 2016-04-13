@@ -1,6 +1,6 @@
 {
   "name": "Vuelog",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A backend-free blog system built on top of Vue.js",
   "author": "Leo Deng",
   "license": "MIT",
@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "postinstall": "npm run build",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e"
@@ -20,7 +21,6 @@
     "angular": "~1.4.2",
     "autocomplete.js": "^0.18.0",
     "babel-runtime": "^5.8.0",
-    "commander": "^2.9.0",
     "highlight.js": "^9.2.0",
     "jquery": "^2.2.3",
     "marked": "^0.3.5",
@@ -37,6 +37,7 @@
     "babel-preset-stage-2": "^6.0.0",
     "chai": "^3.5.0",
     "chromedriver": "^2.21.2",
+    "commander": "^2.9.0",
     "connect-history-api-fallback": "^1.1.0",
     "cross-spawn": "^2.1.5",
     "css-loader": "^0.23.0",

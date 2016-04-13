@@ -1,7 +1,7 @@
 /* Service Worker boilerplate, not in use at the moment. */
 
+/*
 var urlsToCache = [
-  '/static/css/fonts.css',
   '/static/css/vuelog.css'
 ]
 
@@ -32,3 +32,4 @@ self.addEventListener('fetch', function(event) {
     )
   )
 })
+*/

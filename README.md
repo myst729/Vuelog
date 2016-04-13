@@ -1,8 +1,20 @@
 # Vuelog
 
+[![NPM Version](https://img.shields.io/npm/v/vuelog.svg?style=flat)](https://www.npmjs.com/package/vuelog) 
+[![License](https://img.shields.io/npm/l/vuelog.svg?style=flat)](https://www.npmjs.com/package/vuelog) 
+[![NPM Downloads](https://img.shields.io/npm/dm/vuelog.svg?style=flat)](https://www.npmjs.com/package/vuelog) 
+
 > A backend-free blog system built on top of Vue.js
 
-## Build Setup
+## If you just want to set up your blog in a flash
+
+```bash
+npm install Vuelog -g
+
+vuelog init my-blog
+```
+
+## Build setup for hackers
 
 ``` bash
 # install dependencies
@@ -25,3 +37,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](https://github.com/vuejs-templates/webpack#vue-webpack-boilerplate) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## License
+
+MIT © [Leo Deng](https://myst729.github.io/)
