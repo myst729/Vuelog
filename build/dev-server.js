@@ -2,6 +2,7 @@ var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
 var config = require('../config')
+var url = require('url')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
@@ -53,11 +54,11 @@ app.use(devMiddleware)
 app.use(hotMiddleware)
 
 // serve pure static assets
-var staticPath = path.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
+var staticPath = url.resolve(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 app.use(staticPath, express.static('./' + config.build.assetsSubDirectory))
-var docsPath = path.join(config.build.assetsPublicPath, config.build.docsSubDirectory)
+var docsPath = url.resolve(config.build.assetsPublicPath, config.build.docsSubDirectory)
 app.use(docsPath, express.static('./' + config.build.docsSubDirectory))
-var databasePath = path.join(config.build.assetsPublicPath, config.build.databaseFileName)
+var databasePath = url.resolve(config.build.assetsPublicPath, config.build.databaseFileName)
 app.use(databasePath, express.static('./' + config.build.databaseFileName))
 
 module.exports = app.listen(port, function (err) {
