@@ -1,8 +1,8 @@
 # Vuelog
 
-[![NPM Version](https://img.shields.io/npm/v/vuelog.svg?style=flat)](https://www.npmjs.com/package/vuelog) 
-[![License](https://img.shields.io/npm/l/vuelog.svg?style=flat)](https://www.npmjs.com/package/vuelog) 
-[![NPM Downloads](https://img.shields.io/npm/dm/vuelog.svg?style=flat)](https://www.npmjs.com/package/vuelog) 
+[![NPM Version](https://img.shields.io/npm/v/Vuelog.svg?style=flat)](https://www.npmjs.com/package/Vuelog) 
+[![License](https://img.shields.io/npm/l/Vuelog.svg?style=flat)](https://www.npmjs.com/package/Vuelog) 
+[![NPM Downloads](https://img.shields.io/npm/dm/Vuelog.svg?style=flat)](https://www.npmjs.com/package/Vuelog) 
 
 > A backend-free blog system built on top of Vue.js
 
