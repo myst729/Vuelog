@@ -14,6 +14,10 @@
     methods: {
       initSearch () {
         var settings = this.settings
+        if (!settings.appId || !settings.apiKey || !settings.indexName || !settings.displayKey) {
+          return
+        }
+
         var client = algoliasearch(settings.appId, settings.apiKey)
         var index = client.initIndex(settings.indexName)
 

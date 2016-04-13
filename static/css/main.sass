@@ -168,12 +168,15 @@ a.button
   position: relative
 
 .header-logo
+  background: #fff
   flex: 1
   font-size: 1.5em
   color: $strong
   height: 40px
   font-family: 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
   font-weight: 500
+  position: relative
+  z-index: 4000
 
   a
     display: inline-block
@@ -195,10 +198,12 @@ a.button
   height: 40px
   width: 40px
   position: absolute
-  left: 10px
+  right: 10px
   top: 10px
+  z-index: 5000
 
 .header-search
+  display: inline-block
   line-height: 40px
   margin-right: 20px
 
@@ -250,6 +255,7 @@ a.button
       font-style: normal
 
 .header-nav
+  display: inline-block
   margin: 0
   padding: 0
   text-align: center
@@ -352,6 +358,7 @@ a.button
 
   .content-body
     padding: 1em 0 2em
+    word-break: break-word
 
   a
     color: $vue-green
@@ -490,9 +497,10 @@ a.button
 .footer
   border-top: 1px solid #ddd
   color: $thin
+  height: 60px
+  line-height: 60px
   font-weight: 600
   text-align: center
-  padding: 20px
 
   i
     font-style: normal

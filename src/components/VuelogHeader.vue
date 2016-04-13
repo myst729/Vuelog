@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrap">
-    <div class="header" :class="{'menu-toggle-on': showSideMenu}">
+    <div class="header" :class="{'mobile-menu-open': showSideMenu}">
       <div class="header-logo">
         <a v-link="{path: '/'}">
           <img :src="database.deployment.logo">
@@ -8,8 +8,10 @@
         </a>
       </div>
       <span class="menu-icon" @click="toggle"></span>
-      <vuelog-search v-if="database.search.enable && (!database.deployment.useHomepage || $route.path !== '/')" :settings="database.search"></vuelog-search>
-      <vuelog-navigation :items="database.navigation"></vuelog-navigation>
+      <div class="header-menu">
+        <vuelog-search v-if="database.search.enable" :settings="database.search"></vuelog-search>
+        <vuelog-navigation :items="database.navigation"></vuelog-navigation>
+      </div>
     </div>
   </div>
 </template>

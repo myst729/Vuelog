@@ -21,15 +21,14 @@
 
 @media screen and (max-width: 750px)
 
-  .header-nav
-    display: none
-    font-size: 20px
-
+  .header-wrap
+    box-shadow: none
 
   .header
     padding: 0
 
   .header-logo
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25)
     height: 60px
     text-align: center
 
@@ -37,13 +36,82 @@
       padding: 14px
       text-align: center
 
-      img
-        margin-right: 0
-        vertical-align: top
+    img
+      margin-right: 0
+      vertical-align: top
 
   .menu-icon
     display: block
+    opacity: 0.5
+
+  .header-menu
+    background: #f8f8f8
+    border-bottom: 1px solid #ddd
+    padding: 10px 30px
+    width: 100%
+    position: absolute
+    top: 60px
+    left: 0
+    z-index: 3000
+    transform: translateY(-100%)
+    transition: transform 300ms ease-in-out
+
+  .header.mobile-menu-open
+
+    .menu-icon
+      opacity: 1
+
+    .header-menu
+      transform: translateY(0)
+
+  .header-search,
+  .header-nav,
+  .header-nav li,
+  .header-nav a
+    display: block
+
+  .header-nav
+    font-size: 20px
+    text-align: center
+
+    li
+      margin-left: 0
+      padding-left: 10px
+      padding-right: 10px
+
+      .current
+        border-bottom: 0 none
+
+    .nav-dropdown-container
+      padding: 0
+
+      > a
+        display: none
+
+    .nav-dropdown
+      display: block
+      position: static
+      background: rgba(255, 255, 255, 0)
+      padding: 0
+      border: 0 none
+      text-align: center
+
+      a
+        font-size: 1em
+        padding: 0
+
+  .header-search
+    margin: 0 10px
+
+    .algolia-autocomplete
+      width: 100%
+
+  #search-query
+    border-color: $thin
+    padding-left: 30px
+    width: 100%
 
   .footer
     font-size: 0.8em
-    padding: 10px
+    height: 40px
+    line-height: 40px
