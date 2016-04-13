@@ -1,5 +1,5 @@
 <template>
-  <ul class="header-nav">
+  <ul class="header-nav" @click="bubbleClick">
     <li v-for="item in items" track-by="$index" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
       <a v-if="item.type === 'dropdown'" v-text="item.label"></a>
       <ul v-if="item.type === 'dropdown'" class="nav-dropdown">
@@ -16,6 +16,12 @@
 
 <script>
   export default {
-    props: ['items']
+    props: ['items'],
+
+    methods: {
+      bubbleClick () {
+        this.$dispatch('nav-menu-clicked')
+      }
+    }
   }
 </script>

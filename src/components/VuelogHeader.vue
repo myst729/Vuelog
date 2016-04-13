@@ -1,13 +1,13 @@
 <template>
   <div class="header-wrap">
-    <div class="header" :class="{'mobile-menu-open': showSideMenu}">
+    <div class="header" :class="{'mobile-menu-open': showMobileMenu}">
       <div class="header-logo">
         <a v-link="{path: '/'}">
           <img :src="database.deployment.logo">
           <span v-text="database.deployment.title"></span>
         </a>
       </div>
-      <span class="menu-icon" @click="toggle"></span>
+      <span class="menu-icon" @click="toggleMobileMenu"></span>
       <div class="header-menu">
         <vuelog-search v-if="database.search.enable" :settings="database.search"></vuelog-search>
         <vuelog-navigation :items="database.navigation"></vuelog-navigation>
@@ -30,13 +30,19 @@
 
     data () {
       return {
-        showSideMenu: false
+        showMobileMenu: false
+      }
+    },
+
+    events: {
+      'nav-menu-clicked': function () {
+        this.showMobileMenu = false
       }
     },
 
     methods: {
-      toggle () {
-        this.showSideMenu = !this.showSideMenu
+      toggleMobileMenu () {
+        this.showMobileMenu = !this.showMobileMenu
       }
     }
   }
