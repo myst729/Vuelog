@@ -2,9 +2,19 @@
 
 > A backend-free blog system built on top of Vue.js
 
-## Build setup
+## Simply set up your blog in a flash
 
-``` bash
+```bash
+# install cli tool via npm
+npm install vuelog-cli -g
+
+# that's it
+vuelog init my-blog
+```
+
+## Build setup for hackers
+
+```bash
 # install dependencies
 npm install
 

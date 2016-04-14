@@ -2,7 +2,7 @@
   <div class="header-wrap">
     <div class="header" :class="{'mobile-menu-open': showMobileMenu}">
       <div class="header-logo">
-        <a v-link="{path: '/'}">
+        <a v-link="{path: '/'}" @click="closeMobileMenu">
           <img :src="database.deployment.logo">
           <span v-text="database.deployment.title"></span>
         </a>
@@ -36,11 +36,14 @@
 
     events: {
       'nav-menu-clicked': function () {
-        this.showMobileMenu = false
+        this.closeMobileMenu()
       }
     },
 
     methods: {
+      closeMobileMenu () {
+        this.showMobileMenu = false
+      },
       toggleMobileMenu () {
         this.showMobileMenu = !this.showMobileMenu
       }

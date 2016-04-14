@@ -1,5 +1,5 @@
 <template>
-  <ul class="header-nav" @click="bubbleClick">
+  <ul class="header-nav" @click="navMenuClicked">
     <li v-for="item in items" track-by="$index" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
       <a v-if="item.type === 'dropdown'" v-text="item.label"></a>
       <ul v-if="item.type === 'dropdown'" class="nav-dropdown">
@@ -19,7 +19,7 @@
     props: ['items'],
 
     methods: {
-      bubbleClick () {
+      navMenuClicked () {
         this.$dispatch('nav-menu-clicked')
       }
     }
