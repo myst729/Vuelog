@@ -50,8 +50,12 @@
         var content = md.slice(delimiterPosition + delimiter.length)
         var title = metadata[0].replace('title:', '').trim()
 
-        this.showTitle = (title !== 'NOSHOW')
-        this.title = (title || this.record.title)
+        if (title === 'NOSHOW') {
+          this.showTitle = false
+          this.title = this.record.title
+        } else {
+          this.title = (title || this.record.title)
+        }
 
         if (this.excerpt) {
           content = content.split('<!-- more -->')[0]
