@@ -1,6 +1,6 @@
 {
   "name": "Vuelog",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "A backend-free blog system built on top of Vue.js",
   "author": "Leo Deng",
   "license": "MIT",
