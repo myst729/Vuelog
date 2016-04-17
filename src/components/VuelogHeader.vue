@@ -10,7 +10,7 @@
       <span class="menu-icon" @click="toggleMobileMenu"></span>
       <div class="header-menu">
         <vuelog-search v-if="database.search.enable" :settings="database.search"></vuelog-search>
-        <vuelog-navigation :items="database.navigation"></vuelog-navigation>
+        <vuelog-navigation :items="database.navigation" :mobile-expanded.sync="showMobileMenu"></vuelog-navigation>
       </div>
     </div>
   </div>
@@ -31,12 +31,6 @@
     data () {
       return {
         showMobileMenu: false
-      }
-    },
-
-    events: {
-      'nav-menu-clicked': function () {
-        this.closeMobileMenu()
       }
     },
 

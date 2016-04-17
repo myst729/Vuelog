@@ -16,11 +16,11 @@
 
 <script>
   export default {
-    props: ['items'],
+    props: ['items', 'mobileExpanded'],
 
     methods: {
       navMenuClicked () {
-        this.$dispatch('nav-menu-clicked')
+        this.mobileExpanded = false
       }
     }
   }
