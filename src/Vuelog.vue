@@ -24,6 +24,7 @@
       'update-document-title': function (label) {
         var title = this.database.deployment.title
         document.title = label ? `${title} | ${label}` : title
+        document.scrollingElement.scrollTop = 0
       }
     }
   }
