@@ -8,6 +8,13 @@ Posts are filed under categories. Before write a post, you must create a categor
 To create a category is simple:
 
 - Create a new folder under `/docs/posts`.
+
+```bash
+docs
+└── posts
+    └── guide
+```
+
 - Add a new entry in `categories` section in `database.js`. Set the folder name as the `slug` property's value.
 
 ```js
@@ -24,7 +31,24 @@ categories: [
 ### How to add a post?
 
 - Create a sub folder in the category folder, name it in **route time format** defined in your `database.js`. This can be either year accurate or month accurate, or even day, all up to you.
+
+```bash
+docs
+└── posts
+    └── guide
+        └── 2016
+```
+
 - Create a new markdown file (extension must be **md**) in the sub folder.
+
+```bash
+docs
+└── posts
+    └── guide
+        └── 2016
+            └── how-to-add-a-post-or-page.md
+```
+
 - Add a new entry in `posts` section.
    - Set the file name (without extension) as the `slug` property's value.
    - Set the category folder name as the `category` property's value.
@@ -65,8 +89,14 @@ Start your content here...
 Adding a post is very similar to posts.
 
 - Just put the markdown file in `/docs/pages` folder.
-- Add a new entry in `pages` section. Set the file name as the `slug` property's value.
-- As a page is usually for long-term content, it doesn't need to set the time, both in database entry and source markdown file.
+
+```bash
+docs
+└── pages
+    └── all-about-vuelog.md
+```
+
+- Add a new entry in `pages` section. Set the file name (without extension) as the `slug` property's value.
 
 ```js
 pages: [
@@ -77,3 +107,10 @@ pages: [
   ...
 ```
 
+- As a page is usually for long-term content, it doesn't need to set the time, both in database entry and source markdown file.
+
+```md
+title: All about Vuelog
+---
+Start your content here...
+```

@@ -34,16 +34,6 @@ var VUELOG_DATABASE = {
 
   navigation: [
     {
-      label: 'Blog',
-      type: 'blog',
-      path: '/blog'
-    },
-    {
-      label: 'Archive',
-      type: 'archive',
-      path: '/archive'
-    },
-    {
       label: 'Guide',
       type: 'category',
       path: '/category/guide'
@@ -57,6 +47,11 @@ var VUELOG_DATABASE = {
       label: 'Changelog',
       type: 'page',
       path: '/page/changelog'
+    },
+    {
+      label: 'Archive',
+      type: 'archive',
+      path: '/archive'
     },
     {
       label: 'Links',
