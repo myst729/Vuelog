@@ -126,14 +126,14 @@ var VUELOG_DATABASE = {
       date: 20160410
     },
     {
-      title: 'Using Algolia search',
-      slug: 'using-algolia-search',
+      title: 'Using Algolia search service',
+      slug: 'using-algolia-search-service',
       category: 'guide',
       date: 20160409
     },
     {
-      title: 'Vuelog hacker\'s guide',
-      slug: 'customization-for-the-hackers',
+      title: 'Vuelog hacker’s guide',
+      slug: 'vuelog-hackers-guide',
       category: 'guide',
       date: 20160408
     }
