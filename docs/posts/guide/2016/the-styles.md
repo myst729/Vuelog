@@ -1,5 +1,7 @@
 title: Talk is cheap, show me the styles!
+date: 2016-04-11
 ---
+> This post is a demo of the most commmon styles.
 
 ### Headings
 
@@ -9,6 +11,8 @@ title: Talk is cheap, show me the styles!
 #### h4. Bootstrap heading
 ##### h5. Bootstrap heading
 ###### h6. Bootstrap heading
+
+<!-- more -->
 
 ### Ordered list
 
@@ -47,7 +51,7 @@ Here is the famous 10 second example from [Vue.js](http://vuejs.org/) official s
 
 ```html
 <div id="demo">
-  <p></p>
+  <p>{{message}}</p>
   <input v-model="message">
 </div>
 ```

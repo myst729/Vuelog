@@ -35,13 +35,13 @@
     },
 
     methods: {
-      fetchContent (record) {
-        var folder = this.database.deployment.folder
-        var year = utils.formatTime(record.date, this.database.deployment.routeTime)
-        var fullpath = this.type === 'post' ? `${folder}/${record.category}/${year}/${record.slug}.md` : `${folder}/${record.slug}.md`
-        /* global fetch */
-        return fetch(fullpath).then(response => response.ok && response.text())
-      },
+      // fetchContent (record) {
+      //   var folder = this.database.deployment.folder
+      //   var year = utils.formatTime(record.date, this.database.deployment.routeTime)
+      //   var fullpath = (this.type === 'post') ? `${folder}/posts/${record.category}/${year}/${record.slug}.md` : `${folder}/pages/${record.slug}.md`
+      //   /* global fetch */
+      //   return fetch(fullpath).then(response => response.ok && response.text())
+      // },
 
       parseContent (md) {
         var delimiter = '\n---\n'
@@ -82,7 +82,8 @@
 
         var folder = this.database.deployment.folder
         var year = utils.formatTime(record.date, this.database.deployment.routeTime)
-        var fullpath = this.type === 'post' ? `${folder}/${record.category}/${year}/${record.slug}.md` : `${folder}/${record.slug}.md`
+        var fullpath = (this.type === 'post') ? `${folder}/posts/${record.category}/${year}/${record.slug}.md` : `${folder}/pages/${record.slug}.md`
+
         /* global XMLHttpRequest */
         var xhr = new XMLHttpRequest()
         xhr.open('GET', fullpath, true)

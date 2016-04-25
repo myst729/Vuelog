@@ -4,7 +4,7 @@ var VUELOG_DATABASE = {
   system: {
     name: 'Vuelog',
     description: 'A backend-free blog system built on top of Vue.js',
-    version: '0.3.10',
+    version: '0.4.0',
     project: 'https://github.com/myst729/Vuelog',
     release: 'https://github.com/myst729/Vuelog/releases',
     logo: './static/img/logo.svg',
@@ -16,16 +16,16 @@ var VUELOG_DATABASE = {
     title: 'Vuelog',
     url: 'https://myst729.github.io/Vuelog/',
     logo: './static/img/logo.svg',
-    folder: './docs',
-    perPage: 2,
+    folder: './docs',          // The folder name where your source markdown files are stored
+    perPage: 3,                // How many posts are listed in a blog/category view
     displayTime: 'YYYY-MM-DD', // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'
-    routeTime: 'YYYY', // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD', DO NOT include '/'
-    useHomepage: true
+    routeTime: 'YYYY',         // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD', DO NOT include '/'
+    useHomepage: true          // If a dedicated homepage isn't specified, it'll route to `/blog`
   },
 
   // Search functionality is served with Algolia
   search: {
-    enable: true,
+    enable: false,
     appId: '',
     apiKey: '',
     indexName: '',
@@ -44,9 +44,19 @@ var VUELOG_DATABASE = {
       path: '/archive'
     },
     {
-      label: 'Talk Is Cheap',
+      label: 'Guide',
+      type: 'category',
+      path: '/category/guide'
+    },
+    {
+      label: 'About',
       type: 'page',
-      path: '/page/talk-is-cheap'
+      path: '/page/all-about-vuelog'
+    },
+    {
+      label: 'Changelog',
+      type: 'page',
+      path: '/page/changelog'
     },
     {
       label: 'Links',
@@ -73,46 +83,64 @@ var VUELOG_DATABASE = {
 
   pages: [
     {
-      title: 'Talk Is Cheap',
-      slug: 'talk-is-cheap'
+      title: 'All about Vuelog',
+      slug: 'all-about-vuelog'
+    },
+    {
+      title: 'Changelog',
+      slug: 'changelog'
     }
   ],
 
   categories: [
     {
-      title: 'Chandeen',
-      slug: 'chandeen'
-    },
-    {
-      title: 'Lorem Ipsum',
-      slug: 'lorem-ipsum'
+      title: 'Guide',
+      slug: 'guide'
     }
   ],
 
   posts: [
     {
-      title: 'Lorem Ipsum Samples',
-      slug: 'lorem-ipsum-samples',
-      category: 'lorem-ipsum',
-      date: 20160116
+      title: 'How to add a post or page?',
+      slug: 'how-to-add-a-post-or-page',
+      category: 'guide',
+      date: 20160416
     },
     {
-      title: 'Lorem Ipsum on Wikipedia',
-      slug: 'lorem-ipsum-on-wikipedia',
-      category: 'lorem-ipsum',
-      date: 20150214
+      title: 'The structure of Vuelog',
+      slug: 'the-structure-of-vuelog',
+      category: 'guide',
+      date: 20160414
     },
     {
-      title: 'Lorem Ipsum Demystified',
-      slug: 'lorem-ipsum-demystified',
-      category: 'lorem-ipsum',
-      date: 20150212
+      title: 'The (so-called) database',
+      slug: 'the-so-called-database',
+      category: 'guide',
+      date: 20160412
     },
     {
-      title: 'Chandeen on Wikipedia',
-      slug: 'chandeen-on-wikipedia',
-      category: 'chandeen',
-      date: 20120214
+      title: 'Talk is cheap, show me the styles!',
+      slug: 'the-styles',
+      category: 'guide',
+      date: 20160411
+    },
+    {
+      title: 'Using Disqus comment service',
+      slug: 'using-disqus-comment-service',
+      category: 'guide',
+      date: 20160410
+    },
+    {
+      title: 'Using Algolia search',
+      slug: 'using-algolia-search',
+      category: 'guide',
+      date: 20160409
+    },
+    {
+      title: 'Vuelog hacker\'s guide',
+      slug: 'customization-for-the-hackers',
+      category: 'guide',
+      date: 20160408
     }
   ]
 
