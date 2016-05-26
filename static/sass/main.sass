@@ -471,6 +471,38 @@ a.button
     font-family: 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
     font-size: 14px
 
+  p.eof
+    text-align: center
+    line-height: 36px
+
+    &:before,
+    &:after
+      content: ""
+      background: $vue-dark
+      display: inline-block
+      height: 2px
+      width: 50px
+      margin: 0 5px
+      vertical-align: middle
+
+    i:before
+      content: "\2731" // ✱
+      color: $vue-dark
+      font-style: normal
+      vertical-align: middle
+
+    i.cross:before
+      content: "\2670" // ♰
+
+    i.heart:before
+      content: "\2764" // ❤
+
+    i.leo:before
+      content: "\264c" // ♌
+
+    i.music:before
+      content: "\266b" // ♫
+
 .pagination
   color: $thin
   font-weight: 600
