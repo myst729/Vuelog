@@ -86,7 +86,7 @@ Start your content here...
 
 ### How to write a page?
 
-Adding a post is very similar to posts.
+Adding a page is very similar to posts.
 
 - Just put the markdown file in `/docs/pages` folder.
 
