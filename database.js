@@ -6,7 +6,7 @@ var VUELOG_DATABASE = {
     description: 'A backend-free blog system built on top of Vue.js',
     version: '0.4.1',
     project: 'https://github.com/myst729/Vuelog',
-    release: 'https://github.com/myst729/Vuelog/releases',
+    release: 'https://github.com/myst729/Vuelog/releases/tag/0.4.1',
     logo: './static/img/logo.svg',
     author: 'Leo Deng'
   },
