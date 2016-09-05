@@ -7,6 +7,9 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals: {
+    VUELOG_DATABASE: true
+  },
   output: {
     path: config.build.assetsRoot,
     publicPath: config.build.assetsPublicPath,

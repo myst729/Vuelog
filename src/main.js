@@ -72,6 +72,10 @@ router.map({
   }
 })
 
+router.beforeEach(function () {
+  window.scrollTo(0, 0)
+})
+
 /* global VUELOG_DATABASE */
 if (VUELOG_DATABASE.deployment.useHomepage) {
   router.on('/', {

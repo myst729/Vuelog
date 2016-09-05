@@ -40,7 +40,7 @@
       'update-document-title': function (label) {
         var title = this.database.deployment.title
         document.title = label ? `${title} | ${label}` : title
-        this.scrollTop()
+        // this.scrollTop()
       }
     }
   }
