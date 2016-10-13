@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 0.5.0 - 2016-xx-xx
+
+#### Changed
+- Rewrote to adopt Vue.js 2.x
+
 ### 0.4.1 - 2016-09-05
 
 #### Fixed

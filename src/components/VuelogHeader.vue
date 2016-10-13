@@ -1,46 +1,151 @@
 <template>
   <div class="header-wrap">
-    <div class="header" :class="{'mobile-menu-open': showMobileMenu}">
-      <div class="header-logo">
-        <a v-link="{path: '/'}" @click="closeMobileMenu">
-          <img :src="database.deployment.logo">
-          <span v-text="database.deployment.title"></span>
-        </a>
+    <header>
+      <div class="title">
+        <router-link to="/">
+          <img :src="deploy.logo">
+          <span v-text="deploy.title"></span>
+        </router-link>
       </div>
-      <span class="menu-icon" @click="toggleMobileMenu"></span>
-      <div class="header-menu">
-        <vuelog-search v-if="database.search.enable" :settings="database.search"></vuelog-search>
-        <vuelog-navigation :items="database.navigation" :mobile-expanded.sync="showMobileMenu"></vuelog-navigation>
-      </div>
-    </div>
+      <!--TODO <span class="menu-icon" @click="toggleMobileMenu"></span>-->
+      <nav>
+        <ul>
+          <li v-for="item in navigation" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
+            <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
+            <ul v-if="item.type === 'dropdown'" class="nav-dropdown">
+              <li v-for="child in item.children">
+                <a v-if="child.type === 'outgoing'" :href="child.link" target="_blank" rel="noopener noreferrer" v-text="child.label"></a>
+                <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="child.label"></router-link>
+              </li>
+            </ul>
+            <a v-if="item.type === 'outgoing'" :href="item.link" target="_blank" rel="noopener noreferrer" v-text="item.label"></a>
+            <router-link v-if="item.type !== 'dropdown' && item.type !== 'outgoing'" :to="item.path" v-text="item.label"></router-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   </div>
 </template>
 
 <script>
-  import VuelogNavigation from './VuelogNavigation'
-  import VuelogSearch from './VuelogSearch'
-
   export default {
-    components: {
-      VuelogNavigation,
-      VuelogSearch
-    },
+    name: 'vuelog-header',
 
-    props: ['database'],
-
-    data () {
-      return {
-        showMobileMenu: false
-      }
-    },
-
-    methods: {
-      closeMobileMenu () {
-        this.showMobileMenu = false
+    computed: {
+      deploy () {
+        return this.$store.getters.deployment
       },
-      toggleMobileMenu () {
-        this.showMobileMenu = !this.showMobileMenu
+
+      navigation () {
+        return this.$store.getters.navigation
       }
     }
   }
 </script>
+
+<style lang="stylus" scoped>
+  .header-wrap
+    box-shadow 0 0 4px rgba(0, 0, 0, .25)
+    width 100%
+
+  header
+    display flex
+    width 960px
+    margin 0 auto
+    padding 25px 30px
+
+  a:hover
+    text-decoration none
+
+  .title
+    flex 1
+    font-family 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-size 24px
+    font-weight 700
+
+    a
+      color #34495e
+
+    img
+    span
+      display inline-block
+      height 32px
+      margin-right 5px
+      vertical-align middle
+
+  ul
+    margin 0
+    padding 0
+
+  li
+    display inline-block
+    font-size 15px
+    line-height 40px
+    margin-left 20px
+
+    &:first-child
+      margin-left 0
+
+    a
+      color #7f8c8d
+      font-size 15px
+
+      &:hover
+      &.router-link-active
+        color #34495e
+        border-bottom 3px solid #42b983
+
+  .nav-dropdown
+    display none
+    position absolute
+    top 100%
+    left -10px
+    background #fff
+    padding 10px 0
+    border 1px solid #ddd
+    border-bottom-color #ccc
+    border-radius 4px
+
+    li
+      display block
+      line-height 28px
+      margin 0
+
+    a
+      display block
+      font-size 0.9em
+      padding 0 20px
+    
+      &:hover
+        color #42b983
+        border-bottom none
+
+  .nav-dropdown-container
+    position relative
+
+    > span
+      color #7f8c8d
+
+      &:after
+        content ''
+        display inline-block
+        vertical-align middle
+        margin-top -1px
+        margin-left 6px
+        width 0
+        height 0
+        border-left 4px solid transparent
+        border-right 4px solid transparent
+        border-top 5px solid #ccc
+        transition transform .3s ease-in-out
+
+      &:hover
+        color #34495e
+
+    &:hover
+      .nav-dropdown
+        display block
+
+      > span:after
+        transform rotateZ(180deg)
+</style>

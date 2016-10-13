@@ -1,47 +1,41 @@
 <template>
-  <div id="vuelog">
-    <vuelog-header :database="database"></vuelog-header>
-    <router-view :database="database"></router-view>
+  <div class="vuelog">
+    <vuelog-header></vuelog-header>
+    <transition name="fade" mode="out-in">
+      <router-view class="router-view"></router-view>
+    </transition>
+    <vuelog-footer v-if="!isHomepage"></vuelog-footer>
   </div>
 </template>
 
 <script>
   import VuelogHeader from './components/VuelogHeader'
+  import VuelogFooter from './components/VuelogFooter'
 
   export default {
     components: {
-      VuelogHeader
+      VuelogHeader,
+      VuelogFooter
     },
 
-    data () {
-      return {
-        /* global VUELOG_DATABASE */
-        database: VUELOG_DATABASE
-      }
-    },
-
-    methods: {
-      scrollTop () {
-        if (document.scrollingElement && document.scrollingElement.scrollTop) {
-          document.scrollingElement.scrollTop = 0
-          return
-        }
-
-        if (document.documentElement && document.documentElement.scrollTop) {
-          document.documentElement.scrollTop = 0
-          return
-        }
-
-        document.body.scrollTop = 0
-      }
-    },
-
-    events: {
-      'update-document-title': function (label) {
-        var title = this.database.deployment.title
-        document.title = label ? `${title} | ${label}` : title
-        // this.scrollTop()
+    computed: {
+      isHomepage () {
+        return this.$route.name === 'home'
       }
     }
   }
 </script>
+
+<style lang="stylus">
+  @import './assets/styles/fonts.css';
+  @import './assets/styles/global';
+
+  .vuelog
+    min-height 100vh
+    display flex
+    flex-direction column
+    align-items center
+
+  .router-view
+    flex 1
+</style>

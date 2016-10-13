@@ -20,17 +20,12 @@ spinner.start()
 var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
-cp('-R', config.build.assetsSubDirectory + '/', assetsPath)
+cp('-R', 'static/*', assetsPath)
 
-var docsPath = path.join(config.build.assetsRoot, config.build.docsSubDirectory)
-rm('-rf', docsPath)
-mkdir('-p', docsPath)
-cp('-R', config.build.docsSubDirectory + '/', docsPath)
-
-var databasePath = path.join(config.build.assetsRoot, config.build.databaseFileName)
-rm('-f', databasePath)
-
-cp(config.build.databaseFileName, config.build.assetsRoot)
+var userdataPath = path.join(config.build.assetsRoot, config.build.userdataSubDirectory)
+rm('-rf', userdataPath)
+mkdir('-p', userdataPath)
+cp('-R', 'userdata/*', userdataPath)
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
