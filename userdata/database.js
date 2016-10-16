@@ -1,23 +1,11 @@
 window.VUELOG_DATABASE = {
 
-  // DO NOT TOUCH THIS PART!
-  system: {
-    name: 'Vuelog',
-    description: 'A backend-free blog system built on top of Vue.js',
-    version: '0.5.0',
-    author: 'Leo Deng',
-    project: 'https://github.com/myst729/Vuelog',
-    release: 'https://github.com/myst729/Vuelog/releases/tag/0.5.0',
-    logo: './static/vuelog.svg'
-  },
-
-  // Edit your site from here
   deployment: {
     title: 'Vuelog Demo',
     home: 'https://myst729.github.io/Vuelog/',
     logo: './static/vuelog.svg',
-    perPage: 3,       // How many posts are listed in a blog/category view
-    useHomepage: true // If a dedicated homepage isn't specified, it'll route to `/blog`
+    perPage: 3,       // Count of posts listed in a blog/category view.
+    useHomepage: true // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
   },
 
   navigation: [

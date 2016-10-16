@@ -1,5 +1,5 @@
-export function meaningfulDays (date) {
-  const between = (Date.now() - new Date(date)) / 1000
+export function meaningfulDays (isoDate) {
+  const between = (Date.now() - new Date(isoDate)) / 1000
   if (between < 0) {
     return 'in the future'
   } else if (between < 86400) {

@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import system from './system'
 import * as database from 'database'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    system,
     database
   },
 
@@ -50,7 +52,7 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    system: (state) => state.database.system,
+    system: (state) => state.system,
 
     deployment: (state) => state.database.deployment,
 

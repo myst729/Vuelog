@@ -14,7 +14,7 @@
             <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
             <ul v-if="item.type === 'dropdown'" class="nav-dropdown">
               <li v-for="child in item.children">
-                <a v-if="child.type === 'outgoing'" :href="child.link" target="_blank" rel="noopener noreferrer" v-text="child.label"></a>
+                <a v-if="child.type === 'outgoing'" :href="child.link" v-text="child.label" target="_blank" rel="noopener noreferrer"></a>
                 <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="child.label"></router-link>
               </li>
             </ul>
@@ -45,14 +45,17 @@
 
 <style lang="stylus" scoped>
   .header-wrap
+    background rgba(255, 255, 255, .8)
     box-shadow 0 0 4px rgba(0, 0, 0, .25)
     width 100%
+    position fixed
+    z-index 9999
 
   header
     display flex
     width 960px
     margin 0 auto
-    padding 25px 30px
+    padding 25px 0
 
   a:hover
     text-decoration none
@@ -138,6 +141,7 @@
         border-right 4px solid transparent
         border-top 5px solid #ccc
         transition transform .3s ease-in-out
+        will-change transform
 
       &:hover
         color #34495e

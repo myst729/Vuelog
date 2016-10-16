@@ -1,8 +1,8 @@
 <template>
   <div class="vuelog">
     <vuelog-header></vuelog-header>
-    <transition name="fade" mode="out-in">
-      <router-view class="router-view"></router-view>
+    <transition name="view" mode="out-in" appear>
+      <router-view class="view"></router-view>
     </transition>
     <vuelog-footer v-if="!isHomepage"></vuelog-footer>
   </div>
@@ -36,6 +36,17 @@
     flex-direction column
     align-items center
 
-  .router-view
+  .view
     flex 1
+    padding 100px 0 10px
+    width 900px
+    will-change opacity
+
+  .view-enter-active
+  .view-leave-active
+    transition opacity .3s ease
+
+  .view-enter
+  .view-leave-active
+    opacity 0
 </style>

@@ -9,6 +9,7 @@ body
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   margin 0
+  overflow-y scroll
 
 h1
 h2
@@ -144,7 +145,8 @@ a.button
   min-width 180px
   margin 0.5em 1em
   padding 12px 24px
-  transition all 0.15s ease
+  transition background 0.15s ease, transform 0.15s ease
+  will-change background, transform
 
   &:hover
     background #5dc596

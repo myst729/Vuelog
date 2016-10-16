@@ -1,38 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import * as database from 'database'
 
 Vue.use(VueRouter)
 
+// `VuelogHome` and `VuelogOops` views are not necessarily lazy loaded
 import VuelogHome from '../views/VuelogHome'
-import VuelogArchive from '../views/VuelogArchive'
-import VuelogPosts from '../views/VuelogPosts'
-import VuelogPost from '../views/VuelogPost'
-import VuelogPage from '../views/VuelogPage'
 import VuelogOops from '../views/VuelogOops'
+const VuelogArchive = resolve => require(['../views/VuelogArchive'], resolve)
+const VuelogPosts = resolve => require(['../views/VuelogPosts'], resolve)
+const VuelogPost = resolve => require(['../views/VuelogPost'], resolve)
+const VuelogPage = resolve => require(['../views/VuelogPage'], resolve)
 
 var routes = [
-  { name: 'home', path: '/home', component: VuelogHome },
-  { name: 'archive', path: '/archive', component: VuelogArchive },
-  { name: 'archive-year', path: '/archive/year/:year', component: VuelogArchive },
-  { name: 'archive-category', path: '/archive/category/:category', component: VuelogArchive },
-  { name: 'blog', path: '/blog', component: VuelogPosts },
-  { name: 'blog-more', path: '/blog/p/:p', component: VuelogPosts },
-  { name: 'category', path: '/category/:category', component: VuelogPosts },
-  { name: 'category-more', path: '/category/:category/p/:p', component: VuelogPosts },
-  { name: 'post', path: '/category/:category/:year/:post', component: VuelogPost },
-  { name: 'page', path: '/page/:page', component: VuelogPage },
-  { name: 'oops', path: '/oops', component: VuelogOops },
-  { path: '/', redirect: '/home' }, // TODO
-  { path: '*', redirect: '/oops' }
+  { path: '/archive', name: 'archive', component: VuelogArchive },
+  { path: '/archive/category/:category', name: 'archive-category', component: VuelogArchive },
+  { path: '/archive/year/:year', name: 'archive-year', component: VuelogArchive },
+  { path: '/blog', name: 'posts', component: VuelogPosts },
+  { path: '/blog/p/:p', name: 'posts-more', component: VuelogPosts },
+  { path: '/category/:category', name: 'category', component: VuelogPosts },
+  { path: '/category/:category/p/:p', name: 'category-more', component: VuelogPosts },
+  { path: '/category/:category/:year/:post', name: 'post', component: VuelogPost },
+  { path: '/page/:page', name: 'page', component: VuelogPage },
+  { path: '/oops', name: 'oops', component: VuelogOops }
 ]
 
+if (database.deployment.useHomepage) {
+  routes.push({ path: '/home', name: 'home', component: VuelogHome })
+  routes.push({ path: '/', redirect: '/home' })
+} else {
+  routes.push({ path: '/home', redirect: '/blog' })
+  routes.push({ path: '/', redirect: '/blog' })
+}
+routes.push({ path: '/p/:p', redirect: '/blog/p/:p' })
+routes.push({ path: '*', redirect: '/oops' })
+
 var router = new VueRouter({
-  // scrollBehavior: () => ({ y: 0 }),
+  // TODO scrollBehavior: () => ({ y: 0 }),
   routes
 })
 
 router.afterEach(function (transition) {
-  console.log(transition)
+  // console.log(transition)
   window.scrollTo(0, 0)
   document.title = `Vuelog | ${Math.random()}` // TODO
 })

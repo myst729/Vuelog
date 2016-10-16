@@ -1,9 +1,8 @@
 <template>
-  <div class="content-wrap">
-    <div class="content-body">
-      <div class="not-found">
-        <h1>Vuelog Posts (TODO)</h1>
-      </div>
+  <div class="posts">
+    <div class="posts-body">
+      <h2>Vuelog Posts (TODO)</h2>
+      <div>TODO: pagination</div>
     </div>
   </div>
 </template>
@@ -13,3 +12,8 @@
     name: 'vuelog-posts-view'
   }
 </script>
+
+<style lang="stylus" scoped>
+  .posts-body
+    color red
+</style>
