@@ -1,8 +1,8 @@
 <template>
   <div class="posts">
-    <div class="posts-wrap" v-for="">
+    <div class="post" v-for="">
       <h2 v-text="post.title"></h2>
-      <vuelog-content class="post-body" :type="$route.name" :metadata="post" :markdown="post.markdown"></vuelog-content>
+      <vuelog-content class="post-body" :type="'posts'" :metadata="post" :markdown="post.markdown"></vuelog-content>
     </div>
     <div>TODO: pagination</div>
   </div>
@@ -10,7 +10,17 @@
 
 <script>
   export default {
-    name: 'vuelog-posts-view'
+    name: 'vuelog-posts-view',
+
+    methods: {
+      oops () {
+        this.$router.replace('/oops')
+      }
+    },
+
+    created () {
+      this.$store.dispatch('DOCUMENT_TITLE', 'Blog') // Blog | 2, categoryTitle, categoryTitle | 2
+    }
   }
 </script>
 

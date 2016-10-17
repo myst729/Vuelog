@@ -16,6 +16,10 @@
       sys () {
         return this.$store.getters.system
       }
+    },
+
+    created () {
+      this.$store.dispatch('DOCUMENT_TITLE', false)
     }
   }
 </script>

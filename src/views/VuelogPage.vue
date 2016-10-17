@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <h1 v-text="page.title"></h1>
-    <vuelog-content class="page-body" :type="$route.name" :metadata="page" :markdown="page.markdown"></vuelog-content>
+    <vuelog-content class="page-body" :type="'page'" :metadata="page" :markdown="page.markdown"></vuelog-content>
   </div>
 </template>
 
@@ -31,6 +31,10 @@
       oops () {
         this.$router.replace('/oops')
       }
+    },
+
+    created () {
+      this.$store.dispatch('DOCUMENT_TITLE', this.page.title)
     }
   }
 </script>

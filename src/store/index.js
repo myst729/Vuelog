@@ -7,11 +7,16 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    documentTitle: database.deployment.title,
     system,
     database
   },
 
   actions: {
+    DOCUMENT_TITLE: ({ commit, state }, title) => {
+      const docTitle = title ? (state.database.deployment.title + ' | ' + title) : state.database.deployment.title
+      commit('SET_DOCUMENT_TITLE', { title: docTitle })
+    }
     // FETCH_ITEMS: ({ commit, state }, { ids }) => {
     //   // only fetch items that we don't already have.
     //   ids = ids.filter(id => !state.items[id])
@@ -30,9 +35,9 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    // SET_ACTIVE_TYPE: (state, { type }) => {
-    //   state.activeType = type
-    // },
+    SET_DOCUMENT_TITLE: (state, { title }) => {
+      state.documentTitle = document.title = title
+    }
 
     // SET_LIST: (state, { type, ids }) => {
     //   state.lists[type] = ids

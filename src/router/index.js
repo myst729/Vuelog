@@ -35,15 +35,6 @@ if (database.deployment.useHomepage) {
 routes.push({ path: '/p/:p', redirect: '/blog/p/:p' })
 routes.push({ path: '*', redirect: '/oops' })
 
-var router = new VueRouter({
-  // TODO scrollBehavior: () => ({ y: 0 }),
-  routes
-})
-
-router.afterEach(function (transition) {
-  // console.log(transition)
-  window.scrollTo(0, 0)
-  document.title = `Vuelog | ${Math.random()}` // TODO
-})
+const router = new VueRouter({ routes })
 
 export default router

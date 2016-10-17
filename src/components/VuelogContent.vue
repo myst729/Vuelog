@@ -96,9 +96,7 @@
 <style lang="stylus" scoped>
   .spinner
     display block
-    margin: 100px auto 0
-    height 48px
-    width 48px
+    margin 30px auto
 
   .loading-enter-active
   .loading-leave-active

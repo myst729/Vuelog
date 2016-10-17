@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <h1 v-text="post.title"></h1>
-    <vuelog-content class="post-body" :type="$route.name" :metadata="post" :markdown="post.markdown"></vuelog-content>
+    <vuelog-content class="post-body" :type="'post'" :metadata="post" :markdown="post.markdown"></vuelog-content>
     <div>TODO: pagination</div>
   </div>
 </template>
@@ -38,6 +38,10 @@
       oops () {
         this.$router.replace('/oops')
       }
+    },
+
+    created () {
+      this.$store.dispatch('DOCUMENT_TITLE', this.post.title)
     }
   }
 </script>

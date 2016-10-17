@@ -2,8 +2,8 @@
   <div class="vuelog">
     <vuelog-header></vuelog-header>
     <div class="vuelog-body">
-      <transition name="view" mode="out-in" appear>
-        <router-view></router-view>
+      <transition name="view" mode="out-in" @before-enter="resetScroll" appear>
+        <router-view :key="$route.fullPath"></router-view>
       </transition>
     </div>
     <vuelog-footer v-if="!isHomepage"></vuelog-footer>
@@ -23,6 +23,12 @@
     computed: {
       isHomepage () {
         return this.$route.name === 'home'
+      }
+    },
+
+    methods: {
+      resetScroll () {
+        window.scrollTo(0, 0)
       }
     }
   }
