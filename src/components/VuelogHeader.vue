@@ -141,7 +141,6 @@
         border-right 4px solid transparent
         border-top 5px solid #ccc
         transition transform .3s ease-in-out
-        will-change transform
 
       &:hover
         color #34495e

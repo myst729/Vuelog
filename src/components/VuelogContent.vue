@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <transition name="loading" mode="out-in" appear>
-      <vuelog-spinner v-if="!content" key="spinner" class="spinner"></vuelog-spinner>
+      <vuelog-spinner :pattern="deploy.spinnerPattern" v-if="!content" key="spinner" class="spinner"></vuelog-spinner>
       <div v-if="content" key="content" class="content-body">Vuelog Content (TODO): {{type}} - {{content}}</div>
     </transition>
   </div>
@@ -17,6 +17,12 @@
 
     components: {
       VuelogSpinner
+    },
+
+    computed: {
+      deploy () {
+        return this.$store.getters.deployment
+      }
     },
 
     data () {
@@ -57,10 +63,8 @@
   .spinner
     display block
     margin: 100px auto 0
-
-  .spinner
-  .content-body
-    will-change opacity
+    height 48px
+    width 48px
 
   .loading-enter-active
   .loading-leave-active

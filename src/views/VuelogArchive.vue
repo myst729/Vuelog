@@ -143,9 +143,6 @@
 </script>
 
 <style lang="stylus" scoped>
-  .archive-body
-    will-change opacity
-
   .archive-enter-active
   .archive-leave-active
     transition opacity .3s ease

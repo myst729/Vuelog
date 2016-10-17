@@ -4,8 +4,9 @@ window.VUELOG_DATABASE = {
     title: 'Vuelog Demo',
     home: 'https://myst729.github.io/Vuelog/',
     logo: './static/vuelog.svg',
-    perPage: 3,       // Count of posts listed in a blog/category view.
-    useHomepage: true // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    perPage: 3,            // Count of posts listed in a blog/category view.
+    useHomepage: true,     // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    spinnerPattern: 'logo' // 'logo' or 'line', set to other values to disable the spinner.
   },
 
   navigation: [

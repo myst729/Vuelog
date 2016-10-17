@@ -40,7 +40,6 @@
     flex 1
     padding 100px 0 10px
     width 900px
-    will-change opacity
 
   .view-enter-active
   .view-leave-active
