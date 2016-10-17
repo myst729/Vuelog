@@ -1,9 +1,10 @@
 <template>
   <div class="home">
-    <img src="../assets/img/logo.svg">
+    <img src="../assets/img/logo-256.svg">
     <h1 v-text="sys.name"></h1>
     <p v-text="sys.description"></p>
     <a class="button" :href="sys.release" v-text="'Download v' + sys.version" target="_blank" rel="noopener noreferrer"></a>
+    <a class="button github" :href="sys.project" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 </template>
 
@@ -26,7 +27,6 @@
   img
     display inline-block
     margin-top 75px
-    width 240px
 
   h1
     font-family 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -37,6 +37,14 @@
 
   p
     color #7f8c8d
-    font-size 18px
+    font-size 20px
     margin-bottom 24px
+
+  .github
+    background #fff
+    color #4fc08d
+
+    &:hover
+      background #fcfcfc
+      color #5dc596
 </style>

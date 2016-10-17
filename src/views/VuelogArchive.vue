@@ -155,9 +155,6 @@
     line-height 1.6em
     padding-left 1.6em
 
-  a
-    font-weight 700
-
   h4
   span
     color #7f8c8d

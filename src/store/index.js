@@ -58,7 +58,12 @@ const store = new Vuex.Store({
 
     navigation: (state) => state.database.navigation,
 
-    pages: (state) => state.database.pages,
+    pages (state) {
+      return state.database.pages.map(page => {
+        page.markdown = './userdata/pages/' + page.slug + '.md'
+        return page
+      })
+    },
 
     categories: (state) => state.database.categories,
 
@@ -69,6 +74,7 @@ const store = new Vuex.Store({
       })
       return state.database.posts.map((post) => {
         post.year = new Date(post.date).getFullYear()
+        post.markdown = './userdata/posts/' + post.year + '/' + post.slug + '.md'
         post.categoryTitle = categoriesHash[post.category]
         return post
       })
@@ -85,8 +91,8 @@ const store = new Vuex.Store({
     },
 
     postsByYear (state, getters) {
-      var years = [...new Set(getters.posts.map((post) => post.year))]
-      return years.sort((a, b) => b - a).map((year) => {
+      var years = [...new Set(getters.posts.map((post) => post.year))].sort((a, b) => b - a)
+      return years.map((year) => {
         return {
           year,
           posts: getters.posts.filter((post) => post.year === year)

@@ -64,10 +64,11 @@
     flex 1
     font-family 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
     font-size 24px
-    font-weight 700
 
     a
       color #34495e
+      display inline-block
+      font-weight 500
 
     img
     span
@@ -92,6 +93,7 @@
     a
       color #7f8c8d
       font-size 15px
+      font-weight 400
 
       &:hover
       &.router-link-active
@@ -99,10 +101,9 @@
         border-bottom 3px solid #42b983
 
   .nav-dropdown
-    display none
     position absolute
     top 100%
-    left -10px
+    left -9000px
     background #fff
     padding 10px 0
     border 1px solid #ddd
@@ -116,8 +117,8 @@
 
     a
       display block
-      font-size 0.9em
-      padding 0 20px
+      font-size .9em
+      padding 0 1.4em
     
       &:hover
         color #42b983
@@ -128,6 +129,7 @@
 
     > span
       color #7f8c8d
+      font-weight 400
 
       &:after
         content ''
@@ -147,7 +149,8 @@
 
     &:hover
       .nav-dropdown
-        display block
+        left -10px
+
 
       > span:after
         transform rotateZ(180deg)

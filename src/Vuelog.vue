@@ -1,9 +1,11 @@
 <template>
   <div class="vuelog">
     <vuelog-header></vuelog-header>
-    <transition name="view" mode="out-in" appear>
-      <router-view class="view"></router-view>
-    </transition>
+    <div class="vuelog-body">
+      <transition name="view" mode="out-in" appear>
+        <router-view></router-view>
+      </transition>
+    </div>
     <vuelog-footer v-if="!isHomepage"></vuelog-footer>
   </div>
 </template>
@@ -36,9 +38,9 @@
     flex-direction column
     align-items center
 
-  .view
+  .vuelog-body
     flex 1
-    padding 100px 0 10px
+    padding 100px 0 15px
     width 900px
 
   .view-enter-active

@@ -1,19 +1,21 @@
 <template>
   <div class="content">
     <transition name="loading" mode="out-in" appear>
-      <vuelog-spinner :pattern="deploy.spinnerPattern" v-if="!content" key="spinner" class="spinner"></vuelog-spinner>
-      <div v-if="content" key="content" class="content-body">Vuelog Content (TODO): {{type}} - {{content}}</div>
+      <vuelog-spinner class="spinner" v-if="!content" key="spinner" :pattern="deploy.spinnerPattern"></vuelog-spinner>
+      <div class="content-body" v-if="content" key="content" v-html="content"></div>
     </transition>
   </div>
 </template>
 
 <script>
+  import hljs from 'highlight.js'
+  import marked from 'marked'
   import VuelogSpinner from './VuelogSpinner'
 
   export default {
     name: 'vuelog-content',
 
-    props: ['type', 'slug'],
+    props: ['type', 'metadata', 'markdown'],
 
     components: {
       VuelogSpinner
@@ -22,37 +24,69 @@
     computed: {
       deploy () {
         return this.$store.getters.deployment
+      },
+
+      excerpt () {
+        return this.type === 'posts'
       }
     },
 
     data () {
       return {
-        content: null,
-        loading: null
+        content: null
       }
     },
 
     methods: {
-      loadContent (slug) {
-        var self = this
+      loadMarkdown (path) {
         this.content = null
-        clearTimeout(this.loading)
-        this.loading = setTimeout(function () {
-          self.content = slug
-          console.log(1)
-        }, 2000)
+
+        /* global XMLHttpRequest */
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', path, true)
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            this.content = this.parseMarkdown(xhr.responseText)
+          }
+        }
+        xhr.send(null)
+      },
+
+      parseMarkdown (md) {
+        var delimiter = '\n---\n'
+        var delimiterPosition = md.indexOf(delimiter)
+        var content = md.slice(delimiterPosition + delimiter.length)
+
+        if (this.excerpt) {
+          content = content.split('<!-- more -->')[0]
+        }
+
+        content = content.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
+          var formatted
+          try {
+            formatted = hljs.highlight($lang, $code)
+          } catch (e) {
+            formatted = hljs.highlightAuto($code)
+          }
+          return `<pre data-lang="${formatted.language}"><code class="hljs ${formatted.language}">${formatted.value}</code></pre>`
+        })
+
+        // Have you ever thought of the GitHub API?
+        // https://developer.github.com/v3/markdown/
+        return marked(content)
       }
     },
 
     created () {
-      console.log('created')
-      this.loadContent(this.slug)
+      if (this.markdown) {
+        this.loadMarkdown(this.markdown)
+      }
     },
 
     watch: {
-      slug (newVal, oldVal) {
+      markdown (newVal, oldVal) {
         if (newVal && newVal !== oldVal) {
-          this.loadContent(newVal)
+          this.loadMarkdown(newVal)
         }
       }
     }

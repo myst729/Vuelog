@@ -17,8 +17,8 @@
     text-align center
 
   h1
-    font-size 110px
+    font-size 100px
 
   p
-    font-size 36px
+    font-size 28px
 </style>
