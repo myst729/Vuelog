@@ -37,7 +37,11 @@
 <style lang="stylus">
   @import './assets/styles/fonts.css';
   @import './assets/styles/global';
+  @import './assets/styles/content';
+  @import './assets/styles/highlight';
+</style>
 
+<style lang="stylus" scoped>
   .vuelog
     min-height 100vh
     display flex
@@ -46,8 +50,10 @@
 
   .vuelog-body
     flex 1
+    display flex
+    flex-direction column
     padding 100px 0 15px
-    width 900px
+    width 840px
 
   .view-enter-active
   .view-leave-active

@@ -1,8 +1,6 @@
 title: Talk is cheap, show me the styles!
 date: 2016-04-11
 ---
-> This post is a demo of the most commmon styles.
-
 ### Headings
 
 # h1. Bootstrap heading
@@ -47,7 +45,7 @@ date: 2016-04-11
 
 ### You guys want code highlighting, I knew it!
 
-Here is the famous 10 second example from [Vue.js](http://vuejs.org/) official site.
+Here is the <q>famous</q> <span class="light">10 second</span> example from [Vue.js](http://vuejs.org/) official site.
 
 ```html
 <div id="demo">
@@ -66,3 +64,26 @@ var demo = new Vue({
 ```
 
 You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> code.
+
+### Tips, quotes and delimiters
+
+<p class="tip">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<p class="eof"><i class="cross"></i></p>
+<p class="eof"><i class="heart"></i></p>
+<p class="eof"><i class="music"></i></p>
+
+### Media: images, audios and videos
+
+![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
+
+<p><audio src="./userdata/media/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+
+<p>
+  <video poster="./userdata/media/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="./userdata/media/big-buck-bunny.mp4" type="video/mp4">
+    <source src="./userdata/media/big-buck-bunny.webm" type="video/webm">
+  </video>
+</p>

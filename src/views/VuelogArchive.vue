@@ -4,7 +4,7 @@
       <h2>Posts in category <q v-text="archive.title"></q>:</h2>
       <ul>
         <li v-for="post in archive.posts">
-          <router-link :to="{name: 'post', params: {category: post.category, post: post.slug, year: post.year}}" v-text="post.title"></router-link>
+          <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="post.title"></router-link>
           <span v-text="' ( ' + post.date + ' )'"></span>
         </li>
         <li v-if="archive.posts.length === 0">No posts found.</li>
@@ -15,7 +15,7 @@
       <h2 v-text="'Posts in year ' + archive.year + ':'"></h2>
       <ul>
         <li v-for="post in archive.posts">
-          <router-link :to="{name: 'post', params: {category: post.category, post: post.slug, year: archive.year}}" v-text="post.title"></router-link>
+          <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: archive.year}}" v-text="post.title"></router-link>
           <span> ( </span>
           <router-link :to="{name: 'category', params: {category: post.category}}" v-text="post.categoryTitle"></router-link>
           <span> )</span>
@@ -34,7 +34,7 @@
           </h4>
           <ul>
             <li v-for="post in category.posts">
-              <router-link :to="{name: 'post', params: {category: post.category, post: post.slug, year: post.year}}" v-text="post.title"></router-link>
+              <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="post.title"></router-link>
               <span v-text="' ( ' + post.date + ' )'"></span>
             </li>
           </ul>
@@ -50,7 +50,7 @@
           </h4>
           <ul>
             <li v-for="post in year.posts">
-              <router-link :to="{name: 'post', params: {category: post.category, post: post.slug, year: post.year}}" v-text="post.title"></router-link>
+              <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="post.title"></router-link>
               <span> ( </span>
               <router-link :to="{name: 'category', params: {category: post.category}}" v-text="post.categoryTitle"></router-link>
               <span> )</span>

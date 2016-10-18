@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1 v-text="page.title"></h1>
+    <h1 class="page-title" v-text="page.title"></h1>
     <vuelog-content class="page-body" :type="'page'" :metadata="page" :markdown="page.markdown"></vuelog-content>
   </div>
 </template>
@@ -40,6 +40,6 @@
 </script>
 
 <style lang="stylus" scoped>
-//  .page-body
-//    padding 1em 0 2em
+  .page-title
+    color #34495e
 </style>

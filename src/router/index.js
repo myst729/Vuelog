@@ -20,12 +20,12 @@ var routes = [
   { path: '/blog/p/:p', name: 'posts-more', component: VuelogPosts },
   { path: '/category/:category', name: 'category', component: VuelogPosts },
   { path: '/category/:category/p/:p', name: 'category-more', component: VuelogPosts },
-  { path: '/category/:category/:year/:post', name: 'post', component: VuelogPost },
+  { path: '/category/:category/:year/:slug', name: 'post', component: VuelogPost },
   { path: '/page/:page', name: 'page', component: VuelogPage },
   { path: '/oops', name: 'oops', component: VuelogOops }
 ]
 
-if (database.deployment.useHomepage) {
+if (database.config.useHomepage) {
   routes.push({ path: '/home', name: 'home', component: VuelogHome })
   routes.push({ path: '/', redirect: '/home' })
 } else {

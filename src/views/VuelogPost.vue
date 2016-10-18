@@ -1,8 +1,7 @@
 <template>
   <div class="post">
-    <h1 v-text="post.title"></h1>
-    <vuelog-content class="post-body" :type="'post'" :metadata="post" :markdown="post.markdown"></vuelog-content>
-    <div>TODO: pagination</div>
+    <h1 class="post-title" v-text="posts.current.title"></h1>
+    <vuelog-content class="post-body" :type="'post'" :metadata="posts.current" :markdown="posts.current.markdown" :navs="posts"></vuelog-content>
   </div>
 </template>
 
@@ -17,16 +16,19 @@
     },
 
     computed: {
-      post () {
-        const year = this.$route.params.year
-        var posts = this.$store.getters.postsByYear
+      posts () {
+        const category = this.$route.params.category
+        const slug = this.$route.params.slug
+        const year = +this.$route.params.year
+        const posts = this.$store.getters.posts
+
         for (var i = 0; i < posts.length; i++) {
-          if (posts[i].year === year) {
-            posts = posts[i].posts
-            for (var j = 0; i < posts.length; j++) {
-              if (posts[j].slug === this.$route.params.post) {
-                return posts[j]
-              }
+          if (posts[i].category === category && posts[i].year === year && posts[i].slug === slug) {
+            const siblings = this.getSiblings(posts, i)
+            return {
+              current: posts[i],
+              prev: siblings.prev,
+              next: siblings.next
             }
           }
         }
@@ -37,16 +39,38 @@
     methods: {
       oops () {
         this.$router.replace('/oops')
+      },
+
+      getSiblings (posts, i) {
+        const prev = (i - 1 < 0) ? null : posts[i - 1]
+        const next = (i + 1 < posts.length) ? posts[i + 1] : null
+
+        return {
+          prev: prev ? {
+            label: '&laquo; ' + prev.title,
+            route: {name: 'post', params: prev}
+          } : null,
+          next: next ? {
+            label: next.title + ' &raquo;',
+            route: {name: 'post', params: next}
+          } : null
+        }
       }
     },
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', this.post.title)
+      this.$store.dispatch('DOCUMENT_TITLE', this.posts.current.title)
     }
   }
 </script>
 
 <style lang="stylus" scoped>
-//  .post-body
-//    padding 1em 0 2em
+  .post
+  .post-body
+    flex 1
+    display flex
+    flex-direction column
+
+  .post-title
+    color #34495e
 </style>

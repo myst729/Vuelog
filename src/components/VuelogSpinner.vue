@@ -13,6 +13,8 @@
 
 <script>
   export default {
+    name: 'vuelog-spinner',
+
     props: ['pattern']
   }
 </script>

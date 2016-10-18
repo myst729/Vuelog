@@ -3,11 +3,12 @@
     <header>
       <div class="title">
         <router-link to="/">
-          <img :src="deploy.logo">
-          <span v-text="deploy.title"></span>
+          <img :src="config.logo">
+          <span v-text="config.title"></span>
         </router-link>
       </div>
-      <!--TODO <span class="menu-icon" @click="toggleMobileMenu"></span>-->
+      <!-- TODO: mobile support -->
+      <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
       <nav>
         <ul>
           <li v-for="item in navigation" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
@@ -32,12 +33,18 @@
     name: 'vuelog-header',
 
     computed: {
-      deploy () {
-        return this.$store.getters.deployment
+      config () {
+        return this.$store.getters.config
       },
 
       navigation () {
         return this.$store.getters.navigation
+      }
+    },
+
+    methods: {
+      toggleSideMenu () {
+        // TODO
       }
     }
   }
@@ -49,11 +56,14 @@
     box-shadow 0 0 4px rgba(0, 0, 0, .25)
     width 100%
     position fixed
-    z-index 9999
+    left 0
+    right 0
+    top 0
+    z-index 8000
 
   header
     display flex
-    width 960px
+    width 900px
     margin 0 auto
     padding 25px 0
 
@@ -76,6 +86,16 @@
       height 32px
       margin-right 5px
       vertical-align middle
+
+  .menu-icon
+    cursor pointer
+    display none
+    height 48px
+    width 48px
+    position absolute
+    left 12px
+    top 8px
+    z-index 9000
 
   ul
     margin 0
@@ -149,9 +169,21 @@
 
     &:hover
       .nav-dropdown
-        left -10px
-
+        left -15px
 
       > span:after
         transform rotateZ(180deg)
+
+  @media screen and (max-width: 1059px)
+    .nav-dropdown-container:hover .nav-dropdown
+      left auto
+      right -30px
+
+  @media screen and (max-width: 999px)
+    header
+      opacity 1 // 0
+
+    .menu-icon
+      display block
+
 </style>

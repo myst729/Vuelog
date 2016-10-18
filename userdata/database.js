@@ -1,6 +1,6 @@
 window.VUELOG_DATABASE = {
 
-  deployment: {
+  config: {
     title: 'Vuelog Demo',
     home: 'https://myst729.github.io/Vuelog/',
     logo: './static/vuelog.svg',

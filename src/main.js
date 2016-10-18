@@ -12,7 +12,7 @@ Object.keys(filters).forEach(key => {
 })
 
 const app = new Vue({
-  el: 'vuelog',
+  el: '#app',
   router,
   store,
   ...Vuelog

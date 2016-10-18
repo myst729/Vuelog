@@ -1,12 +1,36 @@
-export function meaningfulDays (isoDate) {
-  const between = (Date.now() - new Date(isoDate)) / 1000
+export function meaningfulTime (isoDate) {
+  const now = new Date()
+  const then = new Date(isoDate)
+
+  var between = now - then
   if (between < 0) {
-    return 'in the future'
-  } else if (between < 86400) {
-    return 'today'
-  } else if (between < 172800) {
-    return 'yesterday'
-  } else {
-    return Math.floor(between / 86400) + ' days ago'
+    return 'Somewhere in time'
+  }
+
+  between = now.getFullYear() - then.getFullYear()
+  if (between > 1) {
+    return between + ' years ago'
+  }
+  if (between === 1) {
+    return 'Last year'
+  }
+
+  between = now.getMonth() - then.getMonth()
+  if (between > 1) {
+    return between + ' months ago'
+  }
+  if (between === 1) {
+    return 'Last month'
+  }
+
+  between = now.getDate() - then.getDate()
+  if (between > 1) {
+    return between + ' days ago'
+  }
+  if (between === 1) {
+    return 'Yesterday'
+  }
+  if (between === 0) {
+    return 'Today'
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <footer>Built with <span>&#10084;</span> and <a :href="sys.project" v-text="sys.name" target="_blank" rel="noopener noreferrer"></a></footer>
+  <footer>Built with <span>&#10084;</span> and <a :href="system.project" v-text="system.name" target="_blank" rel="noopener noreferrer"></a></footer>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
     name: 'vuelog-footer',
 
     computed: {
-      sys () {
+      system () {
         return this.$store.getters.system
       }
     }

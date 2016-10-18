@@ -1,65 +1,34 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import system from './system'
+import system from '../system'
 import * as database from 'database'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    documentTitle: database.deployment.title,
+    title: '',
     system,
     database
   },
 
   actions: {
     DOCUMENT_TITLE: ({ commit, state }, title) => {
-      const docTitle = title ? (state.database.deployment.title + ' | ' + title) : state.database.deployment.title
-      commit('SET_DOCUMENT_TITLE', { title: docTitle })
+      const documentTitle = title ? (state.database.config.title + ' | ' + title) : state.database.config.title
+      commit('SET_DOCUMENT_TITLE', { title: documentTitle })
     }
-    // FETCH_ITEMS: ({ commit, state }, { ids }) => {
-    //   // only fetch items that we don't already have.
-    //   ids = ids.filter(id => !state.items[id])
-    //   if (ids.length) {
-    //     // return fetchItems(ids).then(items => commit('SET_ITEMS', { items }))
-    //   } else {
-    //     return Promise.resolve()
-    //   }
-    // },
-
-    // FETCH_USER: ({ commit, state }, { id }) => {
-    //   // return state.users[id]
-    //   //   ? Promise.resolve(state.users[id])
-    //   //   : fetchUser(id).then(user => commit('SET_USER', { user }))
-    // }
   },
 
   mutations: {
     SET_DOCUMENT_TITLE: (state, { title }) => {
-      state.documentTitle = document.title = title
+      state.title = document.title = title
     }
-
-    // SET_LIST: (state, { type, ids }) => {
-    //   state.lists[type] = ids
-    // },
-
-    // SET_ITEMS: (state, { items }) => {
-    //   items.forEach(item => {
-    //     if (item) {
-    //       Vue.set(state.items, item.id, item)
-    //     }
-    //   })
-    // },
-
-    // SET_USER: (state, { user }) => {
-    //   Vue.set(state.users, user.id, user)
-    // }
   },
 
   getters: {
     system: (state) => state.system,
 
-    deployment: (state) => state.database.deployment,
+    config: (state) => state.database.config,
 
     navigation: (state) => state.database.navigation,
 
@@ -82,6 +51,8 @@ const store = new Vuex.Store({
         post.markdown = './userdata/posts/' + post.year + '/' + post.slug + '.md'
         post.categoryTitle = categoriesHash[post.category]
         return post
+      }).sort((a, b) => {
+        return new Date(b.date) - new Date(a.date)
       })
     },
 
@@ -90,7 +61,7 @@ const store = new Vuex.Store({
         return {
           slug: category.slug,
           title: category.title,
-          posts: getters.posts.filter((post) => post.category === category.slug)
+          posts: getters.posts.filter((post) => post.category === category.slug).sort((a, b) => new Date(b.date) - new Date(a.date))
         }
       })
     },
@@ -100,7 +71,7 @@ const store = new Vuex.Store({
       return years.map((year) => {
         return {
           year,
-          posts: getters.posts.filter((post) => post.year === year)
+          posts: getters.posts.filter((post) => post.year === year).sort((a, b) => new Date(b.date) - new Date(a.date))
         }
       })
     }
