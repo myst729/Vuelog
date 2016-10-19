@@ -7,7 +7,6 @@
           <span v-text="config.brand"></span>
         </router-link>
       </div>
-      <!-- TODO: mobile support -->
       <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
       <nav>
         <ul>
@@ -63,9 +62,9 @@
 
   header
     display flex
-    width 900px
+    max-width 980px
     margin 0 auto
-    padding 25px 0
+    padding 25px 40px
 
   a:hover
     text-decoration none
@@ -84,17 +83,19 @@
     span
       display inline-block
       height 32px
-      margin-right 5px
       vertical-align middle
+
+    span
+      margin-left 5px
 
   .menu-icon
     cursor pointer
     display none
-    height 48px
-    width 48px
+    height 32px
+    width 32px
     position absolute
-    left 12px
-    top 8px
+    left 10px
+    top 10px
     z-index 9000
 
   ul
@@ -175,15 +176,32 @@
         transform rotateZ(180deg)
 
   @media screen and (max-width: 1059px)
+    header
+      padding 10px 40px
+
     .nav-dropdown-container:hover .nav-dropdown
       left auto
       right -30px
 
   @media screen and (max-width: 999px)
-    header
-      opacity 1 // 0
+    .header-wrap
+      background #fff
+      border-bottom 1px solid #ddd
+      box-shadow none
+
+    .title
+      a
+      img
+        display block
+        margin 0 auto
+        width 32px
+
+      span
+        display none
+
+    nav
+      display none
 
     .menu-icon
       display block
-
 </style>

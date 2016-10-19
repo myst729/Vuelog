@@ -20,7 +20,7 @@
     color #7f8c8d
     font-size 15px
     font-weight 600
-    width 960px
+    width 900px
     padding 20px 0
     text-align center
 
@@ -29,4 +29,8 @@
 
   a:hover
     text-decoration none
+
+  @media screen and (max-width: 999px)
+    footer
+      display none
 </style>

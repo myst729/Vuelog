@@ -52,8 +52,9 @@
     flex 1
     display flex
     flex-direction column
-    padding 100px 0 15px
-    width 840px
+    padding 100px 30px 15px
+    width 100%
+    max-width 900px
 
   .view-enter-active
   .view-leave-active
@@ -62,4 +63,13 @@
   .view-enter
   .view-leave-active
     opacity 0
+
+  @media screen and (max-width: 1059px)
+    .vuelog-body
+      padding-top 60px
+
+  @media screen and (max-width: 999px)
+    .vuelog-body
+      padding-top 50px
+      padding-bottom 15px
 </style>

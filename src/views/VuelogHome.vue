@@ -51,4 +51,15 @@
     &:hover
       background #fcfcfc
       color #5dc596
+
+  @media screen and (max-width: 999px)
+    img
+      margin-top 30px
+
+    h1
+      margin-top 10px
+      margin-bottom 20px
+
+    p
+      margin-bottom 10px
 </style>

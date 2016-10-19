@@ -173,4 +173,14 @@
   h4
   span
     color #7f8c8d
+
+  @media screen and (max-width: 999px)
+    h4
+      margin-bottom .5em
+
+    ul
+      padding-left 1em
+
+      ul
+        padding-left .75em
 </style>
