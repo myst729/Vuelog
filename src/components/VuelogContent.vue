@@ -97,8 +97,6 @@
       },
 
       parseMarkdown (md) {
-        // Ever thought of the GitHub API?
-        // https://developer.github.com/v3/markdown/
         const content = md.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
           var formatted
           try {
@@ -110,6 +108,19 @@
         })
 
         return marked(content)
+      },
+
+      parseMarkdownByGitHub (md) {
+        // Ever thought of the GitHub API [Markdown](https://developer.github.com/v3/markdown/)?
+        // Well, it may not be a good idea. The API will **silently** eat some tags, like <audio>, <video>. Do it at your own risk.
+        // Want the GitHub look and feel too? Check out [sindresorhus/github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
+        return this.$http.post('https://api.github.com/markdown', { text: md, mode: 'markdown' }).then(
+          response => response.data,
+          exception => {
+            if (this.type !== 'posts') {
+              this.oops()
+            }
+          })
       }
     },
 

@@ -1,14 +1,14 @@
 window.VUELOG_DATABASE = {
 
   config: {
-    title: 'Vuelog Demo',
+    brand: 'Vuelog Demo',
     home: 'https://myst729.github.io/Vuelog/',
     logo: './static/vuelog.svg',
     useHomepage: true,                 // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
     postsCount: 3,                     // Number of posts listed in a blog/category view.
-    metadataDelimiter: '---',          // A single line of characters in *.md files to separate metadata from actual content.
-    excerptDelimiter: '<!-- more -->', // A single line of characters in *.md files to separate metadata from actual content.
-    spinnerPattern: 'logo'             // 'logo' or 'line', set to other values to disable the loading spinner.
+    metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.
+    excerptDelimiter: '<!-- more -->', // The string to annotate excerpt out of the complete content in *.md files.
+    spinnerPattern: 'logo'             // Can be either `logo` or `line`, set to other values to disable the loading spinner.
   },
 
   navigation: [

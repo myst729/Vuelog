@@ -14,7 +14,7 @@ const store = new Vuex.Store({
 
   actions: {
     DOCUMENT_TITLE: ({ commit, state }, title) => {
-      const documentTitle = title ? (state.database.config.title + ' | ' + title) : state.database.config.title
+      const documentTitle = title ? (state.database.config.brand + ' | ' + title) : state.database.config.brand
       commit('SET_DOCUMENT_TITLE', { title: documentTitle })
     }
   },

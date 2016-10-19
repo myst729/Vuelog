@@ -4,7 +4,7 @@
       <div class="title">
         <router-link to="/">
           <img :src="config.logo">
-          <span v-text="config.title"></span>
+          <span v-text="config.brand"></span>
         </router-link>
       </div>
       <!-- TODO: mobile support -->
