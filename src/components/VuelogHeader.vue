@@ -24,19 +24,22 @@
       </nav>
     </header>
     <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
-    <ul class="side-menu" :class="sideMenuState">
-      <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
-        <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
-        <ul v-if="item.type === 'dropdown'" class="side-dropdown">
-          <li v-for="child in item.children">
-            <a v-if="child.type === 'outgoing'" :href="child.link" v-text="child.label" target="_blank" rel="noopener noreferrer"></a>
-            <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="child.label"></router-link>
-          </li>
-        </ul>
-        <a v-if="item.type === 'outgoing'" :href="item.link" target="_blank" rel="noopener noreferrer" v-text="item.label"></a>
-        <router-link v-if="item.type !== 'dropdown' && item.type !== 'outgoing'" :to="item.path" v-text="item.label"></router-link>
-      </li>
-    </ul>
+    <div class="side-menu" :class="sideMenuState">
+      <ul>
+        <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
+          <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
+          <ul v-if="item.type === 'dropdown'" class="side-dropdown">
+            <li v-for="child in item.children">
+              <a v-if="child.type === 'outgoing'" :href="child.link" v-text="child.label" target="_blank" rel="noopener noreferrer"></a>
+              <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="child.label"></router-link>
+            </li>
+          </ul>
+          <a v-if="item.type === 'outgoing'" :href="item.link" target="_blank" rel="noopener noreferrer" v-text="item.label"></a>
+          <router-link v-if="item.type !== 'dropdown' && item.type !== 'outgoing'" :to="item.path" v-text="item.label"></router-link>
+        </li>
+      </ul>
+      <footer>Built with <span>&#10084;</span> and <a :href="system.project" v-text="system.name" target="_blank" rel="noopener noreferrer"></a></footer>
+    </div>
   </div>
 </template>
 
@@ -51,6 +54,10 @@
 
       config () {
         return this.$store.getters.config
+      },
+
+      system () {
+        return this.$store.getters.system
       },
 
       navigation () {
@@ -131,16 +138,6 @@
     span
       margin-left 5px
 
-  .menu-icon
-    cursor pointer
-    display none
-    height 32px
-    width 32px
-    position absolute
-    left 10px
-    top 10px
-    z-index 9000
-
   ul
     margin 0
     padding 0
@@ -218,13 +215,24 @@
       > span:after
         transform rotateZ(180deg)
 
+  .menu-icon
+    cursor pointer
+    display none
+    height 32px
+    width 32px
+    position absolute
+    left 10px
+    top 10px
+    z-index 9000
+
   .side-menu
     display none
+    flex-direction column
     background #f7f7f7
     box-shadow 0 0 10px rgba(0, 0, 0, .25)
     height 100%
     width 260px
-    padding 60px 15px 20px 15px
+    padding 60px 15px 5px 15px
     overflow-x hidden
     overflow-y auto
     position fixed
@@ -234,39 +242,51 @@
     transform translate(-280px, 0)
     transition transform .4s cubic-bezier(.4, 0, 0, 1)
 
-    li
-      display block
-      margin 0
+    ul
+      flex 1
 
-    a
-    a:hover
-    a.router-link-active
-    .side-dropdown-container > span
-    .side-dropdown a
+      li
+        display block
+        margin 0
+
+      a
+      a:hover
+      a.router-link-active
+      .side-dropdown-container > span
+      .side-dropdown a
+        color #7f8c8d
+        font-weight 600
+        display block
+        border-bottom none
+        padding 0 1em
+
+      .side-dropdown-container > span:after
+          content ''
+          display inline-block
+          vertical-align middle
+          margin-top -1px
+          margin-left 6px
+          width 0
+          height 0
+          border-left 4px solid transparent
+          border-right 4px solid transparent
+          border-top 5px solid #ccc
+          transition transform .3s ease-in-out
+
+      a.router-link-active
+        color #42b983
+
+      .side-dropdown
+        padding 0 0 0 15px
+
+    footer
       color #7f8c8d
-      font-weight 600
-      display block
-      border-bottom none
-      padding 0 1em
+      font-size 14px
+      text-align center
+      padding .4em 0
 
-    .side-dropdown-container > span:after
-        content ''
-        display inline-block
-        vertical-align middle
-        margin-top -1px
-        margin-left 6px
-        width 0
-        height 0
-        border-left 4px solid transparent
-        border-right 4px solid transparent
-        border-top 5px solid #ccc
-        transition transform .3s ease-in-out
-
-    a.router-link-active
-      color #42b983
-
-    .side-dropdown
-      padding 0 0 0 15px
+      span
+        color #f66
 
   @media screen and (max-width: 1059px)
     header
@@ -308,8 +328,10 @@
       display none
 
     .menu-icon
-    .side-menu
       display block
+
+    .side-menu
+      display flex
 
     .side-menu-open
       transform translate(0, 0)

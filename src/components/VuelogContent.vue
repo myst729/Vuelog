@@ -183,4 +183,8 @@
 
   .continue-reading a:hover:after
     opacity 1
+
+  @media screen and (max-width: 999px)
+    .continue-reading a:after
+      opacity 1
 </style>
