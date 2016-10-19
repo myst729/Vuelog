@@ -7,8 +7,7 @@
           <span v-text="config.brand"></span>
         </router-link>
       </div>
-      <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
-      <nav>
+      <nav class="header-menu">
         <ul>
           <li v-for="item in navigation" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
             <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
@@ -24,6 +23,20 @@
         </ul>
       </nav>
     </header>
+    <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
+    <ul class="side-menu" :class="sideMenuState">
+      <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
+        <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
+        <ul v-if="item.type === 'dropdown'" class="side-dropdown">
+          <li v-for="child in item.children">
+            <a v-if="child.type === 'outgoing'" :href="child.link" v-text="child.label" target="_blank" rel="noopener noreferrer"></a>
+            <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="child.label"></router-link>
+          </li>
+        </ul>
+        <a v-if="item.type === 'outgoing'" :href="item.link" target="_blank" rel="noopener noreferrer" v-text="item.label"></a>
+        <router-link v-if="item.type !== 'dropdown' && item.type !== 'outgoing'" :to="item.path" v-text="item.label"></router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -32,6 +45,10 @@
     name: 'vuelog-header',
 
     computed: {
+      menu () {
+        return this.$store.getters.menu
+      },
+
       config () {
         return this.$store.getters.config
       },
@@ -41,10 +58,36 @@
       }
     },
 
-    methods: {
-      toggleSideMenu () {
-        // TODO
+    data () {
+      return {
+        sideMenuState: ''
       }
+    },
+
+    methods: {
+      closeSideMenu () {
+        this.$store.dispatch('SIDE_MENU', false)
+      },
+
+      toggleSideMenu () {
+        this.$store.dispatch('SIDE_MENU', !this.menu)
+      }
+    },
+
+    watch: {
+      menu (newVal, oldVal) {
+        this.sideMenuState = newVal ? 'side-menu-open' : ''
+      }
+    },
+
+    mounted () {
+      var menuIcon = document.querySelector('.menu-icon')
+      var sideMenu = document.querySelector('.side-menu')
+      document.body.addEventListener('click', (e) => {
+        if (e.target !== menuIcon && !sideMenu.contains(e.target)) {
+          this.closeSideMenu()
+        }
+      })
     }
   }
 </script>
@@ -175,6 +218,56 @@
       > span:after
         transform rotateZ(180deg)
 
+  .side-menu
+    display none
+    background #f7f7f7
+    box-shadow 0 0 10px rgba(0, 0, 0, .25)
+    height 100%
+    width 260px
+    padding 60px 15px 20px 15px
+    overflow-x hidden
+    overflow-y auto
+    position fixed
+    top 0
+    left 0
+    z-index 6000
+    transform translate(-280px, 0)
+    transition transform .4s cubic-bezier(.4, 0, 0, 1)
+
+    li
+      display block
+      margin 0
+
+    a
+    a:hover
+    a.router-link-active
+    .side-dropdown-container > span
+    .side-dropdown a
+      color #7f8c8d
+      font-weight 600
+      display block
+      border-bottom none
+      padding 0 1em
+
+    .side-dropdown-container > span:after
+        content ''
+        display inline-block
+        vertical-align middle
+        margin-top -1px
+        margin-left 6px
+        width 0
+        height 0
+        border-left 4px solid transparent
+        border-right 4px solid transparent
+        border-top 5px solid #ccc
+        transition transform .3s ease-in-out
+
+    a.router-link-active
+      color #42b983
+
+    .side-dropdown
+      padding 0 0 0 15px
+
   @media screen and (max-width: 1059px)
     header
       padding 10px 40px
@@ -185,9 +278,13 @@
 
   @media screen and (max-width: 999px)
     .header-wrap
+      box-shadow none
+
+    header
       background #fff
       border-bottom 1px solid #ddd
-      box-shadow none
+      position relative
+      z-index 8000
 
     .title
       a
@@ -199,9 +296,21 @@
       span
         display none
 
+    .vuelog-view-home
+      header
+        border none
+        padding 0
+
+      .title
+        display none
+
     nav
       display none
 
     .menu-icon
+    .side-menu
       display block
+
+    .side-menu-open
+      transform translate(0, 0)
 </style>

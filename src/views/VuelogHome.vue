@@ -54,12 +54,16 @@
 
   @media screen and (max-width: 999px)
     img
-      margin-top 30px
+      margin-top 10px
 
     h1
-      margin-top 10px
-      margin-bottom 20px
+      margin-top 5px
+      margin-bottom 10px
 
     p
+      margin-top 0
       margin-bottom 10px
+
+    .button
+      margin-bottom .25em
 </style>

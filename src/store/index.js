@@ -8,6 +8,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     title: '',
+    menu: false,
     system,
     database
   },
@@ -16,16 +17,28 @@ const store = new Vuex.Store({
     DOCUMENT_TITLE: ({ commit, state }, title) => {
       const documentTitle = title ? (state.database.config.brand + ' | ' + title) : state.database.config.brand
       commit('SET_DOCUMENT_TITLE', { title: documentTitle })
+    },
+
+    SIDE_MENU: ({ commit, state }, visibility) => {
+      commit('TOGGLE_SIDE_MENU', { visibility })
     }
   },
 
   mutations: {
     SET_DOCUMENT_TITLE: (state, { title }) => {
-      state.title = document.title = title
+      state.title = title
+    },
+
+    TOGGLE_SIDE_MENU: (state, { visibility }) => {
+      state.menu = visibility
     }
   },
 
   getters: {
+    title: (state) => state.title,
+
+    menu: (state) => state.menu,
+
     system: (state) => state.system,
 
     config: (state) => state.database.config,

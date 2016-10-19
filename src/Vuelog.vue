@@ -1,8 +1,8 @@
 <template>
-  <div class="vuelog">
+  <div class="vuelog" :class="'vuelog-view-' + $route.name">
     <vuelog-header></vuelog-header>
     <div class="vuelog-body">
-      <transition name="view" mode="out-in" @before-enter="resetScroll" appear>
+      <transition name="view" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
         <router-view :key="$route.fullPath"></router-view>
       </transition>
     </div>
@@ -21,14 +21,28 @@
     },
 
     computed: {
+      title () {
+        return this.$store.getters.title
+      },
+
       isHomepage () {
         return this.$route.name === 'home'
       }
     },
 
     methods: {
+      closeSideMenu () {
+        this.$store.dispatch('SIDE_MENU', false)
+      },
+
       resetScroll () {
         window.scrollTo(0, 0)
+      }
+    },
+
+    watch: {
+      title (newVal, oldVal) {
+        document.title = newVal
       }
     }
   }
@@ -43,7 +57,7 @@
 
 <style lang="stylus" scoped>
   .vuelog
-    min-height 100vh
+    min-height 100%
     display flex
     flex-direction column
     align-items center
@@ -72,4 +86,8 @@
     .vuelog-body
       padding-top 50px
       padding-bottom 15px
+
+    .vuelog-view-home .vuelog-body
+      padding-top 20px
+      padding-bottom 0
 </style>
