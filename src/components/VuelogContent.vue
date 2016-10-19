@@ -3,13 +3,20 @@
     <transition name="loading" mode="out-in" appear>
       <vuelog-spinner class="spinner" v-if="!content" key="spinner" :pattern="config.spinnerPattern"></vuelog-spinner>
       <div class="content-body" v-if="content" key="content">
+        <h1 class="content-title" v-if="type !== 'posts' && showTitle" v-text="metadata.title"></h1>
+        <h2 class="content-title" v-if="type === 'posts'">
+          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="metadata.title"></router-link>
+        </h2>
         <h4 class="content-meta" v-if="type !== 'page'">
           <span class="datetime" :data-raw="metadata.date">{{ metadata.date | meaningfulTime }}</span>
           <span> / </span>
           <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="metadata.categoryTitle"></router-link>
         </h4>
         <div class="content-container" v-html="content"></div>
-        <vuelog-pagination v-if="type === 'post'" :prev="navs.prev" :next="navs.next"></vuelog-pagination>
+        <div v-if="type === 'posts'" class="continue-reading">
+          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}">... continue reading</router-link>
+        </div>
+        <vuelog-pagination v-if="type === 'post' && navs" :prev="navs.prev" :next="navs.next"></vuelog-pagination>
       </div>
     </transition>
   </div>
@@ -24,7 +31,7 @@
   export default {
     name: 'vuelog-content',
 
-    props: ['type', 'metadata', 'markdown', 'navs'],
+    props: ['type', 'metadata', 'navs'],
 
     components: {
       VuelogSpinner,
@@ -39,35 +46,60 @@
 
     data () {
       return {
+        showTitle: true,
         content: null
       }
     },
 
     methods: {
-      loadMarkdown (path) {
-        this.content = null
+      oops () {
+        this.$router.replace('/oops')
+      },
 
-        /* global XMLHttpRequest */
-        var xhr = new XMLHttpRequest()
-        xhr.open('GET', path, true)
-        xhr.onload = () => {
-          if (xhr.status === 200) {
-            this.content = this.parseMarkdown(xhr.responseText)
+      toggleTitleVisibility (metadata) {
+        for (var i = 0; i < metadata.length; i++) {
+          if (/#\s*title:/.test(metadata[i])) {
+            this.showTitle = false
+            return
           }
         }
-        xhr.send(null)
+      },
+
+      loadMarkdown (path) {
+        return this.$http.get(path).then(
+          response => response.data,
+          exception => {
+            if (this.type !== 'posts') {
+              this.oops()
+            }
+          })
+      },
+
+      processMarkdown (md) {
+        const metadataDelimiter = this.config.metadataDelimiter
+        const excerptDelimiter = this.config.excerptDelimiter
+        const metadataPosition = md.indexOf(metadataDelimiter)
+
+        var metadata
+        var content
+
+        if (metadataDelimiter) {
+          metadata = md.slice(0, metadataPosition).split('\n')
+          this.toggleTitleVisibility(metadata)
+          content = md.slice(metadataPosition + metadataDelimiter.length)
+        }
+
+        if (this.type === 'posts' && excerptDelimiter) {
+          content = content.split(excerptDelimiter)[0]
+        }
+
+        return content
       },
 
       parseMarkdown (md) {
-        var delimiter = '\n---\n'
-        var delimiterPosition = md.indexOf(delimiter)
-        var content = md.slice(delimiterPosition + delimiter.length)
-
-        if (this.type === 'posts') {
-          content = content.split('<!-- more -->')[0]
-        }
-
-        content = content.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
+        // Ever thought of the GitHub API?
+        // https://developer.github.com/v3/markdown/
+        const content = md.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
           var formatted
           try {
             formatted = hljs.highlight($lang, $code)
@@ -77,16 +109,17 @@
           return `<pre class="code-block" data-lang="${formatted.language}"><code class="hljs ${formatted.language}">${formatted.value}</code></pre>`
         })
 
-        // Have you ever thought of the GitHub API?
-        // https://developer.github.com/v3/markdown/
         return marked(content)
       }
     },
 
     created () {
-      if (this.markdown) {
-        this.loadMarkdown(this.markdown)
-      }
+      this.loadMarkdown(this.metadata.markdown)
+        .then(this.processMarkdown)
+        .then(this.parseMarkdown)
+        .then(markup => {
+          this.content = markup
+        })
     }
   }
 </script>
@@ -94,7 +127,7 @@
 <style lang="stylus" scoped>
   .spinner
     display block
-    margin 30px auto
+    margin 100px auto
 
   .loading-enter-active
   .loading-leave-active
@@ -109,9 +142,23 @@
     display flex
     flex-direction column
 
+  .content-title
+    color #34495e
+    margin-bottom 0
+
+  .content-title a
+    color #34495e
+    border-bottom 2px solid transparent
+    transition border-color .3s ease
+
+    &:hover
+      border-color #4fc08d
+      text-decoration none
+
   .content-meta
     color #7f8c8d
-    margin 0
+    margin-top .5em
+    margin-bottom 0
 
   .content-container
     flex 1
@@ -153,4 +200,7 @@
     opacity 1
     transform translate(-50%, 0)
     visibility visible
+
+  .continue-reading a:hover
+    text-decoration none
 </style>

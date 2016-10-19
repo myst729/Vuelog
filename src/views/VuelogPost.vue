@@ -1,7 +1,6 @@
 <template>
   <div class="post">
-    <h1 class="post-title" v-text="posts.current.title"></h1>
-    <vuelog-content class="post-body" :type="'post'" :metadata="posts.current" :markdown="posts.current.markdown" :navs="posts"></vuelog-content>
+    <vuelog-content class="post-body" :type="'post'" :metadata="dataset.post" :navs="dataset"></vuelog-content>
   </div>
 </template>
 
@@ -16,7 +15,7 @@
     },
 
     computed: {
-      posts () {
+      dataset () {
         const category = this.$route.params.category
         const slug = this.$route.params.slug
         const year = +this.$route.params.year
@@ -26,7 +25,7 @@
           if (posts[i].category === category && posts[i].year === year && posts[i].slug === slug) {
             const siblings = this.getSiblings(posts, i)
             return {
-              current: posts[i],
+              post: posts[i],
               prev: siblings.prev,
               next: siblings.next
             }
@@ -42,24 +41,18 @@
       },
 
       getSiblings (posts, i) {
-        const prev = (i - 1 < 0) ? null : posts[i - 1]
-        const next = (i + 1 < posts.length) ? posts[i + 1] : null
+        const prevParams = (i - 1 < 0) ? null : posts[i - 1]
+        const nextParams = (i + 1 < posts.length) ? posts[i + 1] : null
 
         return {
-          prev: prev ? {
-            label: '&laquo; ' + prev.title,
-            route: {name: 'post', params: prev}
-          } : null,
-          next: next ? {
-            label: next.title + ' &raquo;',
-            route: {name: 'post', params: next}
-          } : null
+          prev: prevParams && { label: '&laquo; ' + prevParams.title, route: {name: 'post', params: prevParams} },
+          next: nextParams && { label: nextParams.title + ' &raquo;', route: {name: 'post', params: nextParams} }
         }
       }
     },
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', this.posts.current.title)
+      this.$store.dispatch('DOCUMENT_TITLE', this.dataset.post.title)
     }
   }
 </script>
@@ -70,7 +63,4 @@
     flex 1
     display flex
     flex-direction column
-
-  .post-title
-    color #34495e
 </style>

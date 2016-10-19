@@ -1,8 +1,9 @@
 export function meaningfulTime (isoDate) {
   const now = new Date()
   const then = new Date(isoDate)
+  var between
 
-  var between = now - then
+  between = now - then
   if (between < 0) {
     return 'Somewhere in time'
   }

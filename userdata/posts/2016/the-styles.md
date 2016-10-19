@@ -63,7 +63,7 @@ var demo = new Vue({
 })
 ```
 
-You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> code.
+You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> code. ![Husky](./userdata/images/moren-husky.png)
 
 ### Tips, quotes and delimiters
 
@@ -75,11 +75,9 @@ You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> c
 <p class="eof"><i class="heart"></i></p>
 <p class="eof"><i class="music"></i></p>
 
-### Media: images, audios and videos
+### Media: images, videos and audios
 
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
-
-<p><audio src="./userdata/media/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
 
 <p>
   <video poster="./userdata/media/big-buck-bunny.jpg" preload="metadata" controls>
@@ -87,3 +85,5 @@ You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> c
     <source src="./userdata/media/big-buck-bunny.webm" type="video/webm">
   </video>
 </p>
+
+<p><audio src="./userdata/media/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>

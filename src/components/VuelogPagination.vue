@@ -20,11 +20,13 @@
 <style lang="stylus" scoped>
   .pagination
     font-weight 600
-    padding-top 10px
+    padding-top 5px
 
   .prev
-    text-align left
+    padding-top 5px
+    float left
 
   .next
-    text-align right
+    padding-top 5px
+    float right
 </style>

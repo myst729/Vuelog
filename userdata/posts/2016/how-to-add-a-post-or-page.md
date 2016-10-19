@@ -1,5 +1,6 @@
-title: How to add a post or page?
-date: 2016-04-16
+title:    How to add a post or page?
+date:     2016-04-16
+category: Guide
 ---
 ### How to create categories?
 

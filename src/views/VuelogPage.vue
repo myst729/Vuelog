@@ -1,7 +1,6 @@
 <template>
   <div class="page">
-    <h1 class="page-title" v-text="page.title"></h1>
-    <vuelog-content class="page-body" :type="'page'" :metadata="page" :markdown="page.markdown"></vuelog-content>
+    <vuelog-content class="page-body" :type="'page'" :metadata="page"></vuelog-content>
   </div>
 </template>
 
@@ -40,6 +39,9 @@
 </script>
 
 <style lang="stylus" scoped>
-  .page-title
-    color #34495e
+  .page
+  .page-body
+    flex 1
+    display flex
+    flex-direction column
 </style>

@@ -67,7 +67,7 @@ const store = new Vuex.Store({
     },
 
     postsByYear (state, getters) {
-      var years = [...new Set(getters.posts.map((post) => post.year))].sort((a, b) => b - a)
+      const years = [...new Set(getters.posts.map((post) => post.year))].sort((a, b) => b - a)
       return years.map((year) => {
         return {
           year,

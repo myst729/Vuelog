@@ -1,9 +1,9 @@
 <template>
-  <svg class="graph" width="48" height="48" viewBox="0 0 48 48">
-    <g v-if="pattern === 'line'">
+  <svg width="48" height="48" viewBox="0 0 48 48">
+    <g class="group" v-if="pattern === 'line'">
       <circle class="stroke single" fill="none" stroke="#42b983" stroke-width="4" cx="24" cy="24" r="22" />
     </g>
-    <g v-if="pattern === 'logo'">
+    <g class="group" v-if="pattern === 'logo'">
       <circle class="stroke outer" fill="none" stroke="#42b983" stroke-width="9.6" cx="24" cy="24" r="19.2" />
       <circle class="stroke inner" fill="none" stroke="#34495e" stroke-width="9" cx="24" cy="24" r="9.9" />
       <circle class="stroke" fill="none" stroke="#fff" stroke-width="5.4" cx="24" cy="24" r="2.7" />
@@ -20,7 +20,8 @@
 </script>
 
 <style lang="stylus" scoped>
-  .graph
+  .group
+    transform-origin center
     animation graph 1.5s linear infinite
 
   @keyframes graph
