@@ -8,13 +8,13 @@
           <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="metadata.title"></router-link>
         </h2>
         <h4 class="content-meta" v-if="type !== 'page'">
-          <span class="datetime" :data-raw="metadata.date">{{ metadata.date | meaningfulTime }}</span>
+          <span>{{ metadata.date | meaningfulTime }}</span>
           <span> / </span>
           <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="metadata.categoryTitle"></router-link>
         </h4>
         <div class="content-container" v-html="content"></div>
         <div v-if="type === 'posts'" class="continue-reading">
-          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}">... continue reading</router-link>
+          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}">continue reading</router-link>
         </div>
         <vuelog-pagination v-if="type === 'post' && navs" :prev="navs.prev" :next="navs.next"></vuelog-pagination>
       </div>
@@ -97,17 +97,16 @@
       },
 
       parseMarkdown (md) {
-        const content = md.replace(/```([^\n]*)\n([\s\S]+?)\n```/g, ($block, $lang, $code) => {
-          var formatted
-          try {
-            formatted = hljs.highlight($lang, $code)
-          } catch (e) {
-            formatted = hljs.highlightAuto($code)
+        marked.setOptions({
+          highlight: (code, lang) => {
+            try {
+              return hljs.highlight(lang, code).value
+            } catch (e) {
+              return hljs.highlightAuto(code).value
+            }
           }
-          return `<pre class="code-block" data-lang="${formatted.language}"><code class="hljs ${formatted.language}">${formatted.value}</code></pre>`
         })
-
-        return marked(content)
+        return marked(md)
       },
 
       parseMarkdownByGitHub (md) {
@@ -174,44 +173,14 @@
   .content-container
     flex 1
 
-  .datetime
-    position relative
-
-  .datetime:before
-  .datetime:after
-    transform translate(-50%, 5px)
-    position absolute
-    left 50%
+  .continue-reading a:after
+    content ' ...'
     opacity 0
-    visibility hidden
-    transition all .5s ease
-
-  .datetime:before
-    content ''
-    border-left 5px solid transparent
-    border-right 5px solid transparent
-    border-bottom 5px solid #7f8c8d
-    height 0
-    width 0
-    top 22px
-
-  .datetime:after
-    content attr(data-raw)
-    background #7f8c8d
-    border 1px solid #7f8c8d
-    border-radius 3px
-    color #fff
-    font-size .8em
-    padding 2px 7px
-    white-space nowrap
-    top 27px
-
-  .datetime:hover:before
-  .datetime:hover:after
-    opacity 1
-    transform translate(-50%, 0)
-    visibility visible
+    transition opacity .5s ease
 
   .continue-reading a:hover
     text-decoration none
+
+  .continue-reading a:hover:after
+    opacity 1
 </style>

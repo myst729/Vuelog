@@ -17,6 +17,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "fastclick": "^1.0.6",
     "highlight.js": "^9.7.0",
     "marked": "^0.3.6",
     "vue": "^2.0.1",

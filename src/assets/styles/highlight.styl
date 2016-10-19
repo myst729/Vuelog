@@ -1,6 +1,15 @@
-pre.code-block
+pre
   margin 1.2em 0
   position relative
+
+pre > code
+  background #f8f8f8
+  color #525252
+  font-size .85em
+  line-height 1.5
+  display block
+  overflow-x auto
+  padding 1em
 
   &:after
     color #7f8c8d
@@ -17,62 +26,78 @@ pre.code-block
     top 0
     right 0
 
-  &[data-lang=html]:after
+  &.lang-html:after
     content 'HTML'
 
-  &[data-lang=css]:after
+  &.lang-css:after
     content 'CSS'
 
-  &[data-lang=javascript]:after
-  &[data-lang=js]:after
+  &.lang-javascript:after
+  &.lang-js:after
     content 'JavaScript'
 
-  &[data-lang=typescript]:after
-  &[data-lang=ts]:after
+  &.lang-typescript:after
+  &.lang-ts:after
     content 'TypeScript'
 
-  &[data-lang=php]:after
+  &.lang-php:after
     content 'PHP'
 
-  &[data-lang=java]:after
-    content 'Java'
-
-  &[data-lang=python]:after
-  &[data-lang=py]:after
+  &.lang-python:after
+  &.lang-py:after
     content 'Python'
 
-  &[data-lang=ruby]:after
+  &.lang-ruby:after
     content 'Ruby'
 
-  &[data-lang=sql]:after
+  &.lang-java:after
+    content 'Java'
+
+  &.lang-go:after
+    content 'Go'
+
+  &.lang-rust:after
+    content 'Rust'
+
+  &.lang-swift:after
+    content 'Swift'
+
+  &.lang-lua:after
+    content 'Lua'
+
+  &.lang-r:after
+    content 'R'
+
+  &.lang-c:after
+    content 'C'
+
+  &.lang-cpp:after
+    content 'C++'
+
+  &.lang-csharp:after
+  &.lang-cs:after
+    content 'C#'
+
+  &.lang-sql:after
     content 'SQL'
 
-  &[data-lang=json]:after
+  &.lang-json:after
     content 'JSON'
 
-  &[data-lang=markdown]:after
-  &[data-lang=md]:after
+  &.lang-markdown:after
+  &.lang-md:after
     content 'Markdown'
 
-  &[data-lang=bash]:after
-  &[data-lang=shell]:after
+  &.lang-bash:after
+  &.lang-shell:after
     content 'Shell'
 
-  &[data-lang=diff]:after
-  &[data-lang=patch]:after
+  &.lang-diff:after
+  &.lang-patch:after
     content 'Diff'
 
-pre.code-block:hover:after
+pre:hover > code:after
   opacity 1
-
-.hljs
-  background #f8f8f8
-  color #525252
-  font-size .85em
-  line-height 1.5
-  display block
-  overflow-x auto
-  padding 1em
 
 .hljs-strong
   font-weight 600
@@ -121,3 +146,7 @@ pre.code-block:hover:after
 
 .hljs-addition
   background #dfd
+
+@media screen and (max-width: 999px)
+  pre > code:after
+    opacity 1

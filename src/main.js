@@ -1,3 +1,4 @@
+import FastClick from 'fastclick'
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import { sync } from 'vuex-router-sync'
@@ -6,6 +7,7 @@ import router from './router'
 import store from './store'
 import * as filters from './filters'
 
+FastClick.attach(document.body)
 Vue.use(VueResource)
 sync(store, router)
 
