@@ -14,7 +14,7 @@
         </h4>
         <div class="content-container" v-html="content"></div>
         <div v-if="type === 'posts'" class="continue-reading">
-          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}">continue reading</router-link>
+          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}">continue reading ...</router-link>
         </div>
         <vuelog-pagination v-if="type === 'post' && navs" :prev="navs.prev" :next="navs.next"></vuelog-pagination>
       </div>
@@ -173,16 +173,8 @@
   .content-container
     flex 1
 
-  .continue-reading a:after
-    content ' ...'
-    opacity 0
-    transition opacity .5s ease
-
   .continue-reading a:hover
     text-decoration none
-
-  .continue-reading a:hover:after
-    opacity 1
 
   @media screen and (max-width: 999px)
     .continue-reading a:after

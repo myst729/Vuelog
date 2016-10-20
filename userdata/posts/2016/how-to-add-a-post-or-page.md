@@ -1,30 +1,20 @@
-title:    How to add a post or page?
-date:     2016-04-16
-category: Guide
+title: How to add a post or page?
+date: 2016-04-16
 ---
 ### How to create categories?
 
-Posts are filed under categories. Before write a post, you must create a category if it doesn't exist.
+Posts are filed under categories. But **category** is a virtual concept indeed.
 
-To create a category is simple:
-
-- Create a new folder under `/docs/posts`.
-
-```bash
-docs
-└── posts
-    └── guide
-```
-
-- Add a new entry in `categories` section in `database.js`. Set the folder name as the `slug` property's value.
+To create a category is simple, just add a new entry to `categories` section in your `database.js`.
 
 ```js
 categories: [
   {
-    title: 'Guide',
-    slug: 'guide'
+    title: 'Category Name',
+    slug: 'category-slug'
   },
   ...
+]
 ```
 
 <!-- more -->

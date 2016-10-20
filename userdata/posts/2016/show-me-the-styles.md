@@ -1,4 +1,4 @@
-title: Talk is cheap, show me the styles!
+title: Show me the styles!
 date: 2016-04-11
 ---
 ### Headings

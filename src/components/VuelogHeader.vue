@@ -24,7 +24,7 @@
       </nav>
     </header>
     <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
-    <div class="side-menu" :class="sideMenuState">
+    <div class="side-menu" :class="{'side-menu-open': menu}">
       <ul>
         <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
           <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
@@ -40,6 +40,9 @@
       </ul>
       <footer>Built with <span>&#10084;</span> and <a :href="system.project" v-text="system.name" target="_blank" rel="noopener noreferrer"></a></footer>
     </div>
+    <transition name="backdrop">
+      <div class="side-menu-backdrop" v-if="menu"></div>
+    </transition>
   </div>
 </template>
 
@@ -65,12 +68,6 @@
       }
     },
 
-    data () {
-      return {
-        sideMenuState: ''
-      }
-    },
-
     methods: {
       closeSideMenu () {
         this.$store.dispatch('SIDE_MENU', false)
@@ -78,12 +75,6 @@
 
       toggleSideMenu () {
         this.$store.dispatch('SIDE_MENU', !this.menu)
-      }
-    },
-
-    watch: {
-      menu (newVal, oldVal) {
-        this.sideMenuState = newVal ? 'side-menu-open' : ''
       }
     },
 
@@ -230,20 +221,23 @@
     flex-direction column
     background #f7f7f7
     box-shadow 0 0 10px rgba(0, 0, 0, .25)
-    height 100%
+    height 200%
     width 260px
-    padding 60px 15px 5px 15px
+    padding 0 15px
     overflow-x hidden
     overflow-y auto
     position fixed
     top 0
     left 0
-    z-index 6000
+    z-index 7000
     transform translate(-280px, 0)
     transition transform .4s cubic-bezier(.4, 0, 0, 1)
 
     ul
-      flex 1
+      height 50%
+      overflow-y auto
+      padding-top 60px
+      padding-bottom 40px
 
       li
         display block
@@ -283,10 +277,32 @@
       color #7f8c8d
       font-size 14px
       text-align center
-      padding .4em 0
+      line-height 40px
+      height 40px
+      width 260px
+      position absolute
+      left 0
+      bottom 50%
 
       span
         color #f66
+
+  .side-menu-backdrop
+    background rgba(0, 0, 0, .25)
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom -100%
+    z-index 6000
+
+  .backdrop-enter-active
+  .backdrop-leave-active
+    transition opacity .4s ease
+
+  .backdrop-enter
+  .backdrop-leave-active
+    opacity 0
 
   @media screen and (max-width: 1059px)
     header
@@ -331,7 +347,7 @@
       display block
 
     .side-menu
-      display flex
+      display block
 
     .side-menu-open
       transform translate(0, 0)

@@ -97,25 +97,25 @@ window.VUELOG_DATABASE = {
       date: '2016-04-12'
     },
     {
-      title: 'Talk is cheap, show me the styles!',
-      slug: 'the-styles',
+      title: 'Show me the styles!',
+      slug: 'show-me-the-styles',
       category: 'guide',
       date: '2016-04-11'
     },
     {
-      title: 'Using Disqus comment service',
+      title: '[TODO] Using Disqus comment service',
       slug: 'using-disqus-comment-service',
       category: 'guide',
       date: '2016-04-10'
     },
     {
-      title: 'Using Algolia search service',
+      title: '[DEPRECATED] Using Algolia search service',
       slug: 'using-algolia-search-service',
       category: 'guide',
       date: '2016-04-09'
     },
     {
-      title: 'Vuelog hacker’s guide',
+      title: '[TODO] Vuelog hacker’s guide',
       slug: 'vuelog-hackers-guide',
       category: 'guide',
       date: '2016-04-08'
