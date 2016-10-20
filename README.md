@@ -27,7 +27,7 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-If you just want to write something as soon as possible, grab the latest release package [here](https://github.com/myst729/Vuelog/releases).
+If you just want to write something, grab the latest release package [here](https://github.com/myst729/Vuelog/releases).
 
 
 ## License
