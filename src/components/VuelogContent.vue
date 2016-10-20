@@ -75,28 +75,15 @@
           })
       },
 
-      processMarkdown (md) {
+      preProcess (md) {
         const metadataDelimiter = this.config.metadataDelimiter
-        const excerptDelimiter = this.config.excerptDelimiter
         const metadataPosition = md.indexOf(metadataDelimiter)
-
-        var metadata
-        var content
-
-        if (metadataDelimiter) {
-          metadata = md.slice(0, metadataPosition).split('\n')
-          this.toggleTitleVisibility(metadata)
-          content = md.slice(metadataPosition + metadataDelimiter.length)
-        }
-
-        if (this.type === 'posts' && excerptDelimiter) {
-          content = content.split(excerptDelimiter)[0]
-        }
-
-        return content
+        var metadata = md.slice(0, metadataPosition).split('\n')
+        this.toggleTitleVisibility(metadata)
+        return md.slice(metadataPosition + metadataDelimiter.length)
       },
 
-      parseMarkdown (md) {
+      renderMarkdown (md) {
         marked.setOptions({
           highlight: (code, lang) => {
             try {
@@ -109,7 +96,7 @@
         return marked(md)
       },
 
-      parseMarkdownByGitHub (md) {
+      renderGitHubMarkdown (md) {
         // Ever thought of the GitHub API [Markdown](https://developer.github.com/v3/markdown/)?
         // Well, it may not be a good idea. The API will **silently** eat some tags, like <audio>, <video>. Do it at your own risk.
         // Want the GitHub look and feel too? Check out [sindresorhus/github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
@@ -120,13 +107,21 @@
               this.oops()
             }
           })
+      },
+
+      postProcess (markup) {
+        if (this.type === 'posts') {
+          return markup.split(this.config.excerptDelimiter)[0]
+        }
+        return markup
       }
     },
 
     created () {
       this.loadMarkdown(this.metadata.markdown)
-        .then(this.processMarkdown)
-        .then(this.parseMarkdown)
+        .then(this.preProcess)
+        .then(this.renderMarkdown)
+        .then(this.postProcess)
         .then(markup => {
           this.content = markup
         })

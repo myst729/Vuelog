@@ -23,3 +23,22 @@ I've written some "toys" before but haven't got a chance for real deal. But it j
 ### Who can use Vuelog?
 
 Anyone, as long as you are willing to write something more than 140 words (characters), and have a place (e.g. GitHub Pages) to host your writings.
+
+### Is the project still alive?
+
+Of course! In the beginning it's experimental indeed. As I learn more about Vue and other useful add-ons, I decide to continuously improve, not only to consolidate my knowledge but also to make myself more happily writing.
+
+The latest version is totally rewritten. Take a look at the dependencies - Vue 2.x is a building block now:
+
+```js
+"dependencies": {
+  "fastclick": "^1.0.6",
+  "highlight.js": "^9.7.0",
+  "marked": "^0.3.6",
+  "vue": "^2.0.1",
+  "vue-resource": "^1.0.3",
+  "vue-router": "^2.0.0",
+  "vuex": "^2.0.0",
+  "vuex-router-sync": "^3.0.0"
+}
+```

@@ -1,10 +1,11 @@
+// DO NOT CHANGE THE GLOBAL VARIABLE NAME
 window.VUELOG_DATABASE = {
 
   config: {
     brand: 'Vuelog Demo',
     home: 'https://myst729.github.io/Vuelog/',
     logo: './static/vuelog.svg',
-    useHomepage: true,                 // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    useHomepage: false,                // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
     postsCount: 3,                     // Number of posts listed in a blog/category view.
     metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.
     excerptDelimiter: '<!-- more -->', // The string to annotate excerpt out of the complete content in *.md files.
@@ -82,25 +83,25 @@ window.VUELOG_DATABASE = {
       title: 'How to add a post or page?',
       slug: 'how-to-add-a-post-or-page',
       category: 'guide',
-      date: '2016-04-16'
-    },
-    {
-      title: 'The structure of Vuelog',
-      slug: 'the-structure-of-vuelog',
-      category: 'guide',
-      date: '2016-04-14'
+      date: '2016-10-21'
     },
     {
       title: 'The (so-called) database',
       slug: 'the-so-called-database',
       category: 'guide',
-      date: '2016-04-12'
+      date: '2016-10-20'
+    },
+    {
+      title: 'The structure of Vuelog',
+      slug: 'the-structure-of-vuelog',
+      category: 'guide',
+      date: '2016-10-20'
     },
     {
       title: 'Show me the styles!',
       slug: 'show-me-the-styles',
       category: 'guide',
-      date: '2016-04-11'
+      date: '2016-10-19'
     },
     {
       title: '[TODO] Using Disqus comment service',

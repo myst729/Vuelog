@@ -1,31 +1,21 @@
 title: The (so-called) database
-date: 2016-04-12
+date: 2016-10-20
 ---
 Let's take a look at the most important file of your Vuelog deployment - `database.js`:
 
 ```js
-var VUELOG_DATABASE = {
+// DO NOT CHANGE THE GLOBAL VARIABLE NAME
+window.VUELOG_DATABASE = {
 
-  // DO NOT touch this part
-  system: {
-    ...
-  },
-
-  // Edit your site from here
-  deployment: {
-    title: 'Vuelog',
-    url: 'https://myst729.github.io/Vuelog/',
-    logo: './static/img/logo.svg',
-    folder: './docs',          // The folder name where your source markdown files are stored
-    perPage: 3,                // How many posts are listed in a blog/category view
-    displayTime: 'YYYY-MM-DD', // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'
-    routeTime: 'YYYY',         // 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD', DO NOT include '/'
-    useHomepage: true          // If a dedicated homepage isn't specified, it'll route to `/blog`
-  },
-
-  // Search functionality is served with Algolia
-  search: {
-    ...
+  config: {
+    brand: 'Vuelog Demo',
+    home: 'https://myst729.github.io/Vuelog/',
+    logo: './static/vuelog.svg',
+    useHomepage: false,                // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    postsCount: 3,                     // Number of posts listed in a blog/category view.
+    metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.
+    excerptDelimiter: '<!-- more -->', // The string to annotate excerpt out of the complete content in *.md files.
+    spinnerPattern: 'logo'             // Can be either `logo` or `line`, set to other values to disable the loading spinner.
   },
 
   navigation: [
@@ -51,15 +41,14 @@ var VUELOG_DATABASE = {
 
   categories: [
     { title: 'Guide', slug: 'guide' },
-    { title: 'Cheatsheet', slug: 'cheatsheet' }
+    { title: 'Empty', slug: 'empty' }
   ],
 
   posts: [
-    { title: 'How to add a post or page?', slug: 'how-to-add-a-post-or-page', category: 'guide', date: 20160416 },
-    { title: 'The structure of Vuelog', slug: 'the-structure-of-vuelog', category: 'guide', date: 20160414 },
-    { title: 'The (so-called) database', slug: 'the-so-called-database', category: 'guide', date: 20160412 },
-    { title: 'Talk is cheap, show me the styles!', slug: 'the-styles', category: 'guide', date: 20160411 },
-    { title: 'This is for the hackers', slug: 'this-is-for-the-hackers', category: 'cheatsheet', date: 20160410 }
+    { title: 'How to add a post or page?', slug: 'how-to-add-a-post-or-page', category: 'guide', date: '2016-04-16' },
+    { title: 'The structure of Vuelog', slug: 'the-structure-of-vuelog', category: 'guide', date: '2016-04-14' },
+    { title: 'The (so-called) database', slug: 'the-so-called-database', category: 'guide', date: '2016-04-12' },
+    ...
   ]
 
 }
@@ -69,15 +58,17 @@ var VUELOG_DATABASE = {
 
 The purpose of each section:
 
-- `system`: Meta information of the Vuelog build. Don't touch it.
-- `deployment`: Overall settings of your site. Please read inline comments.
-- `search`: (Not finished yet) Vuelog uses Algolia to enable the in-site search. Modify the settings here if you need it.
+- `config`: Overall settings of your site. Let's take a look at some confusing fields.
+  - `useHomepage`: Set to `true` if you want a dedicated home page. However, to customize the home page you need to fork the Vuelog repository.
+  -  `metadataDelimiter`: Metadata are not meant to render the page, so they are really optional. They are recommended for better maintenance of your markdown source files.
+  -  `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don't want to show its full content in a category view. That's why I introduced "excerpt".
+  -  `spinnerPattern`: By default, a spinner is applied to tell the visitor that a page/post is loading asynchronously. There are two built-in spinners, you can also turn it off.
 - `navigation`: This determines the navigation menu in header area. You can link to any thing here, even a single post. These types need to care:
   - `category`: The path must be `/category/${category-slug}`.
   - `page`: The path must be `/page/${page-slug}`.
-  - `post`: The path must be `/category/${category-slug}/${time}/${post-slug}`, time should be in the route time format.
+  - `post`: The path must be `/category/${category-slug}/${year}/${post-slug}`, time should be in the route time format.
   - `dropdown`: Used for create a sub menu. Must provide a `children` array of navigation links.
   - `outgoing`: Only used for links outside your site. New target will pop up in a new browser window or tab.
-- `pages`: Entries of your pages. Must specify the title and slug (markdown file name).
-- `categories`: Entries of your categories. Must specify the title and slug (category folder name).
-- `posts`: Entries of your posts. Must specify the title, slug (markdown file name), category slug (category folder name) and the date (in a 8-digit format).
+- `pages`: Entries of your pages. Must specify the title and slug (markdown file name, **without** extension).
+- `categories`: Entries of your categories. Must specify the title and slug (category identifier displayed in URL).
+- `posts`: Entries of your posts. Must specify the title, slug (markdown file name, **without** extension), category slug (category folder name) and the publish date (in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format, YYYY-MM-DD).

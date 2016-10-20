@@ -6,6 +6,9 @@
 
 #### Fixed
 - Error parsing $vm data before route to oops view.
+- Side menu layout issue when scroll document body.
+- Links opened in new tab got 404 error.
+- Post excerpt parse error.
 
 ### 2.0.0 - 2016-10-20
 

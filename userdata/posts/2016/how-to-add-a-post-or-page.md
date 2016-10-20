@@ -1,5 +1,5 @@
 title: How to add a post or page?
-date: 2016-04-16
+date: 2016-10-21
 ---
 ### How to create categories?
 
@@ -10,8 +10,8 @@ To create a category is simple, just add a new entry to `categories` section in 
 ```js
 categories: [
   {
-    title: 'Category Name',
-    slug: 'category-slug'
+    title: 'Category Name', // displayed in the web page
+    slug: 'category-slug'   // used in the URL
   },
   ...
 ]
@@ -21,29 +21,30 @@ categories: [
 
 ### How to add a post?
 
-- Create a sub folder in the category folder, name it in **route time format** defined in your `database.js`. This can be either year accurate or month accurate, or even day, all up to you.
+- Create yearly sub folders in the `/posts` directory, name them in **YYYY** format.
 
 ```bash
-docs
-└── posts
-    └── guide
-        └── 2016
+userdata/
+└── posts/
+    ├── 2015/
+    └── 2016/
 ```
 
 - Create a new markdown file (extension must be **md**) in the sub folder.
 
 ```bash
-docs
-└── posts
-    └── guide
-        └── 2016
-            └── how-to-add-a-post-or-page.md
+userdata/
+└── posts/
+    ├── 2015/
+    └── 2016/
+        └── how-to-add-a-post-or-page.md
 ```
 
 - Add a new entry in `posts` section.
-   - Set the file name (without extension) as the `slug` property's value.
-   - Set the category folder name as the `category` property's value.
-   - The `date` property should be in 8-digit format, representing year, month, and date of the time.
+   - The `title` field will be rendered in the web pages.
+   - Set the markdown file name (without extension) as `slug` field.
+   - Set the `category` field to the slug value of category that this post is categorized.
+   - The `date` field must be an [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format (YYYY-MM-DD).
 
 ```js
 posts: [
@@ -51,9 +52,10 @@ posts: [
     title: 'How to add a post or page?',
     slug: 'how-to-add-a-post-or-page',
     category: 'guide',
-    date: 20160416
+    date: '2016-10-21'
   },
   ...
+]
 ```
 
 ### How to write a post?
@@ -63,31 +65,32 @@ First of all, I assume you know what [Markdown](https://en.wikipedia.org/wiki/Ma
 A post's source markdown file looks like this:
 
 ```md
-title: How to add a post or page?
+# title: How to add a post or page?
 date: 2016-04-16
+category: guide
 ---
 Start your content here...
 ```
 
-- The first line is the title of the post.
-- The second line is the date, it should follow the **display time format** defined in your `database.js`.
-- The Third line is the delimiter (must be `---`) to separate your post's meta information and main content.
-- Content start from the fourth line.
-- If your post is very long and you just want to show an excerpt in the category view, you can add `<!-- more -->` in your content. Anything after that syntax is only available in the post view.
+- Technically, **all** metadata fields are optional! So you can leave it blank and it's all good. 
+- But be warned, at least keep the metadata delimiter (default value: `---`) there. Or maybe you'll run into a parse error.
+- There's one trick. If you want to hide the title in page/post view, start the title line with `#`, like in above sample.
+- For better maintain your writings, I recommend you leave some metadata.
+- If your post is very long and you just want to show an excerpt in the category view, add an excerpt delimiter (default value: `<!-- more -->`) in the content. Anything after the excerpt delimiter is only available in the post view.
 
 ### How to write a page?
 
 Adding a page is very similar to posts.
 
-- Just put the markdown file in `/docs/pages` folder.
+- Just put the markdown file in `/userdata/pages` folder.
 
 ```bash
-docs
-└── pages
+userdata/
+└── pages/
     └── all-about-vuelog.md
 ```
 
-- Add a new entry in `pages` section. Set the file name (without extension) as the `slug` property's value.
+- Add a new entry in `pages` section. Set the file name (without extension) as the `slug` field.
 
 ```js
 pages: [
@@ -96,12 +99,5 @@ pages: [
     slug: 'all-about-vuelog'
   },
   ...
-```
-
-- As a page is usually for long-term content, it doesn't need to set the time, both in database entry and source markdown file.
-
-```md
-title: All about Vuelog
----
-Start your content here...
+]
 ```

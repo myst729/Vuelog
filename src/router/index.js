@@ -35,6 +35,10 @@ if (database.config.useHomepage) {
 routes.push({ path: '/p/:p', redirect: '/blog/p/:p' })
 routes.push({ path: '*', redirect: '/oops' })
 
-const router = new VueRouter({ routes })
+const router = new VueRouter({
+  routes,
+  mode: 'hash',
+  base: '#'
+})
 
 export default router
