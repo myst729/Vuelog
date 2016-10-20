@@ -30,15 +30,17 @@ Of course! In the beginning it's experimental indeed. As I learn more about Vue 
 
 The latest version is totally rewritten. Take a look at the dependencies - Vue 2.x is a building block now:
 
-```js
-"dependencies": {
-  "fastclick": "^1.0.6",
-  "highlight.js": "^9.7.0",
-  "marked": "^0.3.6",
-  "vue": "^2.0.1",
-  "vue-resource": "^1.0.3",
-  "vue-router": "^2.0.0",
-  "vuex": "^2.0.0",
-  "vuex-router-sync": "^3.0.0"
+```json
+{
+  "dependencies": {
+    "fastclick": "^1.0.6",
+    "highlight.js": "^9.7.0",
+    "marked": "^0.3.6",
+    "vue": "^2.0.1",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^2.0.0",
+    "vuex": "^2.0.0",
+    "vuex-router-sync": "^3.0.0"
+  }
 }
 ```
