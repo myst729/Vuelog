@@ -38,7 +38,7 @@ routes.push({ path: '*', redirect: '/oops' })
 const router = new VueRouter({
   routes,
   mode: 'hash',
-  base: '#'
+  base: database.config.base + '/#/'
 })
 
 export default router
