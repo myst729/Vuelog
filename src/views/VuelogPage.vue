@@ -23,6 +23,7 @@
           }
         }
         this.oops()
+        return { markdown: '', slug: '', title: '' }
       }
     },
 

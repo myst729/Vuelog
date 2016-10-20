@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.0.1 - 2016-10-20
+
+#### Fixed
+- Error parsing $vm data before route to oops view.
+
 ### 2.0.0 - 2016-10-20
 
 #### Feature

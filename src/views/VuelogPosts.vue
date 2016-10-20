@@ -31,7 +31,7 @@
         const siblings = this.getSiblings(p, Math.ceil(collection.posts.length / postsCount), category)
         return {
           posts,
-          current: { p, label: category && collection.title },
+          current: { p, label: category ? collection.title : 'Blog' },
           prev: siblings.prev,
           next: siblings.next
         }
@@ -49,6 +49,7 @@
           return allPosts.slice(start, start + postsCount)
         }
         this.oops()
+        return []
       },
 
       getAllPosts (category) {
@@ -66,6 +67,7 @@
           }
         }
         this.oops()
+        return { posts: [], slug: '', title: '' }
       },
 
       getSiblings (p, total, category) {
@@ -92,7 +94,7 @@
 
     created () {
       const current = this.dataset.current
-      var label = current.label || 'Blog'
+      var label = current.label
       if (current.p > 1) {
         label += ` | ${current.p}`
       }

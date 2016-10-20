@@ -114,22 +114,20 @@
           }
         }
         this.oops()
+        return { posts: [], slug: '', title: '' }
       },
 
       getPostsInYear (year) {
         if (Number.isNaN(year)) {
           this.oops()
-          return
+          return { posts: [], year }
         }
         for (var i = 0; i < this.postsByYear.length; i++) {
           if (this.postsByYear[i].year === year) {
             return this.postsByYear[i]
           }
         }
-        return {
-          year,
-          posts: []
-        }
+        return { posts: [], year }
       },
 
       getAllPostsAndPages () {

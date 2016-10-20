@@ -32,6 +32,7 @@
           }
         }
         this.oops()
+        return { post: { category, slug, year, title: '', date: '', markdown: '', categoryTitle: '' }, prev: null, next: null }
       }
     },
 
