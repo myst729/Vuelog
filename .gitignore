@@ -1,7 +1,8 @@
 .DS_Store
-node_modules/
 dist/
-npm-debug.log
-selenium-debug.log
+node_modules/
 test/unit/coverage
 test/e2e/reports
+userdata/media
+npm-debug.log
+selenium-debug.log
