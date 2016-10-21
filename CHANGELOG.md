@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.0.3 - 2016-10-21
+
+#### Changed
+- Remove vue-resource from dependencies.
+
 ### 2.0.2 - 2016-10-21
 
 #### Fixed

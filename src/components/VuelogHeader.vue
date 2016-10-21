@@ -79,8 +79,8 @@
     },
 
     mounted () {
-      var menuIcon = document.querySelector('.menu-icon')
-      var sideMenu = document.querySelector('.side-menu')
+      var menuIcon = this.$el.querySelector('.menu-icon')
+      var sideMenu = this.$el.querySelector('.side-menu')
       document.body.addEventListener('click', (e) => {
         if (e.target !== menuIcon && !sideMenu.contains(e.target)) {
           this.closeSideMenu()

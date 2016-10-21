@@ -73,4 +73,4 @@ The purpose of each section:
   - `outgoing`: Only used for links outside your site. New target will pop up in a new browser window or tab.
 - `pages`: Entries of your pages. Must specify the title and slug (markdown file name, **without** extension).
 - `categories`: Entries of your categories. Must specify the title and slug (category identifier displayed in URL).
-- `posts`: Entries of your posts. Must specify the title, slug (markdown file name, **without** extension), category slug (category folder name) and the publish date (in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format, YYYY-MM-DD).
+- `posts`: Entries of your posts. Must specify the title, slug (markdown file name, **without** extension), category slug (category folder name) and the publish date (in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format, **YYYY-MM-DD**).
