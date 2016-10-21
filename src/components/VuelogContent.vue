@@ -65,14 +65,30 @@
         }
       },
 
-      loadMarkdown (path) {
-        return this.$http.get(path).then(
-          response => response.data,
-          exception => {
-            if (this.type !== 'posts') {
-              this.oops()
+      promiseRequest (method, url, header, body) {
+        return new Promise((resolve, reject) => {
+          /* global XMLHttpRequest */
+          var xhr = new XMLHttpRequest()
+          xhr.onload = () => {
+            if (xhr.status === 200) {
+              resolve(xhr.responseText)
+            } else {
+              reject(xhr.status)
             }
+          }
+          xhr.error = () => {
+            reject(xhr.status)
+          }
+          xhr.open(method, url, true)
+          Object.keys(header || {}).forEach(key => {
+            xhr.setRequestHeader(key, header[key])
           })
+          xhr.send(body)
+        })
+      },
+
+      loadMarkdown (path) {
+        return this.promiseRequest('GET', path)
       },
 
       preProcess (md) {
@@ -100,13 +116,9 @@
         // Ever thought of the GitHub API [Markdown](https://developer.github.com/v3/markdown/)?
         // Well, it may not be a good idea. The API will **silently** eat some tags, like <audio>, <video>. Do it at your own risk.
         // Want the GitHub look and feel too? Check out [sindresorhus/github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
-        return this.$http.post('https://api.github.com/markdown', { text: md, mode: 'markdown' }).then(
-          response => response.data,
-          exception => {
-            if (this.type !== 'posts') {
-              this.oops()
-            }
-          })
+        const header = { 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }
+        const body = JSON.stringify({ text: md, mode: 'markdown' })
+        return this.promiseRequest('POST', 'https://api.github.com/markdown', header, body)
       },
 
       postProcess (markup) {
@@ -124,6 +136,11 @@
         .then(this.postProcess)
         .then(markup => {
           this.content = markup
+        })
+        .catch(exception => {
+          if (this.type !== 'posts') {
+            this.oops()
+          }
         })
     }
   }
