@@ -244,10 +244,7 @@
         margin 0
 
       a
-      a:hover
-      a.router-link-active
       .side-dropdown-container > span
-      .side-dropdown a
         color #7f8c8d
         font-weight 600
         display block
@@ -267,6 +264,7 @@
           border-top 5px solid #ccc
           transition transform .3s ease-in-out
 
+      a:hover
       a.router-link-active
         color #42b983
 
