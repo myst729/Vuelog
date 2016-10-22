@@ -18,7 +18,7 @@ AngularJS (1.x) is not an option because I use it quite a lot in my daily job. I
 
 Besides the incredibly sufficient documentation, Vue has a complete line-up for developement, including scaffolding tool ([vue-cli](https://github.com/vuejs/vue-cli)), client-side routing ([vue-router](https://github.com/vuejs/vue-router)), centralized state management ([vuex](https://github.com/vuejs/vuex)), Chrome DevTools add-on ([vue-devtools](https://github.com/vuejs/vue-devtools)) and other useful tools.
 
-I've written some "toys" before but haven't got a chance for real deal. But it just doesn't attract me much. React also has its own ecosystem. Maybe I'll try it in my next project.
+I've also written some React "toys" before but never got a chance for real deal. It just doesn't attract me much. React has its own ecosystem. Maybe I'll try it in my next project.
 
 ### Who can use Vuelog?
 

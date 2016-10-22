@@ -18,9 +18,9 @@ var routes = [
   { path: '/archive/year/:year', name: 'archive-year', component: VuelogArchive },
   { path: '/blog', name: 'posts', component: VuelogPosts },
   { path: '/blog/p/:p', name: 'posts-more', component: VuelogPosts },
-  { path: '/category/:category', name: 'category', component: VuelogPosts },
-  { path: '/category/:category/p/:p', name: 'category-more', component: VuelogPosts },
-  { path: '/category/:category/:year/:slug', name: 'post', component: VuelogPost },
+  { path: '/blog/:category', name: 'category', component: VuelogPosts },
+  { path: '/blog/:category/p/:p', name: 'category-more', component: VuelogPosts },
+  { path: '/blog/:category/:year/:slug', name: 'post', component: VuelogPost },
   { path: '/page/:page', name: 'page', component: VuelogPage },
   { path: '/oops', name: 'oops', component: VuelogOops }
 ]

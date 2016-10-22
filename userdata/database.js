@@ -17,7 +17,7 @@ window.VUELOG_DATABASE = {
     {
       label: 'Guide',
       type: 'category',
-      path: '/category/guide'
+      path: '/blog/guide'
     },
     {
       label: 'About',

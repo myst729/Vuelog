@@ -22,8 +22,8 @@ window.VUELOG_DATABASE = {
   navigation: [
     { label: 'Blog', type: 'blog', path: '/blog' },
     { label: 'Archive', type: 'archive', path: '/archive' },
-    { label: 'Guide', type: 'category', path: '/category/guide' },
-    { label: 'Cheatsheet', type: 'category', path: '/category/cheatsheet' },
+    { label: 'Guide', type: 'category', path: '/blog/guide' },
+    { label: 'Cheatsheet', type: 'category', path: '/blog/cheatsheet' },
     { label: 'About', type: 'page', path: '/page/all-about-vuelog' },
     {
       label: 'Links',
@@ -66,11 +66,11 @@ The purpose of each section:
   - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don't want to show its full content in a category view. That's why I introduced "excerpt".
   - `spinnerPattern`: By default, a spinner is applied to tell the visitor that a page/post is loading asynchronously. There are two built-in spinners, you can also turn it off.
 - `navigation`: This determines the navigation menu in header area. You can link to any thing here, even a single post. These types need to care:
-  - `category`: The path must be `/category/${category-slug}`.
+  - `category`: The path must be `/blog/${category-slug}`.
   - `page`: The path must be `/page/${page-slug}`.
-  - `post`: The path must be `/category/${category-slug}/${year}/${post-slug}`, time should be in the route time format.
+  - `post`: The path must be `/blog/${category-slug}/${year}/${post-slug}`, time should be in the route time format.
   - `dropdown`: Used for create a sub menu. Must provide a `children` array of navigation links.
   - `outgoing`: Only used for links outside your site. New target will pop up in a new browser window or tab.
 - `pages`: Entries of your pages. Must specify the title and slug (markdown file name, **without** extension).
 - `categories`: Entries of your categories. Must specify the title and slug (category identifier displayed in URL).
-- `posts`: Entries of your posts. Must specify the title, slug (markdown file name, **without** extension), category slug (category folder name) and the publish date (in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format, **YYYY-MM-DD**).
+- `posts`: Entries of your posts. Must specify the title, slug (markdown file name, **without** extension), category slug and publish date (in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format, **YYYY-MM-DD**).
