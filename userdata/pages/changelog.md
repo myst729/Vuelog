@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.1.1 - 2016-11-01
+
+#### Added
+- Site brand in side menu on mobile devices.
+
 ### 2.1.0 - 2016-11-01
 
 #### Added

@@ -1,12 +1,12 @@
 <template>
   <div class="header-wrap">
     <header>
-      <div class="title">
+      <h1 class="brand">
         <router-link to="/">
           <img :src="config.logo">
           <span v-text="config.brand"></span>
         </router-link>
-      </div>
+      </h1>
       <nav class="header-menu">
         <ul>
           <li v-for="item in navigation" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
@@ -27,6 +27,7 @@
     <img class="menu-icon" src="../assets/img/menu.svg" @click="toggleSideMenu">
     <div class="side-menu" :class="{'side-menu-open': menu}">
       <ul>
+        <li class="side-brand"><h2 v-text="config.brand"></h2></li>
         <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
           <span v-if="item.type === 'dropdown' && !item.path" v-text="item.label"></span>
           <router-link v-if="item.type === 'dropdown' && item.path" :to="item.path" v-text="item.label"></router-link>
@@ -112,9 +113,10 @@
   a:hover
     text-decoration none
 
-  .title
+  .brand
     flex 1
     font-size 24px
+    margin 0
 
     a
       color #34495e
@@ -253,6 +255,13 @@
         display block
         margin 0
 
+      .side-brand
+        line-height 48px
+
+        h2
+          margin 0
+          padding-left .7em
+
       a
       span
         // font-weight 600
@@ -338,7 +347,7 @@
       position relative
       z-index 8000
 
-    .title
+    .brand
       a
       img
         display block
@@ -353,7 +362,7 @@
         border none
         padding 0
 
-      .title
+      .brand
         display none
 
     nav
