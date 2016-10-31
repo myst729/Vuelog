@@ -2,6 +2,12 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.0.4 - 2016-10-31
+
+#### Added
+- Dropdown navigation parent can be linkable now.
+- Unfinished async requests will be cancelled before leave the page.
+
 ### 2.0.3 - 2016-10-21
 
 #### Changed

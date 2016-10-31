@@ -37,6 +37,7 @@ window.VUELOG_DATABASE = {
     {
       label: 'Links',
       type: 'dropdown',
+      // path: 'dropdown can be linkable too',
       children: [
         {
           label: 'Weibo',

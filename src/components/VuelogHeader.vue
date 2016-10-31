@@ -10,7 +10,8 @@
       <nav class="header-menu">
         <ul>
           <li v-for="item in navigation" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
-            <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
+            <span v-if="item.type === 'dropdown' && !item.path" v-text="item.label"></span>
+            <router-link v-if="item.type === 'dropdown' && item.path" :to="item.path" v-text="item.label"></router-link>
             <ul v-if="item.type === 'dropdown'" class="nav-dropdown">
               <li v-for="child in item.children">
                 <a v-if="child.type === 'outgoing'" :href="child.link" v-text="child.label" target="_blank" rel="noopener noreferrer"></a>
@@ -27,7 +28,8 @@
     <div class="side-menu" :class="{'side-menu-open': menu}">
       <ul>
         <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
-          <span v-if="item.type === 'dropdown'" v-text="item.label"></span>
+          <span v-if="item.type === 'dropdown' && !item.path" v-text="item.label"></span>
+          <router-link v-if="item.type === 'dropdown' && item.path" :to="item.path" v-text="item.label"></router-link>
           <ul v-if="item.type === 'dropdown'" class="side-dropdown">
             <li v-for="child in item.children">
               <a v-if="child.type === 'outgoing'" :href="child.link" v-text="child.label" target="_blank" rel="noopener noreferrer"></a>
@@ -151,6 +153,7 @@
       &.router-link-active
         color #34495e
         border-bottom 3px solid #42b983
+        padding-bottom 2px
 
   .nav-dropdown
     position absolute
@@ -175,13 +178,17 @@
       &:hover
         color #42b983
         border-bottom none
+        padding 0 1.4em
 
   .nav-dropdown-container
+    padding-right 14px
     position relative
 
+    > a
     > span
       color #7f8c8d
       font-weight 400
+      position relative
 
       &:after
         content ''
@@ -195,6 +202,9 @@
         border-right 4px solid transparent
         border-top 5px solid #ccc
         transition transform .3s ease-in-out
+        position absolute
+        right -14px
+        top 9px
 
       &:hover
         color #34495e
@@ -203,6 +213,7 @@
       .nav-dropdown
         left -15px
 
+      > a:after
       > span:after
         transform rotateZ(180deg)
 
@@ -244,14 +255,21 @@
         margin 0
 
       a
-      .side-dropdown-container > span
-        color #7f8c8d
-        font-weight 600
+      span
+        // font-weight 600
         display block
         border-bottom none
         padding 0 1em
 
-      .side-dropdown-container > span:after
+      a
+        color #34495e
+
+      span
+        color #7f8c8d
+
+      .side-dropdown-container
+        > a:after
+        > span:after
           content ''
           display inline-block
           vertical-align middle
@@ -267,6 +285,7 @@
       a:hover
       a.router-link-active
         color #42b983
+        padding-bottom 0
 
       .side-dropdown
         padding 0 0 0 15px

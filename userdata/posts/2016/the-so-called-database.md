@@ -28,6 +28,7 @@ window.VUELOG_DATABASE = {
     {
       label: 'Links',
       type: 'dropdown',
+      // path: 'dropdown can be linkable too',
       children: [
         { label: 'Weibo', type: 'outgoing', link: 'http://weibo.com/myst729' },
         { label: 'GitHub', type: 'outgoing', link: 'https://github.com/myst729' },
@@ -69,7 +70,7 @@ The purpose of each section:
   - `category`: The path must be `/blog/${category-slug}`.
   - `page`: The path must be `/page/${page-slug}`.
   - `post`: The path must be `/blog/${category-slug}/${year}/${post-slug}`, time should be in the route time format.
-  - `dropdown`: Used for create a sub menu. Must provide a `children` array of navigation links.
+  - `dropdown`: Create a sub menu. Must provide a `children` array of navigation links. Parent item can be linkable too, depends on whether `path` field is defined or not.
   - `outgoing`: Only used for links outside your site. New target will pop up in a new browser window or tab.
 - `pages`: Entries of your pages. Must specify the title and slug (markdown file name, **without** extension).
 - `categories`: Entries of your categories. Must specify the title and slug (category identifier displayed in URL).

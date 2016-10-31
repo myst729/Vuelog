@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="../assets/img/logo-256.svg">
+    <img src="../assets/img/vuelog.svg">
     <h1 v-text="sys.name"></h1>
     <p v-text="sys.description"></p>
     <a class="button" :href="sys.release" v-text="'Download v' + sys.version" target="_blank" rel="noopener noreferrer"></a>

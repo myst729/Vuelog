@@ -47,7 +47,8 @@
     data () {
       return {
         showTitle: true,
-        content: null
+        content: null,
+        xhr: null
       }
     },
 
@@ -66,17 +67,19 @@
       },
 
       promiseRequest (method, url, header, body) {
+        var self = this
         return new Promise((resolve, reject) => {
           /* global XMLHttpRequest */
-          var xhr = new XMLHttpRequest()
+          var xhr = self.xhr = new XMLHttpRequest()
           xhr.onload = () => {
+            self.xhr = null
             if (xhr.status === 200) {
               resolve(xhr.responseText)
             } else {
               reject(xhr.status)
             }
           }
-          xhr.error = () => {
+          xhr.onerror = () => {
             reject(xhr.status)
           }
           xhr.open(method, url, true)
@@ -142,6 +145,12 @@
             this.oops()
           }
         })
+    },
+
+    beforeDestroy () {
+      if (this.xhr && this.xhr.readyState < 4) {
+        this.xhr.abort()
+      }
     }
   }
 </script>
@@ -149,6 +158,8 @@
 <style lang="stylus" scoped>
   .spinner
     display block
+    height 48px
+    width 48px
     margin 100px auto
 
   .loading-enter-active
