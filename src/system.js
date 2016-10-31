@@ -4,7 +4,7 @@ const system = {
   version: '2.1.0',
   author: 'Leo Deng',
   project: 'https://github.com/myst729/Vuelog',
-  release: 'https://github.com/myst729/Vuelog/releases/tag/2.0.3',
+  release: 'https://github.com/myst729/Vuelog/releases/tag/2.1.0',
   logo: './static/vuelog.svg'
 }
 
