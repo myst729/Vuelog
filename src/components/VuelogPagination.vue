@@ -26,7 +26,13 @@
     padding-top 5px
     float left
 
+    &:before
+      content '\2190 '
+
   .next
     padding-top 5px
     float right
+
+    &:after
+      content ' \2192'
 </style>

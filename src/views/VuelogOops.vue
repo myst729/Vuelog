@@ -1,8 +1,8 @@
 <template>
   <div class="oops">
-    <h1>Oops!</h1>
-    <p>The page you were looking for doesn't exist.</p>
-    <router-link class="button" to="/">Take Me Home</router-link>
+    <h1 v-text="$t('oops.heading')"></h1>
+    <p v-text="$t('oops.description')"></p>
+    <router-link class="button" to="/" v-text="$t('oops.tip')"></router-link>
   </div>
 </template>
 

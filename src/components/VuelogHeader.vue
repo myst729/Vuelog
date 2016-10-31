@@ -114,7 +114,6 @@
 
   .title
     flex 1
-    font-family 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
     font-size 24px
 
     a

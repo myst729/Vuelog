@@ -2,9 +2,9 @@
   <div class="home">
     <img src="../assets/img/vuelog.svg">
     <h1 v-text="sys.name"></h1>
-    <p v-text="sys.description"></p>
-    <a class="button" :href="sys.release" v-text="'Download v' + sys.version" target="_blank" rel="noopener noreferrer"></a>
-    <a class="button github" :href="sys.project" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <p v-text="$t('home.description')"></p>
+    <a class="button" :href="sys.release" v-text="$t('home.download', [sys.version])" target="_blank" rel="noopener noreferrer"></a>
+    <a class="button github" :href="sys.project" target="_blank" rel="noopener noreferrer" v-text="$t('home.github')"></a>
   </div>
 </template>
 
@@ -33,7 +33,6 @@
     margin-top 75px
 
   h1
-    font-family 'Dosis', 'Source Sans Pro', 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
     font-weight 300
     font-size 60px
     margin-top 16px

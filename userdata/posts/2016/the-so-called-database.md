@@ -1,7 +1,7 @@
 title: The (so-called) database
 date: 2016-10-20
 ---
-Let's take a look at the most important file of your Vuelog deployment - `database.js`:
+Let’s take a look at the most important file of your Vuelog deployment - `database.js`:
 
 ```js
 // DO NOT CHANGE THE GLOBAL VARIABLE NAME
@@ -12,6 +12,7 @@ window.VUELOG_DATABASE = {
     logo: './static/vuelog.svg',
     home: 'https://myst729.github.io/Vuelog/',
     base: '/Vuelog',                   // The root path to the domain that serves your site. Set to `''` if your site is under domain root.
+    lang: 'cn',                        // Vuelog interface language. Currently only support 'cn' and 'en'.
     useHomepage: false,                // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
     postsCount: 3,                     // Number of posts listed in a blog/category view.
     metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.
@@ -60,11 +61,12 @@ window.VUELOG_DATABASE = {
 
 The purpose of each section:
 
-- `config`: Overall settings of your site. Let's take a look at some confusing fields.
+- `config`: Overall settings of your site. Let’s take a look at some confusing fields.
   - `base`: This is very important if your site is **NOT** served under your domain root! Start with `/`, and **without** trailing `/`.
+  - `lang`: The language applied to render Vuelog interface. Currently only Simplified Chinese (`'cn'`) and English (`'en'`) are available, contributors are welcome!
   - `useHomepage`: Set to `true` if you want a dedicated home page. However, to customize the home page you need to fork the Vuelog repository.
   - `metadataDelimiter`: Metadata are not meant to render the page, so they are really optional. They are recommended for better maintenance of your markdown source files.
-  - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don't want to show its full content in a category view. That's why I introduced "excerpt".
+  - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don’t want to show its full content in a category view. That’s why I introduced “excerpt”.
   - `spinnerPattern`: By default, a spinner is applied to tell the visitor that a page/post is loading asynchronously. There are two built-in spinners, you can also turn it off.
 - `navigation`: This determines the navigation menu in header area. You can link to any thing here, even a single post. These types need to care:
   - `category`: The path must be `/blog/${category-slug}`.

@@ -6,6 +6,7 @@ window.VUELOG_DATABASE = {
     logo: './static/vuelog.svg',
     home: 'https://myst729.github.io/Vuelog/',
     base: '/Vuelog',                   // The root path to the domain that serves your site. Set to `''` if your site is under domain root.
+    lang: 'cn',                        // Vuelog interface language. Currently only support 'cn' and 'en'.
     useHomepage: false,                // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
     postsCount: 3,                     // Number of posts listed in a blog/category view.
     metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.

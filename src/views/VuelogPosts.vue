@@ -86,8 +86,8 @@
         }
 
         return {
-          prev: prevRoute && { label: '&laquo; Prev', route: prevRoute },
-          next: nextRoute && { label: 'Next &raquo;', route: nextRoute }
+          prev: prevRoute && { label: 'Page ' + prevP, route: prevRoute },
+          next: nextRoute && { label: 'Page ' + nextP, route: nextRoute }
         }
       }
     },

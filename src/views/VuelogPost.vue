@@ -46,8 +46,8 @@
         const nextParams = (i + 1 < posts.length) ? posts[i + 1] : null
 
         return {
-          prev: prevParams && { label: '&laquo; ' + prevParams.title, route: {name: 'post', params: prevParams} },
-          next: nextParams && { label: nextParams.title + ' &raquo;', route: {name: 'post', params: nextParams} }
+          prev: prevParams && { label: prevParams.title, route: {name: 'post', params: prevParams} },
+          next: nextParams && { label: nextParams.title, route: {name: 'post', params: nextParams} }
         }
       }
     },

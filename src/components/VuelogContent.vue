@@ -8,7 +8,7 @@
           <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="metadata.title"></router-link>
         </h2>
         <h4 class="content-meta" v-if="type !== 'page'">
-          <span>{{ metadata.date | meaningfulTime }}</span>
+          <span>{{ metadata.date }}</span>
           <span> / </span>
           <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="metadata.categoryTitle"></router-link>
         </h4>
@@ -25,6 +25,7 @@
 <script>
   import hljs from 'highlight.js'
   import marked from 'marked'
+  import { meaningfulTime } from '../helpers'
   import VuelogSpinner from './VuelogSpinner'
   import VuelogPagination from '../components/VuelogPagination'
 
@@ -41,6 +42,10 @@
     computed: {
       config () {
         return this.$store.getters.config
+      },
+
+      time () {
+        return meaningfulTime(this.metadata.date)
       }
     },
 
@@ -154,6 +159,11 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  @import '../assets/styles/content';
+  @import '../assets/styles/highlight';
+</style>
 
 <style lang="stylus" scoped>
   .spinner

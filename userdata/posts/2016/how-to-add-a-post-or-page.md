@@ -62,7 +62,7 @@ posts: [
 
 First of all, I assume you know what [Markdown](https://en.wikipedia.org/wiki/Markdown) is, and how to write something with it. So we are not going to talk about markdown fundamentals.
 
-A post's source markdown file looks like this:
+A post’s source markdown file looks like this:
 
 ```md
 # title: How to add a post or page?
@@ -72,9 +72,9 @@ category: guide
 Start your content here...
 ```
 
-- Technically, **all** metadata fields are optional! So you can leave it blank and it's all good. 
-- But be warned, at least keep the metadata delimiter (default value: `---`) there. Or maybe you'll run into a parse error.
-- There's one trick. If you want to hide the title in page/post view, start the title line with `#`, like in above sample.
+- Technically, **all** metadata fields are optional! So you can leave it blank and it’s all good. 
+- But be warned, at least keep the metadata delimiter (default value: `---`) there. Or maybe you’ll run into a parse error.
+- There’s one trick. If you want to hide the title in page/post view, start the title line with `#`, like in above sample.
 - For better maintain your writings, I recommend you leave some metadata.
 - If your post is very long and you just want to show an excerpt in the category view, add an excerpt delimiter (default value: `<!-- more -->`) in the content. Anything after the excerpt delimiter is only available in the post view.
 
