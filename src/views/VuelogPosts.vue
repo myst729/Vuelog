@@ -31,7 +31,7 @@
         const siblings = this.getSiblings(p, Math.ceil(collection.posts.length / postsCount), category)
         return {
           posts,
-          current: { p, label: category ? collection.title : 'Blog' },
+          current: { p, label: category ? collection.title : this.$t('reading.blog') },
           prev: siblings.prev,
           next: siblings.next
         }
@@ -86,19 +86,19 @@
         }
 
         return {
-          prev: prevRoute && { label: 'Page ' + prevP, route: prevRoute },
-          next: nextRoute && { label: 'Page ' + nextP, route: nextRoute }
+          prev: prevRoute && { label: this.$t('reading.pagination', [prevP]), route: prevRoute },
+          next: nextRoute && { label: this.$t('reading.pagination', [nextP]), route: nextRoute }
         }
       }
     },
 
     created () {
       const current = this.dataset.current
-      var label = current.label
+      var title = current.label
       if (current.p > 1) {
-        label += ` | ${current.p}`
+        title += ` | ${this.$t('reading.pagination', [current.p])}`
       }
-      this.$store.dispatch('DOCUMENT_TITLE', label)
+      this.$store.dispatch('DOCUMENT_TITLE', title)
     }
   }
 </script>

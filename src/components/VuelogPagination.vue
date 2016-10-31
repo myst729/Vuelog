@@ -1,10 +1,10 @@
 <template>
   <div class="pagination">
     <div class="prev" v-if="prev">
-      <router-link :to="prev.route" v-html="prev.label"></router-link>
+      <router-link :to="prev.route" v-text="prev.label"></router-link>
     </div>
     <div class="next" v-if="next">
-      <router-link :to="next.route" v-html="next.label"></router-link>
+      <router-link :to="next.route" v-text="next.label"></router-link>
     </div>
   </div>
 </template>

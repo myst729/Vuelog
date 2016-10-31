@@ -40,7 +40,7 @@
           <router-link v-if="item.type !== 'dropdown' && item.type !== 'outgoing'" :to="item.path" v-text="item.label"></router-link>
         </li>
       </ul>
-      <footer>Built with <span>&#10084;</span> and <a :href="system.project" v-text="system.name" target="_blank" rel="noopener noreferrer"></a></footer>
+      <footer v-html="$t('credit', [$options._scopeId, system.project, system.name])"></footer>
     </div>
     <transition name="backdrop">
       <div class="side-menu-backdrop" v-if="menu"></div>

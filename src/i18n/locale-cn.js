@@ -6,27 +6,40 @@ const cn = {
     github: 'GitHub'
   },
 
-  archive: {},
-
-  page: {},
-
-  post: {},
-
-  posts: {},
-
   oops: {
-    heading: '啊噢！',
+    title: '啊哦！',
     description: '你要找的页面不见了～',
     tip: '回到首页'
   },
 
-  header: {},
+  archive: {
+    title: '归档',
+    empty: '没有文章。',
+    inCategory: '归入目录 <q>{0}</q> 的文章：',
+    inYear: '{0} 年的文章：',
+    byCategory: '按目录归档：',
+    byYear: '按时间归档：',
+    pages: '页面：'
+  },
 
-  footer: {},
+  reading: {
+    blog: '日志',
+    continued: '继续阅读……',
+    pagination: '第 {0} 页'
+  },
 
-  content: {},
+  time: {
+    future: '穿越了 ( {iso} )',
+    yearsAgo: '{diff} 年前 ( {iso} )',
+    lastYear: '去年 ( {iso} )',
+    monthsAgo: '{diff} 个月前 ( {iso} )',
+    lastMonth: '上个月 ( {iso} )',
+    daysAgo: '{diff} 天前 ( {iso} )',
+    yesterday: '昨天 ( {iso} )',
+    today: '今天 ( {iso} )'
+  },
 
-  pagination: {}
+  credit: '<a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a> 驱动，用 <span {0}>&#10084;</span> 构筑'
 }
 
 export default cn

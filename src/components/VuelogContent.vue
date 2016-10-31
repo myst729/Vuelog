@@ -8,13 +8,14 @@
           <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="metadata.title"></router-link>
         </h2>
         <h4 class="content-meta" v-if="type !== 'page'">
-          <span>{{ metadata.date }}</span>
+          <span v-text="$t(time.key, time.values)"></span>
+          <!--<span>{{ time }}</span>-->
           <span> / </span>
           <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="metadata.categoryTitle"></router-link>
         </h4>
         <div class="content-container" v-html="content"></div>
         <div v-if="type === 'posts'" class="continue-reading">
-          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}">continue reading ...</router-link>
+          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="$t('reading.continued')"></router-link>
         </div>
         <vuelog-pagination v-if="type === 'post' && navs" :prev="navs.prev" :next="navs.next"></vuelog-pagination>
       </div>

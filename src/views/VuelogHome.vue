@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img src="../assets/img/vuelog.svg">
-    <h1 v-text="sys.name"></h1>
+    <h1 v-text="$t('home.name')"></h1>
     <p v-text="$t('home.description')"></p>
     <a class="button" :href="sys.release" v-text="$t('home.download', [sys.version])" target="_blank" rel="noopener noreferrer"></a>
     <a class="button github" :href="sys.project" target="_blank" rel="noopener noreferrer" v-text="$t('home.github')"></a>

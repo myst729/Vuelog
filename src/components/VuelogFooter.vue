@@ -1,5 +1,5 @@
 <template>
-  <footer>Built with <span>&#10084;</span> and <a :href="system.project" v-text="system.name" target="_blank" rel="noopener noreferrer"></a></footer>
+  <footer v-html="$t('credit', [$options._scopeId, system.project, system.name])"></footer>
 </template>
 
 <script>

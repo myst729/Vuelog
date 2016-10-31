@@ -1,6 +1,6 @@
 <template>
   <div class="oops">
-    <h1 v-text="$t('oops.heading')"></h1>
+    <h1 v-text="$t('oops.title')"></h1>
     <p v-text="$t('oops.description')"></p>
     <router-link class="button" to="/" v-text="$t('oops.tip')"></router-link>
   </div>
@@ -11,7 +11,7 @@
     name: 'vuelog-oops-view',
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', 'Oops!')
+      this.$store.dispatch('DOCUMENT_TITLE', this.$t('oops.title'))
     }
   }
 </script>
