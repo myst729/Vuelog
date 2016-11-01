@@ -263,7 +263,6 @@
 
       a
       span
-        font-weight 600
         display block
         border-bottom none
         padding 0 1em
