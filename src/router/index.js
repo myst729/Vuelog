@@ -45,4 +45,12 @@ const router = new VueRouter({
   base: database.config.base + '/#/'
 })
 
+router.beforeEach((to, from, next) => {
+  if (from.query.lang && !to.query.lang) {
+    next(to.fullPath + '?lang=' + from.query.lang)
+  } else {
+    next()
+  }
+})
+
 export default router

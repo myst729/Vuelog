@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import system from '../system'
+import { langs } from '../i18n'
 import * as database from 'database'
 
 Vue.use(Vuex)
@@ -8,6 +9,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     title: '',
+    lang: '',
     menu: false,
     system,
     database
@@ -17,6 +19,11 @@ const store = new Vuex.Store({
     DOCUMENT_TITLE: ({ commit, state }, title) => {
       const documentTitle = title ? (state.database.config.brand + ' | ' + title) : state.database.config.brand
       commit('SET_DOCUMENT_TITLE', { title: documentTitle })
+    },
+
+    SYSTEM_LANGUAGE: ({ commit, state }, language) => {
+      const lang = langs.indexOf(language) > -1 ? language : state.database.config.lang
+      commit('SET_SYSTEM_LANGUAGE', { lang })
     },
 
     SIDE_MENU: ({ commit, state }, visibility) => {
@@ -29,6 +36,11 @@ const store = new Vuex.Store({
       state.title = title
     },
 
+    SET_SYSTEM_LANGUAGE: (state, { lang }) => {
+      state.lang = lang
+      Vue.config.lang = lang
+    },
+
     TOGGLE_SIDE_MENU: (state, { visibility }) => {
       state.menu = visibility
     }
@@ -36,6 +48,8 @@ const store = new Vuex.Store({
 
   getters: {
     title: (state) => state.title,
+
+    lang: (state) => state.lang,
 
     menu: (state) => state.menu,
 

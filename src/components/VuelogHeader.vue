@@ -41,7 +41,6 @@
           <router-link v-if="item.type !== 'dropdown' && item.type !== 'outgoing'" :to="item.path" v-text="item.label"></router-link>
         </li>
       </ul>
-      <footer v-html="$t('credit', [$options._scopeId, system.project, system.name])"></footer>
     </div>
     <transition name="backdrop">
       <div class="side-menu-backdrop" v-if="menu"></div>
@@ -249,7 +248,7 @@
       height 50%
       overflow-y auto
       padding-top 60px
-      padding-bottom 40px
+      padding-bottom 10px
 
       li
         display block
@@ -264,7 +263,7 @@
 
       a
       span
-        // font-weight 600
+        font-weight 600
         display block
         border-bottom none
         padding 0 1em
@@ -298,21 +297,8 @@
       .side-dropdown
         padding 0 0 0 15px
 
-    footer
-      color #7f8c8d
-      font-size 14px
-      text-align center
-      line-height 40px
-      height 40px
-      width 260px
-      position absolute
-      left 0
-      bottom 50%
-
-      span
-        color #f66
-
   .side-menu-backdrop
+    display none
     background rgba(0, 0, 0, .25)
     position fixed
     top 0
@@ -376,4 +362,7 @@
 
     .side-menu-open
       transform translate(0, 0)
+
+    .side-menu-backdrop
+      display block
 </style>

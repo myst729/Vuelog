@@ -35,14 +35,28 @@
         this.$store.dispatch('SIDE_MENU', false)
       },
 
+      switchLang (lang) {
+        this.$store.dispatch('SYSTEM_LANGUAGE', lang)
+      },
+
       resetScroll () {
         window.scrollTo(0, 0)
       }
     },
 
+    created () {
+      this.switchLang(this.$route.query.lang)
+    },
+
     watch: {
       title (newVal, oldVal) {
         document.title = newVal
+      },
+
+      $route (to, from) {
+        if (to.query.lang !== from.query.lang) {
+          this.switchLang(to.query.lang)
+        }
       }
     }
   }

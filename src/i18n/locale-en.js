@@ -24,7 +24,7 @@ const en = {
 
   reading: {
     blog: 'Blog',
-    continued: 'continue reading ...',
+    continued: 'Continue reading ...',
     pagination: 'Page {0}'
   },
 
@@ -37,6 +37,12 @@ const en = {
     daysAgo: '{diff} days ago ( {iso} )',
     yesterday: 'Yesterday ( {iso} )',
     today: 'Today ( {iso} )'
+  },
+
+  lang: {
+    switch: 'Language:',
+    cn: 'Simplified Chinese',
+    en: 'English'
   },
 
   credit: 'Built with <span {0}>&#10084;</span> and <a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a>'

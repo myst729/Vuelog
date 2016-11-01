@@ -1,10 +1,19 @@
 <template>
-  <footer v-html="$t('credit', [$options._scopeId, system.project, system.name])"></footer>
+  <footer>
+    <div v-html="$t('credit', [$options._scopeId, system.project, system.name])"></div>
+    <vuelog-language class="lang"></vuelog-language>
+  </footer>
 </template>
 
 <script>
+  import VuelogLanguage from './VuelogLanguage'
+
   export default {
     name: 'vuelog-footer',
+
+    components: {
+      VuelogLanguage
+    },
 
     computed: {
       system () {
@@ -23,6 +32,7 @@
     width 900px
     padding 20px 0
     text-align center
+    position relative
 
   span
     color #f66
@@ -30,7 +40,20 @@
   a:hover
     text-decoration none
 
+  .lang
+    position absolute
+    right 10px
+    top 20px
+
   @media screen and (max-width: 999px)
     footer
-      display none
+      padding 10px 20px
+      width 100%
+
+    div
+      float left
+
+    .lang
+      position static
+      float right
 </style>
