@@ -4,8 +4,8 @@ import * as database from 'database'
 import * as locales from './locales'
 
 Vue.use(VueI18n)
-Vue.config.lang = database.config.lang
 
+const lang = database.config.lang
 const langs = Object.keys(locales)
 
-export { langs, locales }
+export { lang, langs, locales }
