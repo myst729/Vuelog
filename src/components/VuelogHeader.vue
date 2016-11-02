@@ -83,9 +83,14 @@
     mounted () {
       var menuIcon = this.$el.querySelector('.menu-icon')
       var sideMenu = this.$el.querySelector('.side-menu')
-      document.body.addEventListener('click', (e) => {
-        if (e.target !== menuIcon && !sideMenu.contains(e.target)) {
+      document.body.addEventListener('click', e => {
+        if (this.menu && e.target !== menuIcon && !sideMenu.contains(e.target)) {
           this.closeSideMenu()
+        }
+      })
+      document.body.addEventListener('touchmove', e => {
+        if (this.menu) {
+          e.preventDefault()
         }
       })
     }
@@ -152,6 +157,7 @@
       &:hover
       &.router-link-active
         color #34495e
+        font-weight 600
         border-bottom 3px solid #42b983
         padding-bottom 2px
 
@@ -232,7 +238,7 @@
     flex-direction column
     background #f7f7f7
     box-shadow 0 0 10px rgba(0, 0, 0, .25)
-    height 200%
+    height 100%
     width 260px
     padding 0 15px
     overflow-x hidden
@@ -245,7 +251,7 @@
     transition transform .4s cubic-bezier(.4, 0, 0, 1)
 
     ul
-      height 50%
+      height 100%
       overflow-y auto
       padding-top 60px
       padding-bottom 10px
@@ -303,7 +309,7 @@
     top 0
     left 0
     right 0
-    bottom -100%
+    bottom 0
     z-index 6000
 
   .backdrop-enter-active
