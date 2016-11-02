@@ -131,7 +131,7 @@
       },
 
       postProcess (markup) {
-        if (this.type === 'posts') {
+        if (this.type === 'posts' && this.config.excerptDelimiter) {
           return markup.split(this.config.excerptDelimiter)[0]
         }
         return markup

@@ -66,7 +66,7 @@ The purpose of each section:
   - `lang`: The language applied to render Vuelog interface. Currently only Simplified Chinese (`'cn'`) and English (`'en'`) are available, contributors are welcome!
   - `useHomepage`: Set to `true` if you want a dedicated home page. However, to customize the home page you need to fork the Vuelog repository.
   - `metadataDelimiter`: Metadata are not meant to render the page, so they are really optional. They are recommended for better maintenance of your markdown source files.
-  - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don’t want to show its full content in a category view. That’s why I introduced “excerpt”.
+  - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don’t want to show its full content in a category view. That’s why “excerpt” was introduced. Set to empty string will suppress this feature.
   - `spinnerPattern`: By default, a spinner is applied to tell the visitor that a page/post is loading asynchronously. There are two built-in spinners, you can also turn it off.
 - `navigation`: This determines the navigation menu in header area. You can link to any thing here, even a single post. These types need to care:
   - `category`: The path must be `/blog/${category-slug}`.
