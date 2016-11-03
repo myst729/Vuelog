@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch macOS Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "url": "http://localhost:8080"
+    },
+    {
+      "name": "Attach macOS Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "port": 9222
+    }
+  ]
+}
