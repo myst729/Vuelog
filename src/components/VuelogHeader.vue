@@ -156,10 +156,11 @@
 
       &:hover
       &.router-link-active
-        color #34495e
-        font-weight 600
         border-bottom 3px solid #42b983
         padding-bottom 2px
+
+      &.router-link-active
+        color #34495e
 
   .nav-dropdown
     position absolute
@@ -211,9 +212,6 @@
         position absolute
         right -14px
         top 9px
-
-      &:hover
-        color #34495e
 
     &:hover
       .nav-dropdown
@@ -298,6 +296,9 @@
       a.router-link-active
         color #42b983
         padding-bottom 0
+
+      a.router-link-active
+        font-weight 600
 
       .side-dropdown
         padding 0 0 0 15px
