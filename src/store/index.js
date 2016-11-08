@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import system from '../system'
 import { langs } from '../i18n'
+import system from './system'
 import * as database from 'database'
 
 Vue.use(Vuex)

@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch macOS Chrome",
+      "name": "Launch Chrome",
       "type": "chrome",
       "request": "launch",
       "webRoot": "${workspaceRoot}",
@@ -10,7 +10,7 @@
       "url": "http://localhost:8080"
     },
     {
-      "name": "Attach macOS Chrome",
+      "name": "Attach Chrome",
       "type": "chrome",
       "request": "attach",
       "webRoot": "${workspaceRoot}",
