@@ -45,6 +45,7 @@ userdata/
    - Set the markdown file name (without extension) as `slug` field.
    - Set the `category` field to the slug value of category that this post is categorized.
    - The `date` field must be an [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format (YYYY-MM-DD).
+   - There’re two optional fields: `titleless` and `commentless`. If you want to hide the title in page/post view, set `titleless` to `true`. If you want to disable comments for the particular page or post, set `commentless` to `true`.
 
 ```js
 posts: [
@@ -52,7 +53,9 @@ posts: [
     title: 'How to add a post or page?',
     slug: 'how-to-add-a-post-or-page',
     category: 'guide',
-    date: '2016-10-21'
+    date: '2016-10-21',
+    titleless: true, // optional
+    commentless: true // optional
   },
   ...
 ]
@@ -65,7 +68,7 @@ First of all, I assume you know what [Markdown](https://en.wikipedia.org/wiki/Ma
 A post’s source markdown file looks like this:
 
 ```md
-# title: How to add a post or page?
+title: How to add a post or page?
 date: 2016-04-16
 category: guide
 ---
@@ -74,7 +77,6 @@ Start your content here...
 
 - Technically, **all** metadata fields are optional! So you can leave it blank and it’s all good. 
 - But be warned, at least keep the metadata delimiter (default value: `---`) there. Or maybe you’ll run into a parse error.
-- There’s one trick. If you want to hide the title in page/post view, start the title line with `#`, like in above sample.
 - For better maintain your writings, I recommend you leave some metadata.
 - If your post is very long and you just want to show an excerpt in the category view, add an excerpt delimiter (default value: `<!-- more -->`) in the content. Anything after the excerpt delimiter is only available in the post view.
 

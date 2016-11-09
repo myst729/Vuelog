@@ -3,13 +3,12 @@
     <transition name="loading" mode="out-in" appear>
       <vuelog-spinner class="spinner" v-if="!content" key="spinner" :pattern="config.spinnerPattern"></vuelog-spinner>
       <div class="content-body" v-if="content" key="content">
-        <h1 class="content-title" v-if="type !== 'posts' && showTitle" v-text="metadata.title"></h1>
+        <h1 class="content-title" v-if="type !== 'posts' && !metadata.titleless" v-text="metadata.title"></h1>
         <h2 class="content-title" v-if="type === 'posts'">
           <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="metadata.title"></router-link>
         </h2>
         <h4 class="content-meta" v-if="type !== 'page'">
           <span v-text="$t(time.key, time.values)"></span>
-          <!--<span>{{ time }}</span>-->
           <span> / </span>
           <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="metadata.categoryTitle"></router-link>
         </h4>
@@ -17,7 +16,6 @@
         <div v-if="type === 'posts'" class="continue-reading">
           <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="$t('reading.continued')"></router-link>
         </div>
-        <vuelog-pagination v-if="type === 'post' && navs" :prev="navs.prev" :next="navs.next"></vuelog-pagination>
       </div>
     </transition>
   </div>
@@ -28,16 +26,14 @@
   import marked from 'marked'
   import { meaningfulTime } from '../helpers'
   import VuelogSpinner from './VuelogSpinner'
-  import VuelogPagination from '../components/VuelogPagination'
 
   export default {
     name: 'vuelog-content',
 
-    props: ['type', 'metadata', 'navs'],
+    props: ['type', 'metadata'],
 
     components: {
-      VuelogSpinner,
-      VuelogPagination
+      VuelogSpinner
     },
 
     computed: {
@@ -52,7 +48,6 @@
 
     data () {
       return {
-        showTitle: true,
         content: null,
         xhr: null
       }
@@ -61,15 +56,6 @@
     methods: {
       oops () {
         this.$router.replace('/oops')
-      },
-
-      toggleTitleVisibility (metadata) {
-        for (var i = 0; i < metadata.length; i++) {
-          if (/#\s*title:/.test(metadata[i])) {
-            this.showTitle = false
-            return
-          }
-        }
       },
 
       promiseRequest (method, url, header, body) {
@@ -103,8 +89,6 @@
       preProcess (md) {
         const metadataDelimiter = this.config.metadataDelimiter
         const metadataPosition = md.indexOf(metadataDelimiter)
-        var metadata = md.slice(0, metadataPosition).split('\n')
-        this.toggleTitleVisibility(metadata)
         return md.slice(metadataPosition + metadataDelimiter.length)
       },
 

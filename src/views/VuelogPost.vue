@@ -1,20 +1,30 @@
 <template>
   <div class="post">
-    <vuelog-content class="post-body" :type="'post'" :metadata="dataset.post" :navs="dataset"></vuelog-content>
+    <vuelog-content class="post-body" :type="'post'" :metadata="dataset.post"></vuelog-content>
+    <vue-disqus class="comments" v-if="config.disqusShortname && !dataset.post.commentless" :shortname="config.disqusShortname"></vue-disqus>
+    <vuelog-pagination :prev="dataset.prev" :next="dataset.next"></vuelog-pagination>
   </div>
 </template>
 
 <script>
+  import VueDisqus from 'vue-disqus'
   import VuelogContent from '../components/VuelogContent'
+  import VuelogPagination from '../components/VuelogPagination'
 
   export default {
     name: 'vuelog-post-view',
 
     components: {
-      VuelogContent
+      VueDisqus,
+      VuelogContent,
+      VuelogPagination
     },
 
     computed: {
+      config () {
+        return this.$store.getters.config
+      },
+
       dataset () {
         const category = this.$route.params.category
         const slug = this.$route.params.slug
@@ -64,4 +74,7 @@
     flex 1
     display flex
     flex-direction column
+
+  .comments
+    padding-bottom 10px
 </style>

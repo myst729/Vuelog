@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div v-html="$t('credit', [$options._scopeId, system.project, system.name])"></div>
-    <vuelog-language class="lang"></vuelog-language>
+    <vuelog-language class="lang" v-if="config.switchLang"></vuelog-language>
   </footer>
 </template>
 
@@ -16,6 +16,10 @@
     },
 
     computed: {
+      config () {
+        return this.$store.getters.config
+      },
+
       system () {
         return this.$store.getters.system
       }
