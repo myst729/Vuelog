@@ -176,11 +176,10 @@
 
   .content-title a
     color #34495e
-    border-bottom 2px solid transparent
-    transition border-color .3s ease
+    transition color .3s ease
 
     &:hover
-      border-color #4fc08d
+      color #4fc08d
       text-decoration none
 
   .content-meta
