@@ -34,10 +34,12 @@ The latest version is totally rewritten. Take a look at the dependencies - Vue 2
 {
   "dependencies": {
     "fastclick": "^1.0.6",
-    "highlight.js": "^9.7.0",
+    "highlight.js": "^9.8.0",
     "marked": "^0.3.6",
-    "vue": "^2.0.1",
-    "vue-router": "^2.0.0",
+    "vue": "^2.0.5",
+    "vue-disqus": "^2.0.0",
+    "vue-i18n": "^4.7.1",
+    "vue-router": "^2.0.1",
     "vuex": "^2.0.0",
     "vuex-router-sync": "^3.0.0"
   }
