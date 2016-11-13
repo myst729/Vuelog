@@ -1,20 +1,20 @@
 <template>
   <div class="page">
     <vuelog-content class="page-body" :type="'page'" :metadata="page"></vuelog-content>
-    <vue-disqus class="comments" v-if="config.disqusShortname && !page.commentless" :shortname="config.disqusShortname"></vue-disqus>
+    <vuelog-comments v-if="!page.commentless" :path="$route.fullPath"></vuelog-comments>
   </div>
 </template>
 
 <script>
-  import VueDisqus from 'vue-disqus'
   import VuelogContent from '../components/VuelogContent'
+  import VuelogComments from '../components/VuelogComments'
 
   export default {
     name: 'vuelog-page-view',
 
     components: {
-      VueDisqus,
-      VuelogContent
+      VuelogContent,
+      VuelogComments
     },
 
     computed: {
@@ -52,7 +52,4 @@
     flex 1
     display flex
     flex-direction column
-
-  .comments
-    padding-bottom 10px
 </style>

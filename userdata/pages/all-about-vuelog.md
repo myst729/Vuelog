@@ -28,20 +28,4 @@ Anyone, as long as you are willing to write something more than 140 words (chara
 
 Of course! In the beginning it’s experimental indeed. As I learn more about Vue and other useful add-ons, I decide to continuously improve, not only to consolidate my knowledge but also to make myself more happily writing.
 
-The latest version is totally rewritten. Take a look at the dependencies - Vue 2.x is a building block now:
-
-```json
-{
-  "dependencies": {
-    "fastclick": "^1.0.6",
-    "highlight.js": "^9.8.0",
-    "marked": "^0.3.6",
-    "vue": "^2.0.5",
-    "vue-disqus": "^2.0.0",
-    "vue-i18n": "^4.7.1",
-    "vue-router": "^2.0.1",
-    "vuex": "^2.0.0",
-    "vuex-router-sync": "^3.0.0"
-  }
-}
-```
+The latest version is totally rewritten, built on vue 2.x, vue-router 2.x and vuex 2.x now.
