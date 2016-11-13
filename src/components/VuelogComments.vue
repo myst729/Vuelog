@@ -1,0 +1,49 @@
+<template>
+  <div class="comments">
+    <vue-disqus v-if="type === 'disqus'" :shortname="config.disqusShortname"></vue-disqus>
+    <vue-intense-debate v-if="type === 'intense-debate'" :account="config.intenseDebateAccount" :pid="path"></vue-intense-debate>
+    <vue-livere v-if="type === 'livere'" :uid="config.livereUid" :refer="path"></vue-livere>
+  </div>
+</template>
+
+<script>
+  import VueDisqus from 'vue-disqus'
+  import VueIntenseDebate from 'vue-intense-debate'
+  import VueLivere from 'vue-livere'
+
+  export default {
+    name: 'vuelog-comments',
+
+    components: {
+      VueIntenseDebate,
+      VueLivere,
+      VueDisqus
+    },
+
+    props: ['path'],
+
+    computed: {
+      config () {
+        return this.$store.getters.config
+      },
+
+      type () {
+        if (this.config.livereUid) {
+          return 'livere'
+        }
+        if (this.config.intenseDebateAccount) {
+          return 'intense-debate'
+        }
+        if (this.config.disqusShortname) {
+          return 'disqus'
+        }
+        return null
+      }
+    }
+  }
+</script>
+
+<style lang="stylus" scoped>
+  .comments
+    padding-bottom 10px
+</style>

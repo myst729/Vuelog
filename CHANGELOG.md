@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.3.0 - 2016-11-13
+
+#### Added
+- Integrate with Intense Debate and LiveRe.
+
 ### 2.2.0 - 2016-11-09
 
 #### Added

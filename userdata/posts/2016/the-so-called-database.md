@@ -11,15 +11,17 @@ window.VUELOG_DATABASE = {
     brand: 'Vuelog Demo',
     logo: './static/vuelog.svg',
     home: 'https://myst729.github.io/Vuelog/',
-    base: '/Vuelog',                   // Path to the domain root that serves your site. Set to `''` if your site is under domain root.
-    lang: 'cn',                        // Vuelog interface language. Currently only support 'cn' and 'en'.
-    switchLang: true,                  // Allow/disallow visitors to switch interface language.
-    useHomepage: false,                // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
-    postsCount: 3,                     // Number of posts listed in a blog/category view.
-    metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.
-    excerptDelimiter: '<!-- more -->', // The string to annotate excerpt out of the complete content in *.md files.
-    disqusShortname: 'vuelog',         // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
-    spinnerPattern: 'logo'             // Can be either `logo` or `line`, set to other values to disable the loading spinner.
+    base: '/Vuelog',                    // Path to the domain root that serves your site. Set to `''` if your site is under domain root.
+    lang: 'cn',                         // Vuelog interface language. Currently only support 'cn' and 'en'.
+    switchLang: true,                   // Allow/disallow visitors to switch interface language.
+    useHomepage: false,                 // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    postsCount: 3,                      // Number of posts listed in a blog/category view.
+    metadataDelimiter: '---',           // The string to separate metadata from actual content in *.md files.
+    excerptDelimiter: '<!-- more -->',  // The string to annotate excerpt out of the complete content in *.md files.
+    disqusShortname: 'DQ_SHORTNAME',    // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
+    intenseDebateAccount: 'ID_ACCOUNT', // Fill in the account to integrate Intense Debate with your blog. Leave it blank to turn it off.
+    livereUid: 'LIVERE_UID',            // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
+    spinnerPattern: 'logo'              // Can be either `logo` or `line`, set to other values to disable the loading spinner.
   },
 
   navigation: [
@@ -71,6 +73,8 @@ The purpose of each section:
   - `metadataDelimiter`: Metadata are not meant to render the page, so they are really optional. They are recommended for better maintenance of your markdown source files.
   - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don’t want to show its full content in a category view. That’s why “excerpt” was introduced. Set to empty string will suppress this feature.
   - `disqusShortname`: A string that is used to uniquely identify your website on Disqus. Can be viewed on your Disqus admin page.
+  - `intenseDebateAccount`: A string that is used to uniquely identify your website on Intense Debate. Can be viewed on your Intense Debate admin page.
+  - `livereUid`: A string that is used to uniquely identify your website on LiveRe. Can be viewed on your LiveRe admin page.
   - `spinnerPattern`: By default, a spinner is applied to tell the visitor that a page/post is loading asynchronously. There are two built-in spinners, you can also turn it off.
 - `navigation`: This determines the navigation menu in header area. You can link to any thing here, even a single post. These types need to care:
   - `category`: The path must be `/blog/${category-slug}`.

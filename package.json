@@ -1,6 +1,6 @@
 {
   "name": "vuelog",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A backend-free blog system built on top of Vue.js",
   "author": "Leo Deng",
   "license": "MIT",
@@ -23,6 +23,8 @@
     "vue": "^2.0.5",
     "vue-disqus": "^2.0.0",
     "vue-i18n": "^4.7.1",
+    "vue-intense-debate": "^0.1.0",
+    "vue-livere": "^0.1.1",
     "vue-router": "^2.0.1",
     "vuex": "^2.0.0",
     "vuex-router-sync": "^3.0.0"

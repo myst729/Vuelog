@@ -2,18 +2,23 @@
 window.VUELOG_DATABASE = {
 
   config: {
-    brand: 'Vuelog Demo',
+    brand: 'Vuelog Dev',
     logo: './static/vuelog.svg',
     home: 'https://myst729.github.io/Vuelog/',
-    base: '/Vuelog',                   // Path to the domain root that serves your site. Set to `''` if your site is under domain root.
-    lang: 'cn',                        // Vuelog interface language. Currently only support 'cn' and 'en'.
-    switchLang: true,                  // Allow/disallow visitors to switch interface language.
-    useHomepage: false,                // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
-    postsCount: 3,                     // Number of posts listed in a blog/category view.
-    metadataDelimiter: '---',          // The string to separate metadata from actual content in *.md files.
-    excerptDelimiter: '<!-- more -->', // The string to annotate excerpt out of the complete content in *.md files.
-    disqusShortname: 'vuelog',         // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
-    spinnerPattern: 'logo'             // Can be either `logo` or `line`, set to other values to disable the loading spinner.
+    base: '/Vuelog',                    // Path to the domain root that serves your site. Set to `''` if your site is under domain root.
+    lang: 'cn',                         // Vuelog interface language. Currently only support 'cn' and 'en'.
+    switchLang: true,                   // Allow/disallow visitors to switch interface language.
+    useHomepage: false,                 // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    postsCount: 3,                      // Number of posts listed in a blog/category view.
+    metadataDelimiter: '---',           // The string to separate metadata from actual content in *.md files.
+    excerptDelimiter: '<!-- more -->',  // The string to annotate excerpt out of the complete content in *.md files.
+    // disqusShortname: 'DQ_SHORTNAME',    // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
+    disqusShortname: 'vuelog',
+    // intenseDebateAccount: 'ID_ACCOUNT', // Fill in the account to integrate Intense Debate with your blog. Leave it blank to turn it off.
+    intenseDebateAccount: '6d5f04a17cd6835996d6f0dab8d4fdaf',
+    // livereUid: 'LIVERE_UID',            // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
+    livereUid: 'MTAyMC8yNzE0NS8zNzM0',
+    spinnerPattern: 'logo'              // Can be either `logo` or `line`, set to other values to disable the loading spinner.
   },
 
   navigation: [
@@ -111,13 +116,13 @@ window.VUELOG_DATABASE = {
       date: '2016-10-19'
     },
     {
-      title: 'Using Disqus comment service',
-      slug: 'using-disqus-comment-service',
+      title: 'Using social commenting services',
+      slug: 'using-social-commenting-services',
       category: 'guide',
       date: '2016-04-10'
     },
     {
-      title: '[DEPRECATED] Using Algolia search service',
+      title: '[ONHOLD] Using Algolia search service',
       slug: 'using-algolia-search-service',
       category: 'guide',
       date: '2016-04-09'
