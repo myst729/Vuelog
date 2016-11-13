@@ -23,7 +23,7 @@
     "vue": "^2.0.5",
     "vue-disqus": "^2.0.0",
     "vue-i18n": "^4.7.1",
-    "vue-intense-debate": "^0.1.0",
+    "vue-intense-debate": "^0.1.1",
     "vue-livere": "^0.1.1",
     "vue-router": "^2.0.1",
     "vuex": "^2.0.0",

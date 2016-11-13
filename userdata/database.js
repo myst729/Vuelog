@@ -14,7 +14,7 @@ window.VUELOG_DATABASE = {
     excerptDelimiter: '<!-- more -->',  // The string to annotate excerpt out of the complete content in *.md files.
     // disqusShortname: 'DQ_SHORTNAME',    // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
     disqusShortname: 'vuelog',
-    // intenseDebateAccount: 'ID_ACCOUNT', // Fill in the account to integrate Intense Debate with your blog. Leave it blank to turn it off.
+    // intenseDebateAccount: 'ID_ACCOUNT', // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
     intenseDebateAccount: '6d5f04a17cd6835996d6f0dab8d4fdaf',
     // livereUid: 'LIVERE_UID',            // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
     livereUid: 'MTAyMC8yNzE0NS8zNzM0',
