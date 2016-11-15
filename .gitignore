@@ -3,6 +3,5 @@ dist/
 node_modules/
 test/e2e/reports
 test/unit/coverage
-userdata/media
 npm-debug.log
 selenium-debug.log
