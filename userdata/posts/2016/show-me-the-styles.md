@@ -80,10 +80,10 @@ You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> c
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="./userdata/media/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="./userdata/media/big-buck-bunny.mp4" type="video/mp4">
-    <source src="./userdata/media/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/assets/examples/vuelog-demo/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/assets/examples/vuelog-demo/big-buck-bunny.mp4" type="video/mp4">
+    <source src="//myst729.github.io/assets/examples/vuelog-demo/big-buck-bunny.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="./userdata/media/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/assets/examples/vuelog-demo/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
