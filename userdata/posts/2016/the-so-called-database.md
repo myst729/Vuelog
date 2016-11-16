@@ -4,24 +4,37 @@ date: 2016-10-20
 Let’s take a look at the most important file of your Vuelog deployment - `database.js`:
 
 ```js
-// DO NOT CHANGE THE GLOBAL VARIABLE NAME
 window.VUELOG_DATABASE = {
 
   config: {
+    // The name of your site, will be displayed in browser tab and site header.
     brand: 'Vuelog Demo',
+    // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
-    home: 'https://myst729.github.io/Vuelog/',
-    base: '/Vuelog',                    // Path to the domain root that serves your site. Set to `''` if your site is under domain root.
-    lang: 'cn',                         // Vuelog interface language. Currently only support 'cn' and 'en'.
-    switchLang: true,                   // Allow/disallow visitors to switch interface language.
-    useHomepage: false,                 // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
-    postsCount: 3,                      // Number of posts listed in a blog/category view.
-    metadataDelimiter: '---',           // The string to separate metadata from actual content in *.md files.
-    excerptDelimiter: '<!-- more -->',  // The string to annotate excerpt out of the complete content in *.md files.
-    disqusShortname: 'DQ_SHORTNAME',    // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
-    intenseDebateAccount: 'ID_ACCOUNT', // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
-    livereUid: 'LIVERE_UID',            // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
-    spinnerPattern: 'logo'              // Can be either `logo` or `line`, set to other values to disable the loading spinner.
+    // The full URL where your site is hosted.
+    home: 'https://myst729.github.io/Vuelog',
+    // Path to the domain root that serves your site, starts with a slash (`/`). Set to `''` if your site is under domain root.
+    base: '/Vuelog',
+    // Vuelog interface language. Currently only support 'cn' and 'en'.
+    lang: 'en',
+    // Allow/disallow visitors to switch interface language.
+    switchLang: true,
+    // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
+    useHomepage: true,
+    // Number of posts listed in a blog/category view.
+    postsCount: 3,
+    // The string to separate metadata from actual content in *.md files.
+    metadataDelimiter: '---',
+    // The string to annotate excerpt out of the complete content in *.md files.
+    excerptDelimiter: '<!-- more -->',
+    // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
+    disqusShortname: 'DQ_SHORTNAME',
+    // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
+    intenseDebateAccount: 'ID_ACCOUNT',
+    // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
+    livereUid: 'LIVERE_UID',
+    // Can be either `logo` or `line`, set to other values to disable the loading spinner.
+    spinnerPattern: 'logo'
   },
 
   navigation: [
@@ -33,7 +46,7 @@ window.VUELOG_DATABASE = {
     {
       label: 'Links',
       type: 'dropdown',
-      // path: 'dropdown can be linkable too',
+      path: '', // (OPTIONAL) dropdown can be routable too if you set a valid route path
       children: [
         { label: 'Weibo', type: 'outgoing', link: 'http://weibo.com/myst729' },
         { label: 'GitHub', type: 'outgoing', link: 'https://github.com/myst729' },
@@ -43,7 +56,12 @@ window.VUELOG_DATABASE = {
   ],
 
   pages: [
-    { title: 'All about Vuelog', slug: 'all-about-vuelog' }
+    {
+      title: 'All about Vuelog',
+      slug: 'all-about-vuelog',
+      titleless: false,  // (OPTIONAL) set this to true if you want to hide the title in page view (same for post)
+      commentless: false // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+    }
   ],
 
   categories: [
