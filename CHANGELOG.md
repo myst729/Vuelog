@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.3.1 - 2016-11-16
+
+#### Changed
+- Make `database.js` more clear.
+
 ### 2.3.0 - 2016-11-13
 
 #### Added
