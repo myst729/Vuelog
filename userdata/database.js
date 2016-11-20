@@ -13,8 +13,8 @@ window.VUELOG_DATABASE = {
     // The full URL where your site is hosted.
     home: 'https://myst729.github.io/Vuelog',
 
-    // Path to the domain root that serves your site, starts with a slash (`/`). Set to `''` if your site is under domain root.
-    base: '/Vuelog',
+    // Path to the domain root that serves your site, starts and ends with slash (`/`). Set to `'/'` if your site is under domain root.
+    base: '/Vuelog/',
 
     // Vuelog interface language. Currently only support 'cn' and 'en'.
     lang: 'en',
