@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.4.0 - 2016-11-20
+
+#### Changed
+- Upgrade dependencies and fix bugs.
+
 ### 2.3.1 - 2016-11-16
 
 #### Changed

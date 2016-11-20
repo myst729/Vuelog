@@ -42,7 +42,7 @@ routes.push({ path: '*', redirect: '/oops' })
 const router = new VueRouter({
   routes,
   mode: 'hash',
-  base: database.config.base + '/#/'
+  base: database.config.base
 })
 
 router.beforeEach((to, from, next) => {
