@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.5.0 - 2016-11-23
+
+#### Changed
+- Refactor i18n functionality.
+
 ### 2.4.0 - 2016-11-20
 
 #### Changed
