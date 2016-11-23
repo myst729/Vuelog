@@ -15,8 +15,8 @@ window.VUELOG_DATABASE = {
     home: 'https://myst729.github.io/Vuelog',
     // Path to the domain root that serves your site, starts and ends with slash (`/`). Set to `'/'` if your site is under domain root.
     base: '/Vuelog/',
-    // Vuelog interface language. Currently only support 'cn' and 'en'.
-    lang: 'en',
+    // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
+    lang: 'en-US',
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
     // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
@@ -85,7 +85,7 @@ The purpose of each section:
 
 - `config`: Overall settings of your site. Let’s take a look at some confusing fields.
   - `base`: This is very important if your site is **NOT** served under your domain root! Starts and ends with `/`.
-  - `lang`: The language applied to render Vuelog interface. Currently only Simplified Chinese (`'cn'`) and English (`'en'`) are available, contributors are welcome!
+  - `lang`: The language applied to render Vuelog interface. Currently only Simplified Chinese (`'zh-CN'`) and English (`'en-US'`) are available, contributors are welcome!
   - `switchLang`: A boolean value that enables/disables visitors to switch the interface language.
   - `useHomepage`: Set to `true` if you want a dedicated home page. However, to customize the home page you need to fork the Vuelog repository.
   - `metadataDelimiter`: Metadata are not meant to render the page, so they are really optional. They are recommended for better maintenance of your markdown source files.

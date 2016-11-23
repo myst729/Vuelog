@@ -1,15 +1,13 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import { languages, locales } from './locales'
+import { locales } from './locales'
 
 Vue.use(VueI18n)
 
-function setLocale (locale) {
-  Vue.config.lang = locale
-}
-
-Object.keys(locales).forEach(key => {
-  Vue.locale(key, locales[key])
+Object.keys(locales).forEach(lang => {
+  Vue.locale(lang, locales[lang])
 })
 
-export { languages, setLocale }
+export default function setLocale (locale) {
+  Vue.config.lang = locale
+}

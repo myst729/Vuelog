@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { languages } from '../i18n'
+import { locales } from '../i18n/locales'
 import * as system from '../../package.json'
 import * as database from 'database'
 
@@ -22,7 +22,7 @@ const store = new Vuex.Store({
     },
 
     SYSTEM_LANGUAGE: ({ commit, state }, language) => {
-      const lang = Object.keys(languages).indexOf(language) > -1 ? language : state.database.config.lang
+      const lang = Object.keys(locales).indexOf(language) > -1 ? language : state.database.config.lang
       commit('SET_SYSTEM_LANGUAGE', { lang })
     },
 

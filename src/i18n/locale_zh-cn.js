@@ -1,4 +1,4 @@
-const cn = {
+const zhCN = {
   home: {
     name: 'Vuelog',
     description: '基于 Vue.js 构建的无后端博客系统',
@@ -46,4 +46,4 @@ const cn = {
   credit: '<a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a> 驱动，用 <span {0}>&#10084;</span> 构筑'
 }
 
-export default cn
+export default zhCN

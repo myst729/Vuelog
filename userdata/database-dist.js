@@ -16,8 +16,8 @@ window.VUELOG_DATABASE = {
     // Path to the domain root that serves your site, starts and ends with slash (`/`). Set to `'/'` if your site is under domain root.
     base: '/',
 
-    // Vuelog interface language. Currently only support 'cn' and 'en'.
-    lang: 'cn',
+    // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
+    lang: 'zh-CN',
 
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
