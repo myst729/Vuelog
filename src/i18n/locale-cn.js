@@ -40,9 +40,7 @@ const cn = {
   },
 
   lang: {
-    switch: '更换语言：',
-    cn: '简体中文',
-    en: '英语'
+    switch: '更换语言：'
   },
 
   credit: '<a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a> 驱动，用 <span {0}>&#10084;</span> 构筑'

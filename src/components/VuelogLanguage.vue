@@ -2,13 +2,13 @@
   <div>
     <label v-text="$t('lang.switch')"></label>
     <select v-model="selected" @change="switchLang">
-      <option v-for="lang in langs" :value="lang" v-text="$t('lang.' + lang)"></option>
+      <option v-for="(value, key) in languages" :value="key" v-text="value"></option>
     </select>
   </div>
 </template>
 
 <script>
-  import { langs } from '../i18n'
+  import { languages, setLocale } from '../i18n'
 
   export default {
     name: 'vuelog-language',
@@ -21,13 +21,15 @@
 
     data () {
       return {
-        langs,
+        languages,
         selected: ''
       }
     },
 
     methods: {
       switchLang () {
+        setLocale(this.selected)
+
         this.$router.push({
           name: this.$route.name,
           params: this.$route.params,
