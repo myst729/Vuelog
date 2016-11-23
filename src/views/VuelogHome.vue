@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <img src="../assets/img/vuelog.svg">
-    <h1 v-text="$t('home.name')"></h1>
+    <h1 v-text="system.brand"></h1>
     <p v-text="$t('home.description')"></p>
     <a class="button" :href="download" v-text="$t('home.download', [system.version])" target="_blank" rel="noopener noreferrer"></a>
-    <a class="button github" :href="system.github" target="_blank" rel="noopener noreferrer" v-text="$t('home.github')"></a>
+    <a class="button github" :href="system.project" target="_blank" rel="noopener noreferrer" v-text="$t('home.github')"></a>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
       },
 
       download () {
-        return `${this.system.github}/releases/tag/${this.system.version}`
+        return `${this.system.project}/releases/tag/${this.system.version}`
       }
     },
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { locales } from '../i18n/locales'
-import * as system from '../../package.json'
+import { brand, project, version } from '../../package.json'
 import * as database from 'database'
 
 Vue.use(Vuex)
@@ -11,7 +11,7 @@ const store = new Vuex.Store({
     title: '',
     lang: '',
     menu: false,
-    system,
+    system: { brand, project, version },
     database
   },
 
