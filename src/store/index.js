@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { langs } from '../i18n'
+import { languages } from '../i18n'
 import * as system from '../../package.json'
 import * as database from 'database'
 
@@ -22,7 +22,7 @@ const store = new Vuex.Store({
     },
 
     SYSTEM_LANGUAGE: ({ commit, state }, language) => {
-      const lang = langs.indexOf(language) > -1 ? language : state.database.config.lang
+      const lang = Object.keys(languages).indexOf(language) > -1 ? language : state.database.config.lang
       commit('SET_SYSTEM_LANGUAGE', { lang })
     },
 
@@ -38,7 +38,6 @@ const store = new Vuex.Store({
 
     SET_SYSTEM_LANGUAGE: (state, { lang }) => {
       state.lang = lang
-      Vue.config.lang = lang
     },
 
     TOGGLE_SIDE_MENU: (state, { visibility }) => {

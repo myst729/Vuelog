@@ -40,9 +40,7 @@ const en = {
   },
 
   lang: {
-    switch: 'Language:',
-    cn: 'Simplified Chinese',
-    en: 'English'
+    switch: 'Language:'
   },
 
   credit: 'Built with <span {0}>&#10084;</span> and <a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a>'

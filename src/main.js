@@ -1,18 +1,14 @@
 import FastClick from 'fastclick'
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
+import * as database from 'database'
 import Vuelog from './Vuelog'
-import { lang, langs, locales } from './i18n'
+import { setLocale } from './i18n'
 import router from './router'
 import store from './store'
 
 FastClick.attach(document.body)
-
-Vue.config.lang = lang
-langs.forEach(l => {
-  Vue.locale(l, locales[l])
-})
-
+setLocale(database.config.lang)
 sync(store, router)
 
 const app = new Vue({
