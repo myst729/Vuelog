@@ -5,7 +5,7 @@
   "author": "Leo Deng",
   "license": "MIT",
   "brand": "Vuelog",
-  "github": "https://github.com/myst729/Vuelog",
+  "project": "https://github.com/myst729/Vuelog",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/myst729/Vuelog.git"

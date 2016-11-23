@@ -1,6 +1,5 @@
 const zhCN = {
   home: {
-    name: 'Vuelog',
     description: '基于 Vue.js 构建的无后端博客系统',
     download: '下载 v{0}',
     github: 'GitHub'
