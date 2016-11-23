@@ -61,10 +61,6 @@
         return this.$store.getters.config
       },
 
-      system () {
-        return this.$store.getters.system
-      },
-
       navigation () {
         return this.$store.getters.navigation
       }
