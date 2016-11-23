@@ -1,4 +1,4 @@
-const en = {
+const enUS = {
   home: {
     name: 'Vuelog',
     description: 'A backend-free blog system built on top of Vue.js',
@@ -46,4 +46,4 @@ const en = {
   credit: 'Built with <span {0}>&#10084;</span> and <a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a>'
 }
 
-export default en
+export default enUS

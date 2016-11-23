@@ -8,7 +8,8 @@
 </template>
 
 <script>
-  import { languages, setLocale } from '../i18n'
+  import setLocale from '../i18n'
+  import { languages } from '../i18n/locales'
 
   export default {
     name: 'vuelog-language',

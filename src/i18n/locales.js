@@ -1,12 +1,12 @@
-import cn from './locale-cn'
-import en from './locale-en'
+import enUS from './locale_en-us'
+import zhCN from './locale_zh-cn'
 
 export const languages = {
-  'cn': '简体中文',
-  'en': 'English'
+  'en-US': 'English',
+  'zh-CN': '简体中文'
 }
 
 export const locales = {
-  cn,
-  en
+  'en-US': enUS,
+  'zh-CN': zhCN
 }
