@@ -23,7 +23,7 @@
     },
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', false)
+      this.$store.dispatch('documentTitle', false)
     }
   }
 </script>

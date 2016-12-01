@@ -68,11 +68,11 @@
 
     methods: {
       closeSideMenu () {
-        this.$store.dispatch('SIDE_MENU', false)
+        this.$store.dispatch('sideMenu', false)
       },
 
       toggleSideMenu () {
-        this.$store.dispatch('SIDE_MENU', !this.menu)
+        this.$store.dispatch('sideMenu', !this.menu)
       }
     },
 

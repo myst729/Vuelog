@@ -98,7 +98,7 @@
       if (current.p > 1) {
         title += ` | ${this.$t('reading.pagination', [current.p])}`
       }
-      this.$store.dispatch('DOCUMENT_TITLE', title)
+      this.$store.dispatch('documentTitle', title)
     }
   }
 </script>

@@ -63,7 +63,7 @@
     },
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', this.dataset.post.title)
+      this.$store.dispatch('documentTitle', this.dataset.post.title)
     }
   }
 </script>
