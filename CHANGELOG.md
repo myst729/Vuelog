@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.5.1 - 2016-12-01
+
+#### Added
+- Unit tests for vuex store.
+
 ### 2.5.0 - 2016-11-23
 
 #### Changed
