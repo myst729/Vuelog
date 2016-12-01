@@ -41,7 +41,7 @@
     },
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', this.page.title)
+      this.$store.dispatch('documentTitle', this.page.title)
     }
   }
 </script>

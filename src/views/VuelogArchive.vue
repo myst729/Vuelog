@@ -148,7 +148,7 @@
       if (this.displayType === 'archive-year') {
         title += ` | ${this.archive.year}`
       }
-      this.$store.dispatch('DOCUMENT_TITLE', title)
+      this.$store.dispatch('documentTitle', title)
     }
   }
 </script>

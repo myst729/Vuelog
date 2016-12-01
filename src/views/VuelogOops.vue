@@ -11,7 +11,7 @@
     name: 'vuelog-oops-view',
 
     created () {
-      this.$store.dispatch('DOCUMENT_TITLE', this.$t('oops.title'))
+      this.$store.dispatch('documentTitle', this.$t('oops.title'))
     }
   }
 </script>

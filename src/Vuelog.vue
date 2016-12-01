@@ -15,6 +15,8 @@
   import VuelogFooter from './components/VuelogFooter'
 
   export default {
+    name: 'vuelog',
+
     components: {
       VuelogHeader,
       VuelogFooter
@@ -32,11 +34,11 @@
 
     methods: {
       closeSideMenu () {
-        this.$store.dispatch('SIDE_MENU', false)
+        this.$store.dispatch('sideMenu', false)
       },
 
       switchLang (lang) {
-        this.$store.dispatch('SYSTEM_LANGUAGE', lang)
+        this.$store.dispatch('systemLanguage', lang)
       },
 
       resetScroll () {
