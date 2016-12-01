@@ -102,9 +102,11 @@ export const getters = {
   }
 }
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state,
   actions,
   mutations,
   getters
 })
+
+export default store
