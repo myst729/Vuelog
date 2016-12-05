@@ -48,7 +48,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (from.query.lang && !to.query.lang) {
-    next(to.fullPath + '?lang=' + from.query.lang)
+    next(Object.assign({}, to, { query: { lang: from.query.lang } }))
   } else {
     next()
   }
