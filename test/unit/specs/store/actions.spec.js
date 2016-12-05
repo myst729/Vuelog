@@ -1,12 +1,13 @@
-import '../../../userdata/database'
+import 'userdata/database'
 import { actions } from 'src/store'
+
 const {
   documentTitle,
   systemLanguage,
   sideMenu
 } = actions
 
-describe('Actions', () => {
+describe('Store actions', () => {
   it('Document title dispatched with `Qwerty`', done => {
     const state = {
       title: '',

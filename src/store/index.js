@@ -7,8 +7,8 @@ import { brand, project, version } from '../../package.json'
 Vue.use(Vuex)
 
 const state = {
-  title: '',
-  lang: '',
+  title: database.config.brand,
+  lang: database.config.lang,
   menu: false,
   system: { brand, project, version },
   database
@@ -45,60 +45,69 @@ export const mutations = {
 }
 
 export const getters = {
-  title: (state) => state.title,
+  title: state => state.title,
 
-  lang: (state) => state.lang,
+  lang: state => state.lang,
 
-  menu: (state) => state.menu,
+  menu: state => state.menu,
 
-  system: (state) => state.system,
+  system: state => state.system,
 
-  config: (state) => state.database.config,
+  config: state => state.database.config,
 
-  navigation: (state) => state.database.navigation,
+  navigation: state => state.database.navigation,
 
-  pages (state) {
-    return state.database.pages.map(page => {
-      page.markdown = './userdata/pages/' + page.slug + '.md'
-      return page
-    })
+  pages: state => {
+    return state.database.pages
+      .map(page => {
+        page.markdown = './userdata/pages/' + page.slug + '.md'
+        return page
+      })
   },
 
-  categories: (state) => state.database.categories,
+  categories: state => state.database.categories,
 
-  posts (state, getters) {
+  posts: (state, getters) => {
     var categoriesHash = {}
-    getters.categories.forEach((category) => {
+    getters.categories.forEach(category => {
       categoriesHash[category.slug] = category.title
     })
-    return state.database.posts.map((post) => {
-      post.year = new Date(post.date).getFullYear()
-      post.markdown = './userdata/posts/' + post.year + '/' + post.slug + '.md'
-      post.categoryTitle = categoriesHash[post.category]
-      return post
-    }).sort((a, b) => {
-      return new Date(b.date) - new Date(a.date)
-    })
+
+    return state.database.posts
+      .map(post => {
+        post.year = new Date(post.date).getFullYear()
+        post.markdown = './userdata/posts/' + post.year + '/' + post.slug + '.md'
+        post.categoryTitle = categoriesHash[post.category]
+        return post
+      })
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
   },
 
-  postsByCategory (state, getters) {
-    return getters.categories.map((category) => {
-      return {
-        slug: category.slug,
-        title: category.title,
-        posts: getters.posts.filter((post) => post.category === category.slug).sort((a, b) => new Date(b.date) - new Date(a.date))
-      }
-    })
+  postsByCategory: (state, getters) => {
+    return getters.categories
+      .map(category => {
+        return {
+          slug: category.slug,
+          title: category.title,
+          posts: getters.posts
+            .filter(post => post.category === category.slug)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+        }
+      })
   },
 
-  postsByYear (state, getters) {
-    const years = [...new Set(getters.posts.map((post) => post.year))].sort((a, b) => b - a)
-    return years.map((year) => {
-      return {
-        year,
-        posts: getters.posts.filter((post) => post.year === year).sort((a, b) => new Date(b.date) - new Date(a.date))
-      }
-    })
+  postsByYear: (state, getters) => {
+    const years = [...new Set(getters.posts.map(post => post.year))]
+    return years
+      .sort((a, b) => b - a)
+      .map(year => {
+        return {
+          year,
+          posts: getters.posts
+            .filter(post => post.year === year)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+        }
+      })
   }
 }
 
