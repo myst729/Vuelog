@@ -2,6 +2,17 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.5.2 - 2016-12-05
+
+#### Added
+- Unit tests for helpers.
+
+#### Changed
+- Unit tests for vuex store to achieve 100% branch coverage.
+
+#### Fixed
+- Incorrect translations when deep linking with locale in URL.
+
 ### 2.5.1 - 2016-12-01
 
 #### Added
