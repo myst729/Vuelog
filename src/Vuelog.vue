@@ -49,7 +49,9 @@
     },
 
     created () {
-      this.switchLang(this.$route.query.lang)
+      if (this.$route.query.lang) {
+        this.switchLang(this.$route.query.lang)
+      }
     },
 
     watch: {
