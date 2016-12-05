@@ -1,4 +1,4 @@
-import '../../../userdata/database'
+import 'userdata/database'
 import { mutations } from 'src/store'
 
 const {
@@ -7,7 +7,7 @@ const {
   setSideMenu
 } = mutations
 
-describe('Mutations', () => {
+describe('Store mutations', () => {
   it('Set document title to `Vuelog`', () => {
     const state = { title: '' }
     setDocumentTitle(state, { title: 'Vuelog' })

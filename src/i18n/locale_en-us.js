@@ -28,14 +28,14 @@ const enUS = {
   },
 
   time: {
-    future: 'Somewhere in time ( {iso} )',
-    yearsAgo: '{diff} years ago ( {iso} )',
-    lastYear: 'Last year ( {iso} )',
-    monthsAgo: '{diff} months ago ( {iso} )',
-    lastMonth: 'Last month ( {iso} )',
-    daysAgo: '{diff} days ago ( {iso} )',
-    yesterday: 'Yesterday ( {iso} )',
-    today: 'Today ( {iso} )'
+    future: 'Somewhere in time ( {then} )',
+    yearsAgo: '{diff} years ago ( {then} )',
+    lastYear: 'Last year ( {then} )',
+    monthsAgo: '{diff} months ago ( {then} )',
+    lastMonth: 'Last month ( {then} )',
+    daysAgo: '{diff} days ago ( {then} )',
+    yesterday: 'Yesterday ( {then} )',
+    today: 'Today ( {then} )'
   },
 
   lang: {

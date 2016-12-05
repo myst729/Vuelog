@@ -1,37 +1,32 @@
-export function meaningfulTime (isoDate) {
-  const now = new Date()
-  const then = new Date(isoDate)
-  var between
+export function meaningfulTime (comparedDate, baseDate) {
+  const now = baseDate ? new Date(baseDate) : new Date()
+  const then = new Date(comparedDate)
+  const values = { then: comparedDate, now: baseDate, diff: undefined }
+  const retVal = { key: '', values }
+  var diff
 
-  between = now - then
-  if (between < 0) {
-    return { key: 'time.future', values: { iso: isoDate } }
-  }
-
-  between = now.getFullYear() - then.getFullYear()
-  if (between > 1) {
-    return { key: 'time.yearsAgo', values: { iso: isoDate, diff: between } }
-  }
-  if (between === 1) {
-    return { key: 'time.lastYear', values: { iso: isoDate } }
+  diff = now.getFullYear() - then.getFullYear()
+  if (diff > 0) {
+    values.diff = diff
+    retVal.key = diff === 1 ? 'time.lastYear' : 'time.yearsAgo'
+    return retVal
   }
 
-  between = now.getMonth() - then.getMonth()
-  if (between > 1) {
-    return { key: 'time.monthsAgo', values: { iso: isoDate, diff: between } }
-  }
-  if (between === 1) {
-    return { key: 'time.lastMonth', values: { iso: isoDate } }
+  diff = now.getMonth() - then.getMonth()
+  if (diff > 0) {
+    values.diff = diff
+    retVal.key = diff === 1 ? 'time.lastMonth' : 'time.monthsAgo'
+    return retVal
   }
 
-  between = now.getDate() - then.getDate()
-  if (between > 1) {
-    return { key: 'time.daysAgo', values: { iso: isoDate, diff: between } }
+  diff = now.getDate() - then.getDate()
+  if (diff >= 0) {
+    values.diff = diff
+    retVal.key = diff === 0 ? 'time.today' : (diff === 1 ? 'time.yesterday' : 'time.daysAgo')
+    return retVal
   }
-  if (between === 1) {
-    return { key: 'time.yesterday', values: { iso: isoDate } }
-  }
-  if (between === 0) {
-    return { key: 'time.today', values: { iso: isoDate } }
-  }
+
+  values.diff = -1
+  retVal.key = 'time.future'
+  return retVal
 }

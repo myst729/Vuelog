@@ -1,4 +1,4 @@
-import '../../../userdata/database'
+import 'userdata/database'
 import { getters } from 'src/store'
 
 const {
@@ -15,7 +15,7 @@ const {
   postsByYear
 } = getters
 
-describe('Getters', () => {
+describe('Store getters', () => {
   it('Title', () => {
     const state = { title: 'Apple' }
     const result = title(state)
@@ -205,6 +205,7 @@ describe('Getters', () => {
           { title: 'Empty', slug: 'empty' }
         ],
         posts: [
+          { title: 'Show me the styles!', slug: 'show-me-the-styles', category: 'guide', date: '2015-10-19' },
           { title: 'How to add a post or page?', slug: 'how-to-add-a-post-or-page', category: 'guide', date: '2016-10-21' },
           { title: 'The (so-called) database', slug: 'the-so-called-database', category: 'guide', date: '2015-10-20' }
         ]
@@ -243,6 +244,15 @@ describe('Getters', () => {
             date: '2015-10-20',
             year: 2015,
             markdown: './userdata/posts/2015/the-so-called-database.md',
+            categoryTitle: 'Guide'
+          },
+          {
+            title: 'Show me the styles!',
+            slug: 'show-me-the-styles',
+            category: 'guide',
+            date: '2015-10-19',
+            year: 2015,
+            markdown: './userdata/posts/2015/show-me-the-styles.md',
             categoryTitle: 'Guide'
           }
         ]

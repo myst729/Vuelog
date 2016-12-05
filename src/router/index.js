@@ -2,13 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import * as database from 'database'
 
-// `VuelogHome` and `VuelogOops` views are not necessarily lazy loaded
 import VuelogHome from '../views/VuelogHome'
 import VuelogOops from '../views/VuelogOops'
 import VuelogArchive from '../views/VuelogArchive'
 import VuelogPosts from '../views/VuelogPosts'
 import VuelogPost from '../views/VuelogPost'
 import VuelogPage from '../views/VuelogPage'
+
+// Or lazy load route view components if interested
 // const VuelogArchive = resolve => require(['../views/VuelogArchive'], resolve)
 // const VuelogPosts = resolve => require(['../views/VuelogPosts'], resolve)
 // const VuelogPost = resolve => require(['../views/VuelogPost'], resolve)

@@ -28,14 +28,14 @@ const zhCN = {
   },
 
   time: {
-    future: '穿越了 ( {iso} )',
-    yearsAgo: '{diff} 年前 ( {iso} )',
-    lastYear: '去年 ( {iso} )',
-    monthsAgo: '{diff} 个月前 ( {iso} )',
-    lastMonth: '上个月 ( {iso} )',
-    daysAgo: '{diff} 天前 ( {iso} )',
-    yesterday: '昨天 ( {iso} )',
-    today: '今天 ( {iso} )'
+    future: '穿越了 ( {then} )',
+    yearsAgo: '{diff} 年前 ( {then} )',
+    lastYear: '去年 ( {then} )',
+    monthsAgo: '{diff} 个月前 ( {then} )',
+    lastMonth: '上个月 ( {then} )',
+    daysAgo: '{diff} 天前 ( {then} )',
+    yesterday: '昨天 ( {then} )',
+    today: '今天 ( {then} )'
   },
 
   lang: {
