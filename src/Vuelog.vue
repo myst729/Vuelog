@@ -11,6 +11,7 @@
 </template>
 
 <script>
+  import setLocale from './i18n'
   import VuelogHeader from './components/VuelogHeader'
   import VuelogFooter from './components/VuelogFooter'
 
@@ -39,6 +40,7 @@
 
       switchLang (lang) {
         this.$store.dispatch('systemLanguage', lang)
+        setLocale(lang)
       },
 
       resetScroll () {

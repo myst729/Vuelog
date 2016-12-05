@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as database from 'database'
 import { locales } from '../i18n/locales'
 import { brand, project, version } from '../../package.json'
-import * as database from 'database'
 
 Vue.use(Vuex)
 

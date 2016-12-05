@@ -8,7 +8,6 @@
 </template>
 
 <script>
-  import setLocale from '../i18n'
   import { languages } from '../i18n/locales'
 
   export default {
@@ -29,8 +28,6 @@
 
     methods: {
       switchLang () {
-        setLocale(this.selected)
-
         this.$router.push({
           name: this.$route.name,
           params: this.$route.params,
