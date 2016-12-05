@@ -38,7 +38,7 @@
         this.$store.dispatch('sideMenu', false)
       },
 
-      switchLang (lang) {
+      setLanguage (lang) {
         this.$store.dispatch('systemLanguage', lang)
         setLocale(lang)
       },
@@ -50,7 +50,7 @@
 
     created () {
       if (this.$route.query.lang) {
-        this.switchLang(this.$route.query.lang)
+        this.setLanguage(this.$route.query.lang)
       }
     },
 
@@ -61,7 +61,7 @@
 
       $route (to, from) {
         if (to.query.lang !== from.query.lang) {
-          this.switchLang(to.query.lang)
+          this.setLanguage(to.query.lang)
         }
       }
     }

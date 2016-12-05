@@ -1,7 +1,7 @@
 <template>
   <div>
     <label v-text="$t('lang.switch')"></label>
-    <select v-model="selected" @change="switchLang">
+    <select v-model="selected" @change="switchLanguage">
       <option v-for="(value, key) in languages" :value="key" v-text="value"></option>
     </select>
   </div>
@@ -27,7 +27,7 @@
     },
 
     methods: {
-      switchLang () {
+      switchLanguage () {
         this.$router.push({
           name: this.$route.name,
           params: this.$route.params,
