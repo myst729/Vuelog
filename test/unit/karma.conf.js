@@ -57,7 +57,7 @@ module.exports = function (config) {
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: [
-      path.resolve(projectRoot, './node_modules/babel-polyfill/dist/polyfill.js'),
+      path.resolve(projectRoot, 'node_modules/babel-polyfill/dist/polyfill.js'),
       './index.js'
     ],
     preprocessors: {
