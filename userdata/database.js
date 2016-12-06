@@ -38,10 +38,10 @@ window.VUELOG_DATABASE = {
     disqusShortname: '', // 'vuelog',
 
     // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
-    intenseDebateAccount: '48039cbd4d547c03251bf62282dfa0d6',
+    intenseDebateAccount: '', // '48039cbd4d547c03251bf62282dfa0d6',
 
     // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
-    livereUid: '', // 'MTAyMC8yNzE0NS8zNzM0',
+    livereUid: 'MTAyMC8yNzE0NS8zNzM0',
 
     // Can be either `logo` or `line`, set to other values to disable the loading spinner.
     spinnerPattern: 'logo'
