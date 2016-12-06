@@ -6,7 +6,7 @@ Function.prototype.bind = require('function-bind')
 const testsContext = require.context('./specs', true, /\.spec$/)
 testsContext.keys().forEach(testsContext)
 
-// require only vuex store.
+// require only helpers and vuex store.
 // you can also change this to match only the subset of files that
 // you want coverage for.
 const srcContext = require.context('src', true, /\/(helpers|store)\//)
