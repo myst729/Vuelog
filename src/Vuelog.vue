@@ -24,12 +24,25 @@
     },
 
     computed: {
+      lang () {
+        return this.$store.getters.lang
+      },
+
       title () {
         return this.$store.getters.title
       },
 
       isHomepage () {
         return this.$route.name === 'home'
+      }
+    },
+
+    metaInfo () {
+      return {
+        title: this.title,
+        htmlAttrs: {
+          lang: this.lang.substring(0, 2)
+        }
       }
     },
 
@@ -55,10 +68,6 @@
     },
 
     watch: {
-      title (newVal, oldVal) {
-        document.title = newVal
-      },
-
       $route (to, from) {
         if (to.query.lang !== from.query.lang) {
           this.setLanguage(to.query.lang)

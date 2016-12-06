@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueMeta from 'vue-meta'
 import VueRouter from 'vue-router'
 import * as database from 'database'
 
@@ -15,6 +16,7 @@ import VuelogPage from '../views/VuelogPage'
 // const VuelogPost = resolve => require(['../views/VuelogPost'], resolve)
 // const VuelogPage = resolve => require(['../views/VuelogPage'], resolve)
 
+Vue.use(VueMeta)
 Vue.use(VueRouter)
 
 var routes = [
