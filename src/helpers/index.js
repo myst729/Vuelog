@@ -5,6 +5,12 @@ export function meaningfulTime (comparedDate, baseDate) {
   const retVal = { key: '', values }
   var diff
 
+  if (now < then) {
+    values.diff = -1
+    retVal.key = 'time.future'
+    return retVal
+  }
+
   diff = now.getFullYear() - then.getFullYear()
   if (diff > 0) {
     values.diff = diff
@@ -20,13 +26,13 @@ export function meaningfulTime (comparedDate, baseDate) {
   }
 
   diff = now.getDate() - then.getDate()
-  if (diff >= 0) {
+  if (diff > 0) {
     values.diff = diff
-    retVal.key = diff === 0 ? 'time.today' : (diff === 1 ? 'time.yesterday' : 'time.daysAgo')
+    retVal.key = diff === 1 ? 'time.yesterday' : 'time.daysAgo'
     return retVal
   }
 
-  values.diff = -1
-  retVal.key = 'time.future'
+  values.diff = 0
+  retVal.key = 'time.today'
   return retVal
 }

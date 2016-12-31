@@ -3,31 +3,31 @@ import { meaningfulTime } from 'src/helpers'
 
 describe('Helpers', () => {
   it('Meaningful time: 3 years ago', () => {
-    const comparedDate = '2012-01-01'
+    const comparedDate = '2012-11-19'
     const baseDate = '2015-07-03'
     const result = meaningfulTime(comparedDate, baseDate)
-    expect(result).to.deep.equal({ key: 'time.yearsAgo', values: { then: '2012-01-01', now: '2015-07-03', diff: 3 } })
+    expect(result).to.deep.equal({ key: 'time.yearsAgo', values: { then: '2012-11-19', now: '2015-07-03', diff: 3 } })
   })
 
   it('Meaningful time: last year', () => {
-    const comparedDate = '2014-01-01'
+    const comparedDate = '2014-04-01'
     const baseDate = '2015-07-03'
     const result = meaningfulTime(comparedDate, baseDate)
-    expect(result).to.deep.equal({ key: 'time.lastYear', values: { then: '2014-01-01', now: '2015-07-03', diff: 1 } })
+    expect(result).to.deep.equal({ key: 'time.lastYear', values: { then: '2014-04-01', now: '2015-07-03', diff: 1 } })
   })
 
   it('Meaningful time: 5 months ago', () => {
-    const comparedDate = '2015-02-01'
+    const comparedDate = '2015-02-14'
     const baseDate = '2015-07-03'
     const result = meaningfulTime(comparedDate, baseDate)
-    expect(result).to.deep.equal({ key: 'time.monthsAgo', values: { then: '2015-02-01', now: '2015-07-03', diff: 5 } })
+    expect(result).to.deep.equal({ key: 'time.monthsAgo', values: { then: '2015-02-14', now: '2015-07-03', diff: 5 } })
   })
 
   it('Meaningful time: last month', () => {
-    const comparedDate = '2015-06-01'
+    const comparedDate = '2015-06-06'
     const baseDate = '2015-07-03'
     const result = meaningfulTime(comparedDate, baseDate)
-    expect(result).to.deep.equal({ key: 'time.lastMonth', values: { then: '2015-06-01', now: '2015-07-03', diff: 1 } })
+    expect(result).to.deep.equal({ key: 'time.lastMonth', values: { then: '2015-06-06', now: '2015-07-03', diff: 1 } })
   })
 
   it('Meaningful time: 2 days ago', () => {
