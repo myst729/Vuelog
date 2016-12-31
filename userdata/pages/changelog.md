@@ -2,6 +2,15 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.5.3 - 2016-12-31
+
+#### Fixed
+- Incorrect meaningful time transforming.
+
+#### Added
+- Support page/post drafts.
+- End to end tests.
+
 ### 2.5.2 - 2016-12-05
 
 #### Added
