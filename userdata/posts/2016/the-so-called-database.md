@@ -59,8 +59,9 @@ window.VUELOG_DATABASE = {
     {
       title: 'All about Vuelog',
       slug: 'all-about-vuelog',
-      titleless: false,  // (OPTIONAL) set this to true if you want to hide the title in page view (same for post)
-      commentless: false // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+      titleless: false,   // (OPTIONAL) set this to true if you want to hide the title in page view (same for post)
+      commentless: false, // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+      draft: false        // (OPTIONAL) set this to true if you want to make the particular page invisible in your site (same for post)
     }
   ],
 
@@ -70,6 +71,7 @@ window.VUELOG_DATABASE = {
   ],
 
   posts: [
+    { title: 'This post is invisible', slug: 'this-post-is-a-draft', category: 'guide', date: '2016-12-31', draft: true },
     { title: 'How to add a post or page?', slug: 'how-to-add-a-post-or-page', category: 'guide', date: '2016-04-16' },
     { title: 'The structure of Vuelog', slug: 'the-structure-of-vuelog', category: 'guide', date: '2016-04-14' },
     { title: 'The (so-called) database', slug: 'the-so-called-database', category: 'guide', date: '2016-04-12' },

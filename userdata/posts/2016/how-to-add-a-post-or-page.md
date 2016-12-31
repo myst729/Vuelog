@@ -45,7 +45,10 @@ userdata/
    - Set the markdown file name (without extension) as `slug` field.
    - Set the `category` field to the slug value of category that this post is categorized.
    - The `date` field must be an [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format (YYYY-MM-DD).
-   - There’re two optional fields: `titleless` and `commentless`. If you want to hide the title in page/post view, set `titleless` to `true`. If you want to disable comments for the particular page or post, set `commentless` to `true`.
+   - There’re three **optional** fields: `titleless`, `commentless` and `draft`.
+     - `titleless`: set this to `true` if you want to hide the title in page or post view.
+     - `commentless`: set this to `true` if you want to disable comments for the particular page or post.
+     - `draft`: set this to `true` if you want to make the particular page or post invisible in your site.
 
 ```js
 posts: [
@@ -54,8 +57,9 @@ posts: [
     slug: 'how-to-add-a-post-or-page',
     category: 'guide',
     date: '2016-10-21',
-    titleless: true, // optional
-    commentless: true // optional
+    titleless: true,   // optional
+    commentless: true, // optional
+    draft: true        // optional
   },
   ...
 ]

@@ -59,6 +59,7 @@ export const getters = {
 
   pages: state => {
     return state.database.pages
+      .filter(page => !page.draft)
       .map(page => {
         page.markdown = './userdata/pages/' + page.slug + '.md'
         return page
@@ -74,6 +75,7 @@ export const getters = {
     })
 
     return state.database.posts
+      .filter(post => !post.draft)
       .map(post => {
         post.year = new Date(post.date).getFullYear()
         post.markdown = './userdata/posts/' + post.year + '/' + post.slug + '.md'
