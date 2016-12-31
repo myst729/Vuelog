@@ -118,6 +118,13 @@ window.VUELOG_DATABASE = {
 
   posts: [
     {
+      title: 'This post is invisible',
+      slug: 'this-post-is-invisible',
+      category: 'guide',
+      date: '2016-12-31',
+      draft: true // (OPTIONAL) set this to true if you want to make the particular post invisible in your site (same for page)
+    },
+    {
       title: 'How to add a post or page?',
       slug: 'how-to-add-a-post-or-page',
       category: 'guide',
