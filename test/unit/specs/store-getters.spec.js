@@ -15,7 +15,7 @@ const {
   postsByYear
 } = getters
 
-describe('Store getters', () => {
+describe('Store: getters', () => {
   it('Title', () => {
     const state = { title: 'Apple' }
     const result = title(state)

@@ -7,7 +7,7 @@ const {
   setSideMenu
 } = mutations
 
-describe('Store mutations', () => {
+describe('Store: mutations', () => {
   it('Set document title to `Vuelog`', () => {
     const state = { title: '' }
     setDocumentTitle(state, { title: 'Vuelog' })
