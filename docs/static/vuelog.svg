@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="0 0 256 256">
+  <circle fill="none" stroke="#42b983" stroke-width="51.2" cx="128" cy="128" r="102.4" />
+  <circle fill="none" stroke="#34495e" stroke-width="48" cx="128" cy="128" r="52.8" />
+  <circle fill="none" stroke="#fff" stroke-width="28.8" cx="128" cy="128" r="14.4" />
+</svg>
