@@ -7,7 +7,7 @@ const {
   sideMenu
 } = actions
 
-describe('Store actions', () => {
+describe('Store: actions', () => {
   it('Document title dispatched with `Qwerty`', done => {
     const state = {
       title: '',

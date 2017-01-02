@@ -13,7 +13,7 @@ module.exports = {
   'Start': function (browser) {
     browser
       .waitForElementVisible('.vuelog', 5000)
-      .assert.elementPresent('.vuelog')
+      .assert.elementCount('.vuelog', 1)
   },
 
   'Home view': function (browser) {
@@ -35,6 +35,7 @@ module.exports = {
       .assert.elementCount('.archive-body > h2', 1) // Archive by category view
       .assert.containsText('.archive-body > h2', 'Posts in category')
       .assert.elementPresent('.vuelog > footer')
+      .assert.elementPresent('.vuelog > footer select')
   },
 
   'Post view': function (browser) {
@@ -45,6 +46,8 @@ module.exports = {
       .assert.elementPresent('.content-body > h1.content-title')
       .assert.elementNotPresent('.content-body > h2.content-title')
       .assert.elementPresent('.content-body > h4.content-meta')
+      .assert.elementPresent('.post > .comments')
+      .assert.elementPresent('.post > .pagination')
       .assert.elementPresent('.vuelog > footer')
   },
 
@@ -56,6 +59,8 @@ module.exports = {
       .assert.elementNotPresent('.content-body > h1.content-title')
       .assert.elementPresent('.content-body > h2.content-title')
       .assert.elementPresent('.content-body > h4.content-meta')
+      .assert.elementNotPresent('.comments')
+      .assert.elementPresent('.posts > .pagination')
       .assert.elementPresent('.vuelog > footer')
   },
 
@@ -67,6 +72,8 @@ module.exports = {
       .assert.elementPresent('.content-body > h1.content-title')
       .assert.elementNotPresent('.content-body > h2.content-title')
       .assert.elementNotPresent('.content-body > h4.content-meta')
+      .assert.elementPresent('.page > .comments')
+      .assert.elementNotPresent('.pagination')
       .assert.elementPresent('.vuelog > footer')
   },
 
