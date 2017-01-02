@@ -18,15 +18,17 @@ console.log(
 var spinner = ora('building for production...')
 spinner.start()
 
+rm('-rf', config.build.assetsRoot)
+
 var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
-rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
-cp('-R', 'static/*', assetsPath)
+cp('-r', 'static/*', assetsPath)
 
 var userdataPath = path.join(config.build.assetsRoot, config.build.userdataSubDirectory)
-rm('-rf', userdataPath)
 mkdir('-p', userdataPath)
-cp('-R', 'userdata/*', userdataPath)
+cp('-r', 'userdata/*', userdataPath)
+mv('-f', path.join(userdataPath, 'database-dist.js'), path.join(userdataPath, 'database.js'))
+rm('-f', path.join(userdataPath, 'database-docs.js'))
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
