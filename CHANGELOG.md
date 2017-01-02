@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.6.0 - 2017-01-02
+
+#### Added
+- Build script for docs.
+
 ### 2.5.3 - 2016-12-31
 
 #### Fixed
