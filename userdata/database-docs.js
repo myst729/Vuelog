@@ -5,16 +5,16 @@ window.VUELOG_DATABASE = {
 
   config: {
     // The name of your site, will be displayed in browser tab and site header.
-    brand: 'Vuelog Dev',
+    brand: 'Vuelog Docs',
 
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
 
     // The full URL where your site is hosted.
-    home: 'http://localhost:8080',
+    home: 'https://myst729.github.io/Vuelog',
 
     // Path to the domain root that serves your site, starts and ends with slash (`/`). Set to `'/'` if your site is under domain root.
-    base: '/',
+    base: '/Vuelog/',
 
     // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
     lang: 'en-US',
@@ -35,13 +35,13 @@ window.VUELOG_DATABASE = {
     excerptDelimiter: '<!-- more -->',
 
     // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
-    disqusShortname: 'vuelog',
+    disqusShortname: '',
 
     // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
-    intenseDebateAccount: '48039cbd4d547c03251bf62282dfa0d6',
+    intenseDebateAccount: '',
 
     // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
-    livereUid: 'MTAyMC8yNzE0NS8zNzM0',
+    livereUid: '',
 
     // Can be either `logo` or `line`, set to other values to disable the loading spinner.
     spinnerPattern: 'logo'

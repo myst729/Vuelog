@@ -6,6 +6,7 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
+    docsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
     userdataSubDirectory: 'userdata',
     assetsPublicPath: './',
