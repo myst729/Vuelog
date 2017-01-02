@@ -33,6 +33,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 If you just want to write something, grab the latest release package [here](https://github.com/myst729/Vuelog/releases).
 
 
+## Docs
+
+https://myst729.github.io/Vuelog
+
+
 ## License
 
 MIT © [Leo Deng](https://myst729.github.io/)
