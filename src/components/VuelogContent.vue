@@ -194,6 +194,9 @@
     text-decoration none
 
   @media screen and (max-width: 999px)
+    h1.content-title
+      font-size 1.75em
+
     .continue-reading a:after
       opacity 1
 </style>
