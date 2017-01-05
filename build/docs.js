@@ -6,6 +6,5 @@ var path = require('path')
 var config = require('../config')
 
 rm('-rf', config.build.docsRoot)
-rm('-f', path.join(config.build.assetsRoot, config.build.assetsSubDirectory, '**/*.map'))
 cp('-f', 'userdata/database-docs.js', path.join(config.build.assetsRoot, config.build.userdataSubDirectory, 'database.js'))
 mv('-f', config.build.assetsRoot, config.build.docsRoot)
