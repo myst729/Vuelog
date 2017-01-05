@@ -31,7 +31,7 @@
         this.$router.push({
           name: this.$route.name,
           params: this.$route.params,
-          query: { lang: this.selected }
+          query: Object.assign({}, this.$route.query, { lang: this.selected })
         })
       }
     },
