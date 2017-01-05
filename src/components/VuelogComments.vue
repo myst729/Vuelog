@@ -8,16 +8,16 @@
 
 <script>
   import VueDisqus from 'vue-disqus'
-  import VueIntenseDebate from 'vue-intense-debate'
-  import VueLivere from 'vue-livere'
+  import VueIntenseDebate from 'vue-intense-debate/VueIntenseDebate'
+  import VueLivere from 'vue-livere/VueLivere'
 
   export default {
     name: 'vuelog-comments',
 
     components: {
+      VueDisqus,
       VueIntenseDebate,
-      VueLivere,
-      VueDisqus
+      VueLivere
     },
 
     props: ['path'],
