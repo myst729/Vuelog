@@ -2,6 +2,12 @@ title: Changelog (since v0.4.0)
 ---
 All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
 
+### 2.6.1 - 2017-01-05
+
+#### Changed
+- Style improvement.
+- Production sourcemaps turned off.
+
 ### 2.6.0 - 2017-01-02
 
 #### Added
