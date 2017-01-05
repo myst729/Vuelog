@@ -18,8 +18,8 @@
   h4
     color #7f8c8d
 
-  img:only-child
-  video:only-child
+  img
+  video
     clear both
     display block
     border-radius 3px
@@ -119,3 +119,11 @@
 
     i.music:before
       content '\266b' // ♫
+
+@media screen and (max-width: 999px)
+  .content-container
+    h1
+      font-size 1.6em
+
+    h2
+      font-size 1.35em
