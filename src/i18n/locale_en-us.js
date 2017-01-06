@@ -24,7 +24,7 @@ const enUS = {
   reading: {
     blog: 'Blog',
     continued: 'Continue reading ...',
-    pagination: 'Page {0}'
+    page: 'Page {0}'
   },
 
   time: {

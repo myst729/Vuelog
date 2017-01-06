@@ -5,20 +5,20 @@
         <vuelog-content class="post-body" :type="'posts'" :metadata="post"></vuelog-content>
       </div>
     </div>
-    <vuelog-pagination :prev="dataset.prev" :next="dataset.next"></vuelog-pagination>
+    <vuelog-navigation :prev="dataset.prev" :next="dataset.next"></vuelog-navigation>
   </div>
 </template>
 
 <script>
   import VuelogContent from '../components/VuelogContent'
-  import VuelogPagination from '../components/VuelogPagination'
+  import VuelogNavigation from '../components/VuelogNavigation'
 
   export default {
     name: 'vuelog-posts-view',
 
     components: {
       VuelogContent,
-      VuelogPagination
+      VuelogNavigation
     },
 
     computed: {
@@ -86,8 +86,8 @@
         }
 
         return {
-          prev: prevRoute && { label: this.$t('reading.pagination', [prevP]), route: prevRoute },
-          next: nextRoute && { label: this.$t('reading.pagination', [nextP]), route: nextRoute }
+          prev: prevRoute && { label: this.$t('reading.page', [prevP]), route: prevRoute },
+          next: nextRoute && { label: this.$t('reading.page', [nextP]), route: nextRoute }
         }
       }
     },
@@ -96,7 +96,7 @@
       const current = this.dataset.current
       var title = current.label
       if (current.p > 1) {
-        title += ` | ${this.$t('reading.pagination', [current.p])}`
+        title += ` | ${this.$t('reading.page', [current.p])}`
       }
       this.$store.dispatch('documentTitle', title)
     }
