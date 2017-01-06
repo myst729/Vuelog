@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination">
+  <div class="navigation">
     <div class="prev" v-if="prev">
       <router-link :to="prev.route" v-text="prev.label"></router-link>
     </div>
@@ -11,14 +11,14 @@
 
 <script>
   export default {
-    name: 'vuelog-pagination',
+    name: 'vuelog-navigation',
 
     props: ['prev', 'next']
   }
 </script>
 
 <style lang="stylus" scoped>
-  .pagination
+  .navigation
     font-weight 600
     padding-top 5px
 

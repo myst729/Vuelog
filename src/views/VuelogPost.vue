@@ -2,14 +2,14 @@
   <div class="post">
     <vuelog-content class="post-body" :type="'post'" :metadata="dataset.post"></vuelog-content>
     <vuelog-comments v-if="!dataset.post.commentless" :path="$route.fullPath"></vuelog-comments>
-    <vuelog-pagination :prev="dataset.prev" :next="dataset.next"></vuelog-pagination>
+    <vuelog-navigation :prev="dataset.prev" :next="dataset.next"></vuelog-navigation>
   </div>
 </template>
 
 <script>
   import VuelogContent from '../components/VuelogContent'
   import VuelogComments from '../components/VuelogComments'
-  import VuelogPagination from '../components/VuelogPagination'
+  import VuelogNavigation from '../components/VuelogNavigation'
 
   export default {
     name: 'vuelog-post-view',
@@ -17,7 +17,7 @@
     components: {
       VuelogContent,
       VuelogComments,
-      VuelogPagination
+      VuelogNavigation
     },
 
     computed: {
