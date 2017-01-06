@@ -1,6 +1,6 @@
 {
   "name": "vuelog",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "description": "A backend-free blog system built on top of Vue.js",
   "author": "Leo Deng",
   "license": "MIT",
