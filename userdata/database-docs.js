@@ -34,6 +34,9 @@ window.VUELOG_DATABASE = {
     // The string to annotate excerpt out of the complete content in *.md files.
     excerptDelimiter: '<!-- more -->',
 
+    // The string to annotate content pagination points *.md files.
+    contentDelimiter: '<!-- next -->',
+
     // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
     disqusShortname: '',
 
@@ -117,6 +120,12 @@ window.VUELOG_DATABASE = {
   ],
 
   posts: [
+    {
+      title: 'This post has multiple parts',
+      slug: 'this-post-has-multiple-parts',
+      category: 'guide',
+      date: '2017-01-05'
+    },
     {
       title: 'This post is invisible',
       slug: 'this-post-is-invisible',

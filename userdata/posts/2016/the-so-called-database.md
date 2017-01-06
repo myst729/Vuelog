@@ -27,6 +27,8 @@ window.VUELOG_DATABASE = {
     metadataDelimiter: '---',
     // The string to annotate excerpt out of the complete content in *.md files.
     excerptDelimiter: '<!-- more -->',
+    // The string to annotate content pagination points *.md files.
+    contentDelimiter: '<!-- next -->',
     // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
     disqusShortname: 'DQ_SHORTNAME',
     // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
@@ -92,6 +94,7 @@ The purpose of each section:
   - `useHomepage`: Set to `true` if you want a dedicated home page. However, to customize the home page you need to fork the Vuelog repository.
   - `metadataDelimiter`: Metadata are not meant to render the page, so they are really optional. They are recommended for better maintenance of your markdown source files.
   - `excerptDelimiter`: Sometimes we write [tl;dr](http://www.urbandictionary.com/define.php?term=tl%3Bdr) posts. And we don’t want to show its full content in a category view. That’s why “excerpt” was introduced. Set to empty string will suppress this feature.
+  - `contentDelimiter`: For tl;dr pages or posts, show full content in a page/post view is also boring. Use the content delimiter to split into multiple parts and get rid of super long web pages.
   - `disqusShortname`: A string that is used to uniquely identify your website on Disqus. Can be viewed on your Disqus admin page.
   - `intenseDebateAccount`: A string that is used to uniquely identify your website on IntenseDebate. Can be viewed on your IntenseDebate admin page.
   - `livereUid`: A string that is used to uniquely identify your website on LiveRe. Can be viewed on your LiveRe admin page.
