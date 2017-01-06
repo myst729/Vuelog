@@ -3,7 +3,7 @@
     <vuelog-header></vuelog-header>
     <div class="vuelog-body">
       <transition name="view" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
-        <router-view :key="$route.fullPath"></router-view>
+        <router-view :key="routeKey"></router-view>
       </transition>
     </div>
     <vuelog-footer v-if="!isHomepage"></vuelog-footer>
@@ -34,6 +34,16 @@
 
       isHomepage () {
         return this.$route.name === 'home'
+      },
+
+      routeKey () {
+        // Avoid router-view reload when routing from one part to another in a multiple parts page or post.
+        var path = this.$route.path.replace(/\/$/, '')
+        if (this.$route.name === 'page-part' || this.$route.name === 'post-part') {
+          // By removing the `part` param, different parts of a multiple parts page or post will share the same key.
+          return path.replace(/\/\d+$/, '')
+        }
+        return path
       }
     },
 
