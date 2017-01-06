@@ -1,7 +1,5 @@
 import 'userdata/database'
-import { getters } from 'src/store'
-
-const {
+import {
   title,
   lang,
   menu,
@@ -13,7 +11,7 @@ const {
   posts,
   postsByCategory,
   postsByYear
-} = getters
+} from 'src/store/getters'
 
 describe('Store: getters', () => {
   it('Title', () => {

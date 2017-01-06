@@ -1,11 +1,9 @@
 import 'userdata/database'
-import { mutations } from 'src/store'
-
-const {
+import {
   setDocumentTitle,
   setSystemLanguage,
   setSideMenu
-} = mutations
+} from 'src/store/mutations'
 
 describe('Store: mutations', () => {
   it('Set document title to `Vuelog`', () => {
