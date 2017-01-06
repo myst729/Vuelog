@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.7.0 - 2017-01-07
+
+#### Added
+- Support multiple parts page/post pagination.
+
 ### 2.6.1 - 2017-01-05
 
 #### Changed
