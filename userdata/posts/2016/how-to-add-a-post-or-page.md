@@ -83,6 +83,7 @@ Start your content here...
 - But be warned, at least keep the metadata delimiter (default value: `---`) there. Or maybe you’ll run into a parse error.
 - For better maintain your writings, I recommend you leave some metadata.
 - If your post is very long and you just want to show an excerpt in the category view, add an excerpt delimiter (default value: `<!-- more -->`) in the content. Anything after the excerpt delimiter is only available in the post view.
+- If your post is very long and you want split it into multiple parts to avoid a super long web page, add an content delimiter (default value: `<!-- next -->`) in the content. Each delimiter generates a new part of content.
 
 ### How to write a page?
 
