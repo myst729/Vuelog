@@ -12,9 +12,21 @@
           <span> / </span>
           <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="metadata.categoryTitle"></router-link>
         </h4>
-        <div class="content-container" v-html="content"></div>
-        <div v-if="type === 'posts'" class="continue-reading">
-          <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="$t('reading.continued')"></router-link>
+        <!-- used in posts view -->
+        <div v-if="type === 'posts'">
+          <div class="content-container" v-html="content[0]"></div>
+          <div class="continue-reading">
+            <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="$t('reading.continued')"></router-link>
+          </div>
+        </div>
+        <!-- used in page/post view -->
+        <div v-if="type !== 'posts'">
+          <div class="content-container">
+            <transition name="nested-view" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
+              <router-view :key="$route.fullPath" :markups="content"></router-view>
+            </transition>
+          </div>
+          <vuelog-pagination v-if="content.length > 1" :total="content.length" :type="type"></vuelog-pagination>
         </div>
       </div>
     </transition>
@@ -25,6 +37,7 @@
   import hljs from 'highlight.js'
   import marked from 'marked'
   import { meaningfulTime } from '../helpers'
+  import VuelogPagination from './VuelogPagination'
   import VuelogSpinner from './VuelogSpinner'
 
   export default {
@@ -33,6 +46,7 @@
     props: ['type', 'metadata'],
 
     components: {
+      VuelogPagination,
       VuelogSpinner
     },
 
@@ -56,6 +70,14 @@
     methods: {
       oops () {
         this.$router.replace('/oops')
+      },
+
+      closeSideMenu () {
+        this.$store.dispatch('sideMenu', false)
+      },
+
+      resetScroll () {
+        window.scrollTo(0, 0)
       },
 
       promiseRequest (method, url, header, body) {
@@ -114,11 +136,23 @@
         return this.promiseRequest('POST', 'https://api.github.com/markdown', header, body)
       },
 
-      postProcess (markup) {
-        if (this.type === 'posts' && this.config.excerptDelimiter) {
-          return markup.split(this.config.excerptDelimiter)[0]
+      getDelimiterPosition (markup, delimiter) {
+        if (!delimiter) {
+          return markup.length
         }
-        return markup
+        var position = markup.indexOf(delimiter)
+        return position > -1 ? position : markup.length
+      },
+
+      postProcess (markup) {
+        if (this.type === 'posts') {
+          // For posts view, if both excerptDelimiter and contentDelimiter are inserted, display the shorter part.
+          var excerptPosition = this.getDelimiterPosition(markup, this.config.excerptDelimiter)
+          var contentPosition = this.getDelimiterPosition(markup, this.config.contentDelimiter)
+          return [markup.substring(0, Math.min(excerptPosition, contentPosition))]
+        }
+        // For page or post view, show part of content if contentDelimiter is inserted, otherwise full content.
+        return this.config.contentDelimiter ? markup.split(this.config.contentDelimiter).filter(m => m.trim().length) : [markup]
       }
     },
 
@@ -127,8 +161,8 @@
         .then(this.preProcess)
         .then(this.renderMarkdown)
         .then(this.postProcess)
-        .then(markup => {
-          this.content = markup
+        .then(markups => {
+          this.content = markups
         })
         .catch(exception => {
           if (this.type !== 'posts') {
@@ -192,6 +226,14 @@
 
   .continue-reading a:hover
     text-decoration none
+
+  .nested-view-enter-active
+  .nested-view-leave-active
+    transition opacity .3s ease
+
+  .nested-view-enter
+  .nested-view-leave-active
+    opacity 0
 
   @media screen and (max-width: 999px)
     h1.content-title

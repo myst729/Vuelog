@@ -9,15 +9,24 @@ import VuelogArchive from '../views/VuelogArchive'
 import VuelogPosts from '../views/VuelogPosts'
 import VuelogPost from '../views/VuelogPost'
 import VuelogPage from '../views/VuelogPage'
+import VuelogContentPart from '../views/nested/VuelogContentPart'
 
 // Or lazy load route view components if interested
 // const VuelogArchive = resolve => require(['../views/VuelogArchive'], resolve)
 // const VuelogPosts = resolve => require(['../views/VuelogPosts'], resolve)
 // const VuelogPost = resolve => require(['../views/VuelogPost'], resolve)
 // const VuelogPage = resolve => require(['../views/VuelogPage'], resolve)
+// const VuelogContentPart = resolve => require(['../views/nested/VuelogContentPart'], resolve)
 
 Vue.use(VueMeta)
 Vue.use(VueRouter)
+
+function contentPartRoutes (parentType) {
+  return [
+    { path: '', name: parentType, component: VuelogContentPart },
+    { path: ':part', name: `${parentType}-part`, component: VuelogContentPart }
+  ]
+}
 
 var routes = [
   { path: '/archive', name: 'archive', component: VuelogArchive },
@@ -27,8 +36,8 @@ var routes = [
   { path: '/blog/p/:p', name: 'posts-more', component: VuelogPosts },
   { path: '/blog/:category', name: 'category', component: VuelogPosts },
   { path: '/blog/:category/p/:p', name: 'category-more', component: VuelogPosts },
-  { path: '/blog/:category/:year/:slug', name: 'post', component: VuelogPost },
-  { path: '/page/:page', name: 'page', component: VuelogPage },
+  { path: '/blog/:category/:year/:slug', component: VuelogPost, children: contentPartRoutes('post') },
+  { path: '/page/:page', component: VuelogPage, children: contentPartRoutes('page') },
   { path: '/oops', name: 'oops', component: VuelogOops }
 ]
 
@@ -49,9 +58,25 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  var modified = false
+  var route = Object.assign({}, to)
+
+  // Param `part` is presented but not a natural number
+  if (to.params.part) {
+    let natural = Number.parseInt(to.params.part, 10)
+    if (!Number.isNaN(natural) && `${natural}` !== to.params.part) {
+      route.params.part = `${natural}`
+      modified = true
+    }
+  }
+
+  // Locale set could be missing
   if (from.query.lang && !to.query.lang) {
-    let route = Object.assign({}, to)
     route.query.lang = from.query.lang
+    modified = true
+  }
+
+  if (modified) {
     next(route)
   } else {
     next()
