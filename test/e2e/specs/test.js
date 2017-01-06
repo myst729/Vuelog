@@ -40,15 +40,32 @@ module.exports = {
 
   'Post view': function (browser) {
     browser
-      .click('.archive-body a:nth-child(1)')
+      .click('.archive-body li:nth-last-child(4) a')
       .pause(1000)
       .assert.elementCount('.content-body', 1)
       .assert.elementPresent('.content-body > h1.content-title')
       .assert.elementNotPresent('.content-body > h2.content-title')
       .assert.elementPresent('.content-body > h4.content-meta')
+      .assert.elementNotPresent('.content-pagination') // This post should not have multiple parts
+      .assert.elementNotPresent('.content-pagination > .page-number')
       .assert.elementPresent('.post > .comments')
-      .assert.elementPresent('.post > .pagination')
+      .assert.elementPresent('.post > .navigation')
       .assert.elementPresent('.vuelog > footer')
+  },
+
+  'Post view: multiple parts content': function (browser) {
+    browser
+      .url(browser.globals.devServerURL + '/#/blog/guide/2017/this-post-has-multiple-parts')
+      .pause(1000)
+      .assert.elementPresent('.content-pagination')
+      .assert.elementCount('.content-pagination > .page-number', 3) // This post should have 3 multiple parts
+      .assert.elementCount('.content-pagination > .page-number > span', 1) // Only 1 of which is the active part
+      .assert.elementCount('.content-pagination > .page-number > a', 2) // And 2 are router links to other parts
+      .click('.content-pagination > .page-number a')
+      .pause(1000)
+      .assert.urlContains('/#/blog/guide/2017/this-post-has-multiple-parts') // Should still show the same post, a different part through
+      .assert.elementCount('.content-pagination > .page-number > span', 1) // Only 1 of which is the active part
+      .assert.elementCount('.content-pagination > .page-number > a', 2) // And 2 are router links to other parts
   },
 
   'Posts view': function (browser) {
@@ -60,7 +77,7 @@ module.exports = {
       .assert.elementPresent('.content-body > h2.content-title')
       .assert.elementPresent('.content-body > h4.content-meta')
       .assert.elementNotPresent('.comments')
-      .assert.elementPresent('.posts > .pagination')
+      .assert.elementPresent('.posts > .navigation')
       .assert.elementPresent('.vuelog > footer')
   },
 
@@ -73,7 +90,7 @@ module.exports = {
       .assert.elementNotPresent('.content-body > h2.content-title')
       .assert.elementNotPresent('.content-body > h4.content-meta')
       .assert.elementPresent('.page > .comments')
-      .assert.elementNotPresent('.pagination')
+      .assert.elementNotPresent('.navigation')
       .assert.elementPresent('.vuelog > footer')
   },
 
