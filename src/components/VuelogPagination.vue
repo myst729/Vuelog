@@ -49,9 +49,9 @@
 
     a
     span
-      border 1px solid #4fc08d
       border-radius 2em
-      line-height 30px
+      font-weight 500
+      line-height 32px
       text-align center
       text-decoration none
       display inline-block
@@ -60,6 +60,7 @@
 
     a
       background #fff
+      box-shadow inset 0 0 0 1px #4fc08d
       color #4fc08d
 
       &:hover
@@ -67,14 +68,14 @@
         color #5dc596
 
     span
-      background #4fc08d
+      background #bdc3c7
       color #fff
 
   @media screen and (max-width: 999px)
     .page-number
       a
       span
-        line-height 34px
+        line-height 36px
         height 36px
         width 36px
 </style>
