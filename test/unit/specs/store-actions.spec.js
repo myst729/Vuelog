@@ -1,11 +1,10 @@
 import 'userdata/database'
-import { actions } from 'src/store'
-
-const {
+import { locales } from 'src/i18n/locales'
+import {
   documentTitle,
   systemLanguage,
   sideMenu
-} = actions
+} from 'src/store/actions'
 
 describe('Store: actions', () => {
   it('Document title dispatched with `Qwerty`', done => {
@@ -43,7 +42,8 @@ describe('Store: actions', () => {
       lang: '',
       database: {
         config: { lang: 'en-US' }
-      }
+      },
+      locales
     }
     const commit = (type, payload) => {
       expect(type).to.equal('setSystemLanguage')
@@ -58,7 +58,8 @@ describe('Store: actions', () => {
       lang: '',
       database: {
         config: { lang: 'en-US' }
-      }
+      },
+      locales
     }
     const commit = (type, payload) => {
       expect(type).to.equal('setSystemLanguage')
