@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import VueDisqus from 'vue-disqus'
+  import VueDisqus from 'vue-disqus/VueDisqus'
   import VueIntenseDebate from 'vue-intense-debate/VueIntenseDebate'
   import VueLivere from 'vue-livere/VueLivere'
 
