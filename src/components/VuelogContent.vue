@@ -23,7 +23,7 @@
         <div v-if="type !== 'posts'">
           <div class="content-container">
             <transition name="nested-view" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
-              <router-view :key="$route.fullPath" :markups="content"></router-view>
+              <router-view :key="routeKey" :markups="content"></router-view>
             </transition>
           </div>
           <vuelog-pagination v-if="content.length > 1" :total="content.length" :type="type"></vuelog-pagination>
@@ -57,6 +57,15 @@
 
       time () {
         return meaningfulTime(this.metadata.date)
+      },
+
+      routeKey () {
+        // Avoid router-view reload when routing from default match to part 1 or vise versa.
+        var path = this.$route.path.replace(/\/$/, '')
+        if (this.$route.name === 'page' || this.$route.name === 'post') {
+          return path + '/1'
+        }
+        return path
       }
     },
 
