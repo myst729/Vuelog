@@ -15,6 +15,9 @@ npm run dev
 # build for production with minification
 npm run build
 
+# build and view the bundle analyzer report
+npm run build --report
+
 # update project documentation
 npm run docs
 
