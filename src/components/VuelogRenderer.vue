@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="renderer">
     <transition name="loading" mode="out-in" appear>
       <vuelog-spinner class="spinner" v-if="!content" key="spinner" :pattern="config.spinnerPattern"></vuelog-spinner>
       <div class="content-body" v-if="content" key="content">
@@ -41,7 +41,7 @@
   import VuelogSpinner from './VuelogSpinner'
 
   export default {
-    name: 'vuelog-content',
+    name: 'vuelog-renderer',
 
     props: ['type', 'metadata'],
 

@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'vuelog-content-part-view',
+    name: 'vuelog-content',
 
     props: ['markups'],
 

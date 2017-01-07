@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'vuelog-home-view',
+    name: 'vuelog-home',
 
     computed: {
       system () {

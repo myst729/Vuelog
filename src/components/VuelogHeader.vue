@@ -345,7 +345,7 @@
       span
         display none
 
-    .vuelog-view-home
+    .vuelog-home-view
       header
         border none
         padding 0

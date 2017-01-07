@@ -72,7 +72,7 @@
 
 <script>
   export default {
-    name: 'vuelog-archive-view',
+    name: 'vuelog-archive',
 
     computed: {
       displayType () {
