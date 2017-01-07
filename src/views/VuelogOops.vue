@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: 'vuelog-oops-view',
+    name: 'vuelog-oops',
 
     created () {
       this.$store.dispatch('documentTitle', this.$t('oops.title'))

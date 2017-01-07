@@ -2,7 +2,7 @@
   <div class="posts">
     <div class="posts-body">
       <div class="post" v-for="post in dataset.posts">
-        <vuelog-content class="post-body" :type="'posts'" :metadata="post"></vuelog-content>
+        <vuelog-renderer class="post-body" :type="'posts'" :metadata="post"></vuelog-renderer>
       </div>
     </div>
     <vuelog-navigation :prev="dataset.prev" :next="dataset.next"></vuelog-navigation>
@@ -10,14 +10,14 @@
 </template>
 
 <script>
-  import VuelogContent from '../components/VuelogContent'
+  import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogNavigation from '../components/VuelogNavigation'
 
   export default {
-    name: 'vuelog-posts-view',
+    name: 'vuelog-posts',
 
     components: {
-      VuelogContent,
+      VuelogRenderer,
       VuelogNavigation
     },
 

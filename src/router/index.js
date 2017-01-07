@@ -9,22 +9,22 @@ import VuelogArchive from '../views/VuelogArchive'
 import VuelogPosts from '../views/VuelogPosts'
 import VuelogPost from '../views/VuelogPost'
 import VuelogPage from '../views/VuelogPage'
-import VuelogContentPart from '../views/nested/VuelogContentPart'
+import VuelogContent from '../views/VuelogContent'
 
 // Or lazy load route view components if interested
 // const VuelogArchive = resolve => require(['../views/VuelogArchive'], resolve)
 // const VuelogPosts = resolve => require(['../views/VuelogPosts'], resolve)
 // const VuelogPost = resolve => require(['../views/VuelogPost'], resolve)
 // const VuelogPage = resolve => require(['../views/VuelogPage'], resolve)
-// const VuelogContentPart = resolve => require(['../views/nested/VuelogContentPart'], resolve)
+// const VuelogContent = resolve => require(['../views/VuelogContent'], resolve)
 
 Vue.use(VueMeta)
 Vue.use(VueRouter)
 
-function contentPartRoutes (parentType) {
+function contentRoutes (name) {
   return [
-    { path: '', name: parentType, component: VuelogContentPart },
-    { path: ':part', name: `${parentType}-part`, component: VuelogContentPart }
+    { path: '', name: name, component: VuelogContent },
+    { path: ':part', name: `${name}-part`, component: VuelogContent }
   ]
 }
 
@@ -36,8 +36,8 @@ var routes = [
   { path: '/blog/p/:p', name: 'posts-more', component: VuelogPosts },
   { path: '/blog/:category', name: 'category', component: VuelogPosts },
   { path: '/blog/:category/p/:p', name: 'category-more', component: VuelogPosts },
-  { path: '/blog/:category/:year/:slug', component: VuelogPost, children: contentPartRoutes('post') },
-  { path: '/page/:page', component: VuelogPage, children: contentPartRoutes('page') },
+  { path: '/blog/:category/:year/:slug', component: VuelogPost, children: contentRoutes('post') },
+  { path: '/page/:page', component: VuelogPage, children: contentRoutes('page') },
   { path: '/oops', name: 'oops', component: VuelogOops }
 ]
 

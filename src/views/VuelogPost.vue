@@ -1,21 +1,21 @@
 <template>
   <div class="post">
-    <vuelog-content class="post-body" :type="'post'" :metadata="dataset.post"></vuelog-content>
+    <vuelog-renderer class="post-body" :type="'post'" :metadata="dataset.post"></vuelog-renderer>
     <vuelog-comments v-if="!dataset.post.commentless" :path="$route.fullPath"></vuelog-comments>
     <vuelog-navigation :prev="dataset.prev" :next="dataset.next"></vuelog-navigation>
   </div>
 </template>
 
 <script>
-  import VuelogContent from '../components/VuelogContent'
+  import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogComments from '../components/VuelogComments'
   import VuelogNavigation from '../components/VuelogNavigation'
 
   export default {
-    name: 'vuelog-post-view',
+    name: 'vuelog-post',
 
     components: {
-      VuelogContent,
+      VuelogRenderer,
       VuelogComments,
       VuelogNavigation
     },

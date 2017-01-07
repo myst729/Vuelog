@@ -1,19 +1,19 @@
 <template>
   <div class="page">
-    <vuelog-content class="page-body" :type="'page'" :metadata="page"></vuelog-content>
+    <vuelog-renderer class="page-body" :type="'page'" :metadata="page"></vuelog-renderer>
     <vuelog-comments v-if="!page.commentless" :path="$route.fullPath"></vuelog-comments>
   </div>
 </template>
 
 <script>
-  import VuelogContent from '../components/VuelogContent'
+  import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogComments from '../components/VuelogComments'
 
   export default {
-    name: 'vuelog-page-view',
+    name: 'vuelog-page',
 
     components: {
-      VuelogContent,
+      VuelogRenderer,
       VuelogComments
     },
 

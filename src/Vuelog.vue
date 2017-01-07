@@ -1,5 +1,5 @@
 <template>
-  <div class="vuelog" :class="'vuelog-view-' + $route.name">
+  <div class="vuelog" :class="routeClass">
     <vuelog-header></vuelog-header>
     <div class="vuelog-body">
       <transition name="view" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
@@ -34,6 +34,11 @@
 
       isHomepage () {
         return this.$route.name === 'home'
+      },
+
+      routeClass () {
+        var rootRoute = this.$route.name.replace('-part', '')
+        return `vuelog-${rootRoute}-view`
       },
 
       routeKey () {
@@ -123,7 +128,7 @@
       padding-top 50px
       padding-bottom 15px
 
-    .vuelog-view-home .vuelog-body
+    .vuelog-home-view .vuelog-body
       padding-top 20px
       padding-bottom 0
 </style>
