@@ -126,7 +126,7 @@
 
       renderMarkdown (md) {
         marked.setOptions({
-          highlight: (code, lang) => {
+          highlight (code, lang) {
             try {
               return hljs.highlight(lang, code).value
             } catch (e) {
