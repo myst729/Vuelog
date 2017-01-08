@@ -2,6 +2,13 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.7.1 - 2017-01-08
+
+#### Changed
+- Optimize production build size.
+- Introduce webpack bundle analyzer plugin for build process.
+- Add geckodriver to run end to end tests in Firefox.
+
 ### 2.7.0 - 2017-01-07
 
 #### Added
