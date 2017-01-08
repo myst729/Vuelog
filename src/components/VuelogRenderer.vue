@@ -35,9 +35,8 @@
 
 <script>
   import marked from 'marked'
-  // import hljs from 'highlight.js'
-  import hljs from '../assets/scripts/hljs.trim'
   import { meaningfulTime } from '../helpers'
+  import hljs from '../helpers/highlight'
   import VuelogPagination from './VuelogPagination'
   import VuelogSpinner from './VuelogSpinner'
 
