@@ -4,7 +4,7 @@
       <h2 v-html="$t('archive.inCategory', [archive.title])"></h2>
       <ul>
         <li v-for="post in archive.posts">
-          <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="post.title"></router-link>
+          <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
           <span v-text="' ( ' + post.date + ' )'"></span>
         </li>
         <li v-if="archive.posts.length === 0" v-text="$t('archive.empty')"></li>
@@ -15,9 +15,9 @@
       <h2 v-text="$t('archive.inYear', [archive.year])"></h2>
       <ul>
         <li v-for="post in archive.posts">
-          <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: archive.year}}" v-text="post.title"></router-link>
+          <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: archive.year}}" v-text="i18nify(post.title)"></router-link>
           <span> ( </span>
-          <router-link :to="{name: 'category', params: {category: post.category}}" v-text="post.categoryTitle"></router-link>
+          <router-link :to="{name: 'category', params: {category: post.category}}" v-text="i18nify(post.categoryTitle)"></router-link>
           <span> )</span>
         </li>
         <li v-if="archive.posts.length === 0" v-text="$t('archive.empty')"></li>
@@ -29,12 +29,12 @@
       <ul>
         <li v-for="category in archive.postsByCategory">
           <h4>
-            <router-link :to="{name: 'archive-category', params: {category: category.slug}}" v-text="category.title"></router-link>
+            <router-link :to="{name: 'archive-category', params: {category: category.slug}}" v-text="i18nify(category.title)"></router-link>
             <span v-text="' (' + category.posts.length + ')'"></span>
           </h4>
           <ul>
             <li v-for="post in category.posts">
-              <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="post.title"></router-link>
+              <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
               <span v-text="' ( ' + post.date + ' )'"></span>
             </li>
             <li v-if="category.posts.length === 0" v-text="$t('archive.empty')"></li>
@@ -51,9 +51,9 @@
           </h4>
           <ul>
             <li v-for="post in year.posts">
-              <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="post.title"></router-link>
+              <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
               <span> ( </span>
-              <router-link :to="{name: 'category', params: {category: post.category}}" v-text="post.categoryTitle"></router-link>
+              <router-link :to="{name: 'category', params: {category: post.category}}" v-text="i18nify(post.categoryTitle)"></router-link>
               <span> )</span>
             </li>
           </ul>
@@ -63,7 +63,7 @@
       <h2 v-text="$t('archive.pages')"></h2>
       <ul>
         <li v-for="page in archive.pages" v-if="!page.exclude">
-          <router-link :to="{name: 'page', params: {page: page.slug}}" v-text="page.title"></router-link>
+          <router-link :to="{name: 'page', params: {page: page.slug}}" v-text="i18nify(page.title)"></router-link>
         </li>
       </ul>
     </div>
@@ -71,12 +71,22 @@
 </template>
 
 <script>
+  import { retrieveByLanguage } from '../helpers'
+
   export default {
     name: 'vuelog-archive',
 
     computed: {
       displayType () {
         return this.$route.name
+      },
+
+      active () {
+        return this.$store.getters.lang
+      },
+
+      config () {
+        return this.$store.getters.config
       },
 
       postsByCategory () {
@@ -106,6 +116,10 @@
     methods: {
       oops () {
         this.$router.replace('/oops')
+      },
+
+      i18nify (content) {
+        return retrieveByLanguage(content, this.active, this.config.lang)
       },
 
       getPostsInCategory (slug) {

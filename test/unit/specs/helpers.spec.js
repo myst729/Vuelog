@@ -1,5 +1,5 @@
 import 'userdata/database'
-import { meaningfulTime } from 'src/helpers'
+import { meaningfulTime, retrieveByLanguage } from 'src/helpers'
 
 describe('Helpers', () => {
   it('Meaningful time: 3 years ago', () => {
@@ -55,5 +55,35 @@ describe('Helpers', () => {
     const comparedDate = '2999-01-01'
     const result = meaningfulTime(comparedDate)
     expect(result).to.deep.equal({ key: 'time.future', values: { then: '2999-01-01', now: undefined, diff: -1 } })
+  })
+
+  it('Retrieve null content', () => {
+    const content = null
+    const result = retrieveByLanguage(content, 'en-US', 'zh-CN')
+    expect(result).to.equal(null)
+  })
+
+  it('Retrieve non-multilingua content', () => {
+    const content = 'This text is not multilingua.'
+    const result = retrieveByLanguage(content, 'en-US', 'zh-CN')
+    expect(result).to.equal('This text is not multilingua.')
+  })
+
+  it('Retrieve English content', () => {
+    const content = {'en-US': 'This text is in English.'}
+    const result = retrieveByLanguage(content, 'en-US', 'zh-CN')
+    expect(result).to.equal('This text is in English.')
+  })
+
+  it('Retrieve English content and fallback to Chinese', () => {
+    const content = {'zh-CN': '这段文字是汉语。'}
+    const result = retrieveByLanguage(content, 'en-US', 'zh-CN')
+    expect(result).to.equal('这段文字是汉语。')
+  })
+
+  it('Retrieve English content, then Chinese, but still no luck', () => {
+    const content = {'fr-FR': 'Ce texte est le français.'}
+    const result = retrieveByLanguage(content, 'en-US', 'zh-CN')
+    expect(result).to.equal('Ce texte est le français.')
   })
 })

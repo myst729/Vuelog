@@ -5,7 +5,7 @@ window.VUELOG_DATABASE = {
 
   config: {
     // The name of your site, will be displayed in browser tab and site header.
-    brand: 'Vuelog Dev',
+    brand: {'en-US': 'Vuelog Dev', 'zh-CN': 'Vuelog 开发版'},
 
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
@@ -38,13 +38,13 @@ window.VUELOG_DATABASE = {
     contentDelimiter: '<!-- next -->',
 
     // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
-    disqusShortname: 'vuelog',
+    disqusShortname: '', // vuelog',
 
     // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
-    intenseDebateAccount: '48039cbd4d547c03251bf62282dfa0d6',
+    intenseDebateAccount: '', // 48039cbd4d547c03251bf62282dfa0d6',
 
     // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
-    livereUid: 'MTAyMC8yNzE0NS8zNzM0',
+    livereUid: '', // MTAyMC8yNzE0NS8zNzM0',
 
     // Can be either `logo` or `line`, set to other values to disable the loading spinner.
     spinnerPattern: 'logo'
@@ -52,32 +52,32 @@ window.VUELOG_DATABASE = {
 
   navigation: [
     {
-      label: 'Guide',
+      label: {'en-US': 'Guide', 'zh-CN': '指南'},
       type: 'category',
       path: '/blog/guide'
     },
     {
-      label: 'About',
+      label: {'en-US': 'About', 'zh-CN': '关于'},
       type: 'page',
       path: '/page/all-about-vuelog'
     },
     {
-      label: 'Changelog',
+      label: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
       type: 'page',
       path: '/page/changelog'
     },
     {
-      label: 'Archive',
+      label: {'en-US': 'Archive', 'zh-CN': '归档'},
       type: 'archive',
       path: '/archive'
     },
     {
-      label: 'Links',
+      label: {'en-US': 'Links', 'zh-CN': '链接'},
       type: 'dropdown',
       path: '', // (OPTIONAL) dropdown can be routable too if you set a valid route path
       children: [
         {
-          label: 'Weibo',
+          label: {'en-US': 'Weibo', 'zh-CN': '微博'},
           type: 'outgoing',
           link: 'http://weibo.com/myst729'
         },
@@ -97,12 +97,12 @@ window.VUELOG_DATABASE = {
 
   pages: [
     {
-      title: 'All about Vuelog',
+      title: {'en-US': 'All about Vuelog', 'zh-CN': '关于 Vuelog 的一切'},
       slug: 'all-about-vuelog',
       titleless: false // (OPTIONAL) set this to true if you want to hide the title in page view (same for post)
     },
     {
-      title: 'Changelog',
+      title: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
       slug: 'changelog',
       commentless: false, // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
       exclude: true       // (OPTIONAL) set this to true if you want to exclude the particular page from archive view (page only)
@@ -111,16 +111,28 @@ window.VUELOG_DATABASE = {
 
   categories: [
     {
-      title: 'Guide',
+      title: {'en-US': 'Guide', 'zh-CN': '指南'},
       slug: 'guide'
     },
     {
-      title: 'Empty',
+      title: {'en-US': 'Showcase', 'zh-CN': '演示'},
       slug: 'empty'
     }
   ],
 
   posts: [
+    {
+      title: '只有一种语言',
+      slug: 'a-post-with-one-language-tag',
+      category: 'guide',
+      date: '2017-01-10'
+    },
+    {
+      title: {'en-US': 'A multilingual post', 'zh-CN': '多语言的贴子'},
+      slug: 'a-multilingual-post',
+      category: 'guide',
+      date: '2017-01-09'
+    },
     {
       title: 'This post has multiple parts',
       slug: 'this-post-has-multiple-parts',
