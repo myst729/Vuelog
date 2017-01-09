@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import { retrieveByLanguage } from '../helpers'
   import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogComments from '../components/VuelogComments'
   import VuelogNavigation from '../components/VuelogNavigation'
@@ -21,8 +22,17 @@
     },
 
     computed: {
+      active () {
+        return this.$store.getters.lang
+      },
+
       config () {
         return this.$store.getters.config
+      },
+
+      title () {
+        var title = retrieveByLanguage(this.dataset.post.title, this.active, this.config.lang)
+        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + title
       },
 
       dataset () {
@@ -63,7 +73,15 @@
     },
 
     created () {
-      this.$store.dispatch('documentTitle', this.dataset.post.title)
+      this.$store.dispatch('documentTitle', this.title)
+    },
+
+    watch: {
+      $route (to, from) {
+        if (to.query.lang !== from.query.lang) {
+          this.$store.dispatch('documentTitle', this.title)
+        }
+      }
     }
   }
 </script>

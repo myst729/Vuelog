@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import { retrieveByLanguage } from '../helpers'
   import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogNavigation from '../components/VuelogNavigation'
 
@@ -35,6 +36,23 @@
           prev: siblings.prev,
           next: siblings.next
         }
+      },
+
+      active () {
+        return this.$store.getters.lang
+      },
+
+      config () {
+        return this.$store.getters.config
+      },
+
+      title () {
+        const current = this.dataset.current
+        var title = retrieveByLanguage(current.label, this.active, this.config.lang)
+        if (current.p > 1) {
+          title += ` | ${this.$t('reading.page', [current.p])}`
+        }
+        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + title
       }
     },
 
@@ -93,12 +111,15 @@
     },
 
     created () {
-      const current = this.dataset.current
-      var title = current.label
-      if (current.p > 1) {
-        title += ` | ${this.$t('reading.page', [current.p])}`
+      this.$store.dispatch('documentTitle', this.title)
+    },
+
+    watch: {
+      $route (to, from) {
+        if (to.query.lang !== from.query.lang) {
+          this.$store.dispatch('documentTitle', this.title)
+        }
       }
-      this.$store.dispatch('documentTitle', title)
     }
   }
 </script>

@@ -1,6 +1,5 @@
 export function documentTitle ({ commit, state }, title) {
-  const documentTitle = title ? (state.database.config.brand + ' | ' + title) : state.database.config.brand
-  commit('setDocumentTitle', { title: documentTitle })
+  commit('setDocumentTitle', { title })
 }
 
 export function systemLanguage ({ commit, state }, language) {
