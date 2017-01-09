@@ -1,0 +1,9 @@
+Features:
+
+  ☐ Add i18n support for user content.
+
+Enhancements:
+  ☐ Write better docs.
+
+Others:
+  ☐ Run e2e tests on CircleCI.

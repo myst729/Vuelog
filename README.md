@@ -1,5 +1,10 @@
 # Vuelog
 
+[![CircleCI](https://img.shields.io/circleci/project/myst729/Vuelog/master.svg)](https://circleci.com/gh/myst729/Vuelog/tree/master)
+[![Codecov](https://img.shields.io/codecov/c/github/myst729/Vuelog/master.svg)](https://codecov.io/github/myst729/Vuelog?branch=master)
+[![Release](https://img.shields.io/github/release/myst729/Vuelog.svg)](https://github.com/myst729/Vuelog/releases/tag/2.7.1)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myst729/Vuelog/blob/master/LICENSE)
+
 > A backend-free blog system built on top of Vue.js
 
 
