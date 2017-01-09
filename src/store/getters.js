@@ -18,6 +18,10 @@ export function config (state) {
   return state.database.config
 }
 
+export function languages (state) {
+  return state.languages
+}
+
 export function navigation (state) {
   return state.database.navigation
 }

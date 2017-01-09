@@ -1,5 +1,5 @@
 import 'userdata/database'
-import { locales } from 'src/i18n/locales'
+import { languages } from 'src/i18n/locales'
 import {
   documentTitle,
   systemLanguage,
@@ -43,7 +43,7 @@ describe('Store: actions', () => {
       database: {
         config: { lang: 'en-US' }
       },
-      locales
+      languages
     }
     const commit = (type, payload) => {
       expect(type).to.equal('setSystemLanguage')
@@ -59,7 +59,7 @@ describe('Store: actions', () => {
       database: {
         config: { lang: 'en-US' }
       },
-      locales
+      languages
     }
     const commit = (type, payload) => {
       expect(type).to.equal('setSystemLanguage')
