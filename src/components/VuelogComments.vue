@@ -28,14 +28,14 @@
       },
 
       type () {
+        if (this.config.disqusShortname) {
+          return 'disqus'
+        }
         if (this.config.livereUid) {
           return 'livere'
         }
         if (this.config.intenseDebateAccount) {
           return 'intense-debate'
-        }
-        if (this.config.disqusShortname) {
-          return 'disqus'
         }
         return null
       }

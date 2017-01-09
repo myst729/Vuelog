@@ -8,20 +8,21 @@
 </template>
 
 <script>
-  import { languages } from '../i18n/locales'
-
   export default {
     name: 'vuelog-language',
 
     computed: {
       active () {
         return this.$store.getters.lang
+      },
+
+      languages () {
+        return this.$store.getters.languages
       }
     },
 
     data () {
       return {
-        languages,
         selected: ''
       }
     },

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as database from 'database'
-import { locales } from '../i18n/locales'
+import { languages } from '../i18n/locales'
 import { brand, project, version } from '../../package.json'
 
 import * as actions from './actions'
@@ -16,7 +16,7 @@ const state = {
   menu: false,
   system: { brand, project, version },
   database,
-  locales
+  languages
 }
 
 const store = new Vuex.Store({
