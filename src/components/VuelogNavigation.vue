@@ -1,19 +1,37 @@
 <template>
   <div class="navigation">
     <div class="prev" v-if="prev">
-      <router-link :to="prev.route" v-text="prev.label"></router-link>
+      <router-link :to="prev.route" v-text="i18nify(prev.label)"></router-link>
     </div>
     <div class="next" v-if="next">
-      <router-link :to="next.route" v-text="next.label"></router-link>
+      <router-link :to="next.route" v-text="i18nify(next.label)"></router-link>
     </div>
   </div>
 </template>
 
 <script>
+  import { retrieveByLanguage } from '../helpers'
+
   export default {
     name: 'vuelog-navigation',
 
-    props: ['prev', 'next']
+    props: ['prev', 'next'],
+
+    computed: {
+      active () {
+        return this.$store.getters.lang
+      },
+
+      config () {
+        return this.$store.getters.config
+      }
+    },
+
+    methods: {
+      i18nify (content) {
+        return retrieveByLanguage(content, this.active, this.config.lang)
+      }
+    }
   }
 </script>
 

@@ -36,3 +36,23 @@ export function meaningfulTime (comparedDate, baseDate) {
   retVal.key = 'time.today'
   return retVal
 }
+
+export function retrieveByLanguage (contentByLanguages, selectedLang, fallbackLang) {
+  if (contentByLanguages === null) {
+    return null
+  }
+  // not multilingua
+  if (typeof contentByLanguages === 'string') {
+    return contentByLanguages
+  }
+  // hit selected language
+  if (contentByLanguages[selectedLang]) {
+    return contentByLanguages[selectedLang]
+  }
+  // hit fall back language
+  if (contentByLanguages[fallbackLang]) {
+    return contentByLanguages[fallbackLang]
+  }
+  // return the language that comes the first
+  return contentByLanguages[Object.keys(contentByLanguages)[0]]
+}
