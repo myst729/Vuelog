@@ -7,11 +7,35 @@
 </template>
 
 <script>
+  import { retrieveByLanguage } from '../helpers'
+
   export default {
     name: 'vuelog-oops',
 
+    computed: {
+      active () {
+        return this.$store.getters.lang
+      },
+
+      config () {
+        return this.$store.getters.config
+      },
+
+      title () {
+        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + this.$t('oops.title')
+      }
+    },
+
     created () {
-      this.$store.dispatch('documentTitle', this.$t('oops.title'))
+      this.$store.dispatch('documentTitle', this.title)
+    },
+
+    watch: {
+      $route (to, from) {
+        if (to.query.lang !== from.query.lang) {
+          this.$store.dispatch('documentTitle', this.title)
+        }
+      }
     }
   }
 </script>

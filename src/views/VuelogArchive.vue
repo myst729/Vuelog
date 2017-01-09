@@ -1,7 +1,7 @@
 <template>
   <div class="archive">
     <div v-if="displayType === 'archive-category'" class="archive-body">
-      <h2 v-html="$t('archive.inCategory', [archive.title])"></h2>
+      <h2 v-html="$t('archive.inCategory', [i18nify(archive.title)])"></h2>
       <ul>
         <li v-for="post in archive.posts">
           <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
@@ -110,6 +110,17 @@
           case 'archive':
             return this.getAllPostsAndPages()
         }
+      },
+
+      title () {
+        var title = this.$t('archive.title')
+        if (this.displayType === 'archive-category') {
+          title += ' | ' + retrieveByLanguage(this.archive.title, this.active, this.config.lang)
+        }
+        if (this.displayType === 'archive-year') {
+          title += ` | ${this.archive.year}`
+        }
+        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + title
       }
     },
 
@@ -155,14 +166,15 @@
     },
 
     created () {
-      var title = this.$t('archive.title')
-      if (this.displayType === 'archive-category') {
-        title += ` | ${this.archive.title}`
+      this.$store.dispatch('documentTitle', this.title)
+    },
+
+    watch: {
+      $route (to, from) {
+        if (to.query.lang !== from.query.lang) {
+          this.$store.dispatch('documentTitle', this.title)
+        }
       }
-      if (this.displayType === 'archive-year') {
-        title += ` | ${this.archive.year}`
-      }
-      this.$store.dispatch('documentTitle', title)
     }
   }
 </script>

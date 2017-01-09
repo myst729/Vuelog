@@ -9,21 +9,43 @@
 </template>
 
 <script>
+  import { retrieveByLanguage } from '../helpers'
+
   export default {
     name: 'vuelog-home',
 
     computed: {
+      active () {
+        return this.$store.getters.lang
+      },
+
+      config () {
+        return this.$store.getters.config
+      },
+
       system () {
         return this.$store.getters.system
       },
 
       download () {
         return `${this.system.project}/releases/tag/${this.system.version}`
+      },
+
+      title () {
+        return retrieveByLanguage(this.config.brand, this.active, this.config.lang)
       }
     },
 
     created () {
-      this.$store.dispatch('documentTitle', false)
+      this.$store.dispatch('documentTitle', this.title)
+    },
+
+    watch: {
+      $route (to, from) {
+        if (to.query.lang !== from.query.lang) {
+          this.$store.dispatch('documentTitle', this.title)
+        }
+      }
     }
   }
 </script>

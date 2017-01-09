@@ -9,32 +9,14 @@ import {
 describe('Store: actions', () => {
   it('Document title dispatched with `Qwerty`', done => {
     const state = {
-      title: '',
-      database: {
-        config: { brand: 'Vuelog Test' }
-      }
+      title: ''
     }
     const commit = (type, payload) => {
       expect(type).to.equal('setDocumentTitle')
-      expect(payload.title).to.equal('Vuelog Test | Qwerty')
+      expect(payload.title).to.equal('Qwerty')
       done()
     }
     documentTitle({ commit, state }, 'Qwerty')
-  })
-
-  it('Document title dispatched with nothing', done => {
-    const state = {
-      title: '',
-      database: {
-        config: { brand: 'Vuelog Test' }
-      }
-    }
-    const commit = (type, payload) => {
-      expect(type).to.equal('setDocumentTitle')
-      expect(payload.title).to.equal('Vuelog Test')
-      done()
-    }
-    documentTitle({ commit, state })
   })
 
   it('System language dispatched with `zh-CN`', done => {
