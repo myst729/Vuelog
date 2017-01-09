@@ -116,7 +116,7 @@ window.VUELOG_DATABASE = {
     },
     {
       title: {'en-US': 'Showcase', 'zh-CN': '演示'},
-      slug: 'empty'
+      slug: 'showcase'
     }
   ],
 

@@ -5,7 +5,7 @@ window.VUELOG_DATABASE = {
 
   config: {
     // The name of your site, will be displayed in browser tab and site header.
-    brand: 'Vuelog Docs',
+    brand: {'en-US': 'Vuelog Docs', 'zh-CN': 'Vuelog 文档'},
 
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
@@ -22,8 +22,8 @@ window.VUELOG_DATABASE = {
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
 
-    // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
-    useHomepage: true,
+    // The path to route to when you visit `/`, set to `/home`, `/blog` or other paths at your need.
+    defaultPath: '/home',
 
     // Number of posts listed in a blog/category view.
     postsCount: 3,
@@ -52,32 +52,32 @@ window.VUELOG_DATABASE = {
 
   navigation: [
     {
-      label: 'Guide',
+      label: {'en-US': 'Guide', 'zh-CN': '指南'},
       type: 'category',
       path: '/blog/guide'
     },
     {
-      label: 'About',
+      label: {'en-US': 'About', 'zh-CN': '关于'},
       type: 'page',
       path: '/page/all-about-vuelog'
     },
     {
-      label: 'Changelog',
+      label: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
       type: 'page',
       path: '/page/changelog'
     },
     {
-      label: 'Archive',
+      label: {'en-US': 'Archive', 'zh-CN': '归档'},
       type: 'archive',
       path: '/archive'
     },
     {
-      label: 'Links',
+      label: {'en-US': 'Links', 'zh-CN': '链接'},
       type: 'dropdown',
       path: '', // (OPTIONAL) dropdown can be routable too if you set a valid route path
       children: [
         {
-          label: 'Weibo',
+          label: {'en-US': 'Weibo', 'zh-CN': '微博'},
           type: 'outgoing',
           link: 'http://weibo.com/myst729'
         },
@@ -97,25 +97,26 @@ window.VUELOG_DATABASE = {
 
   pages: [
     {
-      title: 'All about Vuelog',
+      title: {'en-US': 'All about Vuelog', 'zh-CN': '关于 Vuelog 的一切'},
       slug: 'all-about-vuelog',
       titleless: false // (OPTIONAL) set this to true if you want to hide the title in page view (same for post)
     },
     {
-      title: 'Changelog',
+      title: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
       slug: 'changelog',
-      commentless: false // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+      commentless: false, // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+      exclude: true       // (OPTIONAL) set this to true if you want to exclude the particular page from archive view (page only)
     }
   ],
 
   categories: [
     {
-      title: 'Guide',
+      title: {'en-US': 'Guide', 'zh-CN': '指南'},
       slug: 'guide'
     },
     {
-      title: 'Empty',
-      slug: 'empty'
+      title: {'en-US': 'Showcase', 'zh-CN': '演示'},
+      slug: 'showcase'
     }
   ],
 
