@@ -52,13 +52,12 @@ var routes = [
   { path: '/oops', name: 'oops', component: VuelogOops }
 ]
 
-if (database.config.useHomepage) {
+if (database.config.defaultPath === '/home') {
   routes.push({ path: '/home', name: 'home', component: VuelogHome })
-  routes.push({ path: '/', redirect: '/home' })
 } else {
-  routes.push({ path: '/home', redirect: '/blog' })
-  routes.push({ path: '/', redirect: '/blog' })
+  routes.push({ path: '/home', redirect: database.config.defaultPath })
 }
+routes.push({ path: '/', redirect: database.config.defaultPath })
 routes.push({ path: '/p/:p', redirect: '/blog/p/:p' })
 routes.push({ path: '*', redirect: '/oops' })
 

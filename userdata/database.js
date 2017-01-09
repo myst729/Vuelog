@@ -22,8 +22,8 @@ window.VUELOG_DATABASE = {
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
 
-    // Enable the dedicated homepage, otherwise route `/` and `/home` to `/blog`.
-    useHomepage: true,
+    // The path to route to when you visit `/`, set to `/home`, `/blog` or other paths at your need.
+    defaultPath: '/home',
 
     // Number of posts listed in a blog/category view.
     postsCount: 3,
@@ -104,7 +104,8 @@ window.VUELOG_DATABASE = {
     {
       title: 'Changelog',
       slug: 'changelog',
-      commentless: false // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+      commentless: false, // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
+      exclude: true       // (OPTIONAL) set this to true if you want to exclude the particular page from archive view (page only)
     }
   ],
 
