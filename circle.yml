@@ -2,9 +2,21 @@ machine:
   node:
     version: 6
 
+# dependencies:
+#   post:
+#     - java -jar node_modules/selenium-server/lib/runner/selenium-server-standalone-3.0.1.jar:
+#             background: true
+
+compile:
+  override:
+    - npm run build
+
 test:
   override:
     - npm run unit
+    # - npm run unit && npm run e2e -- --env phantomjs
 
   post:
     - bash <(curl -s https://codecov.io/bash)
+    - zip -r vuelog-latest.zip vuelog
+    - cp vuelog-latest.zip $CIRCLE_ARTIFACTS

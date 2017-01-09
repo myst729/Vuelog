@@ -13,8 +13,8 @@ module.exports = {
     host: '127.0.0.1',
     port: 4444,
     cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path,
-      'webdriver.gecko.driver': require('geckodriver').path
+      // 'webdriver.gecko.driver': require('geckodriver').path,
+      'webdriver.chrome.driver': require('chromedriver').path
     }
   },
 
@@ -40,6 +40,17 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'firefox',
         marionette: true,
+        javascriptEnabled: true,
+        acceptSslCerts: true
+      }
+    },
+
+    phantomjs: {
+      desiredCapabilities: {
+        browserName: 'phantomjs',
+        // 'phantomjs.binary.path': require('phantomjs-prebuilt').path,
+        // 'phantomjs.cli.args': ['--ignore-ssl-errors=true'],
+        // 'phantomjs.page.settings.userAgent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36',
         javascriptEnabled: true,
         acceptSslCerts: true
       }
