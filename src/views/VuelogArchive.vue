@@ -62,7 +62,7 @@
 
       <h2 v-text="$t('archive.pages')"></h2>
       <ul>
-        <li v-for="page in archive.pages">
+        <li v-for="page in archive.pages" v-if="!page.exclude">
           <router-link :to="{name: 'page', params: {page: page.slug}}" v-text="page.title"></router-link>
         </li>
       </ul>
