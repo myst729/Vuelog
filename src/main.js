@@ -1,4 +1,4 @@
-import 'babel-polyfill'
+import 'es6-promise/auto'
 
 import FastClick from 'fastclick'
 import Vue from 'vue'
