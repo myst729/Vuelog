@@ -7,6 +7,7 @@ module.exports = {
     // default: http://localhost:8080
     // see nightwatch.conf.js
     browser
+      .resizeWindow(1200, 800)
       .url(browser.globals.devServerURL)
   },
 
