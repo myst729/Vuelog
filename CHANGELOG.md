@@ -2,6 +2,13 @@
 
 > All notable changes to the Vuelog project after v0.4.0 will be documented in this file.
 
+### 2.8.0 - 2017-01-11
+
+#### Added
+- Support custom homepage.
+- Support i18n for user content.
+- Running tests and build on CircleCI.
+
 ### 2.7.1 - 2017-01-08
 
 #### Changed
