@@ -6,3 +6,4 @@ test/unit/coverage
 npm-debug.log
 phantomjsdriver.log
 selenium-debug.log
+TASKS.todo
