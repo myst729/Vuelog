@@ -48,7 +48,7 @@ module.exports = {
     phantomjs: {
       desiredCapabilities: {
         browserName: 'phantomjs',
-        // 'phantomjs.binary.path': require('phantomjs-prebuilt').path,
+        'phantomjs.binary.path': require('phantomjs-prebuilt').path, // required for Windows
         // 'phantomjs.cli.args': ['--ignore-ssl-errors=true'],
         // 'phantomjs.page.settings.userAgent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36',
         javascriptEnabled: true,

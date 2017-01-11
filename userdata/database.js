@@ -121,18 +121,18 @@ window.VUELOG_DATABASE = {
   ],
 
   posts: [
-    {
-      title: '只有一种语言',
-      slug: 'a-post-with-one-language-tag',
-      category: 'guide',
-      date: '2017-01-10'
-    },
-    {
-      title: {'en-US': 'A multilingual post', 'zh-CN': '多语言的贴子'},
-      slug: 'a-multilingual-post',
-      category: 'guide',
-      date: '2017-01-09'
-    },
+    // {
+    //   title: '只有一种语言',
+    //   slug: 'a-post-with-one-language-tag',
+    //   category: 'guide',
+    //   date: '2017-01-10'
+    // },
+    // {
+    //   title: {'en-US': 'A multilingual post', 'zh-CN': '多语言的贴子'},
+    //   slug: 'a-multilingual-post',
+    //   category: 'guide',
+    //   date: '2017-01-09'
+    // },
     {
       title: 'This post has multiple parts',
       slug: 'this-post-has-multiple-parts',
