@@ -48,11 +48,11 @@
 
       title () {
         const current = this.dataset.current
-        var title = retrieveByLanguage(current.label, this.active, this.config.lang)
+        var title = retrieveByLanguage(current.label, this.active, this.config.defaultLang)
         if (current.p > 1) {
           title += ` | ${this.$t('reading.page', [current.p])}`
         }
-        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + title
+        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
       }
     },
 

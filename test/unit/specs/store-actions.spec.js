@@ -23,7 +23,7 @@ describe('Store: actions', () => {
     const state = {
       lang: '',
       database: {
-        config: { lang: 'en-US' }
+        config: { defaultLang: 'en-US' }
       },
       languages
     }
@@ -39,7 +39,7 @@ describe('Store: actions', () => {
     const state = {
       lang: '',
       database: {
-        config: { lang: 'en-US' }
+        config: { defaultLang: 'en-US' }
       },
       languages
     }

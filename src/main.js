@@ -11,7 +11,7 @@ import store from './store'
 import Vuelog from './Vuelog'
 
 FastClick.attach(document.body)
-setLocale(database.config.lang)
+setLocale(database.config.defaultLang)
 sync(store, router)
 
 // Object.keys(helpers).forEach(key => {
