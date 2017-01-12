@@ -5,7 +5,9 @@
         <vuelog-renderer class="post-body" :type="'posts'" :metadata="post"></vuelog-renderer>
       </div>
     </div>
-    <vuelog-navigation :prev="dataset.prev" :next="dataset.next"></vuelog-navigation>
+    <transition name="fade" mode="out-in">
+      <vuelog-navigation :prev="dataset.prev" :next="dataset.next" :key="active"></vuelog-navigation>
+    </transition>
   </div>
 </template>
 

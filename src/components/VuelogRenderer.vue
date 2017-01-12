@@ -1,19 +1,17 @@
 <template>
   <div class="renderer">
-    <transition name="loading" mode="out-in" appear>
+    <transition name="fade" mode="out-in">
       <vuelog-spinner class="spinner" v-if="!content" key="spinner"></vuelog-spinner>
-      <div class="content-body" v-if="content" key="content">
+      <div class="content-body" v-if="content" :key="active">
         <h1 class="content-title" v-if="type !== 'posts' && !metadata.titleless" v-text="i18nify(metadata.title)"></h1>
         <h2 class="content-title" v-if="type === 'posts'">
           <router-link :to="{name: 'post', params: {category: metadata.category, slug: metadata.slug, year: metadata.year}}" v-text="i18nify(metadata.title)"></router-link>
         </h2>
-        <transition name="fade" mode="out-in" appear>
-          <h4 class="content-meta" v-if="type !== 'page'" :key="active">
-            <span v-text="$t(time.key, time.values)"></span>
-            <span> / </span>
-            <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="i18nify(metadata.categoryTitle)"></router-link>
-          </h4>
-        </transition>
+        <h4 class="content-meta" v-if="type !== 'page'">
+          <span v-text="$t(time.key, time.values)"></span>
+          <span> / </span>
+          <router-link :to="{name: 'category', params: {category: metadata.category}}" v-text="i18nify(metadata.categoryTitle)"></router-link>
+        </h4>
         <!-- used in posts view -->
         <div v-if="type === 'posts'">
           <div class="content-container" v-html="content[0]"></div>
@@ -24,7 +22,7 @@
         <!-- used in page/post view -->
         <div v-if="type !== 'posts'">
           <div class="content-container">
-            <transition name="fade" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
+            <transition name="fade" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll">
               <router-view :key="routeKey" :markups="content"></router-view>
             </transition>
           </div>
@@ -83,9 +81,9 @@
         // Avoid router-view reload when routing from default match to part 1 or vise versa.
         var path = this.$route.path.replace(/\/$/, '')
         if (this.$route.name === 'page' || this.$route.name === 'post') {
-          return path + '/1@' + this.active
+          return path + '/1'
         }
-        return path + '@' + this.active
+        return path
       }
     },
 
@@ -268,14 +266,6 @@
     width 48px
     margin 100px auto
 
-  .loading-enter-active
-  .loading-leave-active
-    transition opacity .3s ease
-
-  .loading-enter
-  .loading-leave-active
-    opacity 0
-
   .content-body
     flex 1
     display flex
@@ -303,14 +293,6 @@
 
   .continue-reading a:hover
     text-decoration none
-
-  .fade-enter-active
-  .fade-leave-active
-    transition opacity .3s ease
-
-  .fade-enter
-  .fade-leave-active
-    opacity 0
 
   @media screen and (max-width: 999px)
     h1.content-title

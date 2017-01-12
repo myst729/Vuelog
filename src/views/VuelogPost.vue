@@ -1,8 +1,10 @@
 <template>
   <div class="post">
     <vuelog-renderer class="post-body" :type="'post'" :metadata="dataset.post"></vuelog-renderer>
-    <vuelog-comments v-if="!dataset.post.commentless" :path="$route.fullPath"></vuelog-comments>
-    <vuelog-navigation :prev="dataset.prev" :next="dataset.next"></vuelog-navigation>
+    <vuelog-comments v-if="!dataset.post.commentless" :path="$route.fullPath" key="active"></vuelog-comments>
+    <transition name="fade" mode="out-in">
+      <vuelog-navigation :prev="dataset.prev" :next="dataset.next" :key="active"></vuelog-navigation>
+    </transition>
   </div>
 </template>
 
