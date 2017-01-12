@@ -4,7 +4,7 @@ window.VUELOG_DATABASE = {
 
   config: {
     // The name of your site, will be displayed in browser tab and site header.
-    brand: 'Vuelog',
+    brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
 
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
@@ -108,6 +108,18 @@ window.VUELOG_DATABASE = {
   ],
 
   posts: [
+    // {
+    //   title: '只有一种语言',
+    //   slug: 'a-post-with-one-language-tag',
+    //   category: 'guide',
+    //   date: '2017-01-10'
+    // },
+    // {
+    //   title: {'en-US': 'A multilingual post', 'zh-CN': '多语言的贴子'},
+    //   slug: 'a-multilingual-post',
+    //   category: 'guide',
+    //   date: '2017-01-09'
+    // },
     {
       title: 'This post has multiple parts',
       slug: 'this-post-has-multiple-parts',
