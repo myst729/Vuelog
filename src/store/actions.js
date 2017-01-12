@@ -3,7 +3,7 @@ export function documentTitle ({ commit, state }, title) {
 }
 
 export function systemLanguage ({ commit, state }, language) {
-  const lang = Object.keys(state.languages).indexOf(language) > -1 ? language : state.database.config.lang
+  const lang = Object.keys(state.languages).indexOf(language) > -1 ? language : state.database.config.defaultLang
   commit('setSystemLanguage', { lang })
 }
 

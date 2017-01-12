@@ -32,7 +32,7 @@
       },
 
       title () {
-        return retrieveByLanguage(this.config.brand, this.active, this.config.lang)
+        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
       }
     },
 

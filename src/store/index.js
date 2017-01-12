@@ -12,7 +12,7 @@ Vue.use(Vuex)
 
 const state = {
   title: database.config.brand,
-  lang: database.config.lang,
+  lang: database.config.defaultLang,
   menu: false,
   system: { brand, project, version },
   database,

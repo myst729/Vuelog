@@ -28,8 +28,8 @@
       },
 
       title () {
-        var title = retrieveByLanguage(this.page.title, this.active, this.config.lang)
-        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + title
+        var title = retrieveByLanguage(this.page.title, this.active, this.config.defaultLang)
+        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
       },
 
       page () {

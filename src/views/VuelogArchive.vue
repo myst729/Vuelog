@@ -115,12 +115,12 @@
       title () {
         var title = this.$t('archive.title')
         if (this.displayType === 'archive-category') {
-          title += ' | ' + retrieveByLanguage(this.archive.title, this.active, this.config.lang)
+          title += ' | ' + retrieveByLanguage(this.archive.title, this.active, this.config.defaultLang)
         }
         if (this.displayType === 'archive-year') {
           title += ` | ${this.archive.year}`
         }
-        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + title
+        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
       }
     },
 
@@ -130,7 +130,7 @@
       },
 
       i18nify (content) {
-        return retrieveByLanguage(content, this.active, this.config.lang)
+        return retrieveByLanguage(content, this.active, this.config.defaultLang)
       },
 
       getPostsInCategory (slug) {

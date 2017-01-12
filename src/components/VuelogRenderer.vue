@@ -1,7 +1,7 @@
 <template>
   <div class="renderer">
     <transition name="loading" mode="out-in" appear>
-      <vuelog-spinner class="spinner" v-if="!content" key="spinner" :pattern="config.spinnerPattern"></vuelog-spinner>
+      <vuelog-spinner class="spinner" v-if="!content" key="spinner"></vuelog-spinner>
       <div class="content-body" v-if="content" key="content">
         <h1 class="content-title" v-if="type !== 'posts' && !metadata.titleless" v-text="i18nify(metadata.title)"></h1>
         <h2 class="content-title" v-if="type === 'posts'">
@@ -91,6 +91,12 @@
 
     data () {
       return {
+        metadataRexExp: /\n-{3,}\n/,
+        metadataDelimiter: '<!-- meta -->',
+        excerptDelimiter: '<!-- more -->',
+        contentDelimiter: '<!-- next -->',
+        LanguageStartTag: '<!-- LANG:+ -->',
+        LanguageEndTag: '<!-- LANG:- -->',
         contentByLang: null,
         xhr: null
       }
@@ -102,7 +108,7 @@
       },
 
       i18nify (content) {
-        return retrieveByLanguage(content, this.active, this.config.lang)
+        return retrieveByLanguage(content, this.active, this.config.defaultLang)
       },
 
       closeSideMenu () {
@@ -142,19 +148,20 @@
       },
 
       preProcess (md) {
-        const metadataDelimiter = this.config.metadataDelimiter
-        const metadataPosition = md.indexOf(metadataDelimiter)
-        const contentMd = md.slice(metadataPosition + metadataDelimiter.length)
+        const metadataDelimiter = this.metadataDelimiter
+        const markdown = md.replace(this.metadataRexExp, metadataDelimiter)
+        const metadataPosition = markdown.indexOf(metadataDelimiter)
+        const contentMd = markdown.slice(metadataPosition + metadataDelimiter.length)
         var mdByLang = {}
         Object.keys(this.languages).forEach(lang => {
-          const startTag = `<!-- ${lang}:+ -->`
-          const endTag = `<!-- ${lang}:- -->`
+          const startTag = this.LanguageStartTag.replace('LANG', lang)
+          const endTag = this.LanguageEndTag.replace('LANG', lang)
           const startPosition = contentMd.indexOf(startTag)
           const endPosition = contentMd.indexOf(endTag)
           if (startPosition > -1 && endPosition > -1) {
             mdByLang[lang] = contentMd.substring(startPosition + startTag.length, endPosition).trim()
             // Default language is set for fall back
-            if (this.config.lang === lang) {
+            if (this.config.defaultLang === lang) {
               mdByLang['**-**'] = mdByLang[lang]
             }
           }
@@ -209,12 +216,12 @@
       sliceMarkup (markup) {
         if (this.type === 'posts') {
           // For posts view, if both excerptDelimiter and contentDelimiter are inserted, display the shorter part.
-          var excerptPosition = this.getDelimiterPosition(markup, this.config.excerptDelimiter)
-          var contentPosition = this.getDelimiterPosition(markup, this.config.contentDelimiter)
+          var excerptPosition = this.getDelimiterPosition(markup, this.excerptDelimiter)
+          var contentPosition = this.getDelimiterPosition(markup, this.contentDelimiter)
           return [markup.substring(0, Math.min(excerptPosition, contentPosition))]
         }
         // For page or post view, show part of content if contentDelimiter is inserted, otherwise full content.
-        return this.config.contentDelimiter ? markup.split(this.config.contentDelimiter).filter(m => m.trim().length) : [markup]
+        return this.contentDelimiter ? markup.split(this.contentDelimiter).filter(m => m.trim().length) : [markup]
       },
 
       postProcess (markupByLang) {

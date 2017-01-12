@@ -22,7 +22,7 @@
       },
 
       title () {
-        return retrieveByLanguage(this.config.brand, this.active, this.config.lang) + ' | ' + this.$t('oops.title')
+        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + this.$t('oops.title')
       }
     },
 

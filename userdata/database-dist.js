@@ -1,6 +1,5 @@
 /* DO NOT CHANGE THE GLOBAL VARIABLE NAME */
-/* DO NOT CHANGE THE GLOBAL VARIABLE NAME */
-/* DO NOT CHANGE THE GLOBAL VARIABLE NAME */
+
 window.VUELOG_DATABASE = {
 
   config: {
@@ -16,26 +15,17 @@ window.VUELOG_DATABASE = {
     // Path to the domain root that serves your site, starts and ends with slash (`/`). Set to `'/'` if your site is under domain root.
     base: '/',
 
+    // The path to route to when you visit `/`, set to `/home`, `/blog` or other paths at your need.
+    defaultPath: '/blog',
+
     // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
-    lang: 'zh-CN',
+    defaultLang: 'zh-CN',
 
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
 
-    // The path to route to when you visit `/`, set to `/home`, `/blog` or other paths at your need.
-    defaultPath: '/blog',
-
     // Number of posts listed in a blog/category view.
     postsCount: 3,
-
-    // The string to separate metadata from actual content in *.md files.
-    metadataDelimiter: '---',
-
-    // The string to annotate excerpt out of the complete content in *.md files.
-    excerptDelimiter: '<!-- more -->',
-
-    // The string to annotate content pagination points *.md files.
-    contentDelimiter: '<!-- next -->',
 
     // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
     disqusShortname: '',
@@ -44,10 +34,7 @@ window.VUELOG_DATABASE = {
     intenseDebateAccount: '',
 
     // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
-    livereUid: '',
-
-    // Can be either `logo` or `line`, set to other values to disable the loading spinner.
-    spinnerPattern: 'logo'
+    livereUid: ''
   },
 
   navigation: [

@@ -82,7 +82,7 @@
       },
 
       i18nify (content) {
-        return retrieveByLanguage(content, this.active, this.config.lang)
+        return retrieveByLanguage(content, this.active, this.config.defaultLang)
       }
     },
 
