@@ -15,7 +15,7 @@
 
     computed: {
       routeName () {
-        return `${this.type}-part`
+        return `${this.type}-more`
       },
 
       parts () {

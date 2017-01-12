@@ -41,19 +41,19 @@
       },
 
       routeClass () {
-        var rootRoute = this.$route.name.replace('-part', '')
+        var rootRoute = this.$route.name.replace('-more', '')
         return `vuelog-${rootRoute}-view`
       },
 
       routeKey () {
         // Avoid router-view reload when routing from one part to another in a multiple parts page or post.
         var path = this.$route.path.replace(/\/$/, '')
-        if (this.$route.name === 'page-part' || this.$route.name === 'post-part') {
+        if (this.$route.name === 'page-more' || this.$route.name === 'post-more') {
           // By removing the `part` param, different parts of a multiple parts page or post will share the same key.
           return path.replace(/\/\d+$/, '')
         }
         var contentRoutes = ['posts', 'posts-more', 'category', 'category-more', 'post', 'post-more', 'page', 'page-more']
-        if (contentRoutes.indexOf(this.$route.name)) {
+        if (contentRoutes.indexOf(this.$route.name) > -1) {
           return path
         }
         return path + '@' + this.active

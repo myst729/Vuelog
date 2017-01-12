@@ -35,7 +35,7 @@ Vue.use(VueRouter)
 function contentRoutes (name) {
   return [
     { path: '', name: name, component: VuelogContent },
-    { path: ':part', name: `${name}-part`, component: VuelogContent }
+    { path: ':part', name: `${name}-more`, component: VuelogContent }
   ]
 }
 
