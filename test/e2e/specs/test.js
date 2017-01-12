@@ -22,6 +22,8 @@ module.exports = {
       .assert.elementPresent('.header-wrap h1 img')
       .assert.elementPresent('.home')
       .assert.containsText('.home > h1', 'Vuelog')
+      .assert.containsText('.home > p', 'A backend-free blog system built on top of Vue.js')
+      .assert.containsText('.home > a:not(.github)', require('../../../package.json').version)
       .assert.elementNotPresent('.vuelog > footer') // Home view does not show footer
   },
 
@@ -101,9 +103,14 @@ module.exports = {
       .pause(1000)
       .assert.elementPresent('.oops')
       .assert.containsText('.oops > h1', 'Oops!')
+      .setSelectValue('.vuelog > footer select', 'zh-CN') // change locale to Chinese Simplified
+      .pause(1000)
+      .assert.containsText('.oops > h1', '啊哦！')
       .click('.oops > a')
       .pause(1000)
       .assert.elementPresent('.home') // get back to home view
+      .assert.containsText('.home > h1', 'Vuelog')
+      .assert.containsText('.home > p', '基于 Vue.js 构建的无后端博客系统')
   },
 
   'End': function (browser) {
