@@ -42,7 +42,7 @@
         </li>
       </ul>
     </div>
-    <transition name="backdrop">
+    <transition name="fade">
       <div class="side-menu-backdrop" v-if="menu"></div>
     </transition>
   </div>
@@ -318,14 +318,6 @@
     right 0
     bottom 0
     z-index 6000
-
-  .backdrop-enter-active
-  .backdrop-leave-active
-    transition opacity .4s ease
-
-  .backdrop-enter
-  .backdrop-leave-active
-    opacity 0
 
   @media screen and (max-width: 1059px)
     header

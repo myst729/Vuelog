@@ -1,12 +1,16 @@
 <template>
   <div class="vuelog" :class="routeClass">
-    <vuelog-header></vuelog-header>
+    <transition name="fade" mode="out-in" appear>
+      <vuelog-header :key="active"></vuelog-header>
+    </transition>
     <div class="vuelog-body">
-      <transition name="view" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
+      <transition name="fade" mode="out-in" @before-leave="closeSideMenu" @before-enter="resetScroll" appear>
         <router-view :key="routeKey"></router-view>
       </transition>
     </div>
-    <vuelog-footer v-if="!isHomepage"></vuelog-footer>
+    <transition name="fade" mode="out-in" appear>
+      <vuelog-footer v-if="!isHomepage" :key="active"></vuelog-footer>
+    </transition>
   </div>
 </template>
 
@@ -24,7 +28,7 @@
     },
 
     computed: {
-      lang () {
+      active () {
         return this.$store.getters.lang
       },
 
@@ -48,7 +52,11 @@
           // By removing the `part` param, different parts of a multiple parts page or post will share the same key.
           return path.replace(/\/\d+$/, '')
         }
-        return path
+        var contentRoutes = ['posts', 'posts-more', 'category', 'category-more', 'post', 'post-more', 'page', 'page-more']
+        if (contentRoutes.indexOf(this.$route.name)) {
+          return path
+        }
+        return path + '@' + this.active
       }
     },
 
@@ -56,7 +64,7 @@
       return {
         title: this.title,
         htmlAttrs: {
-          lang: this.lang.substring(0, 2)
+          lang: this.active
         }
       }
     },
@@ -110,14 +118,6 @@
     padding 100px 30px 15px
     width 100%
     max-width 900px
-
-  .view-enter-active
-  .view-leave-active
-    transition opacity .3s ease
-
-  .view-enter
-  .view-leave-active
-    opacity 0
 
   @media screen and (max-width: 1059px)
     .vuelog-body
