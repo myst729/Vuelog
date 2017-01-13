@@ -20,6 +20,10 @@ module.exports = {
   'Home view': function (browser) {
     browser
       .assert.elementPresent('.header-wrap h1 img')
+      .assert.visible('.header-wrap h1 span')
+      .assert.visible('.header-wrap .header-menu')
+      .assert.hidden('.header-wrap .side-menu')
+      .assert.hidden('.header-wrap .menu-icon')
       .assert.elementPresent('.home')
       .assert.containsText('.home > h1', 'Vuelog')
       .assert.containsText('.home > p', 'A backend-free blog system built on top of Vue.js')
@@ -29,7 +33,7 @@ module.exports = {
 
   'Archive view': function (browser) {
     browser
-      .click('.header-menu > ul > li:nth-child(4) > a')
+      .click('.header-menu > ul > li:nth-last-child(2) > a')
       .pause(1000)
       .assert.elementCount('.archive-body > h2', 3) // Archive default view has three sections
       .assert.elementPresent('.vuelog > footer')
@@ -86,7 +90,7 @@ module.exports = {
 
   'Page view': function (browser) {
     browser
-      .click('.header-menu > ul > li:nth-child(2) > a')
+      .click('.header-menu > ul > li:nth-last-child(3) > a')
       .pause(1000)
       .assert.elementCount('.content-body', 1)
       .assert.elementPresent('.content-body > h1.content-title')
