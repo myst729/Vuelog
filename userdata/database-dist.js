@@ -18,6 +18,9 @@ window.VUELOG_DATABASE = {
     // The path to route to when you visit `/`, set to `/home`, `/blog` or other paths at your need.
     defaultPath: '/blog',
 
+    // Whether footer is visible on `defaultPath` or not.
+    defaultFooter: true,
+
     // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
     defaultLang: 'zh-CN',
 
