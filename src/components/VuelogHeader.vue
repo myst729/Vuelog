@@ -296,7 +296,6 @@
           border-left 4px solid transparent
           border-right 4px solid transparent
           border-top 5px solid #ccc
-          transition transform .3s ease-in-out
 
       a:hover
       a.router-link-active
