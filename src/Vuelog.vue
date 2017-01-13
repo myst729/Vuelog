@@ -9,7 +9,7 @@
       </transition>
     </div>
     <transition name="fade" mode="out-in" appear>
-      <vuelog-footer v-if="!isHomepage" :key="active"></vuelog-footer>
+      <vuelog-footer v-if="footerVisible" :key="active"></vuelog-footer>
     </transition>
   </div>
 </template>
@@ -32,12 +32,16 @@
         return this.$store.getters.lang
       },
 
+      config () {
+        return this.$store.getters.config
+      },
+
       title () {
         return this.$store.getters.title
       },
 
-      isHomepage () {
-        return this.$route.name === 'home'
+      footerVisible () {
+        return (this.$route.path !== this.config.defaultPath) || this.config.defaultFooter
       },
 
       routeClass () {
