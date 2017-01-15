@@ -8,6 +8,13 @@
 > A backend-free blog system built on top of Vue.js
 
 
+## Browsers Support
+
+| <img src="https://myst729.github.io/assets/images/browsers/chrome/chrome_256x256.png" alt="Chrome" width="96" height="96"><br>Chrome | <img src="https://myst729.github.io/assets/images/browsers/firefox/firefox_256x256.png" alt="Firefox" width="96" height="96"><br>Firefox | <img src="https://myst729.github.io/assets/images/browsers/opera/opera_256x256.png" alt="Opera" width="96" height="96"><br>Opera | <img src="https://myst729.github.io/assets/images/browsers/safari/safari_256x256.png" alt="Safari" width="96" height="96"><br>Safari |
+| :------: | :------: | :------: | :------: |
+| Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
+
+
 ## Build Setup
 
 ```bash
