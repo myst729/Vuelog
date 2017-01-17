@@ -255,8 +255,8 @@
 </script>
 
 <style lang="stylus">
-  @import '../assets/styles/content';
-  @import '../assets/styles/highlight';
+  @import '../assets/styles/content'
+  @import '../assets/styles/highlight'
 </style>
 
 <style lang="stylus" scoped>
