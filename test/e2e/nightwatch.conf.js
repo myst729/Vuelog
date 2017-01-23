@@ -15,7 +15,9 @@ module.exports = {
     port: 4444,
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path,
-      'webdriver.gecko.driver': require('geckodriver').path
+      // 'webdriver.edge.driver': require('edgedriver').path,
+      'webdriver.gecko.driver': require('geckodriver').path,
+      'phantomjs.binary.path': require('phantomjs-prebuilt').path
     }
   },
 
@@ -37,6 +39,14 @@ module.exports = {
       }
     },
 
+    // edge: {
+    //   desiredCapabilities: {
+    //     browserName: 'MicrosoftEdge',
+    //     javascriptEnabled: true,
+    //     acceptSslCerts: true
+    //   }
+    // },
+
     firefox: {
       desiredCapabilities: {
         browserName: 'firefox',
@@ -49,7 +59,6 @@ module.exports = {
     phantomjs: {
       desiredCapabilities: {
         browserName: 'phantomjs',
-        'phantomjs.binary.path': require('phantomjs-prebuilt').path,
         javascriptEnabled: true,
         acceptSslCerts: true
       }
