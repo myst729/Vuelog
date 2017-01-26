@@ -179,6 +179,7 @@
 
       renderMarkdown (mdByLang) {
         marked.setOptions({
+          smartypants: true,
           highlight (code, lang) {
             try {
               return hljs.highlight(lang, code).value
