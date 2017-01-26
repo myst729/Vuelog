@@ -1,0 +1,45 @@
+title: Guide
+------------------------------------
+<!-- en-US:+ -->
+
+#### Overview
+
+- [File structure of Vuelog](#/blog/docs/2016/file-structure-of-vuelog)
+
+#### Documentation
+
+- [Customize the site](#/blog/docs/2017/customize-the-site)
+- [Customize navigation menu](#/blog/docs/2017/customize-navigation-menu)
+- [Add posts or pages](#/blog/docs/2017/add-posts-or-pages)
+- [Author a post or page](#/blog/docs/2017/author-a-post-or-page)
+- [Insert code blocks with syntax highlight](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight)
+- [Multiple languages support](#/blog/docs/2017/multiple-languages-support)
+- [Use social commenting services](#/blog/docs/2017/use-social-commenting-services)
+
+#### Showcase
+
+- [Style examples](#/blog/showcase/2016/style-examples)
+
+<!-- en-US:- -->
+
+<!-- zh-CN:+ -->
+
+#### 概览
+
+- [Vuelog 文件结构](#/blog/docs/2016/file-structure-of-vuelog)
+
+#### 文档
+
+- [自定义站点](#/blog/docs/2017/customize-the-site)
+- [自定义导航菜单](#/blog/docs/2017/customize-navigation-menu)
+- [新建文章或页面](#/blog/docs/2017/add-posts-or-pages)
+- [编写文章或页面](#/blog/docs/2017/author-a-post-or-page)
+- [插入语法高亮的代码块](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight)
+- [多语言支持](#/blog/docs/2017/multiple-languages-support)
+- [使用社会化评论服务](#/blog/docs/2017/use-social-commenting-services)
+
+#### 示例
+
+- [样式示例](#/blog/showcase/2016/style-examples)
+
+<!-- zh-CN:- -->

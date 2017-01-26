@@ -10,19 +10,21 @@ window.VUELOG_DATABASE = {
     logo: './static/vuelog.svg',
 
     // The full URL where your site is hosted.
-    home: 'http://example.com',
+    home: 'http://yoursite.com',
 
-    // Path to the domain root that serves your site, starts and ends with slash (`/`). Set to `'/'` if your site is under domain root.
+    // Path to the domain root that serves your site, starts and ends with slash (`/`).
+    // Set to `'/'` if your site is under domain root.
     base: '/',
 
-    // The path to route to when you visit `/`, set to `/home`, `/blog` or other paths at your need.
-    defaultPath: '/blog',
+    // The path to route to when you visit `/`.
+    // Set to `/home`, `/blog` or a valid path at your need.
+    defaultPath: '/home',
 
     // Whether footer is visible on `defaultPath` or not.
-    defaultFooter: true,
+    defaultFooter: false,
 
     // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
-    defaultLang: 'zh-CN',
+    defaultLang: 'en-US',
 
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
@@ -30,31 +32,31 @@ window.VUELOG_DATABASE = {
     // Number of posts listed in a blog/category view.
     postsCount: 3,
 
-    // Fill in the shortname to integrate Disqus with your blog. Leave it blank to turn it off.
+    // Fill in the shortname to integrate Disqus with your blog.
     disqusShortname: '',
 
-    // Fill in the account to integrate IntenseDebate with your blog. Leave it blank to turn it off.
+    // Fill in the account to integrate IntenseDebate with your blog.
     intenseDebateAccount: '',
 
-    // Fill in the uid to integrate LiveRe with your blog. Leave it blank to turn it off.
+    // Fill in the uid to integrate LiveRe with your blog.
     livereUid: ''
   },
 
   navigation: [
     {
       label: {'en-US': 'Guide', 'zh-CN': '指南'},
-      type: 'category',
-      path: '/blog/guide'
+      type: 'page',
+      path: '/page/guide'
     },
     {
       label: {'en-US': 'About', 'zh-CN': '关于'},
       type: 'page',
-      path: '/page/all-about-vuelog'
+      path: '/page/about'
     },
     {
-      label: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
-      type: 'page',
-      path: '/page/changelog'
+      label: {'en-US': 'Showcase', 'zh-CN': '示例'},
+      type: 'category',
+      path: '/blog/showcase'
     },
     {
       label: {'en-US': 'Archive', 'zh-CN': '归档'},
@@ -87,96 +89,91 @@ window.VUELOG_DATABASE = {
 
   pages: [
     {
-      title: {'en-US': 'All about Vuelog', 'zh-CN': '关于 Vuelog 的一切'},
-      slug: 'all-about-vuelog',
-      titleless: false // (OPTIONAL) set this to true if you want to hide the title in page view (same for post)
+      title: {'en-US': 'Vuelog Guide', 'zh-CN': 'Vuelog 指南'},
+      slug: 'guide',
+      exclude: true,      // (OPTIONAL) `true` to exclude the page from archive view
+      titleless: false,   // (OPTIONAL) `true` to hide the title in page view
+      commentless: false, // (OPTIONAL) `true` to disable comments for the page
+      draft: false        // (OPTIONAL) `true` to make the page temporarily inaccessible
+    },
+    {
+      title: {'en-US': 'About Vuelog', 'zh-CN': '关于 Vuelog'},
+      slug: 'about'
     },
     {
       title: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
-      slug: 'changelog',
-      commentless: false, // (OPTIONAL) set this to true if you want to disable comments for the particular page (same for post)
-      exclude: true       // (OPTIONAL) set this to true if you want to exclude the particular page from archive view (page only)
+      slug: 'changelog'
     }
   ],
 
   categories: [
     {
-      title: {'en-US': 'Guide', 'zh-CN': '指南'},
-      slug: 'guide'
+      title: {'en-US': 'Documentation', 'zh-CN': '文档'},
+      slug: 'docs'
     },
     {
-      title: {'en-US': 'Showcase', 'zh-CN': '演示'},
+      title: {'en-US': 'Showcase', 'zh-CN': '示例'},
       slug: 'showcase'
     }
   ],
 
   posts: [
-    // {
-    //   title: '只有一种语言',
-    //   slug: 'a-post-with-one-language-tag',
-    //   category: 'guide',
-    //   date: '2017-01-10'
-    // },
-    // {
-    //   title: {'en-US': 'A multilingual post', 'zh-CN': '多语言的贴子'},
-    //   slug: 'a-multilingual-post',
-    //   category: 'guide',
-    //   date: '2017-01-09'
-    // },
+    /* 2017 */
     {
-      title: 'This post has multiple parts',
-      slug: 'this-post-has-multiple-parts',
-      category: 'guide',
-      date: '2017-01-05'
+      title: {'en-US': 'Multiple languages support', 'zh-CN': '多语言支持'},
+      slug: 'multiple-languages-support',
+      category: 'docs',
+      date: '2017-01-24'
     },
     {
-      title: 'This post is invisible',
-      slug: 'this-post-is-invisible',
-      category: 'guide',
-      date: '2016-12-31',
-      draft: true // (OPTIONAL) set this to true if you want to make the particular post invisible in your site (same for page)
+      title: {'en-US': 'Use social commenting services', 'zh-CN': '使用社会化评论服务'},
+      slug: 'use-social-commenting-services',
+      category: 'docs',
+      date: '2017-01-19'
     },
     {
-      title: 'How to add a post or page?',
-      slug: 'how-to-add-a-post-or-page',
-      category: 'guide',
-      date: '2016-10-21'
+      title: {'en-US': 'Insert code blocks with syntax highlight', 'zh-CN': '插入语法高亮的代码块'},
+      slug: 'insert-code-blocks-with-syntax-highlight',
+      category: 'docs',
+      date: '2017-01-18'
     },
     {
-      title: 'The (so-called) database',
-      slug: 'the-so-called-database',
-      category: 'guide',
+      title: {'en-US': 'Author a post or page', 'zh-CN': '编写文章或页面'},
+      slug: 'author-a-post-or-page',
+      category: 'docs',
+      date: '2017-01-13'
+    },
+
+    {
+      title: {'en-US': 'Add posts or pages', 'zh-CN': '新建文章或页面'},
+      slug: 'add-posts-or-pages',
+      category: 'docs',
+      date: '2017-01-12'
+    },
+    {
+      title: {'en-US': 'Customize navigation menu', 'zh-CN': '自定义导航菜单'},
+      slug: 'customize-navigation-menu',
+      category: 'docs',
+      date: '2017-01-11'
+    },
+    {
+      title: {'en-US': 'Customize the site', 'zh-CN': '自定义站点'},
+      slug: 'customize-the-site',
+      category: 'docs',
+      date: '2017-01-10'
+    },
+    /* 2016 */
+    {
+      title: {'en-US': 'File structure of Vuelog', 'zh-CN': 'Vuelog 文件结构'},
+      slug: 'file-structure-of-vuelog',
+      category: 'docs',
       date: '2016-10-20'
     },
     {
-      title: 'The structure of Vuelog',
-      slug: 'the-structure-of-vuelog',
-      category: 'guide',
-      date: '2016-10-20'
-    },
-    {
-      title: 'Show me the styles!',
-      slug: 'show-me-the-styles',
-      category: 'guide',
+      title: {'en-US': 'Style examples', 'zh-CN': '样式示例'},
+      slug: 'style-examples',
+      category: 'showcase',
       date: '2016-10-19'
-    },
-    {
-      title: 'Using social commenting services',
-      slug: 'using-social-commenting-services',
-      category: 'guide',
-      date: '2016-04-10'
-    },
-    {
-      title: '[ONHOLD] Using Algolia search service',
-      slug: 'using-algolia-search-service',
-      category: 'guide',
-      date: '2016-04-09'
-    },
-    {
-      title: '[TODO] Vuelog hacker’s guide',
-      slug: 'vuelog-hackers-guide',
-      category: 'guide',
-      date: '2016-04-08'
     }
   ]
 
