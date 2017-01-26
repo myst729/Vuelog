@@ -62,22 +62,35 @@ module.exports = {
 
   'Post view: multiple parts content': function (browser) {
     browser
-      .url(browser.globals.devServerURL + '/#/blog/guide/2017/this-post-has-multiple-parts')
+      .url(browser.globals.devServerURL + '/#/blog/showcase/2016/style-examples')
       .pause(1000)
       .assert.elementPresent('.content-pagination')
-      .assert.elementCount('.content-pagination > .page-number', 3) // This post should have 3 multiple parts
-      .assert.elementCount('.content-pagination > .page-number > span', 1) // Only 1 of which is the active part
-      .assert.elementCount('.content-pagination > .page-number > a', 2) // And 2 are router links to other parts
+      .assert.elementCount('.content-pagination > .page-number', 2) // This post should have 2 multiple parts
+      .assert.elementCount('.content-pagination > .page-number > span', 1) // One of which is the active part
+      .assert.elementCount('.content-pagination > .page-number > a', 1) // Another one is a router link to the other part
       .click('.content-pagination > .page-number a')
       .pause(1000)
-      .assert.urlContains('/#/blog/guide/2017/this-post-has-multiple-parts') // Should still show the same post, a different part through
-      .assert.elementCount('.content-pagination > .page-number > span', 1) // Only 1 of which is the active part
-      .assert.elementCount('.content-pagination > .page-number > a', 2) // And 2 are router links to other parts
+      .assert.urlContains('/#/blog/showcase/2016/style-examples') // Should still show the same post, a different part through
+      .assert.elementCount('.content-pagination > .page-number > span', 1) // One of which is the active part
+      .assert.elementCount('.content-pagination > .page-number > a', 1) // Another one is a router link to the other part
   },
 
-  'Posts view': function (browser) {
+  'Posts view: single page': function (browser) {
     browser
       .click('.content-meta a')
+      .pause(1000)
+      .assert.elementCount('.content-body', 1) // This category has only 1 post
+      .assert.elementNotPresent('.content-body > h1.content-title')
+      .assert.elementPresent('.content-body > h2.content-title')
+      .assert.elementPresent('.content-body > h4.content-meta')
+      .assert.elementNotPresent('.comments')
+      .assert.elementPresent('.posts > .navigation')
+      .assert.elementPresent('.vuelog > footer')
+  },
+
+  'Posts view: multiple pages': function (browser) {
+    browser
+      .url(browser.globals.devServerURL + '/#/blog/docs')
       .pause(1000)
       .assert.elementCount('.content-body', 3) // 3 posts listed in the posts view
       .assert.elementNotPresent('.content-body > h1.content-title')
@@ -90,7 +103,7 @@ module.exports = {
 
   'Page view': function (browser) {
     browser
-      .click('.header-menu > ul > li:nth-last-child(3) > a')
+      .click('.header-menu > ul > li:nth-last-child(4) > a')
       .pause(1000)
       .assert.elementCount('.content-body', 1)
       .assert.elementPresent('.content-body > h1.content-title')
