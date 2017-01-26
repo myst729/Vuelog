@@ -1,6 +1,11 @@
 title: Changelog (since v0.4.0)
----
-All notable changes to the Vuelog project after v0.4.0 will be documented in this page.
+------------------------------------
+<blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
+
+### 2.9.0 - 2017-01-26
+
+#### Changed
+- Rework docs.
 
 ### 2.8.0 - 2017-01-11
 
@@ -85,7 +90,7 @@ All notable changes to the Vuelog project after v0.4.0 will be documented in thi
 ### 2.1.3 - 2016-11-02
 
 #### Fixed
-- Sometimes click backdrop won't dismiss side menu on mobile devices.
+- Sometimes click backdrop won’t dismiss side menu on mobile devices.
 
 ### 2.1.2 - 2016-11-01
 
