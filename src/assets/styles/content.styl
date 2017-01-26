@@ -26,8 +26,7 @@
     display block
     border-radius 3px
     max-width 100%
-    margin-left auto
-    margin-right auto
+    margin .5em auto
     border 1px solid #ccc
     padding 3px
 
@@ -38,6 +37,7 @@
   p
   ul
   ol
+  table
     margin 1.2em 0
 
   figure
@@ -55,6 +55,8 @@
 
   blockquote
     border-left 4px solid #4fc08d
+    border-bottom-right-radius 3px
+    border-top-right-radius 3px
     margin 1.2em 0
     padding-left 20px
 
@@ -62,19 +64,17 @@
     margin-left 0
     margin .6em 0
 
+  blockquote code
+    background #fff
+
   iframe
     margin 1em 0
 
-  p.tip
-    background #f8f8f8
+  blockquote.tip
     border-left 4px solid #f66
-    border-bottom-right-radius 2px
-    border-top-right-radius 2px
-    padding 12px 24px 12px 30px
-    margin 2em 0
     position relative
 
-  p.tip:before
+  blockquote.tip:before
     content '!'
     background #f66
     border-radius 100%
