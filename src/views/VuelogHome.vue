@@ -28,7 +28,7 @@
       },
 
       download () {
-        return `${this.system.project}/releases/tag/${this.system.version}`
+        return `${this.system.project}/releases/latest`
       },
 
       title () {
@@ -56,6 +56,8 @@
 
   img
     display inline-block
+    height 256px
+    width 256px
     margin-top 75px
 
   h1
@@ -79,12 +81,14 @@
 
   @media screen and (max-width: 999px)
     img
-      margin-top 10px
+      height 192px
+      width 192px
+      margin-top 32px
 
     h1
     p
-      margin-top 0
-      margin-bottom 5px
+      margin-top 15px
+      margin-bottom 15px
 
     .button
       margin-bottom .25em
