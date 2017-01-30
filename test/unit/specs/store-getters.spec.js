@@ -51,12 +51,40 @@ describe('Store: getters', () => {
     expect(result).to.deep.equal({ project: 'Vuelog Test', version: '2016' })
   })
 
-  it('Languages', () => {
+  it('Languages: default', () => {
     const state = {
       languages: { 'en-US': 'English', 'fr-FR': 'Français', 'it-IT': 'Italiano', 'zh-CN': '简体中文' }
     }
-    const result = languages(state)
+    const result = languages(state, {
+      config: {
+        selectedLangs: []
+      }
+    })
     expect(result).to.deep.equal({ 'en-US': 'English', 'fr-FR': 'Français', 'it-IT': 'Italiano', 'zh-CN': '简体中文' })
+  })
+
+  it('Languages: trimmed', () => {
+    const state = {
+      languages: { 'en-US': 'English', 'fr-FR': 'Français', 'it-IT': 'Italiano', 'zh-CN': '简体中文' }
+    }
+    const result = languages(state, {
+      config: {
+        selectedLangs: ['en-US', 'zh-CN']
+      }
+    })
+    expect(result).to.deep.equal({ 'en-US': 'English', 'zh-CN': '简体中文' })
+  })
+
+  it('Languages: trimmed with invalid keys', () => {
+    const state = {
+      languages: { 'en-US': 'English', 'fr-FR': 'Français', 'it-IT': 'Italiano', 'zh-CN': '简体中文' }
+    }
+    const result = languages(state, {
+      config: {
+        selectedLangs: ['en-US', 'de-DE']
+      }
+    })
+    expect(result).to.deep.equal({ 'en-US': 'English' })
   })
 
   it('Navigation', () => {
