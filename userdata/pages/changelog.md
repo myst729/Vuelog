@@ -4,6 +4,12 @@ title: Changelog (since v0.4.0)
 
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.9.1 - 2017-01-30
+
+#### Added
+- Completed Chinese translation for docs.
+- Support trimmed language list defined by user.
+
 ### 2.9.0 - 2017-01-26
 
 #### Changed
@@ -156,6 +162,12 @@ title: Changelog (since v0.4.0)
 <!-- zh-CN:+ -->
 
 <blockquote class="tip"><p>Vuelog 项目 v0.4.0 以后主要的变更都记录在此。</p></blockquote>
+
+### 2.9.1 - 2017-01-30
+
+#### 新增
+- 完整的中文版文档；
+- 支持用户定义的语言列表。
 
 ### 2.9.0 - 2017-01-26
 
