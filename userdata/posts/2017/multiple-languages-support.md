@@ -93,7 +93,7 @@ switchLang: true,
 ```
 
 <blockquote class="tip">
-  <p>如果你愿意贡献其他语言的翻译，欢迎 fork [Vuelog 项目](https://github.com/myst729/Vuelog)并发送 pull 请求。非常感谢！</p>
+  <p>如果你愿意贡献其他语言的翻译，欢迎 fork [Vuelog 项目](https://github.com/myst729/Vuelog)并发送拉取请求。非常感谢！</p>
 </blockquote>
 
 ### 内容语言

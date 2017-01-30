@@ -18,10 +18,10 @@ window.VUELOG_DATABASE = {
 
     // The path to route to when you visit `/`.
     // Set to `/home`, `/blog` or a valid path at your need.
-    defaultPath: '/home',
+    homePath: '/home',
 
-    // Whether footer is visible on `defaultPath` or not.
-    defaultFooter: false,
+    // Whether footer is visible on `homePath` or not.
+    homeFooter: false,
 
     // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
     defaultLang: 'en-US',
@@ -138,8 +138,8 @@ window.VUELOG_DATABASE = {
       date: '2017-01-18'
     },
     {
-      title: {'en-US': 'Author a post or page', 'zh-CN': '编写文章或页面'},
-      slug: 'author-a-post-or-page',
+      title: {'en-US': 'Author posts or pages', 'zh-CN': '编写文章或页面'},
+      slug: 'author-posts-or-pages',
       category: 'docs',
       date: '2017-01-13'
     },
