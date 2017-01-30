@@ -16,6 +16,9 @@ defaultLang: 'en-US',
 
 // Allow/disallow visitors to switch interface language.
 switchLang: true,
+
+// Available languages for switching. Must be a subset of supported languages, or leave empty.
+selectedLangs: [],
 ```
 
 <blockquote class="tip">
@@ -82,7 +85,7 @@ Vuelog 提供了多语言支持。
 
 ### 界面语言
 
-界面语言目前仅支持简体中文（`zh-CN`）和美国英语（`en-US`）的支持。[自定义站点](#/blog/docs/2017/customize-the-site)的<q>语言</q>一节已有介绍，你可以修改 `userdata/database.js` 中的以下两个 `config` 属性：
+界面语言目前仅支持简体中文（`zh-CN`）和美国英语（`en-US`）的支持。[自定义站点](#/blog/docs/2017/customize-the-site)的<q>语言</q>一节已有介绍，你可以修改 `userdata/database.js` 中的以下几个 `config` 属性：
 
 ```js
 // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
@@ -90,10 +93,13 @@ defaultLang: 'en-US',
 
 // Allow/disallow visitors to switch interface language.
 switchLang: true,
+
+// Available languages for switching. Must be a subset of supported languages, or leave empty.
+selectedLangs: [],
 ```
 
 <blockquote class="tip">
-  <p>如果你愿意贡献其他语言的翻译，欢迎 fork [Vuelog 项目](https://github.com/myst729/Vuelog)并发送 pull 请求。非常感谢！</p>
+  <p>如果你愿意贡献其他语言的翻译，欢迎 fork [Vuelog 项目](https://github.com/myst729/Vuelog)并发送拉取请求。非常感谢！</p>
 </blockquote>
 
 ### 内容语言

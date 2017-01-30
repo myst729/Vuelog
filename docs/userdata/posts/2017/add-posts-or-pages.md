@@ -2,9 +2,11 @@ title: Add posts or pages
 category: docs
 date: 2017-01-12
 ------------------------------------
-### Add a page
+<!-- en-US:+ -->
 
-To add a page, just put the markdown file in `/userdata/pages` folder.
+### Add pages
+
+To add pages, just create markdown files (extension must be **md**) in `/userdata/pages` directory.
 
 ```bash
 userdata/
@@ -27,14 +29,14 @@ pages: [
 ]
 ```
 
-There are 2 mandatory fields:
+There are two mandatory fields:
 
-- Set `title` to the page’s title. Page title supports multiple languages, please read [multiple languages support](#/blog/docs/2017/multiple-languages-support) for more information.
-- Set `slug` to the markdown file’s name (without extension).
+- `title` is the page’s title. Page title supports multiple languages, please read [multiple languages support](#/blog/docs/2017/multiple-languages-support) for more information.
+- `slug` must be set to the markdown file’s name (without extension).
 
-There are 4 optional fields that accept boolean values:
+There are four optional fields that accept boolean values:
 
-- Set `exclude` to `true` will exclude the page from `/archive` list.
+- Set `exclude` to `true` will exclude the page from archive view (`/archive`).
 - Set `titleless` to `true` will hide the title in page view.
 - Set `commentless` to `true` will turn off comments for the page, more on [use social commenting services](#/blog/docs/2017/use-social-commenting-services).
 - Set `draft` to `true` will make the page inaccessible for visitors.
@@ -43,9 +45,9 @@ There are 4 optional fields that accept boolean values:
   <p>`exclude` and `titleless` are useful if you set the page as your custom homepage.</p>
 </blockquote>
 
-### Add a categories
+### Add categories
 
-Posts are filed under categories. So, to create posts, you must have a category for it.
+Posts are filed under categories. So, to create posts, you must have categories for them.
 
 To add a category is simple, add a new entry to `categories` section in `userdata/database.js`.
 
@@ -60,9 +62,9 @@ categories: [
 
 Both `title` and `slug` are mandatory. Category title also supports multiple languages.
 
-### Add a post
+### Add posts
 
-Create yearly sub-directories under `/posts` directory, name them in **YYYY** format. Put the markdown files (extension must be **md**) in the yearly sub-directories.
+Create yearly sub-directories under `/posts` directory, name them like **YYYY**, such as `/2017`. Create markdown files (extension must be **md**) in the yearly sub-directories.
 
 ```bash
 userdata/
@@ -72,7 +74,7 @@ userdata/
     └── 2017/
 ```
 
-Then add a new entry in `posts` section in `userdata/database.js`. Set the file name (without extension) as the `slug` field.
+Then add a new entry in `posts` section in `userdata/database.js`.
 
 ```js
 posts: [
@@ -88,12 +90,114 @@ posts: [
 ]
 ```
 
-There are 4 mandatory fields:
+There are four mandatory fields:
 
 - `title` and `slug` are similar as pages.
 - `category` is the category’s `slug` value in which the post is filed under.
 - `date` is the when the post is created, must be an [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) date format (**YYYY-MM-DD**).
 
-There are 3 optional fields that accept boolean values:
+There are three optional fields that accept boolean values:
 
 - `titleless`, `commentless` and `draft` are similar as pages.
+
+<!-- en-US:- -->
+
+<!-- zh-CN:+ -->
+
+### 添加页面
+
+要添加页面，首先在 `/userdata/pages` 目录下创建 markdown 文件（扩展名必须为 **md**）。
+
+```bash
+userdata/
+└── pages/
+    └── all-about-vuelog.md
+```
+
+然后在 `userdata/database.js` 的 `pages` 部分新增一个入口。
+
+```js
+pages: [
+  {
+    title: {'en-US': 'About Vuelog', 'zh-CN': '关于 Vuelog'},
+    slug: 'about',
+    exclude: false,     // (OPTIONAL) `true` to exclude the page from archive view
+    titleless: false,   // (OPTIONAL) `true` to hide the title in page view
+    commentless: false, // (OPTIONAL) `true` to disable comments for the page
+    draft: false        // (OPTIONAL) `true` to make the page temporarily inaccessible
+  }
+]
+```
+
+有两个属性是必需的：
+
+- `title` 属性是页面的标题。这个属性支持多语言，详情请阅读[多语言支持](#/blog/docs/2017/multiple-languages-support)；
+- `slug` 必须设置为对应的 markdown 文件名（不带扩展名）。
+
+有四个接受布尔值的可选属性：
+
+- `exclude` 设为 `true` 的页面不会出现在归档视图（`/archive`）；
+- `titleless` 设为 `true` 的页面在页面视图中不会显示标题；
+- `commentless` 设为 `true` 的页面会关闭评论功能，更多请阅读[使用社会化评论服务](#/blog/docs/2017/use-social-commenting-services)；
+- `draft` 设为 `true` 的页面对所有访问者都不可见。
+
+<blockquote class="tip">
+  <p>设置自定义首页时，可以考虑开启 `exclude` 和 `titleless` 属性。</p>
+</blockquote>
+
+### 添加目录
+
+文章归类在目录下。因此，要添加文章，必须先添加目录。
+
+添加目录很简单，只需要在 `userdata/database.js` 的 `categories` 部分新增一个入口。
+
+```js
+categories: [
+  {
+    title: {'en-US': 'Docs', 'zh-CN': '文档'},
+    slug: 'docs'
+  }
+]
+```
+
+`title` 和 `slug` 属性都是必需的。目录标题也支持多语言。
+
+### 添加文章
+
+在 `/posts` 目录下创建以年份命名，格式为 **YYYY** 的子目录，如 `/2017` 等。在年份目录下创建 markdown 文件（扩展名必须为 **md**）。
+
+```bash
+userdata/
+└── posts/
+    ├── 2016/
+    │   └── how-to-add-posts-or-pages.md
+    └── 2017/
+```
+
+然后在 `userdata/database.js` 的 `posts` 部分新增一个入口。
+
+```js
+posts: [
+  {
+    title: 'Add posts or pages',
+    slug: 'add-posts-or-pages',
+    category: 'docs',
+    date: '2017-01-12',
+    titleless: false,   // (OPTIONAL) `true` to hide the title in page view
+    commentless: false, // (OPTIONAL) `true` to disable comments for the page
+    draft: false        // (OPTIONAL) `true` to make the page temporarily inaccessible
+  }
+]
+```
+
+有四个属性是必需的：
+
+- `title` 和 `slug` 属性与页面类似；
+- `category` 是该文章所属目录的 `slug` 属性值；
+- `date` 是文章创建日期，必须为 [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) 日期格式（**YYYY-MM-DD**）。
+
+有三个接受布尔值的可选属性：
+
+- `titleless`、`commentless` 和 `draft` 属性与页面类似。
+
+<!-- zh-CN:- -->
