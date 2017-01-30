@@ -2,6 +2,8 @@ title: File structure of Vuelog
 category: docs
 date: 2016-10-20
 ------------------------------------
+<!-- en-US:+ -->
+
 Here’s the typical directory structure of a Vuelog deployment:
 
 ```bash
@@ -26,13 +28,54 @@ Here’s the typical directory structure of a Vuelog deployment:
 Let’s go through them one by one:
 
 - `index.html`: The entry point of the site. Usually you don’t need to touch it.
-- `static/`: Compiled Vuelog core files such as JavaScript and CSS. **You should never touch this directory, or your site may down.**
-- `userdata/`: Where you put the source markdown files of posts and pages. **Do not change the folder’s name.**
+- `static/`: This directory contains compiled Vuelog core files, such as JavaScript and CSS. **You should never touch this directory, or your site may down.**
+- `userdata/`: Where you put the source markdown files of posts and pages. **Do not change the directory’s name.**
    - `database.js`: The most important file you need to take care of. All your configurations and pages/posts data are stored here.
    - `pages/`: Source markdown files of pages are stored here.
    - `posts/`: Source markdown files of posts are stored here, filed under sub-directories by year.
-      - `2016/`: The folder name indicates all posts in it are published in year 2016.
+      - `2016/`: The directory name indicates all posts in it are published in year 2016.
 
 You could put other static files in `userdata/`, e.g. the images referencd in your pages/posts.
 
-For process to publish pages/posts, read [add posts or pages](#/blog/docs/2017/add-posts-or-pages) and [author a post or page](#/blog/docs/2017/author-a-post-or-page).
+For process to publish pages/posts, read [add posts or pages](#/blog/docs/2017/add-posts-or-pages) and [author posts or pages](#/blog/docs/2017/author-posts-or-pages).
+
+<!-- en-US:- -->
+
+<!-- zh-CN:+ -->
+
+这是 Vuelog 部署后典型的目录结构：
+
+```bash
+/
+├── index.html
+├── static/
+│   ├── css/
+│   └── js/
+└── userdata/
+    ├── database.js
+    ├── pages/
+    │   ├── all-about-vuelog.md
+    │   └── changelog.md
+    └── posts/
+        └── 2016/
+            ├── how-to-add-a-post-or-page.md
+            ├── the-so-called-database.md
+            ├── the-structure-of-vuelog.md
+            └── the-styles.md
+```
+
+它们分别是：
+
+- `index.html`: 站点的入口文件，通常不用修改。
+- `static/`: 这个目录下是 JavaScript 和 CSS 等编译后的 Vuelog 核心文件。**千万不要动这里的文件，否则可能会导致站点宕机。**
+- `userdata/`: 文章和页面的 markdown 源文件都放在这个目录下。**不要修改这个目录的名字。**
+   - `database.js`: 整个站点最重要的文件，所有的配置和文章/页面数据都保存在里面。
+   - `pages/`: 存放页面 markdown 源文件的目录。
+   - `posts/`: 存放文章 markdown 源文件的目录，分别存放于以年份命名的子目录中。
+      - `2016/`: 这个目录名表示该目录中存放的所有文章都发布于 2016 年。
+
+你可以把其他静态文件放在 `userdata/` 里，比如文章和页面中引用的图像。
+
+关于发布文章和页面的流程，请阅读[新建文章或页面](#/blog/docs/2017/add-posts-or-pages)和[编写文章或页面](#/blog/docs/2017/author-posts-or-pages)。
+
+<!-- zh-CN:- -->

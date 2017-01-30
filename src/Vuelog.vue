@@ -41,7 +41,7 @@
       },
 
       footerVisible () {
-        return (this.$route.path !== this.config.defaultPath) || this.config.defaultFooter
+        return (this.$route.path !== this.config.homePath) || this.config.homeFooter
       },
 
       routeClass () {

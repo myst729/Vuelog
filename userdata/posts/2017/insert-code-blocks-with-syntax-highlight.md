@@ -2,7 +2,9 @@ title: Insert code blocks with syntax highlight
 category: docs
 date: 2017-01-18
 ------------------------------------
-You can insert code block in your post or page. Vuelog supports following languages:
+<!-- en-US:+ -->
+
+You can insert code block in your post or page. Vuelog currently supports syntax highlight for following languages:
 
 - Markdown
 - HTML / XML
@@ -56,4 +58,66 @@ Here are some examples:
   }
   ```
 
-If a language you want to highlight is not in the supported list, you could fork the Vuelog project and edit `src/helpers/highlight.js`. It’s just a trimmed version of the original [highlight.js](https://highlightjs.org/).
+It’s just a trimmed version of the original [highlight.js](https://highlightjs.org/). If a language you want to highlight is not in the supported list, you could fork [Vuelog on GitHub](https://github.com/myst729/Vuelog) and edit `src/helpers/highlight.js`.
+
+<!-- en-US:- -->
+
+<!-- zh-CN:+ -->
+
+你可以在文章或页面中插入代码块。Vuelog 目前支持以下语言的语法高亮：
+
+- Markdown
+- HTML / XML
+- CSS / LESS / SCSS / Stylus
+- JavaScript / TypeScript
+- PHP / Python / Ruby / Rust / Go
+- JSON
+- SQL
+- Bash
+- Diff
+
+来看一些示例：
+
+- 输入：
+
+  <pre><code class="lang-markdown">```html
+  &lt;div id="app"&gt;&lt;/div&gt;
+  ```</code></pre>
+
+  输出：
+
+  ```html
+  <div id="app"></div>
+  ```
+
+- 输入：
+
+  <pre><code class="lang-markdown">```js
+  var brand = 'Vuelog'
+  ```</code></pre>
+
+  输出：
+
+  ```js
+  var brand = 'Vuelog'
+  ```
+
+- 输入：
+
+  <pre><code class="lang-markdown">```css
+  body {
+    color: #4fc08d
+  }
+  ```</code></pre>
+
+  输出：
+
+  ```css
+  body {
+    color: #4fc08d
+  }
+  ```
+
+这只是 [highlight.js](https://highlightjs.org/) 的一个精简版。如果你想高亮的语言尚不在支持列表中，可以 fork [Vuelog 项目](https://github.com/myst729/Vuelog)，编辑 `src/helpers/highlight.js`。
+
+<!-- zh-CN:- -->
