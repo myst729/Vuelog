@@ -29,6 +29,9 @@ window.VUELOG_DATABASE = {
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
 
+    // Available languages for switching. Must be a subset of supported languages, or leave empty.
+    selectedLangs: [],
+
     // Number of posts listed in a blog/category view.
     postsCount: 3,
 
