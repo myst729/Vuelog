@@ -2,6 +2,12 @@
 
 > All notable changes to the Vuelog project after v0.4.0 are documented.
 
+### 2.9.1 - 2017-01-30
+
+#### Added
+- Completed Chinese translation for docs.
+- Support trimmed language list defined by user.
+
 ### 2.9.0 - 2017-01-26
 
 #### Changed
