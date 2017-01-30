@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div v-html="$t('credit', [$options._scopeId, system.project, system.brand])"></div>
-    <vuelog-language class="lang" v-if="config.switchLang"></vuelog-language>
+    <vuelog-language class="lang" v-if="enableSwitch"></vuelog-language>
   </footer>
 </template>
 
@@ -16,8 +16,10 @@
     },
 
     computed: {
-      config () {
-        return this.$store.getters.config
+      enableSwitch () {
+        var switchLang = this.$store.getters.config.switchLang
+        var count = Object.keys(this.$store.getters.languages).length
+        return switchLang && (count > 1)
       },
 
       system () {

@@ -18,7 +18,17 @@ export function config (state) {
   return state.database.config
 }
 
-export function languages (state) {
+export function languages (state, getters) {
+  var selectedLangs = getters.config.selectedLangs
+  if (selectedLangs && selectedLangs.length) {
+    var selectedLanguages = {}
+    selectedLangs.forEach(lang => {
+      if (state.languages[lang]) {
+        selectedLanguages[lang] = state.languages[lang]
+      }
+    })
+    return selectedLanguages
+  }
   return state.languages
 }
 
