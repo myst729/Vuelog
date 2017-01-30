@@ -56,9 +56,16 @@ defaultLang: 'en-US',
 
 // Allow/disallow visitors to switch interface language.
 switchLang: true,
+
+// Available languages for switching. Must be a subset of supported languages, or leave empty.
+selectedLangs: [],
 ```
 
-Vuelog is ready for multiple languages support, although currently only Simplified Chinese (`zh-CN`) and American English (`en-US`) are available. You can pick one as the default language. You can also decide whether the visitors could switch the language on the fly.
+Vuelog is ready for multiple languages support, although currently only Simplified Chinese (`zh-CN`) and American English (`en-US`) are available. 
+
+- Language defined with `defaultLang` will be set as the default language.
+- With `switchLang`, you can decide whether the visitors could switch language on the fly.
+- Set `selectedLangs` as a subset of supported languages to let the visitors to switch. Leave it empty enables all supported languages.
 
 ### Posts
 
@@ -140,9 +147,16 @@ defaultLang: 'en-US',
 
 // Allow/disallow visitors to switch interface language.
 switchLang: true,
+
+// Available languages for switching. Must be a subset of supported languages, or leave empty.
+selectedLangs: [],
 ```
 
-Vuelog 提供了多语言支持的功能，目前暂时只有简体中文（`zh-CN`）和美国英语（`en-US`）。你可以选择其中一种作为默认的语言。你也可以选择是否允许访问者更换语言。
+Vuelog 提供了多语言支持的功能，尽管目前暂时只有简体中文（`zh-CN`）和美国英语（`en-US`）。
+
+- `defaultLang` 属性定义的语言会被设置为默认的语言；
+- `switchLang` 属性决定是否允许访问者更换语言；
+- `selectedLangs` 属性可以设置可供更换的语言，必须为已支持语言的子集。留空则所有支持的语言都可供更换。
 
 ### 文章
 
