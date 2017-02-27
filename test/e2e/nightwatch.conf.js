@@ -10,14 +10,13 @@ module.exports = {
 
   selenium: {
     start_process: true,
-    server_path: 'node_modules/selenium-server/lib/runner/selenium-server-standalone-3.0.1.jar',
+    server_path: require('selenium-server').path,
     host: '127.0.0.1',
     port: 4444,
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path,
       // 'webdriver.edge.driver': require('edgedriver').path,
-      'webdriver.gecko.driver': require('geckodriver').path,
-      'phantomjs.binary.path': require('phantomjs-prebuilt').path
+      'webdriver.gecko.driver': require('geckodriver').path
     }
   },
 
@@ -59,6 +58,7 @@ module.exports = {
     phantomjs: {
       desiredCapabilities: {
         browserName: 'phantomjs',
+        'phantomjs.binary.path': require('phantomjs-prebuilt').path,
         javascriptEnabled: true,
         acceptSslCerts: true
       }
