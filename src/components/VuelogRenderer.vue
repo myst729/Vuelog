@@ -249,7 +249,9 @@
 
     beforeDestroy () {
       if (this.xhr && this.xhr.readyState < 4) {
+        this.xhr.onload = this.xhr.onerror = function () {}
         this.xhr.abort()
+        this.xhr = null
       }
     }
   }
