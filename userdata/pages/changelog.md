@@ -7,7 +7,7 @@ title: Changelog (since v0.4.0)
 ### 2.10.1 - 2017-04-07
 
 #### Added
-- Support end to end tests for Microsoft Edge on Windows 10
+- Support end to end tests for Microsoft Edge on Windows 10.
 
 ### 2.10.0 - 2017-02-27
 

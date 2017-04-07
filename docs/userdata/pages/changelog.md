@@ -4,6 +4,17 @@ title: Changelog (since v0.4.0)
 
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.10.1 - 2017-04-07
+
+#### Added
+- Support end to end tests for Microsoft Edge on Windows 10.
+
+### 2.10.0 - 2017-02-27
+
+#### Changed
+- Upgrade build tools to Webpack 2.2.1.
+- Upgrade dependencies.
+
 ### 2.9.1 - 2017-01-30
 
 #### Added
@@ -162,6 +173,17 @@ title: Changelog (since v0.4.0)
 <!-- zh-CN:+ -->
 
 <blockquote class="tip"><p>Vuelog 项目 v0.4.0 以后主要的变更都记录在此。</p></blockquote>
+
+### 2.10.1 - 2017-04-07
+
+#### 新增
+- 支持 Windows 10 系统 Microsoft Edge 的端到端测试。
+
+### 2.10.0 - 2017-02-27
+
+#### 变更
+- 升级构建工具至 Webpack 2.2.1；
+- 升级依赖。
 
 ### 2.9.1 - 2017-01-30
 
