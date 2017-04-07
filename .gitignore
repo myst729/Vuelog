@@ -3,8 +3,8 @@ dist/
 node_modules/
 test/e2e/reports
 test/unit/coverage
-npm-debug.log
-phantomjsdriver.log
-selenium-debug.log
-yarn-error.log
-TASKS.todo
+npm-debug.log*
+phantomjsdriver.log*
+selenium-debug.log*
+yarn-debug.log*
+yarn-error.log*
