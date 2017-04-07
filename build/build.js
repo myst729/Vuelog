@@ -39,6 +39,6 @@ webpack(webpackConfig, function (err, stats) {
     children: false,
     chunks: false,
     chunkModules: false
-  }) + '\n')
+  }) + '\n\n')
   console.log(chalk.cyan('  Build complete.\n'))
 })
