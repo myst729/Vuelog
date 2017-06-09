@@ -35,7 +35,7 @@
 
 <script>
   import marked from 'marked'
-  import { meaningfulTime, retrieveByLanguage } from '../helpers'
+  import { meaningfulTime, retrieveByLanguage, merge } from '../helpers'
   import hljs from '../helpers/highlight'
   import VuelogPagination from './VuelogPagination'
   import VuelogSpinner from './VuelogSpinner'
@@ -141,6 +141,22 @@
         })
       },
 
+      setupMarked () {
+        const defaultOptions = {
+          smartypants: true,
+          highlight (code, lang) {
+            try {
+              return hljs.highlight(lang, code).value
+            } catch (e) {
+              return hljs.highlightAuto(code).value
+            }
+          }
+        }
+
+        const options = merge(defaultOptions, this.config.markedOptions)
+        marked.setOptions(options)
+      },
+
       loadMarkdown (path) {
         return this.promiseRequest('GET', path)
       },
@@ -178,16 +194,6 @@
       },
 
       renderMarkdown (mdByLang) {
-        marked.setOptions({
-          smartypants: true,
-          highlight (code, lang) {
-            try {
-              return hljs.highlight(lang, code).value
-            } catch (e) {
-              return hljs.highlightAuto(code).value
-            }
-          }
-        })
         var markupByLang = {}
         Object.keys(mdByLang).forEach(lang => {
           markupByLang[lang] = marked(mdByLang[lang])
@@ -233,6 +239,8 @@
     },
 
     created () {
+      this.setupMarked()
+
       this.loadMarkdown(this.metadata.markdown)
         .then(this.preProcess)
         .then(this.renderMarkdown)
