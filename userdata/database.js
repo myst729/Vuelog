@@ -42,7 +42,11 @@ window.VUELOG_DATABASE = {
     intenseDebateAccount: '',
 
     // Fill in the uid to integrate LiveRe with your blog.
-    livereUid: ''
+    livereUid: '',
+
+    // Options for marked, see https://github.com/chjj/marked#options-1 for detail
+    markedOptions: {},
+
   },
 
   navigation: [
