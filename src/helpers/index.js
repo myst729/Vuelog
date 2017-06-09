@@ -56,3 +56,18 @@ export function retrieveByLanguage (contentByLanguages, selectedLang, fallbackLa
   // return the language that comes the first
   return contentByLanguages[Object.keys(contentByLanguages)[0]]
 }
+
+export function merge (obj) {
+  var target
+  var key
+
+  for (var i = 1; i < arguments.length; i++) {
+    target = arguments[i]
+    for (key in target) {
+      if (Object.prototype.hasOwnProperty.call(target, key)) {
+        obj[key] = target[key]
+      }
+    }
+  }
+  return obj
+}
