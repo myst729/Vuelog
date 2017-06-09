@@ -35,7 +35,7 @@
 
 <script>
   import marked from 'marked'
-  import { meaningfulTime, retrieveByLanguage, merge } from '../helpers'
+  import { meaningfulTime, retrieveByLanguage } from '../helpers'
   import hljs from '../helpers/highlight'
   import VuelogPagination from './VuelogPagination'
   import VuelogSpinner from './VuelogSpinner'
@@ -153,7 +153,7 @@
           }
         }
 
-        const options = merge(defaultOptions, this.config.markedOptions)
+        const options = Object.assign(defaultOptions, this.config.markedOptions)
         marked.setOptions(options)
       },
 
