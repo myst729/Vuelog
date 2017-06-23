@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 are documented.
 
+### 2.10.2 - 2017-06-23
+
+#### Added
+- Support custom marked options.
+
 ### 2.10.1 - 2017-04-07
 
 #### Added

@@ -86,10 +86,19 @@ disqusShortname: '',
 intenseDebateAccount: '',
 
 // Fill in the uid to integrate LiveRe with your blog.
-livereUid: ''
+livereUid: '',
 ```
 
 These fields are useful if you want to enable comments on your site. Please read [use social commenting services](#/blog/docs/2017/use-social-commenting-services) for more information.
+
+### Markdown
+
+```js
+// Options for marked, see https://github.com/chjj/marked#options-1 for detail
+markedOptions: {}
+```
+
+Vuelog uses [marked](https://github.com/chjj/marked) to render the mardowns. The default marked rendering settings in Vuelog are somehow opinion based. If you don't like, you could customize with this object. Please read the marked [docs](https://github.com/chjj/marked#options-1) for help.
 
 <!-- en-US:- -->
 
@@ -181,5 +190,14 @@ livereUid: ''
 ```
 
 如果要开启站点的评论功能，就可以用上这几个属性。详情请阅读[使用社会化评论服务](#/blog/docs/2017/use-social-commenting-services)。
+
+### Markdown
+
+```js
+// Options for marked, see https://github.com/chjj/marked#options-1 for detail
+markedOptions: {}
+```
+
+Vuelog 采用 [marked](https://github.com/chjj/marked) 渲染 markdown 文件。默认的 marked 渲染配置主要考虑 Vuelog 作者个人的喜好。如果你不喜欢这些配置，可以通过这个选项来自定义。具体操作请阅读 marked [文档](https://github.com/chjj/marked#options-1)。
 
 <!-- zh-CN:- -->
