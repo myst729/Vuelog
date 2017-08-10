@@ -2,13 +2,17 @@ machine:
   node:
     version: 6
 
+dependencies:
+  override:
+    - yarn
+
 compile:
   override:
-    - npm run build
+    - yarn build
 
 test:
   override:
-    - npm run unit && npm run e2e -- --env phantomjs
+    - yarn unit && yarn e2e -- --env phantomjs
 
   post:
     - bash <(curl -s https://codecov.io/bash)
