@@ -56,6 +56,17 @@ module.exports = {
       }
     },
 
+    headless: {
+      desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        chromeOptions: {
+          args: ['headless', 'no-sandbox', 'disable-gpu']
+        }
+      }
+    },
+
     phantomjs: {
       desiredCapabilities: {
         browserName: 'phantomjs',
