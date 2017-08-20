@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import * as database from 'database'
 import { languages } from '../i18n/locales'
-import { brand, project, version } from '../../package'
+import { brand, project, version, website } from '../../package'
 
 import * as actions from './actions'
 import * as mutations from './mutations'
@@ -14,7 +14,7 @@ const state = {
   title: database.config.brand,
   lang: database.config.defaultLang,
   menu: false,
-  system: { brand, project, version },
+  system: { brand, project, version, website },
   database,
   languages
 }

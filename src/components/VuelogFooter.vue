@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div v-html="$t('credit', [$options._scopeId, system.project, system.brand])"></div>
+    <div v-html="$t('credit', [$options._scopeId, system.website, system.brand])"></div>
     <vuelog-language class="lang" v-if="enableSwitch"></vuelog-language>
   </footer>
 </template>
