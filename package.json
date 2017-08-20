@@ -5,6 +5,7 @@
   "author": "Leo Deng",
   "license": "MIT",
   "brand": "Vuelog",
+  "website": "https://vuelog.js.org",
   "project": "https://github.com/myst729/Vuelog",
   "repository": {
     "type": "git",

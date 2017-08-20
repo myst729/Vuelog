@@ -1,2 +1,6 @@
-build/*.js
-config/*.js
+build/*
+config/*
+docs/*
+node_modules/*
+test/e2e/reports/*
+test/unit/coverage/*
