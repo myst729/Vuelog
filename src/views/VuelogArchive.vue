@@ -1,7 +1,9 @@
 <template>
   <div class="archive">
     <div v-if="displayType === 'archive-category'" class="archive-body">
-      <h2 v-html="$t('archive.inCategory', [i18nify(archive.title)])"></h2>
+      <i18n path="archive.inCategory" tag="h2">
+        <q v-text="i18nify(archive.title)"></q>
+      </i18n>
       <ul>
         <li v-for="(post, index) in archive.posts" :key="index">
           <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>

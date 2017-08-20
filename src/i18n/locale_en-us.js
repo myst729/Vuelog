@@ -14,7 +14,7 @@ const enUS = {
   archive: {
     title: 'Archive',
     empty: 'No posts found.',
-    inCategory: 'Posts in category <q>{0}</q>:',
+    inCategory: 'Posts in category {0}:',
     inYear: 'Posts in year {0}:',
     byCategory: 'Posts by Category:',
     byYear: 'Posts by Year:',
@@ -42,7 +42,7 @@ const enUS = {
     switch: 'Language:'
   },
 
-  credit: 'Built with <span {0}>&#10084;</span> and <a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a>'
+  credit: 'Built with {1} and {0}'
 }
 
 export default enUS
