@@ -1,6 +1,8 @@
 <template>
   <footer>
-    <div v-html="$t('credit', [$options._scopeId, system.website, system.brand])"></div>
+    <i18n path="credit" tag="div">
+      <a :href="system.website" target="_blank" rel="noopener noreferrer" v-text="system.brand"></a><span>&#10084;</span>
+    </i18n>
     <vuelog-language class="lang" v-if="enableSwitch"></vuelog-language>
   </footer>
 </template>

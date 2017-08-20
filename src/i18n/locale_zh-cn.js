@@ -14,7 +14,7 @@ const zhCN = {
   archive: {
     title: '归档',
     empty: '没有文章。',
-    inCategory: '归入目录 <q>{0}</q> 的文章：',
+    inCategory: '归入目录 {0} 的文章：',
     inYear: '{0} 年的文章：',
     byCategory: '按目录归档：',
     byYear: '按时间归档：',
@@ -42,7 +42,7 @@ const zhCN = {
     switch: '更换语言：'
   },
 
-  credit: '<a {0} href="{1}" target="_blank" rel="noopener noreferrer">{2}</a> 驱动，用 <span {0}>&#10084;</span> 构筑'
+  credit: '{0} 驱动，用 {1} 构筑'
 }
 
 export default zhCN
