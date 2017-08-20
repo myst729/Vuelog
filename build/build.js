@@ -18,17 +18,12 @@ console.log(chalk.yellow(
 var spinner = ora('building for production...')
 spinner.start()
 
-rm('-rf', config.build.assetsRoot)
-
-var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
-mkdir('-p', assetsPath)
-cp('-r', 'static/*', assetsPath)
-
-var userdataPath = path.join(config.build.assetsRoot, config.build.userdataSubDirectory)
-mkdir('-p', userdataPath)
-cp('-r', 'userdata/*', userdataPath)
-mv('-f', path.join(userdataPath, 'database-dist.js'), path.join(userdataPath, 'database.js'))
-rm('-f', path.join(userdataPath, 'database-docs.js'))
+var assetsRoot = config.build.assetsRoot
+rm('-rf', assetsRoot)
+mkdir('-p', assetsRoot)
+echo('vuelog.js.org').to(path.join(assetsRoot, 'CNAME'))
+cp('-r', 'static', path.join(assetsRoot, config.build.assetsSubDirectory))
+cp('-r', 'userdata', path.join(assetsRoot, config.build.userdataSubDirectory))
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()

@@ -1,4 +1,4 @@
-# Vuelog
+# [Vuelog](https://vuelog.js.org/)
 
 [![CircleCI](https://img.shields.io/circleci/project/myst729/Vuelog/master.svg)](https://circleci.com/gh/myst729/Vuelog/tree/master)
 [![Codecov](https://img.shields.io/codecov/c/github/myst729/Vuelog/master.svg)](https://codecov.io/github/myst729/Vuelog?branch=master)
@@ -24,14 +24,11 @@ yarn
 # serve with hot reload at localhost:8080
 yarn dev
 
-# build for production with minification
+# build for production with minification, also update documentation
 yarn build
 
 # build for production and view the bundle analyzer report
-yarn build --report
-
-# update project documentation
-yarn docs
+yarn report
 
 # run unit tests
 yarn unit
@@ -50,7 +47,7 @@ If you just want to write something, grab the latest release package [here](http
 
 ## Documentation
 
-https://myst729.github.io/Vuelog
+https://vuelog.js.org/
 
 
 ## License

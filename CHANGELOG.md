@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 are documented.
 
+### 2.11.0 - 2017-08-20
+
+#### Changed
+- Clean up build process.
+
 ### 2.10.2 - 2017-06-23
 
 #### Added

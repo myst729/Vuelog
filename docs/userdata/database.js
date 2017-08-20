@@ -4,17 +4,14 @@ window.VUELOG_DATABASE = {
 
   config: {
     // The name of your site, will be displayed in browser tab and site header.
-    brand: 'Vuelog',
+    brand: {'en-US': 'Vuelog', 'zh-CN': 'Vuelog'},
 
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
 
-    // The full URL where your site is hosted.
-    home: 'https://myst729.github.io/Vuelog',
-
     // Path to the domain root that serves your site, starts and ends with slash (`/`).
     // Set to `'/'` if your site is under domain root.
-    base: '/Vuelog/',
+    base: '/',
 
     // The path to route to when you visit `/`.
     // Set to `/home`, `/blog` or a valid path at your need.
@@ -45,7 +42,7 @@ window.VUELOG_DATABASE = {
     livereUid: '',
 
     // Options for marked, see https://github.com/chjj/marked#options-1 for detail
-    markedOptions: {},
+    markedOptions: {}
   },
 
   navigation: [

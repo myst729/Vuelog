@@ -16,5 +16,5 @@ test:
 
   post:
     - bash <(curl -s https://codecov.io/bash)
-    - zip -r vuelog-latest.zip dist
+    - zip -r vuelog-latest.zip docs
     - cp vuelog-latest.zip $CIRCLE_ARTIFACTS

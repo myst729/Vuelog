@@ -15,9 +15,6 @@ brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
 // The image displayed in site header right beside the brand.
 logo: './static/vuelog.svg',
 
-// The full URL where your site is hosted.
-home: 'http://yoursite.com',
-
 // Path to the domain root that serves your site, starts and ends with slash (`/`).
 // Set to `'/'` if your site is under domain root.
 base: '/',
@@ -27,7 +24,7 @@ The `brand` field supports multiple languages, please read [multiple languages s
 
 Your `logo` image can be any size, either raster or vector. Vuelog will automatically resize it to fit the page layout.
 
-Tell Vuelog where your site is hosted with `home` and `base` fields. Please note that if your site is hosted under a sub-directory of the domain, you must modify the `base` field. For example, if `home` is set to `http://example.com/site`, then `base` should be `/site/`, with both starting and trailing slashes.
+Tell Vuelog where your site is hosted with the `base` fields. Please note that if your site is hosted under a sub-directory of the domain, you must modify the `base` field. For example, if your site is hosted at `http://example.com/site`, then `base` should be `/site/`, with both starting and trailing slashes.
 
 ### Homepage
 
@@ -115,9 +112,6 @@ brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
 // The image displayed in site header right beside the brand.
 logo: './static/vuelog.svg',
 
-// The full URL where your site is hosted.
-home: 'http://yoursite.com',
-
 // Path to the domain root that serves your site, starts and ends with slash (`/`).
 // Set to `'/'` if your site is under domain root.
 base: '/',
@@ -127,7 +121,7 @@ base: '/',
 
 `logo` 图像可以是任意尺寸的位图或矢量图，Vuelog 会根据页面布局将其自动缩放至合适的尺寸。
 
-`home` 和 `base` 属性记录了 Vuelog 站点托管的信息。请注意，如果你的站点托管在域名的某个子目录下，必须相应地修改 `base` 属性。比如，`home` 设置为 `http://example.com/site`，则 `base` 应该设置为 `/site/`，开始和结束的 `/` 都要有。
+`base` 属性记录了 Vuelog 站点托管的信息。请注意，如果你的站点托管在域名的某个子目录下，必须相应地修改 `base` 属性。比如，你的站点访问地址为 `http://example.com/site`，则 `base` 应该设置为 `/site/`，开始和结束的 `/` 都要有。
 
 ### 首页
 
