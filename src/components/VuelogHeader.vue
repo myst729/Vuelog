@@ -9,11 +9,11 @@
       </h1>
       <nav class="header-menu">
         <ul>
-          <li v-for="item in navigation" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
+          <li v-for="(item, index) in navigation" :key="index" :class="{'nav-dropdown-container': item.type === 'dropdown'}">
             <span v-if="item.type === 'dropdown' && !item.path" v-text="i18nify(item.label)"></span>
             <router-link v-if="item.type === 'dropdown' && item.path" :to="item.path" v-text="i18nify(item.label)"></router-link>
             <ul v-if="item.type === 'dropdown'" class="nav-dropdown">
-              <li v-for="child in item.children">
+              <li v-for="(child, index) in item.children" :key="index">
                 <a v-if="child.type === 'outgoing'" :href="child.link" v-text="i18nify(child.label)" target="_blank" rel="noopener noreferrer"></a>
                 <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="i18nify(child.label)"></router-link>
               </li>
@@ -28,11 +28,11 @@
     <div class="side-menu" :class="{'side-menu-open': menu}">
       <ul>
         <li class="side-brand"><h2 v-text="i18nify(config.brand)"></h2></li>
-        <li v-for="item in navigation" :class="{'side-dropdown-container': item.type === 'dropdown'}">
+        <li v-for="(item, index) in navigation" :key="index" :class="{'side-dropdown-container': item.type === 'dropdown'}">
           <span v-if="item.type === 'dropdown' && !item.path" v-text="i18nify(item.label)"></span>
           <router-link v-if="item.type === 'dropdown' && item.path" :to="item.path" v-text="i18nify(item.label)"></router-link>
           <ul v-if="item.type === 'dropdown'" class="side-dropdown">
-            <li v-for="child in item.children">
+            <li v-for="(child, index) in item.children" :key="index">
               <a v-if="child.type === 'outgoing'" :href="child.link" v-text="i18nify(child.label)" target="_blank" rel="noopener noreferrer"></a>
               <router-link v-if="child.type !== 'outgoing'" :to="child.path" v-text="i18nify(child.label)"></router-link>
             </li>

@@ -1,6 +1,6 @@
 <template>
   <div class="content-pagination">
-    <span class="page-number" v-for="(part, index) in parts">
+    <span class="page-number" v-for="(part, index) in parts" :key="index">
       <span v-if="index === active" v-text="index + 1"></span>
       <router-link v-if="index !== active" :to="part" v-text="index + 1"></router-link>
     </span>

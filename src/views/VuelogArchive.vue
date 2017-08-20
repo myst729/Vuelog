@@ -3,7 +3,7 @@
     <div v-if="displayType === 'archive-category'" class="archive-body">
       <h2 v-html="$t('archive.inCategory', [i18nify(archive.title)])"></h2>
       <ul>
-        <li v-for="post in archive.posts">
+        <li v-for="(post, index) in archive.posts" :key="index">
           <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
           <span v-text="' ( ' + post.date + ' )'"></span>
         </li>
@@ -14,7 +14,7 @@
     <div v-if="displayType === 'archive-year'" class="archive-body">
       <h2 v-text="$t('archive.inYear', [archive.year])"></h2>
       <ul>
-        <li v-for="post in archive.posts">
+        <li v-for="(post, index) in archive.posts" :key="index">
           <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: archive.year}}" v-text="i18nify(post.title)"></router-link>
           <span> ( </span>
           <router-link :to="{name: 'category', params: {category: post.category}}" v-text="i18nify(post.categoryTitle)"></router-link>
@@ -27,13 +27,13 @@
     <div v-if="displayType === 'archive'" class="archive-body">
       <h2 v-text="$t('archive.byCategory')"></h2>
       <ul>
-        <li v-for="category in archive.postsByCategory">
+        <li v-for="(category, index) in archive.postsByCategory" :key="index">
           <h4>
             <router-link :to="{name: 'archive-category', params: {category: category.slug}}" v-text="i18nify(category.title)"></router-link>
             <span v-text="' (' + category.posts.length + ')'"></span>
           </h4>
           <ul>
-            <li v-for="post in category.posts">
+            <li v-for="(post, index) in category.posts" :key="index">
               <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
               <span v-text="' ( ' + post.date + ' )'"></span>
             </li>
@@ -44,13 +44,13 @@
 
       <h2 v-text="$t('archive.byYear')"></h2>
       <ul>
-        <li v-for="year in archive.postsByYear">
+        <li v-for="(year, index) in archive.postsByYear" :key="index">
           <h4>
             <router-link :to="{name: 'archive-year', params: {year: year.year}}" v-text="year.year"></router-link>
             <span v-text="' (' + year.posts.length + ')'"></span>
           </h4>
           <ul>
-            <li v-for="post in year.posts">
+            <li v-for="(post, index) in year.posts" :key="index">
               <router-link :to="{name: 'post', params: {category: post.category, slug: post.slug, year: post.year}}" v-text="i18nify(post.title)"></router-link>
               <span> ( </span>
               <router-link :to="{name: 'category', params: {category: post.category}}" v-text="i18nify(post.categoryTitle)"></router-link>
@@ -62,7 +62,7 @@
 
       <h2 v-text="$t('archive.pages')"></h2>
       <ul>
-        <li v-for="page in archive.pages" v-if="!page.exclude">
+        <li v-for="(page, index) in archive.pages" :key="index" v-if="!page.exclude">
           <router-link :to="{name: 'page', params: {page: page.slug}}" v-text="i18nify(page.title)"></router-link>
         </li>
       </ul>
