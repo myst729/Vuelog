@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
     <div class="posts-body">
-      <div class="post" v-for="post in dataset.posts">
+      <div class="post" v-for="(post, index) in dataset.posts" :key="index">
         <vuelog-renderer class="post-body" :type="'posts'" :metadata="post"></vuelog-renderer>
       </div>
     </div>
