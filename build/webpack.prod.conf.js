@@ -81,11 +81,25 @@ var webpackConfig = merge(baseWebpackConfig, {
         )
       }
     }),
+    // split echarts map region js into its own file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vue',
+      chunks: ['vendor'],
+      minChunks: function (module, count) {
+        // vue.js core lib and eco system are extracted to vue
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, '../node_modules/vue')
+          ) === 0
+        )
+      }
+    }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      chunks: ['vendor']
+      name: 'manifest'
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
