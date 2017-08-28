@@ -2,6 +2,11 @@
 
 > All notable changes to the Vuelog project after v0.4.0 are documented.
 
+### 2.11.1 - 2017-08-28
+
+#### Changed
+- Upgrade vue-i18n.
+
 ### 2.11.0 - 2017-08-20
 
 #### Changed

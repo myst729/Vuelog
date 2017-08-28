@@ -4,6 +4,11 @@ title: Changelog (since v0.4.0)
 
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.11.1 - 2017-08-28
+
+#### Changed
+- Upgrade vue-i18n.
+
 ### 2.11.0 - 2017-08-20
 
 #### Changed
@@ -183,6 +188,11 @@ title: Changelog (since v0.4.0)
 <!-- zh-CN:+ -->
 
 <blockquote class="tip"><p>Vuelog 项目 v0.4.0 以后主要的变更都记录在此。</p></blockquote>
+
+### 2.11.1 - 2017-08-28
+
+#### 变更
+- 升级 vue-i18n。
 
 ### 2.11.0 - 2017-08-20
 
