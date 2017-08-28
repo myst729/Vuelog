@@ -11,24 +11,6 @@ import VuelogPost from '../views/VuelogPost'
 import VuelogPage from '../views/VuelogPage'
 import VuelogContent from '../views/VuelogContent'
 
-/* Lazy load components if interested (I don't think necessary though). */
-// const VuelogHome = resolve => require(['../views/VuelogHome'], resolve)
-// const VuelogOops = resolve => require(['../views/VuelogOops'], resolve)
-// const VuelogArchive = resolve => require(['../views/VuelogArchive'], resolve)
-// const VuelogPosts = resolve => require(['../views/VuelogPosts'], resolve)
-// const VuelogPost = resolve => require(['../views/VuelogPost'], resolve)
-// const VuelogPage = resolve => require(['../views/VuelogPage'], resolve)
-// const VuelogContent = resolve => require(['../views/VuelogContent'], resolve)
-
-/* Or even give a name to each chunk. */
-// const VuelogHome = resolve => require.ensure([], () => resolve(require('../views/VuelogHome')), 'home-view')
-// const VuelogOops = resolve => require.ensure([], () => resolve(require('../views/VuelogOops')), 'oops-view')
-// const VuelogArchive = resolve => require.ensure([], () => resolve(require('../views/VuelogArchive')), 'archive-view')
-// const VuelogPosts = resolve => require.ensure([], () => resolve(require('../views/VuelogPosts')), 'posts-view')
-// const VuelogPost = resolve => require.ensure([], () => resolve(require('../views/VuelogPost')), 'post-view')
-// const VuelogPage = resolve => require.ensure([], () => resolve(require('../views/VuelogPage')), 'page-view')
-// const VuelogContent = resolve => require.ensure([], () => resolve(require('../views/VuelogContent')), 'content-view')
-
 Vue.use(VueMeta)
 Vue.use(VueRouter)
 
