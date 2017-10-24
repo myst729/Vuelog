@@ -1,5 +1,4 @@
 require('babel-register')
-var path = require('path')
 var config = require('../../config')
 
 // http://nightwatchjs.org/guide#settings-file
@@ -16,7 +15,6 @@ module.exports = {
     port: 4444,
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path,
-      'webdriver.edge.driver': path.resolve(__dirname, 'node_modules/edgedriver/lib/edgedriver/MicrosoftWebDriver.exe'),
       'webdriver.gecko.driver': require('geckodriver').path
     }
   },
@@ -39,14 +37,6 @@ module.exports = {
       }
     },
 
-    edge: {
-      desiredCapabilities: {
-        browserName: 'MicrosoftEdge',
-        javascriptEnabled: true,
-        acceptSslCerts: true
-      }
-    },
-
     firefox: {
       desiredCapabilities: {
         browserName: 'firefox',
@@ -64,15 +54,6 @@ module.exports = {
         chromeOptions: {
           args: ['headless', 'no-sandbox', 'disable-gpu']
         }
-      }
-    },
-
-    phantomjs: {
-      desiredCapabilities: {
-        browserName: 'phantomjs',
-        'phantomjs.binary.path': require('phantomjs-prebuilt').path,
-        javascriptEnabled: true,
-        acceptSslCerts: true
       }
     }
   }
