@@ -1,18 +1,18 @@
 machine:
   node:
-    version: 6
+    version: 8
 
 dependencies:
-  override:
-    - yarn
+  pre:
+    - curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - sudo dpkg -i google-chrome.deb
+    - sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
+    - rm google-chrome.deb
 
 compile:
   override:
-    - yarn build
+    - npm run build
 
 test:
-  override:
-    - yarn unit && yarn e2e -- --env phantomjs
-
   post:
     - bash <(curl -s https://codecov.io/bash)

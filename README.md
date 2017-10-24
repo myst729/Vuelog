@@ -19,25 +19,25 @@
 
 ```bash
 # install dependencies
-yarn
+npm install
 
 # serve with hot reload at localhost:8080
-yarn dev
+npm run dev
 
 # build for production with minification, also update documentation
-yarn build
+npm run build
 
 # build for production and view the bundle analyzer report
-yarn report
+npm run report
 
 # run unit tests
-yarn unit
+npm run unit
 
 # run e2e tests
-yarn e2e
+npm run e2e
 
 # run all tests
-yarn test
+npm run test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
