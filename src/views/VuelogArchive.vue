@@ -122,7 +122,7 @@
         if (this.displayType === 'archive-year') {
           title += ` | ${this.archive.year}`
         }
-        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
+        return title + ' | ' + retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
       }
     },
 

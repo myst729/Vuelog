@@ -54,7 +54,7 @@
         if (current.p > 1) {
           title += ` | ${this.$t('reading.page', [current.p])}`
         }
-        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
+        return title + ' | ' + retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
       }
     },
 
