@@ -116,13 +116,18 @@
 
       title () {
         var title = this.$t('archive.title')
+        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
         if (this.displayType === 'archive-category') {
           title += ' | ' + retrieveByLanguage(this.archive.title, this.active, this.config.defaultLang)
         }
         if (this.displayType === 'archive-year') {
           title += ` | ${this.archive.year}`
         }
-        return title + ' | ' + retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+        if (this.config.brandTitleBehind) {
+          return title + ' | ' + brand
+        } else {
+          return brand + ' | ' + title
+        }
       }
     },
 

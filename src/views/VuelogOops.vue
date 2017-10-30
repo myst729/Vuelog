@@ -22,7 +22,13 @@
       },
 
       title () {
-        return this.$t('oops.title') + ' | ' + retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+        var title = this.$t('oops.title')
+        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+        if (this.config.brandTitleBehind) {
+          return title + ' | ' + brand
+        } else {
+          return brand + ' | ' + title
+        }
       }
     },
 

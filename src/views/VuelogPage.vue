@@ -29,7 +29,12 @@
 
       title () {
         var title = retrieveByLanguage(this.page.title, this.active, this.config.defaultLang)
-        return title + ' | ' + retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+        if (this.config.brandTitleBehind) {
+          return title + ' | ' + brand
+        } else {
+          return brand + ' | ' + title
+        }
       },
 
       page () {

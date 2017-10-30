@@ -6,6 +6,9 @@ window.VUELOG_DATABASE = {
     // The name of your site, will be displayed in browser tab and site header.
     brand: {'en-US': 'Vuelog', 'zh-CN': 'Vuelog'},
 
+    // Whether put the website brand title behind the current page title.
+    brandTitleBehind: false,
+
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
 
