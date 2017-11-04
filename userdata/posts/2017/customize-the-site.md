@@ -12,6 +12,9 @@ The default Vuelog configurations may or may not meet your needs. You can modify
 // The name of your site, will be displayed in browser tab and site header.
 brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
 
+// Put the site brand behind current page in `document.title`.
+brandTrailing: false,
+
 // The image displayed in site header right beside the brand.
 logo: './static/vuelog.svg',
 
@@ -21,6 +24,8 @@ base: '/',
 ```
 
 The `brand` field supports multiple languages, please read [multiple languages support](#/blog/docs/2017/multiple-languages-support) for more information.
+
+By default, `document.title` of current page is combined with site brand and page name. If you want to reverse the sequence, set `brandTrailing` to `true`.
 
 Your `logo` image can be any size, either raster or vector. Vuelog will automatically resize it to fit the page layout.
 
@@ -109,6 +114,9 @@ Vuelog 的默认配置可能并不完全符合你的需求。你可以修改 `us
 // The name of your site, will be displayed in browser tab and site header.
 brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
 
+// Put the site brand behind current page in `document.title`.
+brandTrailing: false,
+
 // The image displayed in site header right beside the brand.
 logo: './static/vuelog.svg',
 
@@ -118,6 +126,8 @@ base: '/',
 ```
 
 `brand` 属性支持多语言，详情请阅读[多语言支持](#/blog/docs/2017/multiple-languages-support)。
+
+`brandTrailing` 默认为 `false`，即当前页面的 `document.title` 是站点名字加上页面名字。如果你想调换两者的顺序，可以把该选项设为 `true`。
 
 `logo` 图像可以是任意尺寸的位图或矢量图，Vuelog 会根据页面布局将其自动缩放至合适的尺寸。
 

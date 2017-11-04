@@ -51,10 +51,15 @@
       title () {
         const current = this.dataset.current
         var title = retrieveByLanguage(current.label, this.active, this.config.defaultLang)
+        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
         if (current.p > 1) {
           title += ` | ${this.$t('reading.page', [current.p])}`
         }
-        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
+        if (this.config.brandTrailing) {
+          return title + ' | ' + brand
+        } else {
+          return brand + ' | ' + title
+        }
       }
     },
 
