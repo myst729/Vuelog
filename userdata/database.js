@@ -6,6 +6,9 @@ window.VUELOG_DATABASE = {
     // The name of your site, will be displayed in browser tab and site header.
     brand: {'en-US': 'Vuelog', 'zh-CN': 'Vuelog'},
 
+    // Put the site brand behind current page in `document.title`.
+    brandTrailing: false,
+
     // The image displayed in site header right beside the brand.
     logo: './static/vuelog.svg',
 
@@ -32,14 +35,14 @@ window.VUELOG_DATABASE = {
     // Number of posts listed in a blog/category view.
     postsCount: 3,
 
-    // Fill in the shortname to integrate Disqus with your blog.
-    disqusShortname: '',
+    // // Fill in the shortname to integrate Disqus with your blog.
+    // disqusShortname: '',
 
-    // Fill in the account to integrate IntenseDebate with your blog.
-    intenseDebateAccount: '',
+    // // Fill in the account to integrate IntenseDebate with your blog.
+    // intenseDebateAccount: '',
 
-    // Fill in the uid to integrate LiveRe with your blog.
-    livereUid: '',
+    // // Fill in the uid to integrate LiveRe with your blog.
+    // livereUid: '',
 
     // Options for marked, see https://github.com/chjj/marked#options-1 for detail
     markedOptions: {}
@@ -132,7 +135,8 @@ window.VUELOG_DATABASE = {
       title: {'en-US': 'Use social commenting services', 'zh-CN': '使用社会化评论服务'},
       slug: 'use-social-commenting-services',
       category: 'docs',
-      date: '2017-01-19'
+      date: '2017-01-19',
+      draft: true
     },
     {
       title: {'en-US': 'Insert code blocks with syntax highlight', 'zh-CN': '插入语法高亮的代码块'},

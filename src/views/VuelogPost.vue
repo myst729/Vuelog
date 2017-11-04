@@ -34,7 +34,12 @@
 
       title () {
         var title = retrieveByLanguage(this.dataset.post.title, this.active, this.config.defaultLang)
-        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang) + ' | ' + title
+        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+        if (this.config.brandTrailing) {
+          return title + ' | ' + brand
+        } else {
+          return brand + ' | ' + title
+        }
       },
 
       dataset () {
