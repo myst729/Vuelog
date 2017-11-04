@@ -102,10 +102,6 @@
   }
 </script>
 
-<style lang="stylus">
-  @import './assets/styles/global'
-</style>
-
 <style lang="stylus" scoped>
   .vuelog
     min-height 100%
