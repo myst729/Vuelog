@@ -2,6 +2,14 @@
 
 > All notable changes to the Vuelog project after v0.4.0 are documented.
 
+### 2.12.0 - 2017-11-04
+
+#### Added
+- Make `document.title` configurable.
+
+#### Changed
+- Build ES2015 bundle to production.
+
 ### 2.11.1 - 2017-08-28
 
 #### Changed

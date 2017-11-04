@@ -4,6 +4,14 @@ title: Changelog (since v0.4.0)
 
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.12.0 - 2017-11-04
+
+#### Added
+- Make `document.title` configurable.
+
+#### Changed
+- Build ES2015 bundle to production.
+
 ### 2.11.1 - 2017-08-28
 
 #### Changed
@@ -188,6 +196,14 @@ title: Changelog (since v0.4.0)
 <!-- zh-CN:+ -->
 
 <blockquote class="tip"><p>Vuelog 项目 v0.4.0 以后主要的变更都记录在此。</p></blockquote>
+
+### 2.12.0 - 2017-11-04
+
+#### 新增
+- 页面 `document.title` 顺序可配置。
+
+#### 变更
+- 生产构建包升级为 ES2015 语法。
 
 ### 2.11.1 - 2017-08-28
 
