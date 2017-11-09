@@ -3,7 +3,11 @@
 window.VUELOG_DATABASE = {
   config: {
     // The name of your site, will be displayed in browser tab and site header.
-    brand: { 'en-US': 'Vuelog', 'zh-CN': 'Vuelog', 'de-DE': 'Vuelog' },
+    brand: {
+      'en-US': 'Vuelog',
+      'zh-CN': 'Vuelog',
+      'de-DE': 'Vuelog'
+    },
 
     // Put the site brand behind current page in `document.title`.
     brandTrailing: false,
@@ -46,27 +50,47 @@ window.VUELOG_DATABASE = {
 
   navigation: [
     {
-      label: { 'en-US': 'Guide', 'zh-CN': '指南', 'de-DE': 'Anleitung' },
+      label: {
+        'en-US': 'Guide',
+        'zh-CN': '指南',
+        'de-DE': 'Anleitung'
+      },
       type: 'page',
       path: '/page/guide'
     },
     {
-      label: { 'en-US': 'About', 'zh-CN': '关于', 'de-DE': 'Über' },
+      label: {
+        'en-US': 'About',
+        'zh-CN': '关于',
+        'de-DE': 'Über'
+      },
       type: 'page',
       path: '/page/about'
     },
     {
-      label: { 'en-US': 'Showcase', 'zh-CN': '示例', 'de-DE': 'Beispiele' },
+      label: {
+        'en-US': 'Showcase',
+        'zh-CN': '示例',
+        'de-DE': 'Beispiele'
+      },
       type: 'category',
       path: '/blog/showcase'
     },
     {
-      label: { 'en-US': 'Archive', 'zh-CN': '归档', 'de-DE': 'Archiv' },
+      label: {
+        'en-US': 'Archive',
+        'zh-CN': '归档',
+        'de-DE': 'Archiv'
+      },
       type: 'archive',
       path: '/archive'
     },
     {
-      label: { 'en-US': 'Links', 'zh-CN': '链接', 'de-DE': 'Links' },
+      label: {
+        'en-US': 'Links',
+        'zh-CN': '链接',
+        'de-DE': 'Links'
+      },
       type: 'dropdown',
       path: '', // (OPTIONAL) dropdown can be routable too if you set a valid route path
       children: [
@@ -91,7 +115,11 @@ window.VUELOG_DATABASE = {
 
   pages: [
     {
-      title: { 'en-US': 'Vuelog Guide', 'zh-CN': 'Vuelog 指南', 'de-DE': 'Vuelog Anleitung' },
+      title: {
+        'en-US': 'Vuelog Guide',
+        'zh-CN': 'Vuelog 指南',
+        'de-DE': 'Vuelog Anleitung'
+      },
       slug: 'guide',
       exclude: true, // (OPTIONAL) `true` to exclude the page from archive view
       titleless: false, // (OPTIONAL) `true` to hide the title in page view
@@ -99,22 +127,38 @@ window.VUELOG_DATABASE = {
       draft: false // (OPTIONAL) `true` to make the page temporarily inaccessible
     },
     {
-      title: { 'en-US': 'About Vuelog', 'zh-CN': '关于 Vuelog', 'de-DE': 'Über Vuelog' },
+      title: {
+        'en-US': 'About Vuelog',
+        'zh-CN': '关于 Vuelog',
+        'de-DE': 'Über Vuelog'
+      },
       slug: 'about'
     },
     {
-      title: { 'en-US': 'Changelog', 'zh-CN': '变更日志', 'de-DE': 'Änderungen' },
+      title: {
+        'en-US': 'Changelog',
+        'zh-CN': '变更日志',
+        'de-DE': 'Änderungen'
+      },
       slug: 'changelog'
     }
   ],
 
   categories: [
     {
-      title: { 'en-US': 'Documentation', 'zh-CN': '文档', 'de-DE': 'Dokumentation' },
+      title: {
+        'en-US': 'Documentation',
+        'zh-CN': '文档',
+        'de-DE': 'Dokumentation'
+      },
       slug: 'docs'
     },
     {
-      title: { 'en-US': 'Showcase', 'zh-CN': '示例', 'de-DE': 'Beispiele' },
+      title: {
+        'en-US': 'Showcase',
+        'zh-CN': '示例',
+        'de-DE': 'Beispiele'
+      },
       slug: 'showcase'
     }
   ],
@@ -184,7 +228,11 @@ window.VUELOG_DATABASE = {
       date: '2017-01-11'
     },
     {
-      title: { 'en-US': 'Customize the site', 'zh-CN': '自定义站点', 'de-DE': 'Seite anpassen' },
+      title: {
+        'en-US': 'Customize the site',
+        'zh-CN': '自定义站点',
+        'de-DE': 'Seite anpassen'
+      },
       slug: 'customize-the-site',
       category: 'docs',
       date: '2017-01-10'
@@ -201,7 +249,11 @@ window.VUELOG_DATABASE = {
       date: '2016-10-20'
     },
     {
-      title: { 'en-US': 'Style examples', 'zh-CN': '样式示例', 'de-DE': 'Style Beispiele' },
+      title: {
+        'en-US': 'Style examples',
+        'zh-CN': '样式示例',
+        'de-DE': 'Style Beispiele'
+      },
       slug: 'style-examples',
       category: 'showcase',
       date: '2016-10-19'
