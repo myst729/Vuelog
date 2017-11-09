@@ -1,21 +1,21 @@
 <template>
   <div class="page">
     <vuelog-renderer class="page-body" :type="'page'" :metadata="page"></vuelog-renderer>
-    <!-- <vuelog-comments v-if="!page.commentless" :path="$route.fullPath"></vuelog-comments> -->
+    <vuelog-comments v-if="!page.commentless" :path="$route.fullPath"></vuelog-comments>
   </div>
 </template>
 
 <script>
   import { retrieveByLanguage } from '../helpers'
   import VuelogRenderer from '../components/VuelogRenderer'
-  // import VuelogComments from '../components/VuelogComments'
+  import VuelogComments from '../components/VuelogComments'
 
   export default {
     name: 'vuelog-page',
 
     components: {
       VuelogRenderer,
-      // VuelogComments
+      VuelogComments
     },
 
     computed: {

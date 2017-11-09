@@ -50,6 +50,10 @@ If you just want to write something, grab the latest release package [here](http
 https://vuelog.js.org/
 
 
+## Changelog
+
+https://vuelog.js.org/#/page/changelog/
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)

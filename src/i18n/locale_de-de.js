@@ -43,6 +43,6 @@ const deDE = {
   },
 
   credit: 'Gebaut mit {1} und {0}'
-};
+}
 
-export default deDE;
+export default deDE

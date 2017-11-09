@@ -35,14 +35,11 @@ window.VUELOG_DATABASE = {
     // Number of posts listed in a blog/category view.
     postsCount: 3,
 
-    // // Fill in the shortname to integrate Disqus with your blog.
-    // disqusShortname: '',
+    // Fill in the shortname to integrate Disqus with your blog.
+    disqusShortname: '',
 
-    // // Fill in the account to integrate IntenseDebate with your blog.
-    // intenseDebateAccount: '',
-
-    // // Fill in the uid to integrate LiveRe with your blog.
-    // livereUid: '',
+    // Fill in the uid to integrate LiveRe with your blog.
+    livereUid: '',
 
     // Options for marked, see https://github.com/chjj/marked#options-1 for detail
     markedOptions: {}

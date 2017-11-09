@@ -84,9 +84,6 @@ This field determines the count of posts in a list view. For example, if you set
 // Fill in the shortname to integrate Disqus with your blog.
 disqusShortname: '',
 
-// Fill in the account to integrate IntenseDebate with your blog.
-intenseDebateAccount: '',
-
 // Fill in the uid to integrate LiveRe with your blog.
 livereUid: '',
 ```
@@ -185,9 +182,6 @@ postsCount: 3,
 ```js
 // Fill in the shortname to integrate Disqus with your blog.
 disqusShortname: '',
-
-// Fill in the account to integrate IntenseDebate with your blog.
-intenseDebateAccount: '',
 
 // Fill in the uid to integrate LiveRe with your blog.
 livereUid: ''
