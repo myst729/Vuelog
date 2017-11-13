@@ -61,3 +61,33 @@ livereUid: ''
 如果想使用其他的评论服务，欢迎 fork [Vuelog 项目](https://github.com/myst729/Vuelog)并发送拉取请求。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+Como uma aplicação livre de back-end, Vuelog não provê uma função de comentários. Ainda bem que existem várias redes sociais de comentários. Vuelog adota o [Disqus](https://disqus.com/) e [LiveRe](https://livere.com/). Ambos são configurados na secção `config` no arquivo `userdata/database.js`.
+
+```js
+// Fill in the shortname to integrate Disqus with your blog.
+disqusShortname: '',
+
+// Fill in the uid to integrate LiveRe with your blog.
+livereUid: ''
+```
+
+Para usá-la, apenas preencha com seu Disqus _shortname_ ou o LiveRe UID, então os serviços de comentários serão disponíveis para todos os posts e páginas. Se ambos os campos forem preenchidos, **DISQUS** será o padrão. Caso não queira comentários, deixe ambos em branco. 
+
+Se você quer desabilitar comentários de uma página ou post particular, atribua o campo `commentless` para verdadeiro para a página ou post em questão (mais informações em [Adicionar posts ou páginas](#/blog/docs/2017/add-posts-or-pages)).
+
+```js
+{
+  title: 'Use social commenting services',
+  slug: 'use-social-commenting-services',
+  category: 'docs',
+  date: '2017-01-19',
+  commentless: true // This turns off the comments for this post.
+}
+```
+
+Se você estiver utilizando qualquer outro serviço de comentário, sinta-se livre de _forkar_ [Vuelog no Github](https://github.com/myst729/Vuelog) e envie _pull requests_. 
+
+<!-- pt-BR:- -->

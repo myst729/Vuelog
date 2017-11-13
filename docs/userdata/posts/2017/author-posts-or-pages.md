@@ -85,3 +85,45 @@ Vuelog 提供了两个用于组织文章内容结构的特殊标签。
 页面的 markdown 源文件模版与文章类似，只是页面没有目录和发布时间的概念。页面内容也可以使用分页标签和语言标签。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+### Pré-requisitos
+
+Primeiramente, assumiremos que você sabe o que é [Markdown](https://en.wikipedia.org/wiki/Markdown), e como escrever algo com ele. Então não falaremos sobre os fundamentos do markdown. 
+
+### Template para posts
+
+A base para uma arquivo markdown para posts se assemelha a isto: 
+
+```md
+title: Author posts or pages
+category: docs
+date: 2017-01-13
+------------------------------------
+Start your post content here...
+```
+
+No exemplo, podemos ver uma linha cheia de traços (ou hífens, como preferir). Isso é um delimitador entre a metadata e o conteúdo do post. O delimitador consiste de **no mínimo 3** traços consecutivos em uma linha exclusiva. Outra coisa importante que você precisa saber é que o delimitador é, definitivamente, **obrigatório**. Se você se esquecer dele, o post não será corretamente renderizado. 
+
+Tecnicamente, nenhum campo da metadata é necessário. Então você pode deixá-lo em brnaco e estará tudo bem. Mas para melhor manter seus escritos, nós recomendamos que você anote as metadatas!
+
+Vuelog tem um _set_ de estilos _built-in_, leia [Exemplos de Estilos](#/blog/showcase/2016/style-examples) e veja o que podemos fazer.
+
+### Tags Funcionais
+
+Existem duas tags especiais no Vuelog para estruturar o conteúdo do post. 
+
+Se o seu post é muito long e você quer mostrar uma parte dele na lista de visualização de posts, você pode inserir a **tag de trecho** (`<!-- more -->`) em uma determinada "altura" do conteúdo. Qualquer coisa depois desta tag será apenas visualizada se o visitante clicar no post para lê-lo completamente. Se você adicionar várias tags de trecho, apenas a primeira que será levada em conta. 
+
+Na visualização do post por completo, um post muito longo, apresentado como uma _página web super longa_. Isto não parece ser muito certo também. talvez você queira dividir o conteúdo em várias partes. Para isso o Vuelog permite a inserção de uma **tag de paginação** (`<!-- next -->`) no conteúdo. Cada tag de paginação gera uma quebra de página, diferente da tag de trecho onde apenas uma é levada em conta. 
+
+Note que na visualização de lista de posts, a primeira tag de páginação é tratada como uma tag de trecho. Dito isso, na visualização de lista, um post com várias paginações dentro dele, somente será apresentado o conteúdo da primeira parte/página. 
+
+Para o conteúdo do autor em vários idiomas, você precisará de ajuda das **tags de idioma**. Por favor leia a secçao **Posts por idioma** em [Suporte a vários Idiomas](#/blog/docs/2017/multiple-languages-support).
+
+### Template de páginas
+
+A base para a metadata das páginas é similar ao de posts. A única diferença é que a página não tem o conceito de **categoria** e **data**. Tags de paginação e de idioma podem ser aplicadas a páginas também. 
+
+<!-- pt-BR:- -->
