@@ -201,3 +201,103 @@ posts: [
 - `titleless`、`commentless` 和 `draft` 属性与页面类似。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+### Adicionar Páginas
+
+Para adicionar páginas, apenas crie arquivos markdown (a extensão deve ser **md**) no diretório `/userdata/pages`.
+
+```bash
+userdata/
+└── pages/
+    └── all-about-vuelog.md
+```
+
+Então adicione uma nova entrada na secção `pages` em `userdata/database.js`.
+
+```js
+pages: [
+  {
+    title: {'en-US': 'About Vuelog', 'zh-CN': '关于 Vuelog'},
+    slug: 'about',
+    exclude: false,     // (OPTIONAL) `true` to exclude the page from archive view
+    titleless: false,   // (OPTIONAL) `true` to hide the title in page view
+    commentless: false, // (OPTIONAL) `true` to disable comments for the page
+    draft: false        // (OPTIONAL) `true` to make the page temporarily inaccessible
+  }
+]
+```
+
+Existem dois campos obrigatórios: 
+
+- `title` deve conter o título da página. Títulos de página suporta múltiplos idiomas, por favor leia [Suporte a vários idiomas](#/blog/docs/2017/multiple-languages-support) para maiores informações.
+- `slug` deve ser atribuido com o nome do arquivo markdown (**sem a extensão**).
+
+Existem quatro campos opcionais que aceitam valores booleanos, ou seja: verdadeiro ou falso. 
+
+- Atribua `true` para `exclude` que irá esconder a página da visualização de arquivo (`/archive`).
+- Atribua `true` para `titleless` que irá esconder o título da página. 
+- Atribua `true` para `comentless` que Vuelog desligará os comentários na página, mais informações em [Uso de serviços sociais de comentários](#/blog/docs/2017/use-social-commenting-services).
+- Atribua `true` para `draft` que fará a página inacessível para os visitantes.
+
+<blockquote class="tip">
+  <p>`exclude` e `titleless` Se você setar a página como sua página inicial personalizada.</p>
+</blockquote>
+
+### Adicionar Categorias
+
+Posts são divididos sobre categorias. Então, para criar posts, você deve ter criado categorias para eles. 
+
+Para adicionar uma categoria simples, adicione uma nova entrada em `categories` no arquivo `userdata/database.js`.
+
+```js
+categories: [
+  {
+    title: {'en-US': 'Docs', 'zh-CN': '文档'},
+    slug: 'docs'
+  }
+]
+```
+
+Ambos, `title` e `slug`, são obrigatórios. Categorias também suportam vários idiomas.
+
+### Add posts
+
+Crie sub-diretórios dentro de `/posts`, nomeie-os com o ano da publicação, com o formato **YYYY**, como exemplo `/2017`. Crie arquivos markdown (extensões devem ser **md**) dentro dos sub-diretórios anuais.
+
+```bash
+userdata/
+└── posts/
+    ├── 2016/
+    │   └── how-to-add-posts-or-pages.md
+    └── 2017/
+```
+
+então, adicione uma nova entrada na secção `posts` em `userdata/database.js`.
+
+```js
+posts: [
+  {
+    title: 'Add posts or pages',
+    slug: 'add-posts-or-pages',
+    category: 'docs',
+    date: '2017-01-12',
+    titleless: false,   // (OPTIONAL) `true` to hide the title in page view
+    commentless: false, // (OPTIONAL) `true` to disable comments for the page
+    draft: false        // (OPTIONAL) `true` to make the page temporarily inaccessible
+  }
+]
+```
+
+Existem, nesta secção, quatro campos obrigatórios: 
+
+- `title` e `slug` são similares ao de páginas.
+- `category` é o mesmo do campo `slug` em categoria. 
+- `date` é a data em que o post foi criado, deve ser do formato [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm). Ex.: **YYYY-MM-DD**
+
+Existem três campos opcionais que aceitam valores booleanos: 
+
+- `titleless`, `commentless` e `draft`, que são similares aos campos de mesmo nome na secção de páginas.
+
+<!-- pt-BR:- -->

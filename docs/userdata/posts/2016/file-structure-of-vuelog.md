@@ -79,3 +79,41 @@ For process to publish pages/posts, read [add posts or pages](#/blog/docs/2017/a
 关于发布文章和页面的流程，请阅读[新建文章或页面](#/blog/docs/2017/add-posts-or-pages)和[编写文章或页面](#/blog/docs/2017/author-posts-or-pages)。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+Aqui está a estrutura típica do diretório de um site desenvolvido com Vuelog: 
+
+```bash
+/
+├── index.html
+├── static/
+│   ├── css/
+│   └── js/
+└── userdata/
+    ├── database.js
+    ├── pages/
+    │   ├── all-about-vuelog.md
+    │   └── changelog.md
+    └── posts/
+        └── 2016/
+            ├── how-to-add-a-post-or-page.md
+            ├── the-so-called-database.md
+            ├── the-structure-of-vuelog.md
+            └── the-styles.md
+```
+
+Iremos passar por eles, um por um:
+
+- `index.html`: O ponto de entrada do site. Normalmente você não precisa mexer em nada aqui.
+- `static/`: Este diretório contém os arquivos principais, já compilados, do Vuelog, assim como os arquivos JavaScript e CSS. **Você não deve nunca tocar neste diretório, ou seu site pode ir ladeira a baixo**
+- `userdata/`: Onde você põe seus arquivos Markdown dos posts e páginas. **NUNCA mude o nome do diretório.**
+   -`database.js`: O arquivo mais importante com o qual você terá de lidar. Todas as suas configurações e dados dos seus posts e páginas estão armazenados aqui.
+   -`pages/`: A fonte dos arquivos markdown das suas páginas estão armazenados aqui.
+   -`posts/`: A fonte dos arquivos markdown de seus posts estão armazenados aqui, listados por sub-diretórios nomeados pelo ano.
+     -`2016/`: O nome do diretório indica o ano em que os posts, aqui introduzidos, foram publicados.
+
+Você pode colocar outros arquvios estáticos no `userdata/` como por exemplo as imagens referenciadas nas suas páginas e posts.
+
+Para entender sobre o processo de publicação de páginas e posts leia [Adicionar posts ou páginas](#/blog/docs/2017/add-posts-or-pages) e [Posts ou páginas por Autor](#/blog/docs/2017/author-posts-or-pages).
+
+<!-- pt-BR:- -->
