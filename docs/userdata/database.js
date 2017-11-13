@@ -249,7 +249,7 @@ window.VUELOG_DATABASE = {
         'en-US': 'Customize the site',
         'zh-CN': '自定义站点',
         'de-DE': 'Seite anpassen',
-        'pt-BR': 'Customizar o site'
+        'pt-BR': 'Customizando o site'
       },
       slug: 'customize-the-site',
       category: 'docs',
