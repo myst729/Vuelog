@@ -203,3 +203,97 @@ var demo = new Vue({
 <p><audio src="//myst729.github.io/assets/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+<blockquote class="tip">
+  <p>Este post suporta vários idiomas, sinta-se à vontade para alterar a linguagem que lhe proporcione melhor visualização.</p>
+  <img src="./userdata/images/language-en.png" alt="Language" width="200px" height="50px">
+</blockquote>
+
+### Cabeçalhos
+
+# H1 - Cabeçalho de Nível 1
+## H1 - Cabeçalho de Nível 2
+### H1 - Cabeçalho de Nível 3
+#### H1 - Cabeçalho de Nível 4
+##### H1 - Cabeçalho de Nível 5
+###### H1 - Cabeçalho de Nível 6
+
+### Lista Ordenada
+1. Lorem ipsum dolor sit amet
+1. Consectetur adipiscing elit
+1. Integer molestie lorem at massa
+1. Facilisis in pretium nisl aliquet
+1. Nulla volutpat aliquam velit
+1. Faucibus porta lacus fringilla vel
+1. Aenean sit amet erat nunc
+1. Eget porttitor lorem
+
+### Lista Não Ordenada
++ Lorem ipsum dolor sit amet
++ Consectetur adipiscing elit
++ Integer molestie lorem at massa
++ Facilisis in pretium nisl aliquet
++ Nulla volutpat aliquam velit
++ Faucibus porta lacus fringilla vel
++ Aenean sit amet erat nunc
++ Eget porttitor lorem
+
+<!-- more -->
+
+### Tabelas
+| Número | Primeiro Nome | Último Nome | Pontos |
+| :----: | ------------- | ----------- | -----: |
+| 1      | Eva           | Jackson     | 94     |
+| 2      | João          | Damião      | 80     |
+| 3      | Adam          | Silva       | 67     |
+| 4      | José          | Souza       | 50     |
+
+<!-- next -->
+<blockquote class="tip">
+  <p>Este post suporta vários idiomas, sinta-se à vontade para alterar a linguagem que lhe proporcione melhor visualização.</p>
+  <img src="./userdata/images/language-en.png" alt="Language" width="200px" height="50px">
+</blockquote>
+
+### Realce na Sintaxe de Códigos
+Aqui está o <q>famoso</q> exemplo de <span class="light">10 segundos</span> do site oficial do [VueJS](http://vuejs.org/).
+
+```html
+<div id="demo">
+  <p>{{message}}</p>
+  <input v-model="message">
+</div>
+```
+
+```js
+var demo = new Vue({
+  el: '#demo',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+```
+
+Se quiser saber mais sobre Realce de Sintaxe, por favor leia [Inserir blocos de Código com Realce na Sintaxe](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight).
+
+Você também pode inserir `trechos de código na linha` como este, assim como símbolos de <kbd>teclas</kbd>. ![Feliz](./userdata/images/happy-face.png)
+
+### Dicas e Citações
+
+> Este é um típico bloco de citações. Você também pode inserir <q> citações em linha</q>.
+
+<blockquote class="tip"><p>Um parágrafo de dica se parece com esse</p></blockquote>
+
+### Mídia: Imagens, Vídeos e Áudios.
+![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
+
+<p>
+  <video poster="//myst729.github.io/assets/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
+    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  </video>
+</p>
+
+<p><audio src="//myst729.github.io/assets/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+
+<!-- pt-BR:- -->
