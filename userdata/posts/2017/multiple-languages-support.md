@@ -155,3 +155,80 @@ Vuelog 还提供了对文章内容的多语言支持。要编写多语言的内�
 </blockquote>
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+Vuelog está apto para suportar vários idiomas.
+
+### Idiomas para a UI
+
+A UI (_User Interface_) atualmente provê traduções para duas diferentes localidades: Chinês Simplificado (`zh-CN`) e Inglês Norte-Americano (`en-US`). Como descrito na secção de <q>idiomas</q> no [Customizar o Site](#/blog/docs/2017/customize-the-site), você pode alterar as seguintes propriedades de `config` no seu `userdata/database.js`: 
+
+```js
+// Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
+defaultLang: 'en-US',
+
+// Allow/disallow visitors to switch interface language.
+switchLang: true,
+
+// Available languages for switching. Must be a subset of supported languages, or leave empty.
+selectedLangs: [],
+```
+
+<blockquote class="tip">
+  <p>Se você tem vontade de contribuir com mais traduções, sinta-se livre para _forkar_ [Vuelog no GitHub](https://github.com/myst729/Vuelog) e enviar _pull requests_. Muito obrigado!</p>
+</blockquote>
+
+### Contéudo dos idiomas
+
+Alguns conteúdos descritos em `userdata/database.js` será apresentado na UI também, como por exemplo o título dos posts, o nome das categorias, as _labels_ para os links de navegação. Todos estes também suportam diversos idiomas. 
+
+```js
+{
+  title: {'en-US': 'Multiple languages support', 'zh-CN': '多语言支持'},
+  slug: 'multiple-languages-support',
+  category: 'docs',
+  date: '2017-01-24'
+}
+```
+
+Se apenas um idioma for necessário, apenas utilize uma única string: 
+
+```js
+{
+  title: 'Single language',
+  slug: 'single-language',
+  category: 'docs',
+  date: '2017-01-24'
+}
+```
+
+### Idioma dos Posts
+
+Vuelog também provê suporte a múltiplos idiomas para o conteúdo. Para escrever seu conteúdo em vários idiomas, você deverá agrupar cada tradução na sua **tag de pares de idioma** correspondente. 
+
+<pre><code class="lang-markdown">&lt;!-- en-US:+ --&gt;
+Your content in American English ...
+&lt;!-- en-US:- --&gt;</code></pre>
+
+Uma tag de par de idioma consiste em uma tag de início e uma de finalização. Pense no lado positivo e o negativod e uma bateria. <code>&t;!-\- pt-BR:+ -\-&gt;</code> é como o lado positivo, indica o início da tradução. E <code>&t;!-\- pt-BR:- -\-&gt;</code> é o lado negativo, indicando o fim.
+
+As tags são opcionais. Se você não quer deixar seu conteúdo em vários idiomas, não tem problema. Apenas escreva o contéudo sem quaisquer tags de pares de idioma. 
+
+<blockquote class="tip">
+  <p>Comentários não suportam a funcionalidade, pois é hospedada por um serviço de terceiros.</p>
+</blockquote>
+
+### Trocando os Idiomas
+
+Se os visitantes são permitidos a trocar os idiomas, ele pode alterá-las em um pequeno menu drop-down no final da página à direita. 
+
+<img src="./userdata/images/language-en.png" alt="Language" width="208px" height="58px">
+
+Depois que a alteração é feita, o idioma da UI será recarregado automaticamente. Se a página provê conteúdo para aquela linguagem, ela também será recarregada. 
+
+<blockquote class="tip">
+  <p>O usuário alterar o idioma de visualização para ele, não significa que ele irá alterar a configuração base do sistema. Isso não altera para os demais visitantes.</p>
+</blockquote>
+
+<!-- pt-BR:- -->

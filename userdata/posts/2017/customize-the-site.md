@@ -10,7 +10,7 @@ The default Vuelog configurations may or may not meet your needs. You can modify
 
 ```js
 // The name of your site, will be displayed in browser tab and site header.
-brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
+brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点', 'pt-BR': 'Site do Vuelog'},
 
 // Put the site brand behind current page in `document.title`.
 brandTrailing: false,
@@ -109,7 +109,7 @@ Vuelog 的默认配置可能并不完全符合你的需求。你可以修改 `us
 
 ```js
 // The name of your site, will be displayed in browser tab and site header.
-brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点'},
+brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点', 'pt-BR': 'Site do Vuelog'},
 
 // Put the site brand behind current page in `document.title`.
 brandTrailing: false,
@@ -199,3 +199,102 @@ markedOptions: {}
 Vuelog 采用 [marked](https://github.com/chjj/marked) 渲染 markdown 文件。默认的 marked 渲染配置主要考虑 Vuelog 作者个人的喜好。如果你不喜欢这些配置，可以通过这个选项来自定义。具体操作请阅读 marked [文档](https://github.com/chjj/marked#options-1)。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+As configurações padrões do Vuelog podem ou podem não atender suas necessidades. Você pode alterar as propriedades do `config` em `userdata/database.js`.
+
+### Configurações Gerais
+
+```js
+// O nome do seu site, será apresentado na aba do navegador e no cabeçalho do site.
+brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点', 'pt-BR': 'Site do Vuelog'},
+
+// O nome do site `brand` vem antes do nome da página (`document.title`) na aba do navegador.
+brandTrailing: false,
+
+// A imagem em amostra no cabeçalho do site, logo abaixo do brand.
+logo: './static/vuelog.svg',
+
+// Caminho para o domínio que serve o seu site, começa e termina com barra (`/`).
+// Coloque `'/'` se o seu site está na raiz de seu domínio.
+base '/',
+```
+
+O campo `brand` suporta vários idiomas, por favor leia [Suporte a vários idiomas](#/blog/docs/2017/multiple-languages-support) para mais informações.
+
+Por padrão, o `document.title` da sua página atual é combinado com o nome do site e nome da página. Se você quer reverter a sequência, vindo o nome do documento, altere o `brandTrailing` para `true`, ou seja, verdadeiro.
+
+Sua imagem `logo` pode ser de qualquer tamanho, ou também pixelada ou vetorizada. Vuelog irá ajustá-la automaticametne para que se encaixe no layout da página. 
+
+Diga para o Vuelog onde seu site está hospedado com o campo `base`. Por favor, note que se seu site está sobre um sub-diretório do domínio, você deve modificar o campo `base`. Por exemplo, se seu site está hosteado em `http://example.com/site`, então seu `base` deve ser `/site/`, com ambas as barras, iniciando e terminando o caminho.
+
+### Página Inicial
+
+```js
+// O caminho de Rota para quando você visitar `/`.
+// Aplique `/home`, `/blog` ou qualquer caminho válido que você necessite.
+homePath: '/home',
+
+// Se o rodapé é visível na sua `homePath` ou não.
+homeFooter: false,
+```
+
+No site oficial do Vuelog, a página inicial está _setada_ como `/home` - uma breve introdução de como é o projeto **Vuelog**.
+
+![Vuelog](./userdata/images/homepage-en.png)
+
+Você pode alterar para a visualização de posts, alterando o `homePath` para `/blog`. Ou, você pode querer direcionar para o caminho de uma página que você criou como página inicial ou personalizada, por exemplo `/page/homepage`. Desse jeito, você terá sua página inicial customizada.
+
+Você também pode querer esconder o rodapé (_footer_) na sua página inicial. Basta indicarq ue sua `homeFooter` seja `false`, ou seja, falso. 
+
+### Idiomas
+
+```js
+// Idioma da Interface do Vuelog. Atualmente somente existe suporte para 'zn-CN' e 'en-US'.
+defaultLang: 'en-US',
+
+// Permitir ou não que os visitantes alterem o idioma da interface.
+switchLang: true,
+
+// Linguagens disponíveis para troca. Deve conter algumas que já sejam suportadas, ou deixe em branco. 
+selectedLangs: [],
+```
+
+Vuelog está pronto para suportar vários idiomas, apesar de que atualmente apenas Chinês Simplificado (`zn-CN`) e Inglês Norte-Americano (`en-US`) estão disponíveis.
+
+- Idioma definido com `defaultLang` será setado como idioma padrão.
+- Com `switchLang`, vocẽ pode decidir se os visitantes poderão trocar o idioma rapidamente.
+- Coloque em `selectedLangs` um sub-agrupamento de idiomas suportados para permitir que os usuários troquem. Deixe vazio se você deseja permitir todas as linguagens suportadas.
+
+### Posts
+
+```js
+// Número de posts listados em uma visualização de blog.
+postsCount: 3,
+```
+
+Este campo determina a contagem de posts numa visualização de lista. Como exemplo, se você setar para `7`, então na lista estarão sete posts no máximo. Os demais posts estarão listados na página seguinte. 
+
+### Comentários
+
+```js
+// Preencha com o shortname para integrar o Disqus com o Blog.
+disqusShortname: '',
+
+// Preencha com o UID para integrar o LiveRe com o blog.
+livereUid: '',
+```
+
+Esses campos são úteis se você deseja permitir comentários de usuários no seu site. Por favor, leia [Uso de Serviços Sociais de Comentários](#/blog/docs/2017/use-social-commenting-services) para maiores informações.
+
+### Markdown
+
+```js
+// Opções para texto de marcação, veja https://github.com/chjj/marked#options-1 para detalhes
+markedOptions: {}
+```
+
+Vuelog usa [marked](https://github.com/chjj/marked) para renderizar os markdowns. As configurações padrão para renderizar o marked no Vuelog são, de alguma forma, baseado em sua opinião. Se você não gosta, você pode customizá-lo. Por favor leia a [documentação](https://github.com/chjj/marked#options-1) do Marked para ajuda.
+
+<!-- pt-BR:- -->

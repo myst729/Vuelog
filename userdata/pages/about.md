@@ -75,3 +75,41 @@ The latest version is totally rewritten, built on vue 2.x, vue-router 2.x and vu
 新版本是完全重写的，基于 vue 2.x、vue-router 2.x 和 vuex 2.x 构建，并且在持续地开发新功能，修复问题，以及升级依赖。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+### Qual o motivo da criação do Vuelog?
+
+Anos atrás, eu migrei meu blog para o [Github Pages](https://pages.github.com/). Naquele tempo, eu tinha algumas escolhas: Jekyll, Hexo ou algo que eu mesmo fizesse com AngularJS. Finalmente eu escolhi [Hexo](https://hexo.io/) para gerar sites estáticos, porque eu sou muito preguiçoso e não gosto de Ruby.
+
+Antes do Hexo, eu estava utilizando [Wordpress](https://wordpress.org/). Era muito simples - _logava_, escrevia alguma coisa, publicava. Com Hexo, toda vez que eu quisesse escrever algo, eu precisava gerar todo o site estático localmente depois de finalizar o post, e somente então gerar uma cópia através do client do git. No começo eu pensava "bem, é entediante mas eu consigo lidar com isso". Entretanto, uma coisa mudou meu pensamento - Eu comprei um novo notebook. Você deve saber como é o trabalhão de configurar todo o novo _work station_. Hexo só faz o upload do site gerado para o Github, todas as configurações e os arquivos markdown são armazenados localmente. Felizmente, eu não formatei o antigo notebook, mas percebi que não fiz o backup deles.
+
+Então eu pensei, eu posso colocar as configurações no próprio repositório do Github? Ou também, eu poderia me livrar de _buildar_ o site estático e copiá-lo toda vez? A resposta do desenvolvedor é (sempre) construir as suas próprias rodas. Neste momento, eu prometi a mim mesmo não ser mais preguiçoso.
+
+<blockquote class="tip">
+  <p>Se você entende Chinês, aqui está uma [issue no GitHub](https://github.com/myst729/Vuelog/issues/6) criada por um membro do time Hexo, que fala um pouco disso também.</p>
+</blockquote>
+
+### Por quê VueJS? 
+
+Por quê não AngularJS ou React? 
+
+AngularJS (1.x) não é uma opção porque eu o uso muito no meu trabalho. Então eu pensei em testar algo que eu nunca utilizei antes.
+
+[Vue](https://vuejs.org/) tem uma biblioteca básica bem feita. Suas API's são inspiradas nas do AngularJS, além de ser muito atrativo para desenvolvedores farmiliarizados com o Angular, assim como eu. Também vale a pena dizer que é uma ferramenta bem leve e com uma boa performance. 
+
+Além da documentação incrível, Vue tem uma linha completa de desenvolvimento, incluindo a maravilhosa ferramenta [vue-cli](https://github.com/vuejs/vue-cli), roteamento pelo lado do cliente ([vue-router](https://github.com/vuejs/vue-router)), gerenciamento de estado central ([vuex](https://github.com/vuejs/vuex)), um add-on para o Chrome DevTools ([vue-devtools](https://github.com/vuejs/vue-devtools)) e várias outras ferramentas úteis.
+
+Eu já escrevi algumas cosas com React antes, mas nada que me deu uma verdadeira chance de usa-lo como ferramenta real. Ele apenas não me atrai muito. React tem seu próprio ecosistema. Talvez eu o use no meu próximo projeto.
+
+### Quem pode utilizar o Vuelog? 
+
+Qualquer pessoa, desde que esteja interessada em escrever mais do que 140 palavras (caractéres), e tenha um local (exemplo Github pages), para hospedar seus escritos.
+
+### O projeto ainda vive? 
+
+Claro! No começo era apenas experimental. Conforme eu ia aprendendo mais sobre o Vue e outros add-ons úteis, eu decidi continuar incrementando, não apenas para consolidar meus conhecimentos com Vue, mas para me manter feliz escrevendo. 
+
+A última versão está totalmente re-escrita, construída com Vue 2.x, vue-router 2.x e vuex 2.x agora. Também continuo acrescentando novas funcionalidades, concertando _bugs_ e atualizando as dependências. 
+
+<!-- pt-BR:- -->
