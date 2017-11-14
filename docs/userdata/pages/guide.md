@@ -43,3 +43,25 @@ title: Guide
 - [样式示例](#/blog/showcase/2016/style-examples)
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+#### Visão Geral
+
+- [Estrutura do Diretório do Vuelog](#/blog/docs/2016/file-structure-of-vuelog)
+
+#### Documentation
+
+- [Customizando o Site](#/blog/docs/2017/customize-the-site)
+- [Customizar o menu de navegação](#/blog/docs/2017/customize-navigation-menu)
+- [Adicionar posts ou páginas](#/blog/docs/2017/add-posts-or-pages)
+- [Posts ou páginas por autor](#/blog/docs/2017/author-posts-or-pages)
+- [Inserir blocos de código com realce de sintaxe](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight)
+- [Suporte a vários idiomas](#/blog/docs/2017/multiple-languages-support)
+- [Uso de Serviços sociais de Comentários](#/blog/docs/2017/use-social-commenting-services)
+
+#### Showcase
+
+- [Exemplos de estilo](#/blog/showcase/2016/style-examples)
+
+<!-- pt-BR:- -->
