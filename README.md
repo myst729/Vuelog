@@ -1,7 +1,8 @@
 # [Vuelog](https://vuelog.js.org/)
 
+[![ES2015+](https://img.shields.io/badge/es-2015+-ff69b4.svg)](https://kangax.github.io/compat-table/es6/)
 [![CircleCI](https://img.shields.io/circleci/project/myst729/Vuelog/master.svg)](https://circleci.com/gh/myst729/Vuelog/tree/master)
-[![Codecov](https://img.shields.io/codecov/c/github/myst729/Vuelog/master.svg)](https://codecov.io/github/myst729/Vuelog?branch=master)
+[![Codecov](https://img.shields.io/codecov/c/github/myst729/Vuelog/master.svg)](https://codecov.io/github/myst729/Vuelog)
 [![Release](https://img.shields.io/github/release/myst729/Vuelog.svg)](https://github.com/myst729/Vuelog/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myst729/Vuelog/blob/master/LICENSE)
 
