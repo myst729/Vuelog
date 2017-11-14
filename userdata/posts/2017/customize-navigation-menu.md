@@ -93,3 +93,49 @@ navigation: [
 - 导航链接标签也实现了多语言支持，更多信息请阅读[多语言支持](#/blog/docs/2017/multiple-languages-support)。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+Você pode customizar o menu de navegação sempre que precisar. Vamos dar uma olhada nas partes mais relevantes em `userdata/database.js`: 
+
+```js
+navigation: [
+  {
+    label: {'en-US': 'Guide', 'zh-CN': '指南'},
+    type: 'category',
+    path: '/blog/guide'
+  },
+  {
+    label: {'en-US': 'About', 'zh-CN': '关于'},
+    type: 'page',
+    path: '/page/all-about-vuelog'
+  },
+  {
+    label: {'en-US': 'Changelog', 'zh-CN': '变更日志'},
+    type: 'page',
+    path: '/page/changelog'
+  },
+  {
+    label: {'en-US': 'Archive', 'zh-CN': '归档'},
+    type: 'archive',
+    path: '/archive'
+  },
+  {
+    label: {'en-US': 'Links', 'zh-CN': '链接'},
+    type: 'dropdown',
+    path: '', // (OPTIONAL) dropdown can be routable too if you set a valid path
+    children: [
+      { label: 'Weibo', type: 'outgoing', link: 'http://weibo.com/myst729' },
+      { label: 'GitHub', type: 'outgoing', link: 'https://github.com/myst729' },
+      { label: 'StackOverflow', type: 'outgoing', link: 'https://stackoverflow.com/users/1032492' }
+    ]
+  }
+],
+```
+
+- Cada item nessa lista ou é um link direto ou um dropdown.
+- Um link direto pode redirecionar para uma rota dentro do site ou alguma outra URL.
+- Um dropdown é apenas outra lista de links. Pode ser roteável também se você atribuir um caminho válido como outros links dentro do site. 
+- As _labels_ nos Links de navegação suportam vários idiomas, por favor leia [Suporte a vários idiomas](#/blog/docs/2017/multiple-languages-support) para maiores informações.
+
+<!-- pt-BR:- -->
