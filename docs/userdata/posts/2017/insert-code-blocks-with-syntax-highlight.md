@@ -121,3 +121,63 @@ It’s just a trimmed version of the original [highlight.js](https://highlightjs
 这只是 [highlight.js](https://highlightjs.org/) 的一个精简版。如果你想高亮的语言尚不在支持列表中，可以 fork [Vuelog 项目](https://github.com/myst729/Vuelog)，编辑 `src/helpers/highlight.js`。
 
 <!-- zh-CN:- -->
+
+<!-- pt-BR:+ -->
+
+Você pode inserir blocos de código em seu post ou página. Vuelog atualmente suporta realce de sintaxe para as segunites linguagens: 
+
+- Markdown
+- HTML / XML
+- CSS / LESS/ SCSS/ Stylus
+- JavaScript / TypeScript
+- PHP / Python / Ruby / Rust / Go
+- JSON
+- SQL
+- Bash
+- Diff
+
+Aqui estão alguns exemplos: 
+
+- Entrada: 
+
+  <pre><code class="lang-markdown">```html
+  &lt;div id="app"&gt;&lt;/div&gt;
+  ```</code></pre>
+
+  Saída:
+
+  ```html
+  <div id="app"></div>
+  ```
+
+- Entrada:
+
+  <pre><code class="lang-markdown">```js
+  var brand = 'Vuelog'
+  ```</code></pre>
+
+  Saída:
+
+  ```js
+  var brand = 'Vuelog'
+  ```
+
+- Entrada:
+
+  <pre><code class="lang-markdown">```css
+  body {
+    color: #4fc08d
+  }
+  ```</code></pre>
+
+  Saída:
+
+  ```css
+  body {
+    color: #4fc08d
+  }
+  ```
+
+Isto é apenas uma versão cortada da original [highlight.js](https://highlightjs.org/). Se a linguagem que você quer realçar não está descrita na lista das linguagens suportadas, você pode _forkar_ o [Vuelog no Github](https://github.com/myst729/Vuelog) e editar `src/helpers/hihglight.js`.
+
+<!-- pt-BR:- -->
