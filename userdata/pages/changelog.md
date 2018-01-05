@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.12.1 - 2018-01-05
+
+#### Changed
+- Upgrade marked to version 0.3.9 due to security vulnerabilities.
+
 ### 2.12.0 - 2017-11-04
 
 #### Added
