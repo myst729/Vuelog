@@ -2,7 +2,10 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
-### 2.13.1 - 2018-01-06
+### 2.14.0 - 2018-01-06
+
+#### Added
+- Enable loading dependencies from CDN for production build.
 
 #### Changed
 - Use Prism instead of highlight.js for code syntax highlight.

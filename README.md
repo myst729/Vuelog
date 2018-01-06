@@ -28,8 +28,11 @@ npm run dev
 # build for production with minification, and update documentation as well
 npm run build
 
-# build for production and view the bundle analyzer report
+# build for production, and view the bundle analyzer report
 npm run report
+
+# build for production, but dependencies are loaded from jsDelivr CDN
+npm run lite
 
 # run unit tests
 npm run unit
