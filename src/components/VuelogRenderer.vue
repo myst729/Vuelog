@@ -35,8 +35,8 @@
 
 <script>
   import marked from 'marked'
+  import Prism from 'prismjs'
   import { meaningfulTime, retrieveByLanguage } from '../helpers'
-  import hljs from '../helpers/highlight'
   import VuelogPagination from './VuelogPagination'
   import VuelogSpinner from './VuelogSpinner'
 
@@ -145,11 +145,14 @@
         const defaultOptions = {
           smartypants: true,
           highlight (code, lang) {
-            try {
-              return hljs.highlight(lang, code).value
-            } catch (e) {
-              return hljs.highlightAuto(code).value
+            if (lang) {
+              try {
+                return Prism.highlight(code, Prism.languages[lang], lang)
+              } catch (e) {
+                return code
+              }
             }
+            return code
           }
         }
 

@@ -29,6 +29,19 @@ pre > code
   &.lang-css:after
     content 'CSS'
 
+  &.lang-less:after
+    content 'Less'
+
+  &.lang-sass:after
+    content 'Sass'
+
+  &.lang-scss:after
+    content 'Scss'
+
+  &.lang-stylus:after
+  &.lang-styl:after
+    content 'Stylus'
+
   &.lang-javascript:after
   &.lang-js:after
     content 'JavaScript'
@@ -93,56 +106,64 @@ pre > code
   &.lang-patch:after
     content 'Diff'
 
+  .namespace
+    opacity .7
+
+  .token.comment
+  .token.prolog
+  .token.doctype
+  .token.cdata
+    color #b3b3b3
+
+  .token.constant
+  .token.function
+    color #0092db
+
+  .token.punctuation
+  .token.property
+  .token.tag
+  .token.boolean
+  .token.number
+  .token.symbol
+  .token.deleted
+  .token.selector
+  .token.attr-name
+  .token.char
+  .token.builtin
+  .token.inserted
+    color #2973b7
+
+  // .token.operator
+  .token.entity
+  .token.url
+  .language-css .token.string
+  .style .token.string
+    color #a6e22e
+
+  .token.keyword
+    color #e96900
+
+  .token.atrule
+  .token.attr-value
+  .token.string
+    color #42b983
+
+  .token.regex
+  .token.important
+  .token.variable
+    color #ae81ff
+
+  .token.important
+  .token.bold
+    font-weight bold
+  .token.italic
+    font-style italic
+
+  .token.entity
+    cursor help
+
 pre:hover > code:after
   opacity 1
-
-.hljs-strong
-  font-weight 600
-
-.hljs-comment
-.hljs-quote
-.hljs-emphasis
-  color #b3b3b3
-  font-style italic
-
-.hljs-attr
-.hljs-attribute
-.hljs-bullet
-.hljs-built_in
-.hljs-keyword
-.hljs-section
-.hljs-selector-id
-.hljs-type
-.hljs-class
-  color #e96900
-
-.hljs-tag
-.hljs-doctag
-.hljs-selector-tag
-.hljs-name
-.hljs-builtin-name
-.hljs-link
-.hljs-title
-.hljs-meta
-.hljs-subst
-  color #2973b7
-
-.hljs-symbol
-.hljs-string
-.hljs-regexp
-.hljs-variable
-.hljs-template-variable
-  color #42b983
-
-.hljs-literal
-.hljs-number
-  color #ae81ff
-
-.hljs-deletion
-  background #fdd
-
-.hljs-addition
-  background #dfd
 
 @media screen and (max-width: 999px)
   pre > code:after

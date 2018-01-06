@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.13.1 - 2018-01-06
+
+#### Changed
+- Use Prism instead of highlight.js for code syntax highlight.
+
 ### 2.13.0 - 2018-01-06
 
 #### Changed
