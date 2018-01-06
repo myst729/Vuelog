@@ -1,4 +1,4 @@
-import { meaningfulTime, retrieveByLanguage } from 'src/helpers'
+import { meaningfulTime, retrieveByLanguage } from 'src/utils'
 
 describe('Helpers', () => {
   it('Meaningful time: 3 years ago', () => {

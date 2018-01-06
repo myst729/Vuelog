@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../helpers'
+  import { retrieveByLanguage } from '../utils'
 
   export default {
     name: 'vuelog-oops',

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../helpers'
+  import { retrieveByLanguage } from '../utils'
   import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogComments from '../components/VuelogComments'
   import VuelogNavigation from '../components/VuelogNavigation'

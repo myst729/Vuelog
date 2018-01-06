@@ -36,7 +36,7 @@
 <script>
   import marked from 'marked'
   import Prism from 'prismjs'
-  import { meaningfulTime, retrieveByLanguage } from '../helpers'
+  import { meaningfulTime, retrieveByLanguage } from '../utils'
   import VuelogPagination from './VuelogPagination'
   import VuelogSpinner from './VuelogSpinner'
 
