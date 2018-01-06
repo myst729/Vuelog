@@ -7,6 +7,9 @@
       "request": "launch",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${workspaceRoot}/src/*"
+      },
       "url": "http://localhost:8080"
     },
     {
@@ -15,6 +18,9 @@
       "request": "attach",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${workspaceRoot}/src/*"
+      },
       "port": 9222
     },
     {
