@@ -1,4 +1,3 @@
-import 'userdata/database'
 import { languages } from 'src/i18n/locales'
 import {
   documentTitle,
@@ -12,8 +11,8 @@ describe('Store: actions', () => {
       title: ''
     }
     const commit = (type, payload) => {
-      expect(type).to.equal('setDocumentTitle')
-      expect(payload.title).to.equal('Qwerty')
+      expect(type).toBe('setDocumentTitle')
+      expect(payload.title).toBe('Qwerty')
       done()
     }
     documentTitle({ commit, state }, 'Qwerty')
@@ -28,8 +27,8 @@ describe('Store: actions', () => {
       languages
     }
     const commit = (type, payload) => {
-      expect(type).to.equal('setSystemLanguage')
-      expect(payload.lang).to.equal('zh-CN')
+      expect(type).toBe('setSystemLanguage')
+      expect(payload.lang).toBe('zh-CN')
       done()
     }
     systemLanguage({ commit, state }, 'zh-CN')
@@ -44,8 +43,8 @@ describe('Store: actions', () => {
       languages
     }
     const commit = (type, payload) => {
-      expect(type).to.equal('setSystemLanguage')
-      expect(payload.lang).to.equal('en-US')
+      expect(type).toBe('setSystemLanguage')
+      expect(payload.lang).toBe('en-US')
       done()
     }
     systemLanguage({ commit, state }, 'fr-FR')
@@ -54,8 +53,8 @@ describe('Store: actions', () => {
   it('Side menu visibility dispatched with `false`', done => {
     const state = { menu: true }
     const commit = (type, payload) => {
-      expect(type).to.equal('setSideMenu')
-      expect(payload.visibility).to.equal(false)
+      expect(type).toBe('setSideMenu')
+      expect(payload.visibility).toBe(false)
       done()
     }
     sideMenu({ commit, state }, false)

@@ -1,5 +1,5 @@
 .DS_Store
 *.log
-node_modules/
-test/e2e/reports
-test/unit/coverage
+/node_modules/
+/test/e2e/reports/
+/test/unit/coverage/
