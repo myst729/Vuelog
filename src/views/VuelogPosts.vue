@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../helpers'
+  import { retrieveByLanguage } from '../utils'
   import VuelogRenderer from '../components/VuelogRenderer'
   import VuelogNavigation from '../components/VuelogNavigation'
 
