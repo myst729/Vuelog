@@ -1,4 +1,3 @@
-import 'userdata/database'
 import {
   title,
   lang,
@@ -18,19 +17,19 @@ describe('Store: getters', () => {
   it('Title', () => {
     const state = { title: 'Apple' }
     const result = title(state)
-    expect(result).to.equal('Apple')
+    expect(result).toBe('Apple')
   })
 
   it('Language', () => {
     const state = { lang: 'fr-FR' }
     const result = lang(state)
-    expect(result).to.equal('fr-FR')
+    expect(result).toBe('fr-FR')
   })
 
   it('Side menu visibility', () => {
     const state = { menu: false }
     const result = menu(state)
-    expect(result).to.equal(false)
+    expect(result).toBe(false)
   })
 
   it('System settings', () => {
@@ -38,7 +37,7 @@ describe('Store: getters', () => {
       system: { project: 'Vuelog Test', version: '2016' }
     }
     const result = system(state)
-    expect(result).to.deep.equal({ project: 'Vuelog Test', version: '2016' })
+    expect(result).toEqual({ project: 'Vuelog Test', version: '2016' })
   })
 
   it('Configurations', () => {
@@ -48,7 +47,7 @@ describe('Store: getters', () => {
       }
     }
     const result = config(state)
-    expect(result).to.deep.equal({ project: 'Vuelog Test', version: '2016' })
+    expect(result).toEqual({ project: 'Vuelog Test', version: '2016' })
   })
 
   it('Languages: default', () => {
@@ -60,7 +59,7 @@ describe('Store: getters', () => {
         selectedLangs: []
       }
     })
-    expect(result).to.deep.equal({ 'en-US': 'English', 'fr-FR': 'Français', 'it-IT': 'Italiano', 'zh-CN': '简体中文' })
+    expect(result).toEqual({ 'en-US': 'English', 'fr-FR': 'Français', 'it-IT': 'Italiano', 'zh-CN': '简体中文' })
   })
 
   it('Languages: trimmed', () => {
@@ -72,7 +71,7 @@ describe('Store: getters', () => {
         selectedLangs: ['en-US', 'zh-CN']
       }
     })
-    expect(result).to.deep.equal({ 'en-US': 'English', 'zh-CN': '简体中文' })
+    expect(result).toEqual({ 'en-US': 'English', 'zh-CN': '简体中文' })
   })
 
   it('Languages: trimmed with invalid keys', () => {
@@ -84,7 +83,7 @@ describe('Store: getters', () => {
         selectedLangs: ['en-US', 'de-DE']
       }
     })
-    expect(result).to.deep.equal({ 'en-US': 'English' })
+    expect(result).toEqual({ 'en-US': 'English' })
   })
 
   it('Navigation', () => {
@@ -94,7 +93,7 @@ describe('Store: getters', () => {
       }
     }
     const result = navigation(state)
-    expect(result).to.deep.equal({ project: 'Vuelog Test', version: '2016' })
+    expect(result).toEqual({ project: 'Vuelog Test', version: '2016' })
   })
 
   it('Pages', () => {
@@ -107,7 +106,7 @@ describe('Store: getters', () => {
       }
     }
     const result = pages(state)
-    expect(result).to.deep.equal([
+    expect(result).toEqual([
       {
         title: 'All about Vuelog',
         slug: 'all-about-vuelog',
@@ -133,7 +132,7 @@ describe('Store: getters', () => {
       }
     }
     const result = categories(state)
-    expect(result).to.deep.equal([
+    expect(result).toEqual([
       { title: 'Guide', slug: 'guide' },
       { title: 'Empty', slug: 'empty' }
     ])
@@ -156,7 +155,7 @@ describe('Store: getters', () => {
     const result = posts(state, {
       categories: cats
     })
-    expect(result).to.deep.equal([
+    expect(result).toEqual([
       {
         title: 'How to add a post or page?',
         slug: 'how-to-add-a-post-or-page',
@@ -199,7 +198,7 @@ describe('Store: getters', () => {
       posts: pos,
       categories: cats
     })
-    expect(result).to.deep.equal([
+    expect(result).toEqual([
       {
         title: 'Guide',
         slug: 'guide',
@@ -254,7 +253,7 @@ describe('Store: getters', () => {
       posts: pos,
       categories: cats
     })
-    expect(result).to.deep.equal([
+    expect(result).toEqual([
       {
         year: 2016,
         posts: [

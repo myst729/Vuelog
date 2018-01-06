@@ -14,11 +14,17 @@
       }
     }]
   ],
-  "plugins": ["transform-object-rest-spread"],
-  "comments": false,
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-vue-jsx"
+  ],
   "env": {
     "test": {
-      "plugins": [ "istanbul" ]
+      "plugins": [
+        "dynamic-import-node",
+        "transform-es2015-modules-commonjs",
+        "transform-vue-jsx"
+      ]
     }
   }
 }

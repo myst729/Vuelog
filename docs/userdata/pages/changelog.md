@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.13.0 - 2018-01-06
+
+#### Changed
+- Upgrade to the latest version of vuejs-templates/webpack.
+
 ### 2.12.1 - 2018-01-05
 
 #### Changed
