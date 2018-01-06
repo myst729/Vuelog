@@ -1,6 +1,6 @@
 {
   "name": "vuelog",
-  "version": "2.13.0",
+  "version": "2.14.0",
   "description": "A backend-free blog system built on top of Vue.js",
   "author": "Leo Deng",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
+    "lite": "USE_CDN=true npm run build",
     "report": "npm run build --report",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
@@ -93,6 +94,7 @@
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
+    "webpack-cdn-plugin": "^1.7.1",
     "webpack-dev-server": "^2.10.0",
     "webpack-merge": "^4.1.1"
   },

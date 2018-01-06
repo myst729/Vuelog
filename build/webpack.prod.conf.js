@@ -82,6 +82,79 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
+    // copy custom static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      },
+      {
+        from: path.resolve(__dirname, '../userdata'),
+        to: config.build.userdataSubDirectory,
+        ignore: ['.*']
+      },
+      {
+        from: path.resolve(__dirname, '../vuelog.js.org'),
+        to: path.resolve(config.build.assetsRoot, 'CNAME'),
+        toType: 'file'
+      }
+    ])
+  ]
+})
+
+if (process.env.USE_CDN) {
+  const WebpackCdnPlugin = require('webpack-cdn-plugin')
+
+  webpackConfig.plugins.push(
+    new WebpackCdnPlugin({
+      modules: [
+        {
+          name: 'fastclick',
+          var: 'FastClick',
+          path: 'lib/fastclick.js'
+        },
+        {
+          name: 'marked',
+          var: 'marked',
+          path: 'marked.min.js'
+        },
+        {
+          name: 'prismjs',
+          var: 'Prism',
+          path: 'prism.js'
+        },
+        {
+          name: 'vue',
+          var: 'Vue',
+          path: 'dist/vue.runtime.min.js'
+        },
+        {
+          name: 'vue-router',
+          var: 'VueRouter',
+          path: 'dist/vue-router.min.js'
+        },
+        {
+          name: 'vue-meta',
+          var: 'VueMeta',
+          path: 'lib/vue-meta.min.js'
+        },
+        {
+          name: 'vuex',
+          var: 'Vuex',
+          path: 'dist/vuex.min.js'
+        },
+        {
+          name: 'vue-i18n',
+          var: 'VueI18n',
+          path: 'dist/vue-i18n.min.js'
+        }
+      ],
+      prodUrl: config.build.productionCdn
+    })
+  )
+} else {
+  webpackConfig.plugins.push(
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -110,28 +183,9 @@ const webpackConfig = merge(baseWebpackConfig, {
       async: 'vendor-async',
       children: true,
       minChunks: 3
-    }),
-
-    // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      },
-      {
-        from: path.resolve(__dirname, '../userdata'),
-        to: config.build.userdataSubDirectory,
-        ignore: ['.*']
-      },
-      {
-        from: path.resolve(__dirname, '../vuelog.js.org'),
-        to: path.resolve(config.build.assetsRoot, 'CNAME'),
-        toType: 'file'
-      }
-    ])
-  ]
-})
+    })
+  )
+}
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
