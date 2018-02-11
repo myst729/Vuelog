@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.14.1 - 2018-02-11
+
+#### Changed
+- Fix example assets.
+
 ### 2.14.0 - 2018-01-06
 
 #### Added

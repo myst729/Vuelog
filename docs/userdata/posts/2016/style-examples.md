@@ -93,13 +93,13 @@ You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> s
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/blog-media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/blog-media/vuelog/big-buck-bunny.mp4" type="video/mp4">
+    <source src="//myst729.github.io/blog-media/vuelog/big-buck-bunny.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/blog-media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
 
 <!-- en-US:- -->
 
@@ -194,13 +194,13 @@ var demo = new Vue({
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/blog-media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/blog-media/vuelog/big-buck-bunny.mp4" type="video/mp4">
+    <source src="//myst729.github.io/blog-media/vuelog/big-buck-bunny.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/blog-media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
 
 <!-- zh-CN:- -->
 
@@ -288,12 +288,12 @@ Você também pode inserir `trechos de código na linha` como este, assim como s
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/blog-media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/blog-media/vuelog/big-buck-bunny.mp4" type="video/mp4">
+    <source src="//myst729.github.io/blog-media/vuelog/big-buck-bunny.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/blog-media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
 
 <!-- pt-BR:- -->
