@@ -81,6 +81,12 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
+    new webpack.NamedChunksPlugin(chunk => {
+      if (chunk.name) {
+        return chunk.name
+      }
+      return chunk.mapModules(m => path.relative(m.context, m.request)).join('_')
+    }),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
     // copy custom static assets
