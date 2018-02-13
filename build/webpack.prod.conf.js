@@ -131,6 +131,11 @@ if (process.env.USE_CDN) {
           path: 'dist/vue.runtime.min.js'
         },
         {
+          name: 'vuex',
+          var: 'Vuex',
+          path: 'dist/vuex.min.js'
+        },
+        {
           name: 'vue-router',
           var: 'VueRouter',
           path: 'dist/vue-router.min.js'
@@ -139,11 +144,6 @@ if (process.env.USE_CDN) {
           name: 'vue-meta',
           var: 'VueMeta',
           path: 'lib/vue-meta.min.js'
-        },
-        {
-          name: 'vuex',
-          var: 'Vuex',
-          path: 'dist/vuex.min.js'
         },
         {
           name: 'vue-i18n',
