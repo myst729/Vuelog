@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -183,6 +184,9 @@ if (process.env.USE_CDN) {
       async: 'vendor-async',
       children: true,
       minChunks: 3
+    }),
+    new InlineChunkPlugin({
+      inlineChunks: ['manifest']
     })
   )
 }
