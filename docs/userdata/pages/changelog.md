@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.14.2 - 2018-02-13
+
+#### Changed
+- Inline manifest chunk to save browser requests.
+
 ### 2.14.1 - 2018-02-11
 
 #### Changed
