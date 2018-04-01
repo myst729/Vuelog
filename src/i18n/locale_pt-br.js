@@ -40,9 +40,7 @@ const ptBR = {
 
   lang: {
     switch: 'Idioma:'
-  },
-
-  credit: 'Criado com {1} e com {0}'
+  }
 }
 
 export default ptBR

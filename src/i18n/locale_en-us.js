@@ -40,9 +40,7 @@ const enUS = {
 
   lang: {
     switch: 'Language:'
-  },
-
-  credit: 'Built with {1} and {0}'
+  }
 }
 
 export default enUS
