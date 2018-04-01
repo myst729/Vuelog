@@ -40,9 +40,7 @@ const zhCN = {
 
   lang: {
     switch: '更换语言：'
-  },
-
-  credit: '{0} 驱动，用 {1} 构筑'
+  }
 }
 
 export default zhCN

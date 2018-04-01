@@ -40,9 +40,7 @@ const deDE = {
 
   lang: {
     switch: 'Sprache:'
-  },
-
-  credit: 'Gebaut mit {1} und {0}'
+  }
 }
 
 export default deDE
