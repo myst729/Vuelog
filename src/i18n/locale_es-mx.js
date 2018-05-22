@@ -1,4 +1,4 @@
-const enUS = {
+const esMx = {
   home: {
     description: 'Bienvenido a la página principal',
     download: 'Descarga v{0}',
@@ -47,4 +47,4 @@ const enUS = {
   credit: 'Creado con {1} & {0}'
 }
 
-export default enUS
+export default esMx

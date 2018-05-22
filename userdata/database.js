@@ -193,7 +193,7 @@ window.VUELOG_DATABASE = {
         'zh-CN': '多语言支持',
         'de-DE': 'Untersützung mehrerer Sprachen',
         'pt-BR': 'Suporte a vários Idiomas',
-        'es-Mx': 'Soporte multiidioma'
+        'es-MX': 'Soporte multiidioma'
       },
       slug: 'multiple-languages-support',
       category: 'docs',
@@ -205,7 +205,7 @@ window.VUELOG_DATABASE = {
         'zh-CN': '使用社会化评论服务',
         'de-DE': 'Benutzung sozialer Kommentardienste',
         'pt-BR': 'Uso de Serviços Sociais de Comentários',
-        'es-Mx': 'Uso de servicios de comentarios'
+        'es-MX': 'Uso de servicios de comentarios'
       },
       slug: 'use-social-commenting-services',
       category: 'docs',
@@ -230,7 +230,7 @@ window.VUELOG_DATABASE = {
         'zh-CN': '编写文章或页面',
         'de-DE': 'Beiträge und Seiten verfassen',
         'pt-BR': 'Posts ou Páginas por Autor',
-        'es-Mx': 'Publicaciones de author o páginas'
+        'es-MX': 'Publicaciones de author o páginas'
       },
       slug: 'author-posts-or-pages',
       category: 'docs',
@@ -255,7 +255,7 @@ window.VUELOG_DATABASE = {
         'zh-CN': '自定义导航菜单',
         'de-DE': 'Navigationsmenü anpassen',
         'pt-BR': 'Customizar o menu de navegação',
-        'es-Mx': 'Menú de navegación personalizado'
+        'es-MX': 'Menú de navegación personalizado'
       },
       slug: 'customize-navigation-menu',
       category: 'docs',
