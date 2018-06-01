@@ -28,8 +28,8 @@ window.VUELOG_DATABASE = {
     // Whether footer is visible on `homePath` or not.
     homeFooter: false,
 
-    // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
-    defaultLang: 'es-MX',
+    // Vuelog interface language. Currently supports 'en-US', 'zh-CN', 'de-DE', 'pt-BR' and 'es-MX'.
+    defaultLang: 'en-US',
 
     // Allow/disallow visitors to switch interface language.
     switchLang: true,
