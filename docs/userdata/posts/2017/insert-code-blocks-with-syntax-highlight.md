@@ -181,3 +181,65 @@ Aqui estão alguns exemplos:
 Isto é apenas uma versão cortada da original [highlight.js](https://highlightjs.org/). Se a linguagem que você quer realçar não está descrita na lista das linguagens suportadas, você pode _forkar_ o [Vuelog no Github](https://github.com/myst729/Vuelog) e editar `src/helpers/hihglight.js`.
 
 <!-- pt-BR:- -->
+
+
+
+<!-- es-MX:+ -->
+
+Puedes insertar un bloque de código en tu post o página. Vuelog actualmente soporta remarcado de sintaxis para los siguentes lenguajes de programación:
+
+
+- Markdown
+- HTML / XML
+- CSS / LESS / SCSS / Stylus
+- JavaScript / TypeScript
+- PHP / Python / Ruby / Rust / Go
+- JSON
+- SQL
+- Bash
+- Diff
+
+Aquí tienes algunos ejemplos:
+
+- Input:
+
+  <pre><code class="lang-markdown">```html
+  &lt;div id="app"&gt;&lt;/div&gt;
+  ```</code></pre>
+
+  Output:
+
+  ```html
+  <div id="app"></div>
+  ```
+
+- Input:
+
+  <pre><code class="lang-markdown">```js
+  var brand = 'Vuelog'
+  ```</code></pre>
+
+  Output:
+
+  ```js
+  var brand = 'Vuelog'
+  ```
+
+- Input:
+
+  <pre><code class="lang-markdown">```css
+  body {
+    color: #4fc08d
+  }
+  ```</code></pre>
+
+  Output:
+
+  ```css
+  body {
+    color: #4fc08d
+  }
+  ```
+Esto es solamente una versión simplificada del original [highlight.js](https://highlightjs.org/). Si uno de los lenguajesd que deseas utilizar no está soportado, puedes hacer un *fork* a [Vuelog on GitHub](https://github.com/myst729/Vuelog) y editar el archivo `src/helpers/highlight.js`.
+
+<!-- es-MX:- -->
