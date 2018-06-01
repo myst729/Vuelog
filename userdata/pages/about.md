@@ -113,3 +113,42 @@ Claro! No começo era apenas experimental. Conforme eu ia aprendendo mais sobre 
 A última versão está totalmente re-escrita, construída com Vue 2.x, vue-router 2.x e vuex 2.x agora. Também continuo acrescentando novas funcionalidades, concertando _bugs_ e atualizando as dependências. 
 
 <!-- pt-BR:- -->
+
+
+<!-- es-MX:+ -->
+
+### ¿Porqué decidí crear Vuelog?
+
+Hace algunos años, decidi migrar mi blog a [GitHub Pages](https://pages.github.com/). En ese momento, tenia varias opciones: Jekyll, Hexo, o algo desarrollado a mano con AngularJs. Finalmente elegí [Hexo](https://hexo.io/) para generar mi sitio estático, porque soy un poco perezos y no me gusta *Ruby*.
+
+Antes de Hexo, estuve utilizando [WordPress](https://wordpress.org/). Es realmente simple - Inicias sesipon, escribes algo y lo publicas. Con Hexo, cada ves que necesitaba escribir algo nuevo, era necesario generar el el sitio entero de forma local una ves terminaba de escribir, después enviar los archivos generados vía *git*. En un principio pensé, bueno, es aburrido pero puedo soportarlo. sin embargo una cosa vino a mi mente - Adquirí una nueva laptop, ¿sabes todo el trabajo que hay que hacer para configurar tu espacio de trabajo?. Hexo únicamente puede desplegar cambios a Github, todas las configuraciones y archivos markdown están almacenados localmente. Afortunadamente, no formateé mi vieja computadora antes de darme cuenta que no había realizado una copia de seguridad.
+
+Entonces me pregunté. ¿Puedo poner las configuraciones en un repositorio?, ¿Puedo tambien, deshacerme de crear la copia estatica todo el tiempo?, la respuesta de un desarrollador es siempre construir sus propias ruedas. Fue entonces cuando me dije a mí mismo, que nunca más volveria a ser perezoso.
+
+
+<blockquote class="tip">
+  <p>Si puedes leer chino, aquí está [un issue en GitHub](https://github.com/myst729/Vuelog/issues/6) creatdo por un miembro del equipo de hexo, quien tambien habla acerca de esto.</p>
+</blockquote>
+
+### ¿Porqué elegí Vue?
+
+¿Porqué no elegí Angular o React?
+
+AngularJS (1.x) no era una opción porque  lo uso bastante en mi trabajo diariamente. Queria intentar algo que no hubiese usado antes.
+
+[Vue](http://vuejs.org/) tiene un core bien diseñado. Su API estpa inspirada en AngularJS, esto es muy atractivo para los desarrolladores familiarizados con AngularJs, como yo. Ademas es ligero y con un buen desempeño.
+
+De la mano con una documentación muy completa, Vue tiene una alineación completa para el desarollo, incluyendo ([vue-cli](https://github.com/vuejs/vue-cli)), un enrutamiento del lado del cliente ([vue-router](https://github.com/vuejs/vue-router)), administracipon central de estados ([vuex](https://github.com/vuejs/vuex)), una extención para chrome ([vue-devtools](https://github.com/vuejs/vue-devtools)) entre otras herramientas muy útiles.
+
+También llegué a escribir algunos *juguetes* en React pero nunca tuve oportunidad de implementarlo en un proyecto real. Simplemente no me atrae bastante. React tiene su propio ecosistema, quiza lo pruebe en un proyecto futuro.
+
+### ¿Quién puede usar Vuelog?
+
+Cualquiera, siempre y cuando estés diśpuesto a escribir algo más de 140 caracteres y tengas un lugar donde *alojar* tus escritos (Por ejemplo, GitHub pages.)
+
+### ¿Aún está vivo el proyecto?
+Por supuesto, al principio era algo experimental, es verdad. Conforma aprendia más acerca de Vue y de alguno otros *plugins*, decidí continuar mejorando el proyecto. No solo para consolidar mis conocimientos, sino tambien para hacer la labor de escribir más feliz.
+
+La última versión está reescrita totalmente, construida con vue 2.x, vue-router 2.x y vuex 2.x ahora, y constantemente se desarrollan funcionalidades, se corrigen errores y se actualizan dependiencias.
+
+<!-- es-MX:- -->

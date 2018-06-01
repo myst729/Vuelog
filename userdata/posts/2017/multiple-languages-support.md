@@ -232,3 +232,85 @@ Depois que a alteração é feita, o idioma da UI será recarregado automaticame
 </blockquote>
 
 <!-- pt-BR:- -->
+
+<!-- es-MX:+ -->
+
+Vuelog actualmente soporta multiples idiomas.
+
+### Idiomas del UI.
+
+La interfaz gráfica ofrece actualmente traducción para cuatro idiomas. Chino simplificado (`zh-CN`), Inglés americano (`en-US`), Portugués Brasil (`pt-BR`) y Español México ('es-MX').
+
+Tal como se describe en la sección <q>Idiomas</q> de [Personaliza tu sitio](#/blog/docs/2017/customize-the-site), puedes modificar la configuración en la propiedad  `config` del archivo `userData/database.js`:
+
+```js
+// Idioma de la interface Vuelog.
+defaultLang: 'en-US',
+
+// Permitir/Denegar al usurio a cambiar el idioma del sitio.
+switchLang: true,
+
+// Idiomas disponibles para cambiar. Deben ser idiomas soportados o bien, dejar vacio.
+selectedLangs: [],
+```
+
+<blockquote class="tip">
+  <p>Si estas dispuesto a contribuir con mas traducciones, sientete libre de hacer *fork* en [Vuelog on GitHub](https://github.com/myst729/Vuelog), y enviar *pull requests*. Muchas gracias!</p>
+</blockquote>
+
+### Idioma del contenido
+
+Algún contenido de `userdata/database.js` puede estar presente en la interfaz de usuario, por ejemplo, títulos de posts, nombres de categorías, etiquetas del menú de navegación etc. Estas tambien soportan multiples idiomas. Para hacer esto, contruye un objeto que consita de un item `key-value` con el lenguaje correspondiente y su contenido correspondiente. por ejemplo:
+
+```js
+{
+  title: {'en-US': 'Multiple languages support', 'zh-CN': '多语言支持', 'es-MX': 'Soporte muilti idioma'},
+  slug: 'multiple-languages-support',
+  category: 'docs',
+  date: '2017-01-24'
+}
+```
+
+Si úicamente se desea utilizar un idioma, utiliza un *string* ordinario.
+
+```js
+{
+  title: 'Single language',
+  slug: 'single-language',
+  category: 'docs',
+  date: '2017-01-24'
+}
+```
+
+### Idioma de Post
+
+Vuelog tambien tiene soporta para multiples idiomas en los posts. Para empezar a escribir el contenido de tus post en diferentes idiomas puedes utilizar las etiquetas de idioma.
+
+```markdown
+  <!-- en-Us:+ -->
+  Your content in American English ...
+  <!-- en:US:- -->
+```
+Una etiqueta de lenguaje consiste en un par de etiquetas (inicial y final).
+Dentro de las etiquetas observa que el simbolo despues de la abreviación del idioma indica cuando la traducción inicia (`:+`) y cuando termina (`:-`).
+
+Estas etiquetas son opcionales, si no deseas escribir contenido en multiples idiomas ,simplemente redacta tu contenido sin etiqueta alguna.
+
+
+<blockquote class="tip">
+  <p>Los comentarios no soportan esta opcion debido a que son un servicio de terceros.</p>
+</blockquote>
+
+### Cambiar entre idiomas
+
+Si los visitantes  tienen permitido cambiar el idioma, lo pueden hacer con una lista que se encuentra en la parte inferior derecha.
+
+<img src="./userdata/images/language-en.png" alt="Language" width="208px" height="58px">
+
+Despues de elegir otro idioma, la interfaz se recargará automaticamente. Si la página contiene traducciones para este idoma se refrescará de igual forma.
+
+<blockquote class="tip">
+  <p>Cuando un visitante cambia el idioma del sitio, esto no afecta al idioma por default, es decir no afetará a otros visitantes.</p>
+</blockquote>
+
+<!-- es-MX:- -->
