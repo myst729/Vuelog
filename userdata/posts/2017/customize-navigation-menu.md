@@ -139,3 +139,50 @@ navigation: [
 - As _labels_ nos Links de navegação suportam vários idiomas, por favor leia [Suporte a vários idiomas](#/blog/docs/2017/multiple-languages-support) para maiores informações.
 
 <!-- pt-BR:- -->
+
+
+<!-- es-MX:+ -->
+Puedes personalizar el menú de navegación como sea necesario para ti. Veamos una parte relevante del archivo `userdata/database.js`
+
+
+```js
+navigation: [
+  {
+    label: {'en-US': 'Guide', 'zh-CN': '指南', 'es-Mx': 'Guía'},
+    type: 'category',
+    path: '/blog/guide'
+  },
+  {
+    label: {'en-US': 'About', 'zh-CN': '关于', 'es-MX': 'Acerca de'},
+    type: 'page',
+    path: '/page/all-about-vuelog'
+  },
+  {
+    label: {'en-US': 'Changelog', 'zh-CN': '变更日志', 'es-MX': 'Historial de cambios'},
+    type: 'page',
+    path: '/page/changelog'
+  },
+  {
+    label: {'en-US': 'Archive', 'zh-CN': '归档', 'es-MX': 'Archivo'},
+    type: 'archive',
+    path: '/archive'
+  },
+  {
+    label: {'en-US': 'Links', 'zh-CN': '链接', 'es-MX': 'Enlaces'},
+    type: 'dropdown',
+    path: '', // (OPTIONAL) dropdown can be routable too if you set a valid path
+    children: [
+      { label: 'Weibo', type: 'outgoing', link: 'http://weibo.com/myst729' },
+      { label: 'GitHub', type: 'outgoing', link: 'https://github.com/myst729' },
+      { label: 'StackOverflow', type: 'outgoing', link: 'https://stackoverflow.com/users/1032492' }
+    ]
+  }
+],
+```
+- Cada item en la lista es un enlace simple, o una lista desplegable.
+- Un enlace simple puede redirigir a una ruta del sitio, o bien un enlace externo.
+- Una lista desplegable no es más que otra lista de enlaces. Tambien pueden apuntar a rutas del sitio si asignas una ruta válida.
+- Las etiquetas de los menús soportan multiples idiomas, para más información puedes leer [Soporte multi idioma](#/blog/docs/2017/multiple-languages-support).
+
+
+<!-- es-MX:- -->

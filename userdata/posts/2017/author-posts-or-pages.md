@@ -127,3 +127,46 @@ Para o conteúdo do autor em vários idiomas, você precisará de ajuda das **ta
 A base para a metadata das páginas é similar ao de posts. A única diferença é que a página não tem o conceito de **categoria** e **data**. Tags de paginação e de idioma podem ser aplicadas a páginas também. 
 
 <!-- pt-BR:- -->
+
+
+<!-- es-MX:+ -->
+
+### Prerequisitos
+
+Primero que nada, asumo que tienes conocimientos sobre [markdown](https://es.wikipedia.org/wiki/Markdown) y sobre como escribir algo con él. Así que, no hablaremos sobre los fundamentos de markdown.
+
+### Plantilla de un Post
+El archivo markdown de un posts luce como el siguiente:
+
+```md
+title: Author posts or pages
+category: docs
+date: 2017-01-13
+------------------------------------
+Start your post content here...
+```
+
+En el ejemplo puedes observar una line de guines, que actúa como delimitador de la `metadata`(información sobre las propiedades del archivo). Este delimitador consiste de almenos **3** guiones continuos en una misma linea. Es importante que sepas que el delimitador es **obligatorio**, ya que sin este, el posts no se mostrará correctamente.
+
+Técnicamente, no es necesario agregar los metadatos, sin embargo son de gran ayuda a la hora de mantener tus escritos, yo recomiendo utilizarlos tambien para agregar algunas notas ahí.
+
+Vuelog tiene una serie de estilos predefinidos, para ver qué puedes hacer con ellos revisa [Ejemplos de estilos](#/blog/showcase/2016/style-examples)
+
+
+### Etiquetas funcionales
+
+Extisten dos etiquetas especiales en Vuelog para estructurar el contenido de tus posts.
+
+Si tu post es demasiado largo, y deseas solamente mostrar un estracto en la lista de publicaciones, puedes insertar la etiqueta de **extracto**(`<!-- more -->`) en la posición adecuada en tu contenido. Todo lo que se encuentre despues de la etiqueta de  *extracto* se mostrará únicamente en la vista del post. Si agregas más de una etiqueta, solamente se tomará en cuenta la primera.
+
+En la vista de post, un contenido demasiado largo se mostrará como una pagina web super larga. Esto puede no ser del todo agradable al usuario. Puedes hacer una división en tu contenido, para separarlo en múltiples partes. Esto se consigue insertando **etiquetas de paginación**(`<!-- next -->`) en tu contenido. Cada una de las etiquetas creará un salto de página(una nueva paginación).
+ 
+Por favor ten en cuenta que en la vista de lista de posts, la primer etiqueta de paginado es tambien interpretada como una etiqueta de *extracto*. Esto quiere decir que en la vista de lista, un post con múltiples partes solamente mostrará la primera parte.
+
+Para escribir contenido en multiples idiomas, es necesario utilizar las etiquetas de *idioma*. Por favor revisa [soporte multi idioma](#/blog/docs/2017/multiple-languages-support).
+
+### Plantilla de página
+
+Un archivo de página es similar aun archivo de post. La única diferencia es que una página no contiene el concepto de **categoría** y **fecha**. Las etiquetas de *paginado* e *idioma* pueden ser utilizadas tambien.
+
+<!-- es-MX:- -->

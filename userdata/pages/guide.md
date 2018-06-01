@@ -69,11 +69,11 @@ title: Guide
 
 <!-- es-MX:+ -->
 
-#### Overview
+#### Introducción
 
 - [Estructura de archivos Vuelog](#/blog/docs/2016/file-structure-of-vuelog)
 
-#### Documentation
+#### Documentación
 
 - [Personalizar el sitio](#/blog/docs/2017/customize-the-site)
 - [Personalizar el menú de navegación](#/blog/docs/2017/customize-navigation-menu)
