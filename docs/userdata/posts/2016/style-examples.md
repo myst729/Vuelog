@@ -297,3 +297,105 @@ Você também pode inserir `trechos de código na linha` como este, assim como s
 <p><audio src="//myst729.github.io/blog/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
 
 <!-- pt-BR:- -->
+
+<!-- es-MX:+ -->
+
+<blockquote class="tip">
+  <p>Este post  tiene soporte multi idioma. Cambia a otro lenguaje si deseas verlo.</p>
+  <img src="./userdata/images/language-en.png" alt="Language" width="200px" height="50px">
+</blockquote>
+
+### Encabezados
+
+# H1 - Encabezados nivel 1
+## H2 - Encabezados nivel 2
+### H3 - Encabezados nivel 3
+#### H4 - Encabezados nivel 4
+##### H5 - Encabezados nivel 5
+###### H6 - Encabezados nivel 6
+
+### Lista ordenada
+
+1. Lorem ipsum dolor sit amet
+1. Consectetur adipiscing elit
+1. Integer molestie lorem at massa
+1. Facilisis in pretium nisl aliquet
+1. Nulla volutpat aliquam velit
+1. Faucibus porta lacus fringilla vel
+1. Aenean sit amet erat nunc
+1. Eget porttitor lorem
+
+### Lista desordenada
+
++ Lorem ipsum dolor sit amet
++ Consectetur adipiscing elit
++ Integer molestie lorem at massa
++ Facilisis in pretium nisl aliquet
++ Nulla volutpat aliquam velit
++ Faucibus porta lacus fringilla vel
++ Aenean sit amet erat nunc
++ Eget porttitor lorem
+
+<!-- more -->
+
+### Table
+
+| Number | First Name | Last Name | Points |
+| :----: | ---------- | --------- | -----: |
+| 1      | Eve        | Jackson   | 94     |
+| 2      | John       | Doe       | 80     |
+| 3      | Adam       | Johnson   | 67     |
+| 4      | Jill       | Smith     | 50     |
+
+<!-- next -->
+
+<blockquote class="tip">
+  <p>Este post  tiene soporte multi idioma. Cambia a otro lenguaje si deseas verlo.</p>
+  <img src="./userdata/images/language-en.png" alt="Language" width="200px" height="50px">
+</blockquote>
+
+### Remarcado de sintaxis de código.
+
+Aquí tienes el <q>famoso</q> <span class="light">Ejemplo de 10 segundos</span> desde el sitio oficial de [Vue.js](http://vuejs.org/)
+
+
+```html
+<div id="demo">
+  <p>{{message}}</p>
+  <input v-model="message">
+</div>
+```
+
+```js
+var demo = new Vue({
+  el: '#demo',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+```
+
+Para saber más acerca del remarcado de sintaxis puedes leer [Bloques de código con resaltado de sintaxis](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight).
+
+Tambien puedes insertar `código sobre la linea` como este, o bien el símbolo del <kbd>teclado</kbd> que desees. ![Happy](./userdata/images/happy-face.png)
+
+### Citas y consejos
+
+> Esto es una típica cita. Tambien puedes insertar una <q>cita sobre la linea</q>
+
+<blockquote class="tip"><p>Un parrafo con un **tip** luce así.</p></blockquote>
+
+### Multimedia: imágenes, videos y audios.
+
+![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
+
+<p>
+  <video poster="//myst729.github.io/blog/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
+    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  </video>
+</p>
+
+<p><audio src="//myst729.github.io/blog/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+
+<!-- es-MX:- -->

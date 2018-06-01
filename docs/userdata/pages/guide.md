@@ -65,3 +65,26 @@ title: Guide
 - [Exemplos de estilo](#/blog/showcase/2016/style-examples)
 
 <!-- pt-BR:- -->
+
+
+<!-- es-MX:+ -->
+
+#### Introducción
+
+- [Estructura de archivos Vuelog](#/blog/docs/2016/file-structure-of-vuelog)
+
+#### Documentación
+
+- [Personalizar el sitio](#/blog/docs/2017/customize-the-site)
+- [Personalizar el menú de navegación](#/blog/docs/2017/customize-navigation-menu)
+- [Agregar posts y/o páginas](#/blog/docs/2017/add-posts-or-pages)
+- [Publicaciones de author o páginas](#/blog/docs/2017/author-posts-or-pages)
+- [Bloques de código con resaltado de sintaxis](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight)
+- [Soporte multiidioma](#/blog/docs/2017/multiple-languages-support)
+- [Uso de servicios de comentarios](#/blog/docs/2017/use-social-commenting-services)
+
+#### Showcase
+
+- [Ejemplos de estilos](#/blog/showcase/2016/style-examples)
+
+<!-- es-MX:- -->

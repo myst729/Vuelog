@@ -117,3 +117,41 @@ Você pode colocar outros arquvios estáticos no `userdata/` como por exemplo as
 Para entender sobre o processo de publicação de páginas e posts leia [Adicionar posts ou páginas](#/blog/docs/2017/add-posts-or-pages) e [Posts ou páginas por Autor](#/blog/docs/2017/author-posts-or-pages).
 
 <!-- pt-BR:- -->
+
+<!-- es-MX:+ -->
+Aquí tenemos la estructura básica de directorios en Vuelog una vez compilado:
+
+```bash
+/
+├── index.html
+├── static/
+│   ├── css/
+│   └── js/
+└── userdata/
+    ├── database.js
+    ├── pages/
+    │   ├── all-about-vuelog.md
+    │   └── changelog.md
+    └── posts/
+        └── 2016/
+            ├── how-to-add-a-post-or-page.md
+            ├── the-so-called-database.md
+            ├── the-structure-of-vuelog.md
+            └── the-styles.md
+```
+
+Repasemos uno a uno:
+
+- `index.html`: Es el punto de inicio de nuestro sitio. Normalmente no esnecesario modificar nada aquí.
+- `static/`: Este directorio contiene los archivos *core* compilados de Vuelog. **No deberías tocar ninguno de estos archivos, tu sitio podría dejar de funcionar**
+- `userdata/`: Es el directorio donde colocarás los archivos de tus posts y páginas en formato markdown. **No cambies el nombre de este directorio**
+   - `database.js`: El archivo más importante con el cual debes ser cuidadoso. Todas las configuraciones de páginas y posts se encuentra aquí.
+   - `pages/`: Los archivos markdown de las'páginas del sitio se encuentran aquí.
+   - `posts/`: Los archivos markdown de los posts se encuentran aquí, alojadas en subdirectorios por año.
+      - `2016/`: El nombre del directorio indica que loas posts que almacena fueron publicados en el año 2016.
+
+Puedes agregar otros archivos estáticos en 'userdata/', por ejemplo las imágenes referenciadas en tus pages/posts. 
+
+Para ver el procedimiento para publicar páginas/posts puedes leér [Añadir páginas y posts](#/blog/docs/2017/add-posts-or-pages) y [Publicaciones de autor y páginas](#/blog/docs/2017/author-posts-or-pages).
+
+<!-- es-MX:- -->

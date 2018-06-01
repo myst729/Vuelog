@@ -7,7 +7,8 @@ window.VUELOG_DATABASE = {
       'en-US': 'Vuelog',
       'zh-CN': 'Vuelog',
       'de-DE': 'Vuelog',
-      'pt-BR': 'Vuelog'
+      'pt-BR': 'Vuelog',
+      'es-MX': 'Vuelog'
     },
 
     // Put the site brand behind current page in `document.title`.
@@ -27,7 +28,7 @@ window.VUELOG_DATABASE = {
     // Whether footer is visible on `homePath` or not.
     homeFooter: false,
 
-    // Vuelog interface language. Currently only support 'zh-CN' and 'en-US'.
+    // Vuelog interface language. Currently supports 'en-US', 'zh-CN', 'de-DE', 'pt-BR' and 'es-MX'.
     defaultLang: 'en-US',
 
     // Allow/disallow visitors to switch interface language.
@@ -55,7 +56,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Guide',
         'zh-CN': '指南',
         'de-DE': 'Anleitung',
-        'pt-BR': 'Guia'
+        'pt-BR': 'Guia',
+        'es-MX': 'Guía'
       },
       type: 'page',
       path: '/page/guide'
@@ -65,7 +67,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'About',
         'zh-CN': '关于',
         'de-DE': 'Über',
-        'pt-BR': 'Sobre'
+        'pt-BR': 'Sobre',
+        'es-MX': 'Acerca de'
       },
       type: 'page',
       path: '/page/about'
@@ -75,7 +78,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Showcase',
         'zh-CN': '示例',
         'de-DE': 'Beispiele',
-        'pt-BR': 'Exemplos'
+        'pt-BR': 'Exemplos',
+        'es-MX': 'Ejemplos'
       },
       type: 'category',
       path: '/blog/showcase'
@@ -85,7 +89,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Archive',
         'zh-CN': '归档',
         'de-DE': 'Archiv',
-        'pt-BR': 'Arquivo'
+        'pt-BR': 'Arquivo',
+        'es-MX': 'Archivo'
       },
       type: 'archive',
       path: '/archive'
@@ -95,13 +100,14 @@ window.VUELOG_DATABASE = {
         'en-US': 'Links',
         'zh-CN': '链接',
         'de-DE': 'Links',
-        'pt-BR': 'Links'
+        'pt-BR': 'Links',
+        'es-MX': 'Enlaces'
       },
       type: 'dropdown',
       path: '', // (OPTIONAL) dropdown can be routable too if you set a valid route path
       children: [
         {
-          label: { 'en-US': 'Weibo', 'zh-CN': '微博', 'de-DE': 'Weibo', 'pt-BR': 'Weibo' },
+          label: { 'en-US': 'Weibo', 'zh-CN': '微博', 'de-DE': 'Weibo', 'pt-BR': 'Weibo', 'es-MX': 'Weibo' },
           type: 'outgoing',
           link: 'http://weibo.com/myst729'
         },
@@ -125,7 +131,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Vuelog Guide',
         'zh-CN': 'Vuelog 指南',
         'de-DE': 'Vuelog Anleitung',
-        'pt-BR': 'Guia Vuelog'
+        'pt-BR': 'Guia Vuelog',
+        'es-MX': 'Guía Vuelog'
       },
       slug: 'guide',
       exclude: true, // (OPTIONAL) `true` to exclude the page from archive view
@@ -138,7 +145,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'About Vuelog',
         'zh-CN': '关于 Vuelog',
         'de-DE': 'Über Vuelog',
-        'pt-BR': 'Sobre o Vuelog'
+        'pt-BR': 'Sobre o Vuelog',
+        'es-MX': 'Sobre Vuelog'
       },
       slug: 'about'
     },
@@ -147,7 +155,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Changelog',
         'zh-CN': '变更日志',
         'de-DE': 'Änderungen',
-        'pt-BR': 'Changelog'
+        'pt-BR': 'Changelog',
+        'es-MX': 'Registro de cambios'
       },
       slug: 'changelog'
     }
@@ -159,7 +168,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Documentation',
         'zh-CN': '文档',
         'de-DE': 'Dokumentation',
-        'pt-BR': 'Documentação'
+        'pt-BR': 'Documentação',
+        'es-MX': 'Documentación'
       },
       slug: 'docs'
     },
@@ -168,7 +178,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Showcase',
         'zh-CN': '示例',
         'de-DE': 'Beispiele',
-        'pt-BR': 'Exemplos'
+        'pt-BR': 'Exemplos',
+        'es-MX': 'Ejemplos'
       },
       slug: 'showcase'
     }
@@ -181,7 +192,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Multiple languages support',
         'zh-CN': '多语言支持',
         'de-DE': 'Untersützung mehrerer Sprachen',
-        'pt-BR': 'Suporte a vários Idiomas'
+        'pt-BR': 'Suporte a vários Idiomas',
+        'es-MX': 'Soporte multiidioma'
       },
       slug: 'multiple-languages-support',
       category: 'docs',
@@ -192,7 +204,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Use social commenting services',
         'zh-CN': '使用社会化评论服务',
         'de-DE': 'Benutzung sozialer Kommentardienste',
-        'pt-BR': 'Uso de Serviços Sociais de Comentários'
+        'pt-BR': 'Uso de Serviços Sociais de Comentários',
+        'es-MX': 'Uso de servicios de comentarios'
       },
       slug: 'use-social-commenting-services',
       category: 'docs',
@@ -204,7 +217,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Insert code blocks with syntax highlight',
         'zh-CN': '插入语法高亮的代码块',
         'de-DE': 'Einfügen von Code Blöcken mit Syntax Highlighting',
-        'pt-BR': 'Inserir blocos de código com realce de sintaxe'
+        'pt-BR': 'Inserir blocos de código com realce de sintaxe',
+        'es-MX': 'Bloques de código con resaltado de sintaxis'
       },
       slug: 'insert-code-blocks-with-syntax-highlight',
       category: 'docs',
@@ -215,7 +229,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Author posts or pages',
         'zh-CN': '编写文章或页面',
         'de-DE': 'Beiträge und Seiten verfassen',
-        'pt-BR': 'Posts ou Páginas por Autor'
+        'pt-BR': 'Posts ou Páginas por Autor',
+        'es-MX': 'Publicaciones de author o páginas'
       },
       slug: 'author-posts-or-pages',
       category: 'docs',
@@ -227,7 +242,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Add posts or pages',
         'zh-CN': '新建文章或页面',
         'de-DE': 'Beiträge und Seiten hinzufügen',
-        'pt-BR': 'Adicionar Posts ou Páginas'
+        'pt-BR': 'Adicionar Posts ou Páginas',
+        'es-MX': 'Agregar posts o páginas'
       },
       slug: 'add-posts-or-pages',
       category: 'docs',
@@ -238,7 +254,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Customize navigation menu',
         'zh-CN': '自定义导航菜单',
         'de-DE': 'Navigationsmenü anpassen',
-        'pt-BR': 'Customizar o menu de navegação'
+        'pt-BR': 'Customizar o menu de navegação',
+        'es-MX': 'Menú de navegación personalizado'
       },
       slug: 'customize-navigation-menu',
       category: 'docs',
@@ -249,7 +266,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Customize the site',
         'zh-CN': '自定义站点',
         'de-DE': 'Seite anpassen',
-        'pt-BR': 'Customizar o site'
+        'pt-BR': 'Customizar o site',
+        'es-MX': 'Personalizar el sitio'
       },
       slug: 'customize-the-site',
       category: 'docs',
@@ -261,7 +279,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'File structure of Vuelog',
         'zh-CN': 'Vuelog 文件结构',
         'de-DE': 'Dateistruktur von Vuelog',
-        'pt-BR': 'Estrutura do Diretório do Vuelog'
+        'pt-BR': 'Estrutura do Diretório do Vuelog',
+        'es-MX': 'Estructura de archivos Vuelog'
       },
       slug: 'file-structure-of-vuelog',
       category: 'docs',
@@ -272,7 +291,8 @@ window.VUELOG_DATABASE = {
         'en-US': 'Style examples',
         'zh-CN': '样式示例',
         'de-DE': 'Style Beispiele',
-        'pt-BR': 'Exemplos de estilo'
+        'pt-BR': 'Exemplos de estilo',
+        'es-MX': 'Ejemplos de estilo'
       },
       slug: 'style-examples',
       category: 'showcase',

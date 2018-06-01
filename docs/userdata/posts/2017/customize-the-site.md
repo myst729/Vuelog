@@ -298,3 +298,98 @@ markedOptions: {}
 Vuelog usa [marked](https://github.com/chjj/marked) para renderizar os markdowns. As configurações padrão para renderizar o marked no Vuelog são, de alguma forma, baseado em sua opinião. Se você não gosta, você pode customizá-lo. Por favor leia a [documentação](https://github.com/chjj/marked#options-1) do Marked para ajuda.
 
 <!-- pt-BR:- -->
+
+<!-- es-MX:+ -->
+
+Puede que las configuraciones por default de Vuelog cumplan o no con tus necesidades. Puedes modificar las propiedades de `config` en el archivo `userdata/database.js`
+
+
+### En general
+
+```js
+// El nombre de tu sitio, será mostrado en la ventana de tu navegador y en el encabezado del sitio.
+brand: {'en-US': 'Vuelog Site', 'zh-CN': 'Vuelog 站点', 'pt-BR': 'Site do Vuelog', 'es-MX': 'Mi sitio'},
+
+// Pone la marca del sitio detras de la página actual en `document.title`.
+brandTrailing: false,
+
+// La imagen mostrada a la derecha de la marca en el encabezado.
+logo: './static/vuelog.svg',
+
+// La ruta a la carpeta raíz que sirve tu sitio, debe empezar y terminar con `/`.
+// establece `/` si tu sitio se encuentra en la raíz de tu dominio.
+base: '/',
+```
+El campo `brand` tiene soporte multi idioma, para más información visita [Soporte multi idioma](#/blog/docs/2017/multiple-languages-support).
+
+Por default, el campo `document.title` de la página actual es una combinación de el nombre del sitio y el título de la página. Si quieres invertir esto, establece `brandTrailing` a `true`.
+
+Tu logo puede ser de cualquier tamaño. mapa de bits o vector. Vuelog la redimensionará automaticamente para acoplarse al *layout* de la página.
+
+Indicale a Vuelog dónde se encuentra almacendo tu sitop a través del atributo `base`. Por favor ten en cuenta que si tu sitio se encuentra en una subcarpeta, deberás indicar esto en el campo `base`. Por ejemplo, si tu sitio se enceuntra en `http://example.com/site`, entonces `base` debe ser igual a `/site/`. con diagonales al principio y al final.
+
+### Página principal
+
+```js
+// La ruta a seguir cuando visitas `/`.
+// Establece `/home`, `/blog` o cualquier ruta válida quenecesites.
+homePath: '/home',
+
+// Establece si el pie de página es visible o no.
+homeFooter: false,
+```
+En el empaquetado *dist*, *homepage* es establecido en `/home`. - Una breve introducción del proyecto **VueLog**
+
+![Vuelog](./userdata/images/homepage-en.png)
+
+Puedes cambiar esto a la lista de posts estableciendo `homepage` a `/blog`. O es posible que desees redirigirlo a una página que tu establezcas, por ejemplo `/page/homepage`. De esta forma tienes una página personalizada.
+
+Puede que tambien desees ocultar el pie de página en la página principal. puedes hacer esto con `homeFooter` establecido en `false`.
+
+### Idiomas
+
+```js
+// Idioma de la intercade de Vuelog. Actualmente soporta 'zh-Ch', 'en-Us', 'pt-BR' y 'es-Mx'.
+defaultLang: 'en-US',
+
+// Permitir/denegar a los usuarios cambiar el idioma.
+switchLang: true,
+
+// Idiomas disponibles para cambiar. Deben ser idiomas soportados, o bien dejar vacio.
+selectedLangs: [],
+```
+Vuelog soporta multiples idiomas. Acutalmente solo Chino simplificado ('zh-CN'), Inglés Americano ('en-Us'), Portugues de Brasil ('pt-BR') y Español México ('es-MX').
+
+- Language defined with `defaultLang` will be set as the default language.
+- With `switchLang`, you can decide whether the visitors could switch language on the fly.
+- Set `selectedLangs` as a subset of supported languages to let the visitors to switch. Leave it empty enables all supported languages.
+
+### Posts
+
+```js
+// Número de posts listados en la vista de blog/categoría.
+postsCount: 3,
+```
+Este campo establece el número de posts en la vista de lista. Por ejemplo si estableces este campo en **7**, entonces se mostrarán 7 posts como máximo, los demás serán mostrados en la siguiente página.
+
+### Comentarios
+
+```js
+// Llena este campo con el *shortname* que configures en Disqus para integrarlo a tu sitio.
+disqusShortname: '',
+
+// Llena este campo con el uid para integrar LiveRe en tu sitio.
+livereUid: '',
+```
+
+Estos campos son de gran ayuda si desesas habilitar comentarios en tu sitio. Para más información lee [Uso de comentarios sociales](#/blog/docs/2017/use-social-commenting-services).
+
+### Markdown
+
+```js
+// opciones para markdown, visita see https://github.com/chjj/marked#options-1 para más detalles.
+markedOptions: {}
+```
+Vuelog utiliza [marked](https://github.com/chjj/marked) para renderizar el contenido markdown. Las opciones por default para el render en Vuelog estan basados en algunas opiniones. Si deseas puedes personalizarlas con esta opción. Para obtener ayuda revisa [documentacion marked](https://github.com/chjj/marked#options-1).
+
+<!-- es-MX:- -->
