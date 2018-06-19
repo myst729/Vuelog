@@ -187,6 +187,7 @@
       display block
       font-size .9em
       padding 0 1.4em
+      white-space nowrap
     
       &:hover
         color #42b983
@@ -221,7 +222,8 @@
 
     &:hover
       .nav-dropdown
-        left -15px
+        left auto
+        right -10px
 
       > a:after
       > span:after
