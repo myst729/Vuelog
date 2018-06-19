@@ -324,10 +324,6 @@
     header
       padding 10px 40px
 
-    .nav-dropdown-container:hover .nav-dropdown
-      left auto
-      right -30px
-
   @media screen and (max-width: 999px)
     .header-wrap
       box-shadow none
