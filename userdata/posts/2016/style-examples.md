@@ -93,13 +93,13 @@ You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> s
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/blog/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/blog/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- en-US:- -->
 
@@ -194,17 +194,18 @@ var demo = new Vue({
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/blog/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/blog/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- zh-CN:- -->
 
 <!-- pt-BR:+ -->
+
 <blockquote class="tip">
   <p>Este post suporta vários idiomas, sinta-se à vontade para alterar a linguagem que lhe proporcione melhor visualização.</p>
   <img src="./userdata/images/language-en.png" alt="Language" width="200px" height="50px">
@@ -288,13 +289,13 @@ Você também pode inserir `trechos de código na linha` como este, assim como s
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/blog/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/blog/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- pt-BR:- -->
 
@@ -390,12 +391,12 @@ Tambien puedes insertar `código sobre la linea` como este, o bien el símbolo d
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/blog/media/vuelog/big-buck-bunny.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.mp4" type="video/mp4">
-    <source src="//myst729.github.io/blog/media/vuelog/big-buck-bunny.webm" type="video/webm">
+  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/blog/media/vuelog/vali-naar-vinden-graater.mp3" preload="metadata" controls></audio></p>
+<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- es-MX:- -->

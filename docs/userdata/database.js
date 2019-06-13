@@ -109,7 +109,7 @@ window.VUELOG_DATABASE = {
         {
           label: { 'en-US': 'Weibo', 'zh-CN': '微博', 'de-DE': 'Weibo', 'pt-BR': 'Weibo', 'es-MX': 'Weibo' },
           type: 'outgoing',
-          link: 'http://weibo.com/myst729'
+          link: 'https://weibo.com/myst729'
         },
         {
           label: 'GitHub',

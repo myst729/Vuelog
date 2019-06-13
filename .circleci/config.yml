@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  ci:
+    docker:
+      - image: circleci/node:8.9.4-stretch-browsers
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+      - run: npm run unit
+      - run: bash <(curl -s https://codecov.io/bash)
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - ci
