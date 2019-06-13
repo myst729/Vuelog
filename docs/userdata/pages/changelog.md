@@ -2,6 +2,11 @@ title: Changelog (since v0.4.0)
 ------------------------------------
 <blockquote class="tip"><p>All notable changes to the Vuelog project after v0.4.0 are documented.</p></blockquote>
 
+### 2.14.4 - 2019-06-15
+
+#### Changed
+- Update CircleCI config to 2.0
+
 ### 2.14.3 - 2018-06-01
 
 #### Added

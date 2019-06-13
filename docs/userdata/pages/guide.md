@@ -14,7 +14,6 @@ title: Guide
 - [Author posts or pages](#/blog/docs/2017/author-posts-or-pages)
 - [Insert code blocks with syntax highlight](#/blog/docs/2017/insert-code-blocks-with-syntax-highlight)
 - [Multiple languages support](#/blog/docs/2017/multiple-languages-support)
-- [Use social commenting services](#/blog/docs/2017/use-social-commenting-services)
 
 #### Showcase
 
