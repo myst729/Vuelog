@@ -6,6 +6,7 @@ import router from './router'
 import store from './store'
 import Vuelog from './Vuelog'
 import './assets/styles/index.styl'
+import { brand, project, version, website } from '../package'
 
 FastClick.attach(document.body)
 sync(store, router)
@@ -18,3 +19,5 @@ const app = new Vue({
 })
 
 app.$mount('#app')
+
+window[brand] = { version, url: website, repo: project }
