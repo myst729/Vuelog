@@ -93,13 +93,13 @@ You can also insert `inline code snippet` like this, as well as <kbd>key</kbd> s
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
+  <video poster="./userdata/media/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="./userdata/media/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="./userdata/media/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
+<p><audio src="./userdata/media/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- en-US:- -->
 
@@ -194,13 +194,13 @@ var demo = new Vue({
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
+  <video poster="./userdata/media/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="./userdata/media/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="./userdata/media/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
+<p><audio src="./userdata/media/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- zh-CN:- -->
 
@@ -289,13 +289,13 @@ Você também pode inserir `trechos de código na linha` como este, assim como s
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
+  <video poster="./userdata/media/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="./userdata/media/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="./userdata/media/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
+<p><audio src="./userdata/media/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- pt-BR:- -->
 
@@ -391,12 +391,12 @@ Tambien puedes insertar `código sobre la linea` como este, o bien el símbolo d
 ![Chandeen Echoes](./userdata/images/chandeen-echoes.jpg)
 
 <p>
-  <video poster="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.mp4" type="video/mp4">
-    <source src="//myst729.github.io/assets/vuelog/love-your-neighbor-as-yourself.webm" type="video/webm">
+  <video poster="./userdata/media/love-your-neighbor-as-yourself.jpg" preload="metadata" controls>
+    <source src="./userdata/media/love-your-neighbor-as-yourself.mp4" type="video/mp4">
+    <source src="./userdata/media/love-your-neighbor-as-yourself.webm" type="video/webm">
   </video>
 </p>
 
-<p><audio src="//myst729.github.io/assets/vuelog/not-forgotten.mp3" preload="metadata" controls></audio></p>
+<p><audio src="./userdata/media/not-forgotten.mp3" preload="metadata" controls></audio></p>
 
 <!-- es-MX:- -->
