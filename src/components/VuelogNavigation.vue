@@ -10,29 +10,29 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../utils'
+import { retrieveByLanguage } from '../utils'
 
-  export default {
-    name: 'vuelog-navigation',
+export default {
+  name: 'vuelog-navigation',
 
-    props: ['prev', 'next'],
+  props: ['prev', 'next'],
 
-    computed: {
-      active () {
-        return this.$store.getters.lang
-      },
-
-      config () {
-        return this.$store.getters.config
-      }
+  computed: {
+    active () {
+      return this.$store.getters.lang
     },
 
-    methods: {
-      i18nify (content) {
-        return retrieveByLanguage(content, this.active, this.config.defaultLang)
-      }
+    config () {
+      return this.$store.getters.config
+    }
+  },
+
+  methods: {
+    i18nify (content) {
+      return retrieveByLanguage(content, this.active, this.config.defaultLang)
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

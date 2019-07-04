@@ -15,91 +15,91 @@
 </template>
 
 <script>
-  import VuelogHeader from './components/VuelogHeader'
-  import VuelogFooter from './components/VuelogFooter'
+import VuelogHeader from './components/VuelogHeader'
+import VuelogFooter from './components/VuelogFooter'
 
-  export default {
-    name: 'vuelog',
+export default {
+  name: 'vuelog',
 
-    components: {
-      VuelogHeader,
-      VuelogFooter
+  components: {
+    VuelogHeader,
+    VuelogFooter
+  },
+
+  computed: {
+    active () {
+      return this.$store.getters.lang
     },
 
-    computed: {
-      active () {
-        return this.$store.getters.lang
-      },
+    config () {
+      return this.$store.getters.config
+    },
 
-      config () {
-        return this.$store.getters.config
-      },
+    title () {
+      return this.$store.getters.title
+    },
 
-      title () {
-        return this.$store.getters.title
-      },
+    footerVisible () {
+      return (this.$route.path !== this.config.homePath) || this.config.homeFooter
+    },
 
-      footerVisible () {
-        return (this.$route.path !== this.config.homePath) || this.config.homeFooter
-      },
+    routeClass () {
+      var rootRoute = this.$route.name.replace('-more', '')
+      return `vuelog-${rootRoute}-view`
+    },
 
-      routeClass () {
-        var rootRoute = this.$route.name.replace('-more', '')
-        return `vuelog-${rootRoute}-view`
-      },
-
-      routeKey () {
-        // Avoid router-view reload when routing from one part to another in a multiple parts page or post.
-        var path = this.$route.path.replace(/\/$/, '')
-        if (this.$route.name === 'page-more' || this.$route.name === 'post-more') {
-          // By removing the `part` param, different parts of a multiple parts page or post will share the same key.
-          return path.replace(/\/\d+$/, '')
-        }
-        var contentRoutes = ['posts', 'posts-more', 'category', 'category-more', 'post', 'post-more', 'page', 'page-more']
-        if (contentRoutes.indexOf(this.$route.name) > -1) {
-          return path
-        }
-        return path + '@' + this.active
+    routeKey () {
+      // Avoid router-view reload when routing from one part to another in a multiple parts page or post.
+      var path = this.$route.path.replace(/\/$/, '')
+      if (this.$route.name === 'page-more' || this.$route.name === 'post-more') {
+        // By removing the `part` param, different parts of a multiple parts page or post will share the same key.
+        return path.replace(/\/\d+$/, '')
       }
-    },
-
-    metaInfo () {
-      return {
-        title: this.title,
-        htmlAttrs: {
-          lang: this.active
-        }
+      var contentRoutes = ['posts', 'posts-more', 'category', 'category-more', 'post', 'post-more', 'page', 'page-more']
+      if (contentRoutes.indexOf(this.$route.name) > -1) {
+        return path
       }
-    },
+      return path + '@' + this.active
+    }
+  },
 
-    methods: {
-      closeSideMenu () {
-        this.$store.dispatch('sideMenu', false)
-      },
-
-      setLanguage (lang) {
-        this.$store.dispatch('systemLanguage', lang)
-      },
-
-      resetScroll () {
-        window.scrollTo(0, 0)
+  metaInfo () {
+    return {
+      title: this.title,
+      htmlAttrs: {
+        lang: this.active
       }
+    }
+  },
+
+  methods: {
+    closeSideMenu () {
+      this.$store.dispatch('sideMenu', false)
     },
 
-    created () {
-      if (this.$route.query.lang) {
-        this.setLanguage(this.$route.query.lang)
-      }
+    setLanguage (lang) {
+      this.$store.dispatch('systemLanguage', lang)
     },
 
-    watch: {
-      $route (to, from) {
-        if (to.query.lang !== from.query.lang) {
-          this.setLanguage(to.query.lang)
-        }
+    resetScroll () {
+      window.scrollTo(0, 0)
+    }
+  },
+
+  created () {
+    if (this.$route.query.lang) {
+      this.setLanguage(this.$route.query.lang)
+    }
+  },
+
+  watch: {
+    $route (to, from) {
+      if (to.query.lang !== from.query.lang) {
+        this.setLanguage(to.query.lang)
       }
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

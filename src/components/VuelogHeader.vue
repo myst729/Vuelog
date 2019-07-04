@@ -3,7 +3,7 @@
     <header>
       <h1 class="brand">
         <router-link to="/">
-          <img :src="config.logo">
+          <img :src="`userdata/${config.logo}`">
           <span v-text="i18nify(config.brand)"></span>
         </router-link>
       </h1>
@@ -49,58 +49,58 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../utils'
+import { retrieveByLanguage } from '../utils'
 
-  export default {
-    name: 'vuelog-header',
+export default {
+  name: 'vuelog-header',
 
-    computed: {
-      active () {
-        return this.$store.getters.lang
-      },
-
-      menu () {
-        return this.$store.getters.menu
-      },
-
-      config () {
-        return this.$store.getters.config
-      },
-
-      navigation () {
-        return this.$store.getters.navigation
-      }
+  computed: {
+    active () {
+      return this.$store.getters.lang
     },
 
-    methods: {
-      closeSideMenu () {
-        this.$store.dispatch('sideMenu', false)
-      },
-
-      toggleSideMenu () {
-        this.$store.dispatch('sideMenu', !this.menu)
-      },
-
-      i18nify (content) {
-        return retrieveByLanguage(content, this.active, this.config.defaultLang)
-      }
+    menu () {
+      return this.$store.getters.menu
     },
 
-    mounted () {
-      var menuIcon = this.$el.querySelector('.menu-icon')
-      var sideMenu = this.$el.querySelector('.side-menu')
-      document.body.addEventListener('click', e => {
-        if (this.menu && e.target !== menuIcon && !sideMenu.contains(e.target)) {
-          this.closeSideMenu()
-        }
-      })
-      document.body.addEventListener('touchmove', e => {
-        if (this.menu) {
-          e.preventDefault()
-        }
-      })
+    config () {
+      return this.$store.getters.config
+    },
+
+    navigation () {
+      return this.$store.getters.navigation
     }
+  },
+
+  methods: {
+    closeSideMenu () {
+      this.$store.dispatch('sideMenu', false)
+    },
+
+    toggleSideMenu () {
+      this.$store.dispatch('sideMenu', !this.menu)
+    },
+
+    i18nify (content) {
+      return retrieveByLanguage(content, this.active, this.config.defaultLang)
+    }
+  },
+
+  mounted () {
+    var menuIcon = this.$el.querySelector('.menu-icon')
+    var sideMenu = this.$el.querySelector('.side-menu')
+    document.body.addEventListener('click', e => {
+      if (this.menu && e.target !== menuIcon && !sideMenu.contains(e.target)) {
+        this.closeSideMenu()
+      }
+    })
+    document.body.addEventListener('touchmove', e => {
+      if (this.menu) {
+        e.preventDefault()
+      }
+    })
   }
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -188,7 +188,7 @@
       font-size .9em
       padding 0 1.4em
       white-space nowrap
-    
+
       &:hover
         color #42b983
         border-bottom none

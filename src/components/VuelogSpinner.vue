@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'vuelog-spinner'
-  }
+export default {
+  name: 'vuelog-spinner'
+}
 </script>
 
 <style lang="stylus" scoped>

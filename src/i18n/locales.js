@@ -9,7 +9,7 @@ export const languages = {
   'zh-CN': '简体中文',
   'de-DE': 'Deutsch',
   'pt-BR': 'Português Brasileiro',
-  'es-MX': 'Español México',
+  'es-MX': 'Español México'
 }
 
 export const locales = {
@@ -17,5 +17,5 @@ export const locales = {
   'zh-CN': zhCN,
   'de-DE': deDE,
   'pt-BR': ptBR,
-  'es-MX': esMX,
+  'es-MX': esMX
 }
