@@ -9,45 +9,45 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../utils'
+import { retrieveByLanguage } from '../utils'
 
-  export default {
-    name: 'vuelog-home',
+export default {
+  name: 'vuelog-home',
 
-    computed: {
-      active () {
-        return this.$store.getters.lang
-      },
-
-      config () {
-        return this.$store.getters.config
-      },
-
-      system () {
-        return this.$store.getters.system
-      },
-
-      download () {
-        return `${this.system.project}/releases/latest`
-      },
-
-      title () {
-        return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
-      }
+  computed: {
+    active () {
+      return this.$store.getters.lang
     },
 
-    created () {
-      this.$store.dispatch('documentTitle', this.title)
+    config () {
+      return this.$store.getters.config
     },
 
-    watch: {
-      $route (to, from) {
-        if (to.query.lang !== from.query.lang) {
-          this.$store.dispatch('documentTitle', this.title)
-        }
+    system () {
+      return this.$store.getters.system
+    },
+
+    download () {
+      return `${this.system.project}/releases/latest`
+    },
+
+    title () {
+      return retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+    }
+  },
+
+  created () {
+    this.$store.dispatch('documentTitle', this.title)
+  },
+
+  watch: {
+    $route (to, from) {
+      if (to.query.lang !== from.query.lang) {
+        this.$store.dispatch('documentTitle', this.title)
       }
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

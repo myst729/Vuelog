@@ -64,7 +64,7 @@
 
       <h2 v-text="$t('archive.pages')"></h2>
       <ul>
-        <li v-for="(page, index) in archive.pages" :key="index" v-if="!page.exclude">
+        <li v-for="(page, index) in archive.pages" :key="index">
           <router-link :to="{name: 'page', params: {page: page.slug}}" v-text="i18nify(page.title)"></router-link>
         </li>
       </ul>
@@ -73,117 +73,119 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../utils'
+import { retrieveByLanguage } from '../utils'
 
-  export default {
-    name: 'vuelog-archive',
+export default {
+  name: 'vuelog-archive',
 
-    computed: {
-      displayType () {
-        return this.$route.name
-      },
+  computed: {
+    displayType () {
+      return this.$route.name
+    },
 
-      active () {
-        return this.$store.getters.lang
-      },
+    active () {
+      return this.$store.getters.lang
+    },
 
-      config () {
-        return this.$store.getters.config
-      },
+    config () {
+      return this.$store.getters.config
+    },
 
-      postsByCategory () {
-        return this.$store.getters.postsByCategory
-      },
+    postsByCategory () {
+      return this.$store.getters.postsByCategory
+    },
 
-      postsByYear () {
-        return this.$store.getters.postsByYear
-      },
+    postsByYear () {
+      return this.$store.getters.postsByYear
+    },
 
-      pages () {
-        return this.$store.getters.pages
-      },
+    pages () {
+      return this.$store.getters.pages.filter(page => !page.exclude)
+    },
 
-      archive () {
-        switch (this.displayType) {
-          case 'archive-category':
-            return this.getPostsInCategory(this.$route.params.category)
-          case 'archive-year':
-            return this.getPostsInYear(+this.$route.params.year)
-          case 'archive':
-            return this.getAllPostsAndPages()
-        }
-      },
-
-      title () {
-        var title = this.$t('archive.title')
-        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
-        if (this.displayType === 'archive-category') {
-          title += ' | ' + retrieveByLanguage(this.archive.title, this.active, this.config.defaultLang)
-        }
-        if (this.displayType === 'archive-year') {
-          title += ` | ${this.archive.year}`
-        }
-        if (this.config.brandTrailing) {
-          return title + ' | ' + brand
-        } else {
-          return brand + ' | ' + title
-        }
+    archive () {
+      switch (this.displayType) {
+        case 'archive-category':
+          return this.getPostsInCategory(this.$route.params.category)
+        case 'archive-year':
+          return this.getPostsInYear(+this.$route.params.year)
+        case 'archive':
+          return this.getAllPostsAndPages()
+        default:
+          return this.getAllPostsAndPages()
       }
     },
 
-    methods: {
-      oops () {
-        this.$router.replace('/oops')
-      },
+    title () {
+      var title = this.$t('archive.title')
+      var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+      if (this.displayType === 'archive-category') {
+        title += ' | ' + retrieveByLanguage(this.archive.title, this.active, this.config.defaultLang)
+      }
+      if (this.displayType === 'archive-year') {
+        title += ` | ${this.archive.year}`
+      }
+      if (this.config.brandTrailing) {
+        return title + ' | ' + brand
+      } else {
+        return brand + ' | ' + title
+      }
+    }
+  },
 
-      i18nify (content) {
-        return retrieveByLanguage(content, this.active, this.config.defaultLang)
-      },
+  methods: {
+    oops () {
+      this.$router.replace('/oops')
+    },
 
-      getPostsInCategory (slug) {
-        for (var i = 0; i < this.postsByCategory.length; i++) {
-          if (this.postsByCategory[i].slug === slug) {
-            return this.postsByCategory[i]
-          }
+    i18nify (content) {
+      return retrieveByLanguage(content, this.active, this.config.defaultLang)
+    },
+
+    getPostsInCategory (slug) {
+      for (var i = 0; i < this.postsByCategory.length; i++) {
+        if (this.postsByCategory[i].slug === slug) {
+          return this.postsByCategory[i]
         }
+      }
+      this.oops()
+      return { posts: [], slug: '', title: '' }
+    },
+
+    getPostsInYear (year) {
+      if (Number.isNaN(year)) {
         this.oops()
-        return { posts: [], slug: '', title: '' }
-      },
-
-      getPostsInYear (year) {
-        if (Number.isNaN(year)) {
-          this.oops()
-          return { posts: [], year }
-        }
-        for (var i = 0; i < this.postsByYear.length; i++) {
-          if (this.postsByYear[i].year === year) {
-            return this.postsByYear[i]
-          }
-        }
         return { posts: [], year }
-      },
-
-      getAllPostsAndPages () {
-        return {
-          postsByCategory: this.postsByCategory,
-          postsByYear: this.postsByYear,
-          pages: this.pages
+      }
+      for (var i = 0; i < this.postsByYear.length; i++) {
+        if (this.postsByYear[i].year === year) {
+          return this.postsByYear[i]
         }
       }
+      return { posts: [], year }
     },
 
-    created () {
-      this.$store.dispatch('documentTitle', this.title)
-    },
+    getAllPostsAndPages () {
+      return {
+        postsByCategory: this.postsByCategory,
+        postsByYear: this.postsByYear,
+        pages: this.pages
+      }
+    }
+  },
 
-    watch: {
-      $route (to, from) {
-        if (to.query.lang !== from.query.lang) {
-          this.$store.dispatch('documentTitle', this.title)
-        }
+  created () {
+    this.$store.dispatch('documentTitle', this.title)
+  },
+
+  watch: {
+    $route (to, from) {
+      if (to.query.lang !== from.query.lang) {
+        this.$store.dispatch('documentTitle', this.title)
       }
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

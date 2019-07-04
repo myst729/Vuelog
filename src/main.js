@@ -6,18 +6,16 @@ import router from './router'
 import store from './store'
 import Vuelog from './Vuelog'
 import './assets/styles/index.styl'
-import { brand, project, version, website } from '../package'
+import { project, version, website } from '../package'
 
+Object.assign(window.Vuelog, { version, url: website, repo: project })
 FastClick.attach(document.body)
+Vue.config.productionTip = false
 sync(store, router)
 
-const app = new Vue({
+new Vue({
   i18n,
   router,
   store,
   ...Vuelog
-})
-
-app.$mount('#app')
-
-window[brand] = { version, url: website, repo: project }
+}).$mount('#app')

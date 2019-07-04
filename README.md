@@ -16,37 +16,43 @@
 | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✘ |
 
 
-## Build Setup
-
-```bash
-# install dependencies
+## Project setup
+```
 npm install
+```
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-# build for production with minification, and update documentation as well
+### Compiles and minifies for production
+```
 npm run build
+```
 
-# build for production, and view the bundle analyzer report
-npm run report
-
-# build for production, but dependencies are loaded from jsDelivr CDN
-npm run lite
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
+### Run your tests
+```
 npm run test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Lints and fixes files
+```
+npm run lint
+```
 
-If you just want to write something, grab the latest release package [here](https://github.com/myst729/Vuelog/releases/latest).
+### Run your end-to-end tests
+```
+npm run test:e2e
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ## Documentation
@@ -62,4 +68,4 @@ https://vuelog.js.org/#/page/changelog/
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2016-2018 [Leo Deng](https://myst729.github.io/)
+Copyright (c) 2016-2019 [Leo Deng](https://myst729.github.io/)

@@ -7,43 +7,43 @@
 </template>
 
 <script>
-  import { retrieveByLanguage } from '../utils'
+import { retrieveByLanguage } from '../utils'
 
-  export default {
-    name: 'vuelog-oops',
+export default {
+  name: 'vuelog-oops',
 
-    computed: {
-      active () {
-        return this.$store.getters.lang
-      },
+  computed: {
+    active () {
+      return this.$store.getters.lang
+    },
 
-      config () {
-        return this.$store.getters.config
-      },
+    config () {
+      return this.$store.getters.config
+    },
 
-      title () {
-        var title = this.$t('oops.title')
-        var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
-        if (this.config.brandTrailing) {
-          return title + ' | ' + brand
-        } else {
-          return brand + ' | ' + title
-        }
+    title () {
+      var title = this.$t('oops.title')
+      var brand = retrieveByLanguage(this.config.brand, this.active, this.config.defaultLang)
+      if (this.config.brandTrailing) {
+        return title + ' | ' + brand
+      } else {
+        return brand + ' | ' + title
       }
-    },
+    }
+  },
 
-    created () {
-      this.$store.dispatch('documentTitle', this.title)
-    },
+  created () {
+    this.$store.dispatch('documentTitle', this.title)
+  },
 
-    watch: {
-      $route (to, from) {
-        if (to.query.lang !== from.query.lang) {
-          this.$store.dispatch('documentTitle', this.title)
-        }
+  watch: {
+    $route (to, from) {
+      if (to.query.lang !== from.query.lang) {
+        this.$store.dispatch('documentTitle', this.title)
       }
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

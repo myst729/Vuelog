@@ -8,27 +8,27 @@
 </template>
 
 <script>
-  import VuelogLanguage from './VuelogLanguage'
+import VuelogLanguage from './VuelogLanguage'
 
-  export default {
-    name: 'vuelog-footer',
+export default {
+  name: 'vuelog-footer',
 
-    components: {
-      VuelogLanguage
+  components: {
+    VuelogLanguage
+  },
+
+  computed: {
+    enableSwitch () {
+      var switchLang = this.$store.getters.config.switchLang
+      var count = Object.keys(this.$store.getters.languages).length
+      return switchLang && (count > 1)
     },
 
-    computed: {
-      enableSwitch () {
-        var switchLang = this.$store.getters.config.switchLang
-        var count = Object.keys(this.$store.getters.languages).length
-        return switchLang && (count > 1)
-      },
-
-      system () {
-        return this.$store.getters.system
-      }
+    system () {
+      return this.$store.getters.system
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

@@ -8,34 +8,34 @@
 </template>
 
 <script>
-  export default {
-    name: 'vuelog-pagination',
+export default {
+  name: 'vuelog-pagination',
 
-    props: ['total', 'type'],
+  props: ['total', 'type'],
 
-    computed: {
-      routeName () {
-        return `${this.type}-more`
-      },
+  computed: {
+    routeName () {
+      return `${this.type}-more`
+    },
 
-      parts () {
-        var results = []
-        for (var i = 1; i <= this.total; i++) {
-          var part = {
-            name: this.routeName,
-            params: Object.assign({}, this.$route.params, { part: `${i}` }),
-            query: this.$route.query
-          }
-          results.push(part)
+    parts () {
+      var results = []
+      for (var i = 1; i <= this.total; i++) {
+        var part = {
+          name: this.routeName,
+          params: Object.assign({}, this.$route.params, { part: `${i}` }),
+          query: this.$route.query
         }
-        return results
-      },
-
-      active () {
-        return (this.$route.params.part || 1) - 1
+        results.push(part)
       }
+      return results
+    },
+
+    active () {
+      return (this.$route.params.part || 1) - 1
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

@@ -8,39 +8,39 @@
 </template>
 
 <script>
-  export default {
-    name: 'vuelog-language',
+export default {
+  name: 'vuelog-language',
 
-    computed: {
-      active () {
-        return this.$store.getters.lang
-      },
-
-      languages () {
-        return this.$store.getters.languages
-      }
+  computed: {
+    active () {
+      return this.$store.getters.lang
     },
 
-    data () {
-      return {
-        selected: ''
-      }
-    },
-
-    methods: {
-      switchLanguage () {
-        this.$router.push({
-          name: this.$route.name,
-          params: this.$route.params,
-          query: Object.assign({}, this.$route.query, { lang: this.selected })
-        })
-      }
-    },
-
-    created () {
-      this.selected = this.active
+    languages () {
+      return this.$store.getters.languages
     }
+  },
+
+  data () {
+    return {
+      selected: ''
+    }
+  },
+
+  methods: {
+    switchLanguage () {
+      this.$router.push({
+        name: this.$route.name,
+        params: this.$route.params,
+        query: Object.assign({}, this.$route.query, { lang: this.selected })
+      })
+    }
+  },
+
+  created () {
+    this.selected = this.active
   }
+}
 </script>
 
 <style lang="stylus" scoped>
