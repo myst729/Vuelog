@@ -55,7 +55,7 @@ router.beforeEach((to, from, next) => {
 
   // Param `part` is presented but not a natural number
   if (to.params.part) {
-    let natural = Number.parseInt(to.params.part, 10)
+    const natural = Number.parseInt(to.params.part, 10)
     if (!Number.isNaN(natural) && `${natural}` !== to.params.part) {
       route.params.part = `${natural}`
       modified = true

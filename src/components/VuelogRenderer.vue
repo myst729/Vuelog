@@ -208,7 +208,7 @@ export default {
     // Well, it may not be a good idea. The API will **silently** eat some tags, like <audio>, <video>. Do it at your own risk.
     // Want the GitHub look and feel too? Check out [sindresorhus/github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
     renderGitHubMarkdown (md) {
-      const header = { 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }
+      const header = { Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }
       const body = JSON.stringify({ text: md, mode: 'markdown' })
       return this.promiseRequest('POST', 'https://api.github.com/markdown', header, body)
     },
