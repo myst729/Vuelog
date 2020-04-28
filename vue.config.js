@@ -32,5 +32,6 @@ const devConfig = {
 
 module.exports = {
   outputDir: 'docs',
+  publicPath: '',
   configureWebpack: process.env.NODE_ENV === 'production' ? prodConfig : devConfig
 }
